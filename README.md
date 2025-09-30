@@ -1,4 +1,12 @@
-# DankMaterialShell (dms)
+# BuckMaterialShell (dms)
+
+## Do you know what a buck is?
+
+> [!NOTE]
+> This is a fork with nothing changed but the name, because I find the name `DankMaterialShell` a bit cringy.
+
+> [!WARNING]
+> This only supports Nix, sorry.
 
 <div align=center>
 
