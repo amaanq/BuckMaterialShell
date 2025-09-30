@@ -1,0 +1,101 @@
+diff --git a/Modals/Clipboard/ClipboardHistoryModal.qml b/Modals/Clipboard/ClipboardHistoryModal.qml
+index e7d5daf..8b2637a 100644
+--- a/Modals/Clipboard/ClipboardHistoryModal.qml
++++ b/Modals/Clipboard/ClipboardHistoryModal.qml
+@@ -91,7 +91,7 @@ BuckModal {
+ 
+     function copyEntry(entry) {
+         const entryId = entry.split('\t')[0]
+-        Quickshell.execDetached(["sh", "-c", `cliphist decode ${entryId} | wl-copy`])
++        Quickshell.execDetached(["sh", "-c", `stash decode ${entryId} | wl-copy`])
+         ToastService.showInfo(I18n.tr("Copied to clipboard"))
+         hide()
+     }
+diff --git a/Modals/Clipboard/ClipboardProcesses.qml b/Modals/Clipboard/ClipboardProcesses.qml
+index bb3c24d..de37eda 100644
+--- a/Modals/Clipboard/ClipboardProcesses.qml
++++ b/Modals/Clipboard/ClipboardProcesses.qml
+@@ -11,7 +11,7 @@ QtObject {
+     // Load clipboard entries
+     property var loadProcess: Process {
+         id: loadProcess
+-        command: ["cliphist", "list"]
++        command: ["stash", "list"]
+         running: false
+ 
+         stdout: StdioCollector {
+@@ -66,7 +66,7 @@ QtObject {
+     // Clear all entries
+     property var clearProcess: Process {
+         id: clearProcess
+-        command: ["cliphist", "wipe"]
++        command: ["stash", "wipe"]
+         running: false
+ 
+         onExited: exitCode => {
+@@ -84,7 +84,7 @@ QtObject {
+ 
+     function deleteEntry(entry) {
+         deleteProcess.deletedEntry = entry
+-        deleteProcess.command = ["sh", "-c", `echo '${entry.replace(/'/g, "'\\''")}' | cliphist delete`]
++        deleteProcess.command = ["sh", "-c", `echo '${entry.replace(/'/g, "'\\''")}' | stash delete`]
+         deleteProcess.running = true
+     }
+ 
+diff --git a/Modals/Clipboard/ClipboardThumbnail.qml b/Modals/Clipboard/ClipboardThumbnail.qml
+index 67e5d83..48fc6ed 100644
+--- a/Modals/Clipboard/ClipboardThumbnail.qml
++++ b/Modals/Clipboard/ClipboardThumbnail.qml
+@@ -104,7 +104,7 @@ Item {
+         Process {
+             id: imageLoader
+             running: false
+-            command: ["sh", "-c", `cliphist decode ${thumbnailImage.entryId} | base64 -w 0`]
++            command: ["sh", "-c", `stash decode ${thumbnailImage.entryId} | base64 -w 0`]
+ 
+             stdout: StdioCollector {
+                 onStreamFinished: {
+diff --git a/flake.nix b/flake.nix
+index 4b3875c..45bf33f 100644
+--- a/flake.nix
++++ b/flake.nix
+@@ -15,6 +15,10 @@
+             url = "github:amaanq/dykwabi";
+             inputs.nixpkgs.follows = "nixpkgs";
+         };
++        stash = {
++            url = "github:notashelf/stash";
++            inputs.nixpkgs.follows = "nixpkgs";
++        };
+     };
+ 
+     outputs = {
+@@ -23,6 +27,7 @@
+         quickshell,
+         dgop,
+         dykwabi-cli,
++        stash,
+         ...
+     }: let
+         forEachSystem = fn:
+@@ -33,6 +38,7 @@
+             dykwabiCli = dykwabi-cli.packages.${pkgs.system}.default;
+             dgop = dgop.packages.${pkgs.system}.dgop;
+             buckMaterialShell = self.packages.${pkgs.system}.buckMaterialShell;
++            stash = stash.packages.${pkgs.system}.default;
+         };
+     in {
+         formatter = forEachSystem (_: pkgs: pkgs.alejandra);
+diff --git a/nix/default.nix b/nix/default.nix
+index 64e6ef9..a13bd89 100644
+--- a/nix/default.nix
++++ b/nix/default.nix
+@@ -148,7 +148,7 @@ in {
+                 dykwabiPkgs.dykwabiCli
+             ]
+             ++ lib.optional cfg.enableSystemMonitoring dykwabiPkgs.dgop
+-            ++ lib.optionals cfg.enableClipboard [pkgs.cliphist pkgs.wl-clipboard]
++            ++ lib.optionals cfg.enableClipboard [dykwabiPkgs.stash pkgs.wl-clipboard]
+             ++ lib.optionals cfg.enableVPN [pkgs.glib pkgs.networkmanager]
+             ++ lib.optional cfg.enableBrightnessControl pkgs.brightnessctl
+             ++ lib.optional cfg.enableColorPicker pkgs.hyprpicker
