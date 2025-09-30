@@ -1,0 +1,59 @@
+diff --git a/Modules/Settings/AboutTab.qml b/Modules/Settings/AboutTab.qml
+index 78cbaa5..4e672ff 100644
+--- a/Modules/Settings/AboutTab.qml
++++ b/Modules/Settings/AboutTab.qml
+@@ -40,21 +40,6 @@ Item {
+                     anchors.margins: Theme.spacingL
+                     spacing: Theme.spacingM
+ 
+-                    Item {
+-                        width: parent.width
+-                        height: asciiText.implicitHeight
+-
+-                        StyledText {
+-                            id: asciiText
+-
+-                            text: "██████╗  █████╗ ███╗   ██╗██╗  ██╗\n██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝\n██║  ██║███████║██╔██╗ ██║█████╔╝ \n██║  ██║██╔══██║██║╚██╗██║██╔═██╗ \n██████╔╝██║  ██║██║ ╚████║██║  ██╗\n╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝"
+-                            isMonospace: true
+-                            font.pixelSize: Theme.fontSizeMedium
+-                            color: Theme.primary
+-                            anchors.centerIn: parent
+-                        }
+-                    }
+-
+                     StyledText {
+                         text: "BuckMaterialShell"
+                         font.pixelSize: Theme.fontSizeXLarge
+diff --git a/Widgets/BuckBackdrop.qml b/Widgets/BuckBackdrop.qml
+index f5ed62d..e4477a7 100644
+--- a/Widgets/BuckBackdrop.qml
++++ b/Widgets/BuckBackdrop.qml
+@@ -36,28 +36,4 @@ Item {
+         rotation: 35
+         visible: !isColorWallpaper
+     }
+-
+-    Item {
+-        anchors.left: parent.left
+-        anchors.bottom: parent.bottom
+-        anchors.leftMargin: Theme.spacingXL * 2
+-        anchors.bottomMargin: Theme.spacingXL * 2
+-        opacity: 0.25
+-        visible: !isColorWallpaper
+-
+-        StyledText {
+-            anchors.left: parent.left
+-            anchors.bottom: parent.bottom
+-            // ! TODO qmlfmt will brick this
+-            text: `██████╗  █████╗ ███╗   ██╗██╗  ██╗
+-██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝
+-██║  ██║███████║██╔██╗ ██║█████╔╝
+-██║  ██║██╔══██║██║╚██╗██║██╔═██╗
+-██████╔╝██║  ██║██║ ╚████║██║  ██╗
+-╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝`
+-            isMonospace: true
+-            font.pixelSize: Theme.fontSizeLarge * 1.2
+-            color: Theme.primary
+-        }
+-    }
+ }
