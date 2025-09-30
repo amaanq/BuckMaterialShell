@@ -1,0 +1,143 @@
+diff --git a/CLAUDE.md b/CLAUDE.md
+index 6c3889f..7401920 100644
+--- a/CLAUDE.md
++++ b/CLAUDE.md
+@@ -212,7 +212,7 @@ shell.qml           # Main entry point (minimal orchestration)
+ 
+ - **ControlCenter**: System controls (WiFi, Bluetooth, brightness, volume, night mode)
+ - **AppLauncher**: Full-featured app grid/list with 93+ applications, search, categories
+-- **ClipboardHistoryModal**: Complete clipboard management with cliphist integration
++- **ClipboardHistoryModal**: Complete clipboard management with stash integration
+ - **TopBar**: Per-monitor panels with workspace switching, clock, system tray
+ - **System App Theming**: Automatic GTK and Qt application theming using matugen templates
+ 
+diff --git a/Modals/Clipboard/ClipboardHistoryModal.qml b/Modals/Clipboard/ClipboardHistoryModal.qml
+index d6477ea..4bd8092 100644
+--- a/Modals/Clipboard/ClipboardHistoryModal.qml
++++ b/Modals/Clipboard/ClipboardHistoryModal.qml
+@@ -90,7 +90,7 @@ BuckModal {
+ 
+     function copyEntry(entry) {
+         const entryId = entry.split('\t')[0]
+-        Quickshell.execDetached(["sh", "-c", `cliphist decode ${entryId} | wl-copy`])
++        Quickshell.execDetached(["sh", "-c", `stash decode ${entryId} | wl-copy`])
+         ToastService.showInfo("Copied to clipboard")
+         hide()
+     }
+diff --git a/Modals/Clipboard/ClipboardProcesses.qml b/Modals/Clipboard/ClipboardProcesses.qml
+index bb3c24d..de37eda 100644
+--- a/Modals/Clipboard/ClipboardProcesses.qml
++++ b/Modals/Clipboard/ClipboardProcesses.qml
+@@ -11,7 +11,7 @@ QtObject {
+     // Load clipboard entries
+     property var loadProcess: Process {
+         id: loadProcess
+-        command: ["cliphist", "list"]
++        command: ["stash", "list"]
+         running: false
+ 
+         stdout: StdioCollector {
+@@ -66,7 +66,7 @@ QtObject {
+     // Clear all entries
+     property var clearProcess: Process {
+         id: clearProcess
+-        command: ["cliphist", "wipe"]
++        command: ["stash", "wipe"]
+         running: false
+ 
+         onExited: exitCode => {
+@@ -84,7 +84,7 @@ QtObject {
+ 
+     function deleteEntry(entry) {
+         deleteProcess.deletedEntry = entry
+-        deleteProcess.command = ["sh", "-c", `echo '${entry.replace(/'/g, "'\\''")}' | cliphist delete`]
++        deleteProcess.command = ["sh", "-c", `echo '${entry.replace(/'/g, "'\\''")}' | stash delete`]
+         deleteProcess.running = true
+     }
+ 
+diff --git a/Modals/Clipboard/ClipboardThumbnail.qml b/Modals/Clipboard/ClipboardThumbnail.qml
+index bbed879..56df744 100644
+--- a/Modals/Clipboard/ClipboardThumbnail.qml
++++ b/Modals/Clipboard/ClipboardThumbnail.qml
+@@ -104,7 +104,7 @@ Item {
+         Process {
+             id: imageLoader
+             running: false
+-            command: ["sh", "-c", `cliphist decode ${thumbnailImage.entryId} | base64 -w 0`]
++            command: ["sh", "-c", `stash decode ${thumbnailImage.entryId} | base64 -w 0`]
+ 
+             stdout: StdioCollector {
+                 onStreamFinished: {
+diff --git a/PLUGINS/POPOUT_SERVICE.md b/PLUGINS/POPOUT_SERVICE.md
+index cfa9ec2..5bf8a2d 100644
+--- a/PLUGINS/POPOUT_SERVICE.md
++++ b/PLUGINS/POPOUT_SERVICE.md
+@@ -39,7 +39,7 @@ property var popoutService: null
+ | Modal | Show | Hide | Notes |
+ |-------|------|------|-------|
+ | Settings | `openSettings()` | `closeSettings()` | Full settings interface |
+-| Clipboard History | `openClipboardHistory()` | `closeClipboardHistory()` | Cliphist integration |
++| Clipboard History | `openClipboardHistory()` | `closeClipboardHistory()` | Stash integration |
+ | Spotlight | `openSpotlight()` | `closeSpotlight()` | Command launcher |
+ | Power Menu | `openPowerMenu()` | `closePowerMenu()` | Also has `togglePowerMenu()` |
+ | Process List Modal | `showProcessListModal()` | `hideProcessListModal()` | Fullscreen version, has `toggleProcessListModal()` |
+diff --git a/README.md b/README.md
+index bca7fe0..c4359a7 100644
+--- a/README.md
++++ b/README.md
+@@ -291,12 +291,12 @@ sudo sh -c "curl -L https://github.com/AvengeMedia/danklinux/releases/latest/dow
+ **4.1 Core optional dependencies**
+ ```bash
+ # Arch Linux
+-sudo pacman -S cava wl-clipboard cliphist brightnessctl
++sudo pacman -S cava wl-clipboard stash brightnessctl
+ paru -S matugen-bin dgop
+ 
+ # Fedora
+ sudo dnf install cava wl-clipboard brightnessctl
+-sudo dnf copr enable wef/cliphist && sudo dnf install cliphist
++sudo dnf copr enable wef/stash && sudo dnf install stash
+ sudo dnf copr enable heus-sueh/packages && sudo dnf install matugen
+ ```
+ 
+@@ -317,7 +317,7 @@ sudo sh -c "curl -L https://github.com/AvengeMedia/dgop/releases/latest/download
+ - `brightnessctl`: Backlight and LED brightness control
+ - `wl-clipboard`: Required for copying various elements to clipboard.
+ - `cava`: Audio visualizer
+-- `cliphist`: Clipboard history
++- `stash`: Clipboard history
+ - `gammastep`: Night mode support
+ 
+ ## Compositor Configuration
+@@ -330,7 +330,7 @@ Add to your niri config
+ 
+ ```kdl
+ // Required for clipboard history integration
+-spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
++spawn-at-startup "bash" "-c" "stash watch &"
+ 
+ // Recommended (must install polkit-mate before hand) for elevation prompts
+ spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
+@@ -421,7 +421,7 @@ Add to your Hyprland config (`~/.config/hypr/hyprland.conf`):
+ 
+ ```bash
+ # Required for clipboard history integration
+-exec-once = bash -c "wl-paste --watch cliphist store &"
++exec-once = bash -c "stash watch &"
+ 
+ # Recommended (must install polkit-mate beforehand) for elevation prompts  
+ exec-once = /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
+diff --git a/nix/default.nix b/nix/default.nix
+index 0075897..ad876b5 100644
+--- a/nix/default.nix
++++ b/nix/default.nix
+@@ -86,7 +86,7 @@ in {
+                 dykwabiPkgs.dykwabiCli
+             ]
+             ++ lib.optional cfg.enableSystemMonitoring dykwabiPkgs.dgop
+-            ++ lib.optionals cfg.enableClipboard [pkgs.cliphist pkgs.wl-clipboard]
++            ++ lib.optionals cfg.enableClipboard [dykwabiPkgs.stash pkgs.wl-clipboard]
+             ++ lib.optionals cfg.enableVPN [pkgs.glib pkgs.networkmanager]
+             ++ lib.optional cfg.enableBrightnessControl pkgs.brightnessctl
+             ++ lib.optional cfg.enableNightMode pkgs.gammastep
+

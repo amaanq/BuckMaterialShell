@@ -1,0 +1,23 @@
+diff --git a/flake.nix b/flake.nix
+index c8b9dd7..2acc281 100644
+--- a/flake.nix
++++ b/flake.nix
+@@ -58,15 +58,13 @@
+             default = self.packages.${system}.buckMaterialShell;
+         });
+ 
+-        homeModules.buckMaterialShell.default = {pkgs, ...}: let
++        homeModules.default = {pkgs, ...}: let
+             dykwabiPkgs = buildDmsPkgs pkgs;
+         in {
+-            imports = [./nix/default.nix];
++            imports = [./nix/default.nix ./nix/niri.nix];
+             _module.args.dykwabiPkgs = dykwabiPkgs;
+         };
+ 
+-        homeModules.buckMaterialShell.niri = import ./nix/niri.nix;
+-
+         nixosModules.greeter = {pkgs, ...}: let
+             dykwabiPkgs = buildDmsPkgs pkgs;
+         in {
+

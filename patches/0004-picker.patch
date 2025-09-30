@@ -1,0 +1,25 @@
+diff --git a/nix/default.nix b/nix/default.nix
+index 583570e..de8a6d1 100644
+--- a/nix/default.nix
++++ b/nix/default.nix
+@@ -46,6 +46,11 @@ in {
+             default = true;
+             description = "Add needed dependencies to have audio waveleng support";
+         };
++        enableColorPicker = lib.mkOption {
++          type = bool;
++          default = true;
++          description = "Add support for the color picker";
++        };
+         enableCalendarEvents = lib.mkOption {
+             type = bool;
+             default = true;
+@@ -92,6 +97,7 @@ in {
+             ++ lib.optional cfg.enableNightMode pkgs.gammastep
+             ++ lib.optional cfg.enableDynamicTheming pkgs.matugen
+             ++ lib.optional cfg.enableAudioWavelength pkgs.cava
++            ++ lib.optional cfg.enableColorPicker pkgs.kdePackages.kcolorchooser
+             ++ lib.optional cfg.enableCalendarEvents pkgs.khal;
+     };
+ }
+
