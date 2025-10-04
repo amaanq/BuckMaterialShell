@@ -15,7 +15,7 @@ Rectangle {
     radius: Theme.cornerRadius
     color: "transparent"
 
-    DankListView {
+    BuckListView {
         id: resultsList
 
         property int itemHeight: 60
@@ -165,7 +165,7 @@ Rectangle {
         }
     }
 
-    DankGridView {
+    BuckGridView {
         id: resultsGrid
 
         property int currentIndex: appLauncher ? appLauncher.selectedIndex : -1

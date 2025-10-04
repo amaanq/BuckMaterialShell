@@ -10,8 +10,8 @@ Item {
     id: displaysTab
 
     property var variantComponents: [{
-        "id": "dankBar",
-        "name": "Dank Bar",
+        "id": "buckBar",
+        "name": "Buck Bar",
         "description": "System bar with widgets and system information",
         "icon": "toolbar"
     }, {
@@ -62,7 +62,7 @@ Item {
         SettingsData.setScreenPreferences(prefs);
     }
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         anchors.bottomMargin: Theme.spacingS
@@ -95,7 +95,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "monitor"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -155,7 +155,7 @@ Item {
                                     anchors.margins: Theme.spacingS
                                     spacing: Theme.spacingM
 
-                                    DankIcon {
+                                    BuckIcon {
                                         name: "desktop_windows"
                                         size: Theme.iconSize - 4
                                         color: Theme.primary
@@ -237,7 +237,7 @@ Item {
                                 width: parent.width
                                 spacing: Theme.spacingM
 
-                                DankIcon {
+                                BuckIcon {
                                     name: modelData.icon
                                     size: Theme.iconSize
                                     color: Theme.primary
@@ -286,7 +286,7 @@ Item {
                                     width: parent.width
                                     spacing: Theme.spacingXS
 
-                                    DankToggle {
+                                    BuckToggle {
                                         width: parent.width
                                         text: "All displays"
                                         description: "Show on all connected displays"
@@ -315,7 +315,7 @@ Item {
                                         Repeater {
                                             model: Quickshell.screens
 
-                                            delegate: DankToggle {
+                                            delegate: BuckToggle {
                                                 property string screenName: modelData.name
                                                 property string componentId: parent.parent.componentId
 

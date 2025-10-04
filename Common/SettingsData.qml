@@ -12,7 +12,7 @@ import qs.Services
 Singleton {
     id: root
 
-    readonly property bool isGreeterMode: Quickshell.env("DMS_RUN_GREETER") === "1" || Quickshell.env("DMS_RUN_GREETER") === "true"
+    readonly property bool isGreeterMode: Quickshell.env("DYKWABI_RUN_GREETER") === "1" || Quickshell.env("DYKWABI_RUN_GREETER") === "true"
 
     enum Position {
         Top,
@@ -33,8 +33,8 @@ Singleton {
     property string currentThemeName: "blue"
     property string customThemeFile: ""
     property string matugenScheme: "scheme-tonal-spot"
-    property real dankBarTransparency: 1.0
-    property real dankBarWidgetTransparency: 1.0
+    property real buckBarTransparency: 1.0
+    property real buckBarWidgetTransparency: 1.0
     property real popupTransparency: 1.0
     property real dockTransparency: 1
     property bool use24HourClock: true
@@ -87,13 +87,13 @@ Singleton {
     property string clockDateFormat: ""
     property string lockDateFormat: ""
     property int mediaSize: 1
-    property var dankBarLeftWidgets: ["launcherButton", "workspaceSwitcher", "focusedWindow"]
-    property var dankBarCenterWidgets: ["music", "clock", "weather"]
-    property var dankBarRightWidgets: ["systemTray", "clipboard", "cpuUsage", "memUsage", "notificationButton", "battery", "controlCenterButton"]
-    property var dankBarWidgetOrder: []
-    property alias dankBarLeftWidgetsModel: leftWidgetsModel
-    property alias dankBarCenterWidgetsModel: centerWidgetsModel
-    property alias dankBarRightWidgetsModel: rightWidgetsModel
+    property var buckBarLeftWidgets: ["launcherButton", "workspaceSwitcher", "focusedWindow"]
+    property var buckBarCenterWidgets: ["music", "clock", "weather"]
+    property var buckBarRightWidgets: ["systemTray", "clipboard", "cpuUsage", "memUsage", "notificationButton", "battery", "controlCenterButton"]
+    property var buckBarWidgetOrder: []
+    property alias buckBarLeftWidgetsModel: leftWidgetsModel
+    property alias buckBarCenterWidgetsModel: centerWidgetsModel
+    property alias buckBarRightWidgetsModel: rightWidgetsModel
     property string appLauncherViewMode: "list"
     property string spotlightModalViewMode: "list"
     property string networkPreference: "auto"
@@ -141,17 +141,17 @@ Singleton {
     property real dockBottomGap: 0
     property real cornerRadius: 12
     property bool notificationOverlayEnabled: false
-    property bool dankBarAutoHide: false
-    property bool dankBarOpenOnOverview: false
-    property bool dankBarVisible: true
-    property real dankBarSpacing: 4
-    property real dankBarBottomGap: 0
-    property real dankBarInnerPadding: 4
-    property bool dankBarSquareCorners: false
-    property bool dankBarNoBackground: false
-    property bool dankBarGothCornersEnabled: false
-    property int dankBarPosition: SettingsData.Position.Top
-    property bool dankBarIsVertical: dankBarPosition === SettingsData.Position.Left || dankBarPosition === SettingsData.Position.Right
+    property bool buckBarAutoHide: false
+    property bool buckBarOpenOnOverview: false
+    property bool buckBarVisible: true
+    property real buckBarSpacing: 4
+    property real buckBarBottomGap: 0
+    property real buckBarInnerPadding: 4
+    property bool buckBarSquareCorners: false
+    property bool buckBarNoBackground: false
+    property bool buckBarGothCornersEnabled: false
+    property int buckBarPosition: SettingsData.Position.Top
+    property bool buckBarIsVertical: buckBarPosition === SettingsData.Position.Left || buckBarPosition === SettingsData.Position.Right
     property bool lockScreenShowPowerActions: true
     property bool hideBrightnessSlider: false
     property string widgetBackgroundColor: "sch"
@@ -168,7 +168,7 @@ Singleton {
     readonly property string _configUrl: StandardPaths.writableLocation(StandardPaths.ConfigLocation)
     readonly property string _configDir: Paths.strip(_configUrl)
 
-    signal forceDankBarLayoutRefresh
+    signal forceBuckBarLayoutRefresh
     signal forceDockLayoutRefresh
     signal widgetDataChanged
     signal workspaceIconsUpdated
@@ -208,9 +208,9 @@ Singleton {
         centerWidgetsModel.append(dummyItem)
         rightWidgetsModel.append(dummyItem)
 
-        updateListModel(leftWidgetsModel, dankBarLeftWidgets)
-        updateListModel(centerWidgetsModel, dankBarCenterWidgets)
-        updateListModel(rightWidgetsModel, dankBarRightWidgets)
+        updateListModel(leftWidgetsModel, buckBarLeftWidgets)
+        updateListModel(centerWidgetsModel, buckBarCenterWidgets)
+        updateListModel(rightWidgetsModel, buckBarRightWidgets)
     }
 
     function loadSettings() {
@@ -238,8 +238,8 @@ Singleton {
                 }
                 customThemeFile = settings.customThemeFile !== undefined ? settings.customThemeFile : ""
                 matugenScheme = settings.matugenScheme !== undefined ? settings.matugenScheme : "scheme-tonal-spot"
-                dankBarTransparency = settings.dankBarTransparency !== undefined ? (settings.dankBarTransparency > 1 ? settings.dankBarTransparency / 100 : settings.dankBarTransparency) : (settings.topBarTransparency !== undefined ? (settings.topBarTransparency > 1 ? settings.topBarTransparency / 100 : settings.topBarTransparency) : 1.0)
-                dankBarWidgetTransparency = settings.dankBarWidgetTransparency !== undefined ? (settings.dankBarWidgetTransparency > 1 ? settings.dankBarWidgetTransparency / 100 : settings.dankBarWidgetTransparency) : (settings.topBarWidgetTransparency !== undefined ? (settings.topBarWidgetTransparency > 1 ? settings.topBarWidgetTransparency / 100 : settings.topBarWidgetTransparency) : 1.0)
+                buckBarTransparency = settings.buckBarTransparency !== undefined ? (settings.buckBarTransparency > 1 ? settings.buckBarTransparency / 100 : settings.buckBarTransparency) : (settings.topBarTransparency !== undefined ? (settings.topBarTransparency > 1 ? settings.topBarTransparency / 100 : settings.topBarTransparency) : 1.0)
+                buckBarWidgetTransparency = settings.buckBarWidgetTransparency !== undefined ? (settings.buckBarWidgetTransparency > 1 ? settings.buckBarWidgetTransparency / 100 : settings.buckBarWidgetTransparency) : (settings.topBarWidgetTransparency !== undefined ? (settings.topBarWidgetTransparency > 1 ? settings.topBarWidgetTransparency / 100 : settings.topBarWidgetTransparency) : 1.0)
                 popupTransparency = settings.popupTransparency !== undefined ? (settings.popupTransparency > 1 ? settings.popupTransparency / 100 : settings.popupTransparency) : 1.0
                 dockTransparency = settings.dockTransparency !== undefined ? (settings.dockTransparency > 1 ? settings.dockTransparency / 100 : settings.dockTransparency) : 1
                 use24HourClock = settings.use24HourClock !== undefined ? settings.use24HourClock : true
@@ -293,24 +293,24 @@ Singleton {
                 clockDateFormat = settings.clockDateFormat !== undefined ? settings.clockDateFormat : ""
                 lockDateFormat = settings.lockDateFormat !== undefined ? settings.lockDateFormat : ""
                 mediaSize = settings.mediaSize !== undefined ? settings.mediaSize : (settings.mediaCompactMode !== undefined ? (settings.mediaCompactMode ? 0 : 1) : 1)
-                if (settings.dankBarWidgetOrder || settings.topBarWidgetOrder) {
-                    var widgetOrder = settings.dankBarWidgetOrder || settings.topBarWidgetOrder
-                    dankBarLeftWidgets = widgetOrder.filter(w => {
+                if (settings.buckBarWidgetOrder || settings.topBarWidgetOrder) {
+                    var widgetOrder = settings.buckBarWidgetOrder || settings.topBarWidgetOrder
+                    buckBarLeftWidgets = widgetOrder.filter(w => {
                                                                               return ["launcherButton", "workspaceSwitcher", "focusedWindow"].includes(w)
                                                                           })
-                    dankBarCenterWidgets = widgetOrder.filter(w => {
+                    buckBarCenterWidgets = widgetOrder.filter(w => {
                                                                                 return ["clock", "music", "weather"].includes(w)
                                                                             })
-                    dankBarRightWidgets = widgetOrder.filter(w => {
+                    buckBarRightWidgets = widgetOrder.filter(w => {
                                                                                return ["systemTray", "clipboard", "systemResources", "notificationButton", "battery", "controlCenterButton"].includes(w)
                                                                            })
                 } else {
-                    var leftWidgets = settings.dankBarLeftWidgets !== undefined ? settings.dankBarLeftWidgets : (settings.topBarLeftWidgets !== undefined ? settings.topBarLeftWidgets : ["launcherButton", "workspaceSwitcher", "focusedWindow"])
-                    var centerWidgets = settings.dankBarCenterWidgets !== undefined ? settings.dankBarCenterWidgets : (settings.topBarCenterWidgets !== undefined ? settings.topBarCenterWidgets : ["music", "clock", "weather"])
-                    var rightWidgets = settings.dankBarRightWidgets !== undefined ? settings.dankBarRightWidgets : (settings.topBarRightWidgets !== undefined ? settings.topBarRightWidgets : ["systemTray", "clipboard", "cpuUsage", "memUsage", "notificationButton", "battery", "controlCenterButton"])
-                    dankBarLeftWidgets = leftWidgets
-                    dankBarCenterWidgets = centerWidgets
-                    dankBarRightWidgets = rightWidgets
+                    var leftWidgets = settings.buckBarLeftWidgets !== undefined ? settings.buckBarLeftWidgets : (settings.topBarLeftWidgets !== undefined ? settings.topBarLeftWidgets : ["launcherButton", "workspaceSwitcher", "focusedWindow"])
+                    var centerWidgets = settings.buckBarCenterWidgets !== undefined ? settings.buckBarCenterWidgets : (settings.topBarCenterWidgets !== undefined ? settings.topBarCenterWidgets : ["music", "clock", "weather"])
+                    var rightWidgets = settings.buckBarRightWidgets !== undefined ? settings.buckBarRightWidgets : (settings.topBarRightWidgets !== undefined ? settings.topBarRightWidgets : ["systemTray", "clipboard", "cpuUsage", "memUsage", "notificationButton", "battery", "controlCenterButton"])
+                    buckBarLeftWidgets = leftWidgets
+                    buckBarCenterWidgets = centerWidgets
+                    buckBarRightWidgets = rightWidgets
                     updateListModel(leftWidgetsModel, leftWidgets)
                     updateListModel(centerWidgetsModel, centerWidgets)
                     updateListModel(rightWidgetsModel, rightWidgets)
@@ -343,21 +343,21 @@ Singleton {
                 dockBottomGap = settings.dockBottomGap !== undefined ? settings.dockBottomGap : 0
                 cornerRadius = settings.cornerRadius !== undefined ? settings.cornerRadius : 12
                 notificationOverlayEnabled = settings.notificationOverlayEnabled !== undefined ? settings.notificationOverlayEnabled : false
-                dankBarAutoHide = settings.dankBarAutoHide !== undefined ? settings.dankBarAutoHide : (settings.topBarAutoHide !== undefined ? settings.topBarAutoHide : false)
-                dankBarOpenOnOverview = settings.dankBarOpenOnOverview !== undefined ? settings.dankBarOpenOnOverview : (settings.topBarOpenOnOverview !== undefined ? settings.topBarOpenOnOverview : false)
-                dankBarVisible = settings.dankBarVisible !== undefined ? settings.dankBarVisible : (settings.topBarVisible !== undefined ? settings.topBarVisible : true)
+                buckBarAutoHide = settings.buckBarAutoHide !== undefined ? settings.buckBarAutoHide : (settings.topBarAutoHide !== undefined ? settings.topBarAutoHide : false)
+                buckBarOpenOnOverview = settings.buckBarOpenOnOverview !== undefined ? settings.buckBarOpenOnOverview : (settings.topBarOpenOnOverview !== undefined ? settings.topBarOpenOnOverview : false)
+                buckBarVisible = settings.buckBarVisible !== undefined ? settings.buckBarVisible : (settings.topBarVisible !== undefined ? settings.topBarVisible : true)
                 dockOpenOnOverview = settings.dockOpenOnOverview !== undefined ? settings.dockOpenOnOverview : false
                 notificationTimeoutLow = settings.notificationTimeoutLow !== undefined ? settings.notificationTimeoutLow : 5000
                 notificationTimeoutNormal = settings.notificationTimeoutNormal !== undefined ? settings.notificationTimeoutNormal : 5000
                 notificationTimeoutCritical = settings.notificationTimeoutCritical !== undefined ? settings.notificationTimeoutCritical : 0
                 notificationPopupPosition = settings.notificationPopupPosition !== undefined ? settings.notificationPopupPosition : SettingsData.Position.Top
-                dankBarSpacing = settings.dankBarSpacing !== undefined ? settings.dankBarSpacing : (settings.topBarSpacing !== undefined ? settings.topBarSpacing : 4)
-                dankBarBottomGap = settings.dankBarBottomGap !== undefined ? settings.dankBarBottomGap : (settings.topBarBottomGap !== undefined ? settings.topBarBottomGap : 0)
-                dankBarInnerPadding = settings.dankBarInnerPadding !== undefined ? settings.dankBarInnerPadding : (settings.topBarInnerPadding !== undefined ? settings.topBarInnerPadding : 4)
-                dankBarSquareCorners = settings.dankBarSquareCorners !== undefined ? settings.dankBarSquareCorners : (settings.topBarSquareCorners !== undefined ? settings.topBarSquareCorners : false)
-                dankBarNoBackground = settings.dankBarNoBackground !== undefined ? settings.dankBarNoBackground : (settings.topBarNoBackground !== undefined ? settings.topBarNoBackground : false)
-                dankBarGothCornersEnabled = settings.dankBarGothCornersEnabled !== undefined ? settings.dankBarGothCornersEnabled : (settings.topBarGothCornersEnabled !== undefined ? settings.topBarGothCornersEnabled : false)
-                dankBarPosition = settings.dankBarPosition !== undefined ? settings.dankBarPosition : (settings.dankBarAtBottom !== undefined ? (settings.dankBarAtBottom ? SettingsData.Position.Bottom : SettingsData.Position.Top) : (settings.topBarAtBottom !== undefined ? (settings.topBarAtBottom ? SettingsData.Position.Bottom : SettingsData.Position.Top) : SettingsData.Position.Top))
+                buckBarSpacing = settings.buckBarSpacing !== undefined ? settings.buckBarSpacing : (settings.topBarSpacing !== undefined ? settings.topBarSpacing : 4)
+                buckBarBottomGap = settings.buckBarBottomGap !== undefined ? settings.buckBarBottomGap : (settings.topBarBottomGap !== undefined ? settings.topBarBottomGap : 0)
+                buckBarInnerPadding = settings.buckBarInnerPadding !== undefined ? settings.buckBarInnerPadding : (settings.topBarInnerPadding !== undefined ? settings.topBarInnerPadding : 4)
+                buckBarSquareCorners = settings.buckBarSquareCorners !== undefined ? settings.buckBarSquareCorners : (settings.topBarSquareCorners !== undefined ? settings.topBarSquareCorners : false)
+                buckBarNoBackground = settings.buckBarNoBackground !== undefined ? settings.buckBarNoBackground : (settings.topBarNoBackground !== undefined ? settings.topBarNoBackground : false)
+                buckBarGothCornersEnabled = settings.buckBarGothCornersEnabled !== undefined ? settings.buckBarGothCornersEnabled : (settings.topBarGothCornersEnabled !== undefined ? settings.topBarGothCornersEnabled : false)
+                buckBarPosition = settings.buckBarPosition !== undefined ? settings.buckBarPosition : (settings.buckBarAtBottom !== undefined ? (settings.buckBarAtBottom ? SettingsData.Position.Bottom : SettingsData.Position.Top) : (settings.topBarAtBottom !== undefined ? (settings.topBarAtBottom ? SettingsData.Position.Bottom : SettingsData.Position.Top) : SettingsData.Position.Top))
                 lockScreenShowPowerActions = settings.lockScreenShowPowerActions !== undefined ? settings.lockScreenShowPowerActions : true
                 hideBrightnessSlider = settings.hideBrightnessSlider !== undefined ? settings.hideBrightnessSlider : false
                 widgetBackgroundColor = settings.widgetBackgroundColor !== undefined ? settings.widgetBackgroundColor : "sch"
@@ -387,8 +387,8 @@ Singleton {
                                                 "currentThemeName": currentThemeName,
                                                 "customThemeFile": customThemeFile,
                                                 "matugenScheme": matugenScheme,
-                                                "dankBarTransparency": dankBarTransparency,
-                                                "dankBarWidgetTransparency": dankBarWidgetTransparency,
+                                                "buckBarTransparency": buckBarTransparency,
+                                                "buckBarWidgetTransparency": buckBarWidgetTransparency,
                                                 "popupTransparency": popupTransparency,
                                                 "dockTransparency": dockTransparency,
                                                 "use24HourClock": use24HourClock,
@@ -433,9 +433,9 @@ Singleton {
                                                 "clockDateFormat": clockDateFormat,
                                                 "lockDateFormat": lockDateFormat,
                                                 "mediaSize": mediaSize,
-                                                "dankBarLeftWidgets": dankBarLeftWidgets,
-                                                "dankBarCenterWidgets": dankBarCenterWidgets,
-                                                "dankBarRightWidgets": dankBarRightWidgets,
+                                                "buckBarLeftWidgets": buckBarLeftWidgets,
+                                                "buckBarCenterWidgets": buckBarCenterWidgets,
+                                                "buckBarRightWidgets": buckBarRightWidgets,
                                                 "appLauncherViewMode": appLauncherViewMode,
                                                 "spotlightModalViewMode": spotlightModalViewMode,
                                                 "networkPreference": networkPreference,
@@ -465,16 +465,16 @@ Singleton {
                                                 "dockBottomGap": dockBottomGap,
                                                 "cornerRadius": cornerRadius,
                                                 "notificationOverlayEnabled": notificationOverlayEnabled,
-                                                "dankBarAutoHide": dankBarAutoHide,
-                                                "dankBarOpenOnOverview": dankBarOpenOnOverview,
-                                                "dankBarVisible": dankBarVisible,
-                                                "dankBarSpacing": dankBarSpacing,
-                                                "dankBarBottomGap": dankBarBottomGap,
-                                                "dankBarInnerPadding": dankBarInnerPadding,
-                                                "dankBarSquareCorners": dankBarSquareCorners,
-                                                "dankBarNoBackground": dankBarNoBackground,
-                                                "dankBarGothCornersEnabled": dankBarGothCornersEnabled,
-                                                "dankBarPosition": dankBarPosition,
+                                                "buckBarAutoHide": buckBarAutoHide,
+                                                "buckBarOpenOnOverview": buckBarOpenOnOverview,
+                                                "buckBarVisible": buckBarVisible,
+                                                "buckBarSpacing": buckBarSpacing,
+                                                "buckBarBottomGap": buckBarBottomGap,
+                                                "buckBarInnerPadding": buckBarInnerPadding,
+                                                "buckBarSquareCorners": buckBarSquareCorners,
+                                                "buckBarNoBackground": buckBarNoBackground,
+                                                "buckBarGothCornersEnabled": buckBarGothCornersEnabled,
+                                                "buckBarPosition": buckBarPosition,
                                                 "lockScreenShowPowerActions": lockScreenShowPowerActions,
                                                 "hideBrightnessSlider": hideBrightnessSlider,
                                                 "widgetBackgroundColor": widgetBackgroundColor,
@@ -632,13 +632,13 @@ Singleton {
         }
     }
 
-    function setDankBarTransparency(transparency) {
-        dankBarTransparency = transparency
+    function setBuckBarTransparency(transparency) {
+        buckBarTransparency = transparency
         saveSettings()
     }
 
-    function setDankBarWidgetTransparency(transparency) {
-        dankBarWidgetTransparency = transparency
+    function setBuckBarWidgetTransparency(transparency) {
+        buckBarWidgetTransparency = transparency
         saveSettings()
     }
 
@@ -773,25 +773,25 @@ Singleton {
         saveSettings()
     }
 
-    function setDankBarWidgetOrder(order) {
-        dankBarWidgetOrder = order
+    function setBuckBarWidgetOrder(order) {
+        buckBarWidgetOrder = order
         saveSettings()
     }
 
-    function setDankBarLeftWidgets(order) {
-        dankBarLeftWidgets = order
+    function setBuckBarLeftWidgets(order) {
+        buckBarLeftWidgets = order
         updateListModel(leftWidgetsModel, order)
         saveSettings()
     }
 
-    function setDankBarCenterWidgets(order) {
-        dankBarCenterWidgets = order
+    function setBuckBarCenterWidgets(order) {
+        buckBarCenterWidgets = order
         updateListModel(centerWidgetsModel, order)
         saveSettings()
     }
 
-    function setDankBarRightWidgets(order) {
-        dankBarRightWidgets = order
+    function setBuckBarRightWidgets(order) {
+        buckBarRightWidgets = order
         updateListModel(rightWidgetsModel, order)
         saveSettings()
     }
@@ -824,13 +824,13 @@ Singleton {
         widgetDataChanged()
     }
 
-    function resetDankBarWidgetsToDefault() {
+    function resetBuckBarWidgetsToDefault() {
         var defaultLeft = ["launcherButton", "workspaceSwitcher", "focusedWindow"]
         var defaultCenter = ["music", "clock", "weather"]
         var defaultRight = ["systemTray", "clipboard", "notificationButton", "battery", "controlCenterButton"]
-        dankBarLeftWidgets = defaultLeft
-        dankBarCenterWidgets = defaultCenter
-        dankBarRightWidgets = defaultRight
+        buckBarLeftWidgets = defaultLeft
+        buckBarCenterWidgets = defaultCenter
+        buckBarRightWidgets = defaultRight
         updateListModel(leftWidgetsModel, defaultLeft)
         updateListModel(centerWidgetsModel, defaultCenter)
         updateListModel(rightWidgetsModel, defaultRight)
@@ -997,20 +997,20 @@ Singleton {
 
     function setShowDock(enabled) {
         showDock = enabled
-        if (enabled && dockPosition === dankBarPosition) {
-            if (dankBarPosition === SettingsData.Position.Top) {
+        if (enabled && dockPosition === buckBarPosition) {
+            if (buckBarPosition === SettingsData.Position.Top) {
                 setDockPosition(SettingsData.Position.Bottom)
                 return
             }
-            if (dankBarPosition === SettingsData.Position.Bottom) {
+            if (buckBarPosition === SettingsData.Position.Bottom) {
                 setDockPosition(SettingsData.Position.Top)
                 return
             }
-            if (dankBarPosition === SettingsData.Position.Left) {
+            if (buckBarPosition === SettingsData.Position.Left) {
                 setDockPosition(SettingsData.Position.Right)
                 return
             }
-            if (dankBarPosition === SettingsData.Position.Right) {
+            if (buckBarPosition === SettingsData.Position.Right) {
                 setDockPosition(SettingsData.Position.Left)
                 return
             }
@@ -1043,23 +1043,23 @@ Singleton {
         saveSettings()
     }
 
-    function setDankBarAutoHide(enabled) {
-        dankBarAutoHide = enabled
+    function setBuckBarAutoHide(enabled) {
+        buckBarAutoHide = enabled
         saveSettings()
     }
 
-    function setDankBarOpenOnOverview(enabled) {
-        dankBarOpenOnOverview = enabled
+    function setBuckBarOpenOnOverview(enabled) {
+        buckBarOpenOnOverview = enabled
         saveSettings()
     }
 
-    function setDankBarVisible(visible) {
-        dankBarVisible = visible
+    function setBuckBarVisible(visible) {
+        buckBarVisible = visible
         saveSettings()
     }
 
-    function toggleDankBarVisible() {
-        dankBarVisible = !dankBarVisible
+    function toggleBuckBarVisible() {
+        buckBarVisible = !buckBarVisible
         saveSettings()
     }
 
@@ -1091,9 +1091,9 @@ Singleton {
 
     function sendTestNotification(index) {
         const notifications = [
-            ["Notification Position Test", "DMS test notification 1 of 3 ~ Hi there!", "dialog-information"],
-            ["Second Test", "DMS Notification 2 of 3 ~ Check it out!", "emblem-default"],
-            ["Third Test", "DMS notification 3 of 3 ~ Enjoy!", "emblem-favorite"]
+            ["Notification Position Test", "Dykwabi test notification 1 of 3 ~ Hi there!", "dialog-information"],
+            ["Second Test", "Dykwabi Notification 2 of 3 ~ Check it out!", "emblem-default"],
+            ["Third Test", "Dykwabi notification 3 of 3 ~ Enjoy!", "emblem-favorite"]
         ]
 
         if (index < 0 || index >= notifications.length) {
@@ -1101,7 +1101,7 @@ Singleton {
         }
 
         const notif = notifications[index]
-        testNotificationProcess.command = ["notify-send", "-h", "int:transient:1", "-a", "DMS", "-i", notif[2], notif[0], notif[1]]
+        testNotificationProcess.command = ["notify-send", "-h", "int:transient:1", "-a", "Dykwabi", "-i", notif[2], notif[0], notif[1]]
         testNotificationProcess.running = true
     }
 
@@ -1128,38 +1128,38 @@ Singleton {
         onTriggered: sendTestNotification(2)
     }
 
-    function setDankBarSpacing(spacing) {
-        dankBarSpacing = spacing
+    function setBuckBarSpacing(spacing) {
+        buckBarSpacing = spacing
         saveSettings()
     }
 
-    function setDankBarBottomGap(gap) {
-        dankBarBottomGap = gap
+    function setBuckBarBottomGap(gap) {
+        buckBarBottomGap = gap
         saveSettings()
     }
 
-    function setDankBarInnerPadding(padding) {
-        dankBarInnerPadding = padding
+    function setBuckBarInnerPadding(padding) {
+        buckBarInnerPadding = padding
         saveSettings()
     }
 
-    function setDankBarSquareCorners(enabled) {
-        dankBarSquareCorners = enabled
+    function setBuckBarSquareCorners(enabled) {
+        buckBarSquareCorners = enabled
         saveSettings()
     }
 
-    function setDankBarNoBackground(enabled) {
-        dankBarNoBackground = enabled
+    function setBuckBarNoBackground(enabled) {
+        buckBarNoBackground = enabled
         saveSettings()
     }
 
-    function setDankBarGothCornersEnabled(enabled) {
-        dankBarGothCornersEnabled = enabled
+    function setBuckBarGothCornersEnabled(enabled) {
+        buckBarGothCornersEnabled = enabled
         saveSettings()
     }
 
-    function setDankBarPosition(position) {
-        dankBarPosition = position
+    function setBuckBarPosition(position) {
+        buckBarPosition = position
         if (position === SettingsData.Position.Bottom && dockPosition === SettingsData.Position.Bottom && showDock) {
             setDockPosition(SettingsData.Position.Top)
             return
@@ -1181,17 +1181,17 @@ Singleton {
 
     function setDockPosition(position) {
         dockPosition = position
-        if (position === SettingsData.Position.Bottom && dankBarPosition === SettingsData.Position.Bottom && showDock) {
-            setDankBarPosition(SettingsData.Position.Top)
+        if (position === SettingsData.Position.Bottom && buckBarPosition === SettingsData.Position.Bottom && showDock) {
+            setBuckBarPosition(SettingsData.Position.Top)
         }
-        if (position === SettingsData.Position.Top && dankBarPosition === SettingsData.Position.Top && showDock) {
-            setDankBarPosition(SettingsData.Position.Bottom)
+        if (position === SettingsData.Position.Top && buckBarPosition === SettingsData.Position.Top && showDock) {
+            setBuckBarPosition(SettingsData.Position.Bottom)
         }
-        if (position === SettingsData.Position.Left && dankBarPosition === SettingsData.Position.Left && showDock) {
-            setDankBarPosition(SettingsData.Position.Right)
+        if (position === SettingsData.Position.Left && buckBarPosition === SettingsData.Position.Left && showDock) {
+            setBuckBarPosition(SettingsData.Position.Right)
         }
-        if (position === SettingsData.Position.Right && dankBarPosition === SettingsData.Position.Right && showDock) {
-            setDankBarPosition(SettingsData.Position.Left)
+        if (position === SettingsData.Position.Right && buckBarPosition === SettingsData.Position.Right && showDock) {
+            setBuckBarPosition(SettingsData.Position.Left)
         }
         saveSettings()
         Qt.callLater(() => forceDockLayoutRefresh())
@@ -1210,8 +1210,8 @@ Singleton {
     }
 
     function getPopupYPosition(barHeight) {
-        const gothOffset = dankBarGothCornersEnabled ? Theme.cornerRadius : 0
-        return barHeight + dankBarSpacing + dankBarBottomGap - gothOffset + Theme.popupDistance
+        const gothOffset = buckBarGothCornersEnabled ? Theme.cornerRadius : 0
+        return barHeight + buckBarSpacing + buckBarBottomGap - gothOffset + Theme.popupDistance
     }
 
     function getPopupTriggerPosition(globalPos, screen, barThickness, widgetWidth) {
@@ -1220,16 +1220,16 @@ Singleton {
         const relativeX = globalPos.x - screenX
         const relativeY = globalPos.y - screenY
 
-        if (dankBarPosition === SettingsData.Position.Left || dankBarPosition === SettingsData.Position.Right) {
+        if (buckBarPosition === SettingsData.Position.Left || buckBarPosition === SettingsData.Position.Right) {
             return {
                 x: relativeY,
-                y: barThickness + dankBarSpacing + Theme.popupDistance,
+                y: barThickness + buckBarSpacing + Theme.popupDistance,
                 width: widgetWidth
             }
         }
         return {
             x: relativeX,
-            y: barThickness + dankBarSpacing + dankBarBottomGap + Theme.popupDistance,
+            y: barThickness + buckBarSpacing + buckBarBottomGap + Theme.popupDistance,
             width: widgetWidth
         }
     }
@@ -1352,7 +1352,7 @@ Singleton {
     FileView {
         id: settingsFile
 
-        path: isGreeterMode ? "" : StandardPaths.writableLocation(StandardPaths.ConfigLocation) + "/DankMaterialShell/settings.json"
+        path: isGreeterMode ? "" : StandardPaths.writableLocation(StandardPaths.ConfigLocation) + "/BuckMaterialShell/settings.json"
         blockLoading: true
         blockWrites: true
         atomicWrites: true
@@ -1437,7 +1437,7 @@ Singleton {
         id: defaultSettingsCheckProcess
 
         command: ["sh", "-c", "CONFIG_DIR=\"" + _configDir
-            + "/DankMaterialShell\"; if [ -f \"$CONFIG_DIR/default-settings.json\" ] && [ ! -f \"$CONFIG_DIR/settings.json\" ]; then cp \"$CONFIG_DIR/default-settings.json\" \"$CONFIG_DIR/settings.json\" && echo 'copied'; else echo 'not_found'; fi"]
+            + "/BuckMaterialShell\"; if [ -f \"$CONFIG_DIR/default-settings.json\" ] && [ ! -f \"$CONFIG_DIR/settings.json\" ]; then cp \"$CONFIG_DIR/default-settings.json\" \"$CONFIG_DIR/settings.json\" && echo 'copied'; else echo 'not_found'; fi"]
         running: false
         onExited: exitCode => {
             if (exitCode === 0) {
@@ -1452,22 +1452,22 @@ Singleton {
 
     IpcHandler {
         function reveal(): string {
-            root.setDankBarVisible(true)
+            root.setBuckBarVisible(true)
             return "BAR_SHOW_SUCCESS"
         }
 
         function hide(): string {
-            root.setDankBarVisible(false)
+            root.setBuckBarVisible(false)
             return "BAR_HIDE_SUCCESS"
         }
 
         function toggle(): string {
-            root.toggleDankBarVisible()
-            return root.dankBarVisible ? "BAR_SHOW_SUCCESS" : "BAR_HIDE_SUCCESS"
+            root.toggleBuckBarVisible()
+            return root.buckBarVisible ? "BAR_SHOW_SUCCESS" : "BAR_HIDE_SUCCESS"
         }
 
         function status(): string {
-            return root.dankBarVisible ? "visible" : "hidden"
+            return root.buckBarVisible ? "visible" : "hidden"
         }
 
         target: "bar"

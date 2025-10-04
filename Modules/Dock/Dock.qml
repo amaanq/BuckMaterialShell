@@ -34,21 +34,21 @@ Variants {
     property real backgroundTransparency: SettingsData.dockTransparency
     property bool groupByApp: SettingsData.dockGroupByApp
 
-    readonly property real widgetHeight: Math.max(20, 26 + SettingsData.dankBarInnerPadding * 0.6)
-    readonly property real effectiveBarHeight: Math.max(widgetHeight + SettingsData.dankBarInnerPadding + 4, Theme.barHeight - 4 - (8 - SettingsData.dankBarInnerPadding))
+    readonly property real widgetHeight: Math.max(20, 26 + SettingsData.buckBarInnerPadding * 0.6)
+    readonly property real effectiveBarHeight: Math.max(widgetHeight + SettingsData.buckBarInnerPadding + 4, Theme.barHeight - 4 - (8 - SettingsData.buckBarInnerPadding))
     readonly property real barSpacing: {
-        const barIsHorizontal = (SettingsData.dankBarPosition === SettingsData.Position.Top || SettingsData.dankBarPosition === SettingsData.Position.Bottom)
-        const barIsVertical = (SettingsData.dankBarPosition === SettingsData.Position.Left || SettingsData.dankBarPosition === SettingsData.Position.Right)
-        const samePosition = (SettingsData.dockPosition === SettingsData.dankBarPosition)
+        const barIsHorizontal = (SettingsData.buckBarPosition === SettingsData.Position.Top || SettingsData.buckBarPosition === SettingsData.Position.Bottom)
+        const barIsVertical = (SettingsData.buckBarPosition === SettingsData.Position.Left || SettingsData.buckBarPosition === SettingsData.Position.Right)
+        const samePosition = (SettingsData.dockPosition === SettingsData.buckBarPosition)
         const dockIsHorizontal = !isVertical
         const dockIsVertical = isVertical
 
-        if (!SettingsData.dankBarVisible) return 0
+        if (!SettingsData.buckBarVisible) return 0
         if (dockIsHorizontal && barIsHorizontal && samePosition) {
-            return SettingsData.dankBarSpacing + effectiveBarHeight + SettingsData.dankBarBottomGap
+            return SettingsData.buckBarSpacing + effectiveBarHeight + SettingsData.buckBarBottomGap
         }
         if (dockIsVertical && barIsVertical && samePosition) {
-            return SettingsData.dankBarSpacing + effectiveBarHeight + SettingsData.dankBarBottomGap
+            return SettingsData.buckBarSpacing + effectiveBarHeight + SettingsData.buckBarBottomGap
         }
         return 0
     }

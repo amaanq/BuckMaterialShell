@@ -11,7 +11,7 @@ Item {
     property string expandedPluginId: ""
 
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -42,7 +42,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "extension"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -61,7 +61,7 @@ Item {
                             }
 
                             StyledText {
-                                text: "Manage and configure plugins for extending DMS functionality"
+                                text: "Manage and configure plugins for extending Dykwabi functionality"
                                 font.pixelSize: Theme.fontSizeSmall
                                 color: Theme.surfaceVariantText
                             }
@@ -72,7 +72,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankButton {
+                        BuckButton {
                             text: "Scan for Plugins"
                             iconName: "refresh"
                             onClicked: {
@@ -81,7 +81,7 @@ Item {
                             }
                         }
 
-                        DankButton {
+                        BuckButton {
                             text: "Create Plugin Directory"
                             iconName: "create_new_folder"
                             onClicked: {
@@ -208,7 +208,7 @@ Item {
                                         width: parent.width
                                         spacing: Theme.spacingM
 
-                                        DankIcon {
+                                        BuckIcon {
                                             name: pluginDelegate.pluginIcon
                                             size: Theme.iconSize
                                             color: PluginService.isPluginLoaded(pluginDelegate.pluginId) ? Theme.primary : Theme.surfaceVariantText
@@ -232,7 +232,7 @@ Item {
                                                     anchors.verticalCenter: parent.verticalCenter
                                                 }
 
-                                                DankIcon {
+                                                BuckIcon {
                                                     name: pluginDelegate.hasSettings ? (pluginDelegate.isExpanded ? "expand_less" : "expand_more") : ""
                                                     size: 16
                                                     color: pluginDelegate.hasSettings ? Theme.primary : "transparent"
@@ -261,7 +261,7 @@ Item {
                                                 color: reloadArea.containsMouse ? Theme.surfaceContainerHighest : "transparent"
                                                 visible: PluginService.isPluginLoaded(pluginDelegate.pluginId)
 
-                                                DankIcon {
+                                                BuckIcon {
                                                     anchors.centerIn: parent
                                                     name: "refresh"
                                                     size: 16
@@ -287,7 +287,7 @@ Item {
                                                 }
                                             }
 
-                                            DankToggle {
+                                            BuckToggle {
                                                 id: pluginToggle
                                                 anchors.verticalCenter: parent.verticalCenter
                                                 checked: PluginService.isPluginLoaded(pluginDelegate.pluginId)

@@ -186,7 +186,7 @@ LazyLoader {
                     active: !root.source || root.isColorSource
                     asynchronous: true
 
-                    sourceComponent: DankBackdrop {
+                    sourceComponent: BuckBackdrop {
                         screenName: modelData.name
                     }
                 }

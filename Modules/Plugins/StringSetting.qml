@@ -50,7 +50,7 @@ Column {
         visible: root.description !== ""
     }
 
-    DankTextField {
+    BuckTextField {
         id: textField
         width: parent.width
         placeholderText: root.placeholder

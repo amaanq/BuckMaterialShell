@@ -93,7 +93,7 @@ Column {
         border.width: 1
         radius: Theme.cornerRadius
 
-        DankFlickable {
+        BuckFlickable {
             id: flickable
             anchors.fill: parent
             anchors.margins: 1
@@ -256,7 +256,7 @@ Column {
 
                 Row {
                     spacing: Theme.spacingS
-                    DankActionButton {
+                    BuckActionButton {
                         iconName: "save"
                         iconSize: Theme.iconSize - 2
                         iconColor: Theme.primary
@@ -273,7 +273,7 @@ Column {
 
                 Row {
                     spacing: Theme.spacingS
-                    DankActionButton {
+                    BuckActionButton {
                         iconName: "folder_open"
                         iconSize: Theme.iconSize - 2
                         iconColor: Theme.secondary
@@ -289,7 +289,7 @@ Column {
 
                 Row {
                     spacing: Theme.spacingS
-                    DankActionButton {
+                    BuckActionButton {
                         iconName: "note_add"
                         iconSize: Theme.iconSize - 2
                         iconColor: Theme.surfaceText
@@ -304,7 +304,7 @@ Column {
                 }
             }
 
-            DankActionButton {
+            BuckActionButton {
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 iconName: "more_horiz"

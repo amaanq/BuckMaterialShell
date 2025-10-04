@@ -31,7 +31,7 @@ Column {
         width: parent.width
         spacing: Theme.spacingM
 
-        DankIcon {
+        BuckIcon {
             name: root.titleIcon
             size: Theme.iconSize
             color: Theme.primary
@@ -84,7 +84,7 @@ Column {
                                           Theme.outline.b, 0.2)
                     border.width: 0
 
-                    DankIcon {
+                    BuckIcon {
                         name: "drag_indicator"
                         size: Theme.iconSize - 4
                         color: Theme.outline
@@ -94,7 +94,7 @@ Column {
                         opacity: 0.8
                     }
 
-                    DankIcon {
+                    BuckIcon {
                         name: modelData.icon
                         size: Theme.iconSize
                         color: modelData.enabled ? Theme.primary : Theme.outline
@@ -146,7 +146,7 @@ Column {
                             height: 32
                             visible: modelData.id === "gpuTemp"
 
-                            DankDropdown {
+                            BuckDropdown {
                                 id: gpuDropdown
                                 anchors.fill: parent
                                 popupWidth: -1
@@ -193,7 +193,7 @@ Column {
                             width: 120
                             height: 32
                             visible: modelData.id === "diskUsage"
-                            DankDropdown {
+                            BuckDropdown {
                                 id: diskMountDropdown
                                 anchors.fill: parent
                                 currentValue: {
@@ -226,7 +226,7 @@ Column {
                             height: 32
                             visible: modelData.warning !== undefined && modelData.warning !== ""
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "warning"
                                 size: 20
                                 color: Theme.error
@@ -290,7 +290,7 @@ Column {
                                      || modelData.id === "focusedWindow"
                                      || modelData.id === "runningApps"
 
-                            DankActionButton {
+                            BuckActionButton {
                                 id: smallSizeButton
                                 buttonSize: 28
                                 visible: modelData.id === "music"
@@ -316,7 +316,7 @@ Column {
                                 }
                             }
 
-                            DankActionButton {
+                            BuckActionButton {
                                 id: mediumSizeButton
                                 buttonSize: 28
                                 visible: modelData.id === "music"
@@ -342,7 +342,7 @@ Column {
                                 }
                             }
 
-                            DankActionButton {
+                            BuckActionButton {
                                 id: largeSizeButton
                                 buttonSize: 28
                                 visible: modelData.id === "music"
@@ -368,7 +368,7 @@ Column {
                                 }
                             }
 
-                            DankActionButton {
+                            BuckActionButton {
                                 id: compactModeButton
                                 buttonSize: 28
                                 visible: modelData.id === "clock"
@@ -462,7 +462,7 @@ Column {
                             }
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             visible: modelData.id === "controlCenterButton"
                             buttonSize: 32
                             iconName: "more_vert"
@@ -481,7 +481,7 @@ Column {
                             }
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             id: visibilityButton
                             visible: modelData.id !== "spacer"
                             buttonSize: 32
@@ -514,7 +514,7 @@ Column {
                             spacing: Theme.spacingXS
                             anchors.verticalCenter: parent.verticalCenter
 
-                            DankActionButton {
+                            BuckActionButton {
                                 buttonSize: 24
                                 iconName: "remove"
                                 iconSize: 14
@@ -535,7 +535,7 @@ Column {
                                 anchors.verticalCenter: parent.verticalCenter
                             }
 
-                            DankActionButton {
+                            BuckActionButton {
                                 buttonSize: 24
                                 iconName: "add"
                                 iconSize: 14
@@ -551,7 +551,7 @@ Column {
                             }
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             buttonSize: 32
                             iconName: "close"
                             iconSize: 18
@@ -712,7 +712,7 @@ Column {
                         anchors.verticalCenter: parent.verticalCenter
                         spacing: Theme.spacingS
 
-                        DankIcon {
+                        BuckIcon {
                             name: "lan"
                             size: 16
                             color: Theme.surfaceText
@@ -728,7 +728,7 @@ Column {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         id: networkToggle
                         anchors.right: parent.right
                         anchors.rightMargin: Theme.spacingS
@@ -765,7 +765,7 @@ Column {
                         anchors.verticalCenter: parent.verticalCenter
                         spacing: Theme.spacingS
 
-                        DankIcon {
+                        BuckIcon {
                             name: "bluetooth"
                             size: 16
                             color: Theme.surfaceText
@@ -781,7 +781,7 @@ Column {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         id: bluetoothToggle
                         anchors.right: parent.right
                         anchors.rightMargin: Theme.spacingS
@@ -818,7 +818,7 @@ Column {
                         anchors.verticalCenter: parent.verticalCenter
                         spacing: Theme.spacingS
 
-                        DankIcon {
+                        BuckIcon {
                             name: "volume_up"
                             size: 16
                             color: Theme.surfaceText
@@ -834,7 +834,7 @@ Column {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         id: audioToggle
                         anchors.right: parent.right
                         anchors.rightMargin: Theme.spacingS
@@ -866,30 +866,30 @@ Column {
     Loader {
         id: smallTooltipLoader
         active: false
-        sourceComponent: DankTooltip {}
+        sourceComponent: BuckTooltip {}
     }
 
     Loader {
         id: mediumTooltipLoader
         active: false
-        sourceComponent: DankTooltip {}
+        sourceComponent: BuckTooltip {}
     }
 
     Loader {
         id: largeTooltipLoader
         active: false
-        sourceComponent: DankTooltip {}
+        sourceComponent: BuckTooltip {}
     }
 
     Loader {
         id: compactTooltipLoader
         active: false
-        sourceComponent: DankTooltip {}
+        sourceComponent: BuckTooltip {}
     }
 
     Loader {
         id: visibilityTooltipLoader
         active: false
-        sourceComponent: DankTooltip {}
+        sourceComponent: BuckTooltip {}
     }
 }

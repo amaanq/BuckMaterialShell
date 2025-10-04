@@ -9,7 +9,7 @@ import qs.Modals.Common
 import qs.Services
 import qs.Widgets
 
-DankModal {
+BuckModal {
     id: clipboardHistoryModal
 
     property int totalCount: 0
@@ -90,7 +90,7 @@ DankModal {
 
     function copyEntry(entry) {
         const entryId = entry.split('\t')[0]
-        Quickshell.execDetached(["sh", "-c", `cliphist decode ${entryId} | wl-copy`])
+        Quickshell.execDetached(["sh", "-c", `stash decode ${entryId} | wl-copy`])
         ToastService.showInfo("Copied to clipboard")
         hide()
     }

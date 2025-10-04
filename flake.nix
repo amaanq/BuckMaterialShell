@@ -1,5 +1,5 @@
 {
-    description = "Dank Material Shell";
+    description = "Buck Material Shell";
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs?ref=nixpkgs-unstable";
@@ -11,8 +11,12 @@
             url = "github:AvengeMedia/dgop";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        dms-cli = {
-            url = "github:AvengeMedia/danklinux";
+        dykwabi-cli = {
+            url = "github:amaanq/dykwabi";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        stash = {
+            url = "github:notashelf/stash";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
@@ -22,7 +26,8 @@
         nixpkgs,
         quickshell,
         dgop,
-        dms-cli,
+        dykwabi-cli,
+        stash,
         ...
     }: let
         forEachSystem = fn:
@@ -33,32 +38,31 @@
         formatter = forEachSystem (_: pkgs: pkgs.alejandra);
 
         packages = forEachSystem (system: pkgs: {
-            dankMaterialShell = pkgs.stdenvNoCC.mkDerivation {
-                name = "dankMaterialShell";
+            buckMaterialShell = pkgs.stdenvNoCC.mkDerivation {
+                name = "buckMaterialShell";
                 src = ./.;
                 installPhase = ''
-                    mkdir -p $out/etc/xdg/quickshell/DankMaterialShell
-                    cp -r . $out/etc/xdg/quickshell/DankMaterialShell
-                    ln -s $out/etc/xdg/quickshell/DankMaterialShell $out/etc/xdg/quickshell/dms
+                    mkdir -p $out/etc/xdg/quickshell/BuckMaterialShell
+                    cp -r . $out/etc/xdg/quickshell/BuckMaterialShell
+                    ln -s $out/etc/xdg/quickshell/BuckMaterialShell $out/etc/xdg/quickshell/dykwabi
                 '';
             };
 
             quickshell = quickshell.packages.${system}.default;
 
-            default = self.packages.${system}.dankMaterialShell;
+            default = self.packages.${system}.buckMaterialShell;
         });
 
-        homeModules.dankMaterialShell.default = {pkgs, ...}: let
-            dmsPkgs = {
-                dmsCli = dms-cli.packages.${pkgs.system}.default;
+        homeModules.default = {pkgs, ...}: let
+            dykwabiPkgs = {
+                dykwabiCli = dykwabi-cli.packages.${pkgs.system}.default;
                 dgop = dgop.packages.${pkgs.system}.dgop;
-                dankMaterialShell = self.packages.${pkgs.system}.dankMaterialShell;
+                stash = stash.packages.${pkgs.stdenv.hostPlatform.system}.default;
+                buckMaterialShell = self.packages.${pkgs.system}.buckMaterialShell;
             };
         in {
-            imports = [./nix/default.nix];
-            _module.args.dmsPkgs = dmsPkgs;
+            imports = [./nix/default.nix ./nix/niri.nix];
+            _module.args.dykwabiPkgs = dykwabiPkgs;
         };
-
-        homeModules.dankMaterialShell.niri = import ./nix/niri.nix;
     };
 }

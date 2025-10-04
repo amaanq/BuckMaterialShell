@@ -11,7 +11,7 @@ import qs.Modules.ProcessList
 import qs.Services
 import qs.Widgets
 
-DankPopout {
+BuckPopout {
     id: processListPopout
 
     property var parentWidget: null
@@ -39,7 +39,7 @@ DankPopout {
     popupWidth: 600
     popupHeight: 600
     triggerX: Screen.width - 600 - Theme.spacingL
-    triggerY: Math.max(26 + SettingsData.dankBarInnerPadding + 4, Theme.barHeight - 4 - (8 - SettingsData.dankBarInnerPadding)) + SettingsData.dankBarSpacing + SettingsData.dankBarBottomGap - 2
+    triggerY: Math.max(26 + SettingsData.buckBarInnerPadding + 4, Theme.barHeight - 4 - (8 - SettingsData.buckBarInnerPadding)) + SettingsData.buckBarSpacing + SettingsData.buckBarBottomGap - 2
     triggerWidth: 55
     positioning: ""
     screen: triggerScreen

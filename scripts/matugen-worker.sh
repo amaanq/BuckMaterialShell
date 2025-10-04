@@ -75,8 +75,8 @@ build_once() {
   cat "$SHELL_DIR/matugen/configs/base.toml" > "$TMP_CFG"
   echo "" >> "$TMP_CFG"
 
-  # Always include dank config for dms-colors.json
-  cat "$SHELL_DIR/matugen/configs/dank.toml" >> "$TMP_CFG"
+  # Always include buck config for dykwabi-colors.json
+  cat "$SHELL_DIR/matugen/configs/buck.toml" >> "$TMP_CFG"
   echo "" >> "$TMP_CFG"
 
   if command -v niri >/dev/null 2>&1; then
@@ -217,26 +217,26 @@ build_once() {
   HONOR=$(echo "$SECTION"  | sed -n 's/.*"primary":"\(#[0-9a-fA-F]\{6\}\)".*/\1/p')
   SURFACE=$(echo "$SECTION" | sed -n 's/.*"surface":"\(#[0-9a-fA-F]\{6\}\)".*/\1/p')
 
-  if command -v ghostty >/dev/null 2>&1 && [[ -f "$CONFIG_DIR/ghostty/config-dankcolors" ]]; then
-    OUT=$("$SHELL_DIR/matugen/dank16.py" "$PRIMARY" $([[ "$mode" == "light" ]] && echo --light) ${HONOR:+--honor-primary "$HONOR"} ${SURFACE:+--background "$SURFACE"} 2>/dev/null || true)
+  if command -v ghostty >/dev/null 2>&1 && [[ -f "$CONFIG_DIR/ghostty/config-buckcolors" ]]; then
+    OUT=$("$SHELL_DIR/matugen/buck16.py" "$PRIMARY" $([[ "$mode" == "light" ]] && echo --light) ${HONOR:+--honor-primary "$HONOR"} ${SURFACE:+--background "$SURFACE"} 2>/dev/null || true)
     if [[ -n "${OUT:-}" ]]; then
       TMP="$(mktemp)"
       printf "%s\n\n" "$OUT" > "$TMP"
-      cat "$CONFIG_DIR/ghostty/config-dankcolors" >> "$TMP"
-      mv "$TMP" "$CONFIG_DIR/ghostty/config-dankcolors"
-      if [[ -f "$CONFIG_DIR/ghostty/config" ]] && grep -q "^[^#]*config-dankcolors" "$CONFIG_DIR/ghostty/config" 2>/dev/null; then
+      cat "$CONFIG_DIR/ghostty/config-buckcolors" >> "$TMP"
+      mv "$TMP" "$CONFIG_DIR/ghostty/config-buckcolors"
+      if [[ -f "$CONFIG_DIR/ghostty/config" ]] && grep -q "^[^#]*config-buckcolors" "$CONFIG_DIR/ghostty/config" 2>/dev/null; then
         pkill -USR2 -x ghostty >/dev/null 2>&1 || true
       fi
     fi
   fi
 
-  if command -v kitty >/dev/null 2>&1 && [[ -f "$CONFIG_DIR/kitty/dank-theme.conf" ]]; then
-    OUT=$("$SHELL_DIR/matugen/dank16.py" "$PRIMARY" $([[ "$mode" == "light" ]] && echo --light) ${HONOR:+--honor-primary "$HONOR"} ${SURFACE:+--background "$SURFACE"} --kitty 2>/dev/null || true)
+  if command -v kitty >/dev/null 2>&1 && [[ -f "$CONFIG_DIR/kitty/buck-theme.conf" ]]; then
+    OUT=$("$SHELL_DIR/matugen/buck16.py" "$PRIMARY" $([[ "$mode" == "light" ]] && echo --light) ${HONOR:+--honor-primary "$HONOR"} ${SURFACE:+--background "$SURFACE"} --kitty 2>/dev/null || true)
     if [[ -n "${OUT:-}" ]]; then
       TMP="$(mktemp)"
       printf "%s\n\n" "$OUT" > "$TMP"
-      cat "$CONFIG_DIR/kitty/dank-theme.conf" >> "$TMP"
-      mv "$TMP" "$CONFIG_DIR/kitty/dank-theme.conf"
+      cat "$CONFIG_DIR/kitty/buck-theme.conf" >> "$TMP"
+      mv "$TMP" "$CONFIG_DIR/kitty/buck-theme.conf"
     fi
   fi
   COLOR_SCHEME=$([[ "$mode" == "light" ]] && echo prefer-light || echo prefer-dark)

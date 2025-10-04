@@ -53,7 +53,7 @@ Row {
                 tooltipLoader.active = false
             }
 
-            DankIcon {
+            BuckIcon {
                 anchors.centerIn: parent
                 name: {
                     if (!DisplayService.brightnessAvailable) return "brightness_low"
@@ -69,7 +69,7 @@ Row {
         }
     }
 
-    DankSlider {
+    BuckSlider {
         anchors.verticalCenter: parent.verticalCenter
         width: parent.width - (Theme.iconSize + Theme.spacingS * 2)
         enabled: DisplayService.brightnessAvailable
@@ -157,6 +157,6 @@ Row {
     Loader {
         id: tooltipLoader
         active: false
-        sourceComponent: DankTooltip {}
+        sourceComponent: BuckTooltip {}
     }
 }

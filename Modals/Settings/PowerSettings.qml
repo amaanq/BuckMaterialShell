@@ -6,7 +6,7 @@ import qs.Widgets
 Item {
     id: powerTab
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -43,7 +43,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "schedule"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -63,7 +63,7 @@ Item {
                             height: parent.height
                         }
 
-                        DankButtonGroup {
+                        BuckButtonGroup {
                             id: powerCategory
                             anchors.verticalCenter: parent.verticalCenter
                             visible: BatteryService.batteryAvailable
@@ -74,7 +74,7 @@ Item {
                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         id: lockDropdown
                         property var timeoutOptions: ["Never", "1 minute", "2 minutes", "3 minutes", "5 minutes", "10 minutes", "15 minutes", "20 minutes", "30 minutes", "1 hour", "1 hour 30 minutes", "2 hours", "3 hours"]
                         property var timeoutValues: [0, 60, 120, 180, 300, 600, 900, 1200, 1800, 3600, 5400, 7200, 10800]
@@ -110,7 +110,7 @@ Item {
                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         id: monitorDropdown
                         property var timeoutOptions: ["Never", "1 minute", "2 minutes", "3 minutes", "5 minutes", "10 minutes", "15 minutes", "20 minutes", "30 minutes", "1 hour", "1 hour 30 minutes", "2 hours", "3 hours"]
                         property var timeoutValues: [0, 60, 120, 180, 300, 600, 900, 1200, 1800, 3600, 5400, 7200, 10800]
@@ -146,7 +146,7 @@ Item {
                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         id: suspendDropdown
                         property var timeoutOptions: ["Never", "1 minute", "2 minutes", "3 minutes", "5 minutes", "10 minutes", "15 minutes", "20 minutes", "30 minutes", "1 hour", "1 hour 30 minutes", "2 hours", "3 hours"]
                         property var timeoutValues: [0, 60, 120, 180, 300, 600, 900, 1200, 1800, 3600, 5400, 7200, 10800]
@@ -182,7 +182,7 @@ Item {
                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         id: hibernateDropdown
                         property var timeoutOptions: ["Never", "1 minute", "2 minutes", "3 minutes", "5 minutes", "10 minutes", "15 minutes", "20 minutes", "30 minutes", "1 hour", "1 hour 30 minutes", "2 hours", "3 hours"]
                         property var timeoutValues: [0, 60, 120, 180, 300, 600, 900, 1200, 1800, 3600, 5400, 7200, 10800]
@@ -219,7 +219,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         width: parent.width
                         text: "Lock before suspend"
                         description: "Automatically lock the screen when the system prepares to suspend"

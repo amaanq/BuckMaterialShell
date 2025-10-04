@@ -81,7 +81,7 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 spacing: Theme.spacingS
 
-                DankIcon {
+                BuckIcon {
                     name: {
                         if (!contextMenu.currentApp || !contextMenu.currentApp.desktopEntry)
                             return "push_pin"
@@ -156,7 +156,7 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 spacing: Theme.spacingS
 
-                DankIcon {
+                BuckIcon {
                     name: "launch"
                     size: Theme.iconSize - 2
                     color: Theme.surfaceText

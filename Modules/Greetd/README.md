@@ -1,28 +1,28 @@
-# Dank (dms) Greeter
+# Buck (dykwabi) Greeter
 
-A greeter for [greetd](https://github.com/kennylevinsen/greetd) that follows the aesthetics of the dms lock screen.
+A greeter for [greetd](https://github.com/kennylevinsen/greetd) that follows the aesthetics of the dykwabi lock screen.
 
 ## Features
 
 - **Multi user**: Login with any system user
-- **dms sync**: Sync settings with dms for consistent styling between shell and greeter
+- **dykwabi sync**: Sync settings with dykwabi for consistent styling between shell and greeter
 - **niri or Hyprland**: Use either niri or Hyprland for the greeter's compositor.
-- **Custom PAM**: Supports custom PAM configuration in `/etc/pam.d/dankshell`
+- **Custom PAM**: Supports custom PAM configuration in `/etc/pam.d/buckshell`
 - **Session Memory**: Remembers last selected session and user
 
 ## Installation
 
 ### Automatic
 
-The easiest thing is to run `dms greeter install` or `dms` for interactive installation.
+The easiest thing is to run `dykwabi greeter install` or `dykwabi` for interactive installation.
 
 ### Manual
 
 1. Install `greetd` (in most distro's standard repositories)
-2. Copy `assets/dms-niri.kdl` or `assets/dms-hypr.conf` to `/etc/greetd`
+2. Copy `assets/dykwabi-niri.kdl` or `assets/dykwabi-hypr.conf` to `/etc/greetd`
   - niri if you want to run the greeter under niri, hypr if you want to run the greeter under Hyprland
-3. Copy `assets/greet-niri.sh` or `assets/greet-hyprland.sh` to `/usr/local/bin/start-dms-greetd.sh`
-4. Edit `/etc/greetd/dms-niri.kdl` or `/etc/greetd/dms-hypr.conf` and replace `_DMS_PATH_` with the absolute path to dms, e.g. `/home/joecool/.config/quickshell/dms`
+3. Copy `assets/greet-niri.sh` or `assets/greet-hyprland.sh` to `/usr/local/bin/start-dykwabi-greetd.sh`
+4. Edit `/etc/greetd/dykwabi-niri.kdl` or `/etc/greetd/dykwabi-hypr.conf` and replace `_DYKWABI_PATH_` with the absolute path to dykwabi, e.g. `/home/joecool/.config/quickshell/dykwabi`
 5. Edit or create `/etc/greetd/config.toml` 
 ```toml
 [terminal]
@@ -41,7 +41,7 @@ vt = 1
 # in the `video` group.
 user = "greeter"
 
-command = "/usr/local/bin/start-dms-greetd.sh"
+command = "/usr/local/bin/start-dykwabi-greetd.sh"
 ```
 
 Enable the greeter with `sudo systemctl enable greetd`
@@ -51,25 +51,25 @@ Enable the greeter with `sudo systemctl enable greetd`
 To install the greeter on NixOS add the repo to your flake inputs as described in the readme. Then somewhere in your NixOS config add this to imports:
 ```nix
 imports = [
-  inputs.dankMaterialShell.nixosModules.greeter
+  inputs.buckMaterialShell.nixosModules.greeter
 ]
 ```
 
 Enable the greeter with this in your NixOS config:
 ```nix
-programs.dankMaterialShell.greeter = {
+programs.buckMaterialShell.greeter = {
   enable = true;
   compositor = "niri"; # or set to hyprland
-  configHome = "/home/user"; # optionally symlinks that users DMS settings to the greeters data directory
+  configHome = "/home/user"; # optionally symlinks that users Dykwabi settings to the greeters data directory
 };
 ```
 
 ## Usage
 
-To run dms in greeter mode you just need to set `DMS_RUN_GREETER=1` in the environment.
+To run dykwabi in greeter mode you just need to set `DYKWABI_RUN_GREETER=1` in the environment.
 
 ```bash
-DMS_RUN_GREETER=1 qs -p /path/to/dms
+DYKWABI_RUN_GREETER=1 qs -p /path/to/dykwabi
 ```
 
 ### Configuration
@@ -78,23 +78,23 @@ DMS_RUN_GREETER=1 qs -p /path/to/dms
 
 You can configure compositor specific settings such as outputs/displays the same as you would in niri or Hyprland.
 
-Simply edit `/etc/greetd/dms-niri.kdl` or `/etc/greetd/dms-hypr.conf` to change compositor settings for the greeter
+Simply edit `/etc/greetd/dykwabi-niri.kdl` or `/etc/greetd/dykwabi-hypr.conf` to change compositor settings for the greeter
 
 #### Personalization
 
-Wallpapers and themes and weather and clock formats and things are a TODO on the documentation, but it's configured exactly the same as dms.
+Wallpapers and themes and weather and clock formats and things are a TODO on the documentation, but it's configured exactly the same as dykwabi.
 
 You can synchronize those configurations with a specific user if you want greeter settings to always mirror the shell.
 
 ```bash
 # For core settings (theme, clock formats, etc)
-sudo ln -sf ~/.config/DankMaterialShell/settings.json /etc/greetd/.dms/settings.json
+sudo ln -sf ~/.config/BuckMaterialShell/settings.json /etc/greetd/.dykwabi/settings.json
 # For state (mainly you would configure wallpaper in this file)
-sudo ln -sf ~/.local/state/DankMaterialShell/session.json /etc/greetd/.dms/session.json
+sudo ln -sf ~/.local/state/BuckMaterialShell/session.json /etc/greetd/.dykwabi/session.json
 # For wallpaper based theming
-sudo ln -sf ~/.cache/quickshell/dankshell/dms-colors.json /etc/greetd/.dms/dms-colors.json
+sudo ln -sf ~/.cache/quickshell/buckshell/dykwabi-colors.json /etc/greetd/.dykwabi/dykwabi-colors.json
 ```
 
-You can override the configuration path with the `DMS_GREET_CFG_DIR` environment variable, the default is `/etc/greetd/.dms`
+You can override the configuration path with the `DYKWABI_GREET_CFG_DIR` environment variable, the default is `/etc/greetd/.dykwabi`
 
 It should be writable by the greeter user.

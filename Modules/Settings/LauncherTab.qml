@@ -7,7 +7,7 @@ import qs.Widgets
 Item {
     id: recentAppsTab
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -39,7 +39,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "terminal"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -63,7 +63,7 @@ Item {
                         wrapMode: Text.WordWrap
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         width: parent.width
                         text: SessionData.launchPrefix
                         placeholderText: "Enter launch prefix (e.g., 'uwsm-app')"
@@ -119,7 +119,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "history"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -141,7 +141,7 @@ Item {
                             height: 1
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             id: clearAllButton
 
                             iconName: "delete_sweep"
@@ -262,7 +262,7 @@ Item {
                                     }
                                 }
 
-                                DankActionButton {
+                                BuckActionButton {
                                     anchors.right: parent.right
                                     anchors.rightMargin: Theme.spacingM
                                     anchors.verticalCenter: parent.verticalCenter

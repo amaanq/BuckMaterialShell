@@ -18,7 +18,7 @@ Rectangle {
         "text": "Weather",
         "icon": "cloud"
     }, {
-        "text": "Dank Bar",
+        "text": "Buck Bar",
         "icon": "toolbar"
     }, {
         "text": "Widgets",
@@ -94,7 +94,7 @@ Rectangle {
                     anchors.verticalCenter: parent.verticalCenter
                     spacing: Theme.spacingM
 
-                    DankIcon {
+                    BuckIcon {
                         name: modelData.icon || ""
                         size: Theme.iconSize - 2
                         color: parent.parent.isActive ? Theme.primaryText : Theme.surfaceText

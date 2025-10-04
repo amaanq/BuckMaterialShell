@@ -150,7 +150,7 @@ Popup {
             }
         }
 
-        DankActionButton {
+        BuckActionButton {
             iconName: "close"
             iconSize: Theme.iconSize - 2
             iconColor: Theme.outline
@@ -173,7 +173,7 @@ Popup {
                 width: parent.width
                 spacing: Theme.spacingM
 
-                DankIcon {
+                BuckIcon {
                     name: "add_circle"
                     size: Theme.iconSize
                     color: Theme.primary
@@ -198,7 +198,7 @@ Popup {
                 wrapMode: Text.WordWrap
             }
 
-            DankTextField {
+            BuckTextField {
                 id: searchField
                 width: parent.width
                 height: 48
@@ -232,7 +232,7 @@ Popup {
                 }
             }
 
-            DankListView {
+            BuckListView {
                 id: widgetList
 
                 width: parent.width
@@ -261,7 +261,7 @@ Popup {
                         anchors.margins: Theme.spacingM
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: modelData.icon
                             size: Theme.iconSize
                             color: Theme.primary
@@ -292,7 +292,7 @@ Popup {
                             }
                         }
 
-                        DankIcon {
+                        BuckIcon {
                             name: "add"
                             size: Theme.iconSize - 4
                             color: Theme.primary

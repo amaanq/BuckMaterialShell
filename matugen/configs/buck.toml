@@ -1,0 +1,3 @@
+[templates.buck]
+input_path = './matugen/templates/buck.json'
+output_path = '~/.cache/quickshell/buckshell/dykwabi-colors.json'
