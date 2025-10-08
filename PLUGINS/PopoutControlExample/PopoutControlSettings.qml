@@ -32,7 +32,7 @@ PluginSettings {
             {label: "Notification Center", value: "notificationCenter"},
             {label: "App Drawer", value: "appDrawer"},
             {label: "Process List", value: "processList"},
-            {label: "DankDash", value: "dankDash"},
+            {label: "BuckDash", value: "buckDash"},
             {label: "Battery Info", value: "battery"},
             {label: "VPN", value: "vpn"},
             {label: "System Update", value: "systemUpdate"},

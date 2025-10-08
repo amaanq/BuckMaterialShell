@@ -53,7 +53,7 @@ Rectangle {
             height: parent.height
         }
         
-        DankButtonGroup {
+        BuckButtonGroup {
             id: preferenceControls
             anchors.verticalCenter: parent.verticalCenter
             visible: NetworkService.ethernetConnected
@@ -99,7 +99,7 @@ Rectangle {
             anchors.centerIn: parent
             spacing: Theme.spacingM
 
-            DankIcon {
+            BuckIcon {
                 anchors.horizontalCenter: parent.horizontalCenter
                 name: "sync"
                 size: 32
@@ -139,7 +139,7 @@ Rectangle {
             spacing: Theme.spacingL
             width: parent.width
             
-            DankIcon {
+            BuckIcon {
                 anchors.horizontalCenter: parent.horizontalCenter
                 name: "wifi_off"
                 size: 48
@@ -184,7 +184,7 @@ Rectangle {
         }
     }
 
-    DankFlickable {
+    BuckFlickable {
         id: wifiContent
         anchors.top: headerRow.bottom
         anchors.left: parent.left
@@ -206,7 +206,7 @@ Rectangle {
                 height: 200
                 visible: NetworkService.wifiInterface && NetworkService.wifiNetworks?.length < 1 && !NetworkService.wifiToggling && NetworkService.isScanning
 
-                DankIcon {
+                BuckIcon {
                     anchors.centerIn: parent
                     name: "refresh"
                     size: 48
@@ -253,7 +253,7 @@ Rectangle {
                         anchors.leftMargin: Theme.spacingM
                         spacing: Theme.spacingS
                         
-                        DankIcon {
+                        BuckIcon {
                             name: {
                                 let strength = modelData.signal || 0
                                 if (strength >= 50) return "wifi"
@@ -303,7 +303,7 @@ Rectangle {
                         }
                     }
                     
-                    DankActionButton {
+                    BuckActionButton {
                         id: optionsButton
                         anchors.right: parent.right
                         anchors.rightMargin: Theme.spacingS

@@ -15,7 +15,7 @@ FocusScope {
     focus: true
 
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -46,7 +46,7 @@ FocusScope {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "extension"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -65,7 +65,7 @@ FocusScope {
                             }
 
                             StyledText {
-                                text: I18n.tr("Manage and configure plugins for extending DMS functionality")
+                                text: I18n.tr("Manage and configure plugins for extending Dykwabi functionality")
                                 font.pixelSize: Theme.fontSizeSmall
                                 color: Theme.surfaceVariantText
                             }
@@ -74,15 +74,15 @@ FocusScope {
 
                     StyledRect {
                         width: parent.width
-                        height: dmsWarningColumn.implicitHeight + Theme.spacingM * 2
+                        height: dykwabiWarningColumn.implicitHeight + Theme.spacingM * 2
                         radius: Theme.cornerRadius
                         color: Qt.rgba(Theme.warning.r, Theme.warning.g, Theme.warning.b, 0.1)
                         border.color: Theme.warning
                         border.width: 1
-                        visible: !DMSService.dmsAvailable
+                        visible: !DykwabiService.dykwabiAvailable
 
                         Column {
-                            id: dmsWarningColumn
+                            id: dykwabiWarningColumn
                             anchors.fill: parent
                             anchors.margins: Theme.spacingM
                             spacing: Theme.spacingXS
@@ -90,7 +90,7 @@ FocusScope {
                             Row {
                                 spacing: Theme.spacingXS
 
-                                DankIcon {
+                                BuckIcon {
                                     name: "warning"
                                     size: 16
                                     color: Theme.warning
@@ -98,7 +98,7 @@ FocusScope {
                                 }
 
                                 StyledText {
-                                    text: I18n.tr("DMS Plugin Manager Unavailable")
+                                    text: I18n.tr("Dykwabi Plugin Manager Unavailable")
                                     font.pixelSize: Theme.fontSizeSmall
                                     color: Theme.warning
                                     font.weight: Font.Medium
@@ -107,7 +107,7 @@ FocusScope {
                             }
 
                             StyledText {
-                                text: I18n.tr("The DMS_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DMS_SOCKET.")
+                                text: I18n.tr("The DYKWABI_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DYKWABI_SOCKET.")
                                 font.pixelSize: Theme.fontSizeSmall - 1
                                 color: Theme.surfaceVariantText
                                 wrapMode: Text.WordWrap
@@ -120,29 +120,29 @@ FocusScope {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankButton {
+                        BuckButton {
                             text: I18n.tr("Browse")
                             iconName: "store"
-                            enabled: DMSService.dmsAvailable
+                            enabled: DykwabiService.dykwabiAvailable
                             onClicked: {
                                 pluginBrowserModal.show()
                             }
                         }
 
-                        DankButton {
+                        BuckButton {
                             text: I18n.tr("Scan")
                             iconName: "refresh"
                             onClicked: {
                                 pluginsTab.isRefreshingPlugins = true
                                 PluginService.scanPlugins()
-                                if (DMSService.dmsAvailable) {
-                                    DMSService.listInstalled()
+                                if (DykwabiService.dykwabiAvailable) {
+                                    DykwabiService.listInstalled()
                                 }
                                 pluginsTab.refreshPluginList()
                             }
                         }
 
-                        DankButton {
+                        BuckButton {
                             text: I18n.tr("Create Dir")
                             iconName: "create_new_folder"
                             onClicked: {
@@ -276,7 +276,7 @@ FocusScope {
                                         width: parent.width
                                         spacing: Theme.spacingM
 
-                                        DankIcon {
+                                        BuckIcon {
                                             name: pluginDelegate.pluginIcon
                                             size: Theme.iconSize
                                             color: PluginService.isPluginLoaded(pluginDelegate.pluginId) ? Theme.primary : Theme.surfaceVariantText
@@ -300,7 +300,7 @@ FocusScope {
                                                     anchors.verticalCenter: parent.verticalCenter
                                                 }
 
-                                                DankIcon {
+                                                BuckIcon {
                                                     name: pluginDelegate.hasSettings ? (pluginDelegate.isExpanded ? "expand_less" : "expand_more") : ""
                                                     size: 16
                                                     color: pluginDelegate.hasSettings ? Theme.primary : "transparent"
@@ -327,9 +327,9 @@ FocusScope {
                                                 height: 28
                                                 radius: 14
                                                 color: updateArea.containsMouse ? Theme.surfaceContainerHighest : "transparent"
-                                                visible: DMSService.dmsAvailable && PluginService.isPluginLoaded(pluginDelegate.pluginId)
+                                                visible: DykwabiService.dykwabiAvailable && PluginService.isPluginLoaded(pluginDelegate.pluginId)
 
-                                                DankIcon {
+                                                BuckIcon {
                                                     anchors.centerIn: parent
                                                     name: "download"
                                                     size: 16
@@ -344,7 +344,7 @@ FocusScope {
                                                     onClicked: {
                                                         const currentPluginDirName = pluginDelegate.pluginDirectoryName
                                                         const currentPluginName = pluginDelegate.pluginName
-                                                        DMSService.update(currentPluginDirName, response => {
+                                                        DykwabiService.update(currentPluginDirName, response => {
                                                             if (response.error) {
                                                                 ToastService.showError("Update failed: " + response.error)
                                                             } else {
@@ -361,9 +361,9 @@ FocusScope {
                                                 height: 28
                                                 radius: 14
                                                 color: uninstallArea.containsMouse ? Theme.surfaceContainerHighest : "transparent"
-                                                visible: DMSService.dmsAvailable
+                                                visible: DykwabiService.dykwabiAvailable
 
-                                                DankIcon {
+                                                BuckIcon {
                                                     anchors.centerIn: parent
                                                     name: "delete"
                                                     size: 16
@@ -378,7 +378,7 @@ FocusScope {
                                                     onClicked: {
                                                         const currentPluginDirName = pluginDelegate.pluginDirectoryName
                                                         const currentPluginName = pluginDelegate.pluginName
-                                                        DMSService.uninstall(currentPluginDirName, response => {
+                                                        DykwabiService.uninstall(currentPluginDirName, response => {
                                                             if (response.error) {
                                                                 ToastService.showError("Uninstall failed: " + response.error)
                                                             } else {
@@ -400,7 +400,7 @@ FocusScope {
                                                 color: reloadArea.containsMouse ? Theme.surfaceContainerHighest : "transparent"
                                                 visible: PluginService.isPluginLoaded(pluginDelegate.pluginId)
 
-                                                DankIcon {
+                                                BuckIcon {
                                                     anchors.centerIn: parent
                                                     name: "refresh"
                                                     size: 16
@@ -426,7 +426,7 @@ FocusScope {
                                                 }
                                             }
 
-                                            DankToggle {
+                                            BuckToggle {
                                                 id: pluginToggle
                                                 anchors.verticalCenter: parent.verticalCenter
                                                 checked: PluginService.isPluginLoaded(pluginDelegate.pluginId)
@@ -603,7 +603,7 @@ FocusScope {
     }
 
     Connections {
-        target: DMSService
+        target: DykwabiService
         function onPluginsListReceived(plugins) {
             pluginBrowserModal.isLoading = false
             pluginBrowserModal.allPlugins = plugins
@@ -621,7 +621,7 @@ FocusScope {
         pluginBrowserModal.parentModal = pluginsTab.parentModal
     }
 
-    DankModal {
+    BuckModal {
         id: pluginBrowserModal
 
         property var allPlugins: []
@@ -681,7 +681,7 @@ FocusScope {
 
         function installPlugin(pluginName) {
             ToastService.showInfo("Installing plugin: " + pluginName)
-            DMSService.install(pluginName, response => {
+            DykwabiService.install(pluginName, response => {
                 if (response.error) {
                     ToastService.showError("Install failed: " + response.error)
                 } else {
@@ -694,7 +694,7 @@ FocusScope {
 
         function refreshPlugins() {
             isLoading = true
-            DMSService.listPlugins()
+            DykwabiService.listPlugins()
         }
 
         function show() {
@@ -771,7 +771,7 @@ FocusScope {
                         width: parent.width
                         height: Math.max(headerIcon.height, headerText.height, refreshButton.height, closeButton.height)
 
-                        DankIcon {
+                        BuckIcon {
                             id: headerIcon
                             name: "store"
                             size: Theme.iconSize
@@ -796,7 +796,7 @@ FocusScope {
                             anchors.verticalCenter: parent.verticalCenter
                             spacing: Theme.spacingXS
 
-                            DankButton {
+                            BuckButton {
                                 id: thirdPartyButton
                                 text: SessionData.showThirdPartyPlugins ? "Hide 3rd Party" : "Show 3rd Party"
                                 iconName: SessionData.showThirdPartyPlugins ? "visibility_off" : "visibility"
@@ -811,7 +811,7 @@ FocusScope {
                                 }
                             }
 
-                            DankActionButton {
+                            BuckActionButton {
                                 id: refreshButton
                                 iconName: "refresh"
                                 iconSize: 18
@@ -820,7 +820,7 @@ FocusScope {
                                 onClicked: pluginBrowserModal.refreshPlugins()
                             }
 
-                            DankActionButton {
+                            BuckActionButton {
                                 id: closeButton
                                 iconName: "close"
                                 iconSize: Theme.iconSize - 2
@@ -831,14 +831,14 @@ FocusScope {
                     }
 
                     StyledText {
-                        text: I18n.tr("Install plugins from the DMS plugin registry")
+                        text: I18n.tr("Install plugins from the Dykwabi plugin registry")
                         font.pixelSize: Theme.fontSizeSmall
                         color: Theme.outline
                         width: parent.width
                         wrapMode: Text.WordWrap
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         id: browserSearchField
                         width: parent.width
                         height: 48
@@ -873,7 +873,7 @@ FocusScope {
                             anchors.centerIn: parent
                             spacing: Theme.spacingM
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "sync"
                                 size: 48
                                 color: Theme.primary
@@ -897,7 +897,7 @@ FocusScope {
                         }
                     }
 
-                    DankListView {
+                    BuckListView {
                         id: pluginBrowserList
 
                         width: parent.width
@@ -933,7 +933,7 @@ FocusScope {
                                     width: parent.width
                                     spacing: Theme.spacingM
 
-                                    DankIcon {
+                                    BuckIcon {
                                         name: modelData.icon || "extension"
                                         size: Theme.iconSize
                                         color: Theme.primary
@@ -1042,7 +1042,7 @@ FocusScope {
                                             anchors.centerIn: parent
                                             spacing: Theme.spacingXS
 
-                                            DankIcon {
+                                            BuckIcon {
                                                 name: isInstalled ? "check" : "download"
                                                 size: 14
                                                 color: isInstalled ? Theme.surfaceText : Theme.surface
@@ -1124,7 +1124,7 @@ FocusScope {
         }
     }
 
-    DankModal {
+    BuckModal {
         id: thirdPartyConfirmModal
 
         width: 500
@@ -1154,7 +1154,7 @@ FocusScope {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "warning"
                             size: Theme.iconSize
                             color: Theme.warning
@@ -1172,7 +1172,7 @@ FocusScope {
 
                     StyledText {
                         width: parent.width
-                        text: I18n.tr("Third-party plugins are created by the community and are not officially supported by DankMaterialShell.\n\nThese plugins may pose security and privacy risks - install at your own risk.")
+                        text: I18n.tr("Third-party plugins are created by the community and are not officially supported by BuckMaterialShell.\n\nThese plugins may pose security and privacy risks - install at your own risk.")
                         font.pixelSize: Theme.fontSizeMedium
                         color: Theme.surfaceText
                         wrapMode: Text.WordWrap
@@ -1210,13 +1210,13 @@ FocusScope {
                         anchors.right: parent.right
                         spacing: Theme.spacingM
 
-                        DankButton {
+                        BuckButton {
                             text: I18n.tr("Cancel")
                             iconName: "close"
                             onClicked: thirdPartyConfirmModal.close()
                         }
 
-                        DankButton {
+                        BuckButton {
                             text: I18n.tr("I Understand")
                             iconName: "check"
                             onClicked: {

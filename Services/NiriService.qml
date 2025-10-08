@@ -134,7 +134,7 @@ Singleton {
         }
     }
 
-    DankSocket {
+    BuckSocket {
         id: eventStreamSocket
         path: root.socketPath
         connected: CompositorService.isNiri
@@ -158,7 +158,7 @@ Singleton {
         }
     }
 
-    DankSocket {
+    BuckSocket {
         id: requestSocket
         path: root.socketPath
         connected: CompositorService.isNiri
@@ -672,7 +672,7 @@ Singleton {
         console.log("NiriService: Generating layout config...")
 
         const cornerRadius = typeof SettingsData !== "undefined" ? SettingsData.cornerRadius : 12
-        const gaps = typeof SettingsData !== "undefined" ? Math.max(4, SettingsData.dankBarSpacing) : 4
+        const gaps = typeof SettingsData !== "undefined" ? Math.max(4, SettingsData.buckBarSpacing) : 4
 
         const configContent = `layout {
     gaps ${gaps}
@@ -694,7 +694,7 @@ window-rule {
 }`
 
         const configDir = Paths.strip(StandardPaths.writableLocation(StandardPaths.ConfigLocation))
-        const niriDmsDir = configDir + "/niri/dms"
+        const niriDmsDir = configDir + "/niri/dykwabi"
         const configPath = niriDmsDir + "/layout.kdl"
 
         writeConfigProcess.configContent = configContent
@@ -708,7 +708,7 @@ window-rule {
         console.log("NiriService: Generating binds config...")
 
         const configDir = Paths.strip(StandardPaths.writableLocation(StandardPaths.ConfigLocation))
-        const niriDmsDir = configDir + "/niri/dms"
+        const niriDmsDir = configDir + "/niri/dykwabi"
         const bindsPath = niriDmsDir + "/binds.kdl"
         const sourceBindsPath = Paths.strip(Qt.resolvedUrl("niri-binds.kdl"))
 

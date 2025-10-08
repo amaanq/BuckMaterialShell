@@ -2,15 +2,15 @@
     config,
     pkgs,
     lib,
-    dmsPkgs,
+    dykwabiPkgs,
     ...
 }: let
-    cfg = config.programs.dankMaterialShell;
+    cfg = config.programs.buckMaterialShell;
 in {
-    options.programs.dankMaterialShell = with lib.types; {
-        enable = lib.mkEnableOption "DankMaterialShell";
+    options.programs.buckMaterialShell = with lib.types; {
+        enable = lib.mkEnableOption "BuckMaterialShell";
 
-        enableSystemd = lib.mkEnableOption "DankMaterialShell systemd startup";
+        enableSystemd = lib.mkEnableOption "BuckMaterialShell systemd startup";
         enableSystemMonitoring = lib.mkOption {
             type = bool;
             default = true;
@@ -46,6 +46,11 @@ in {
             default = true;
             description = "Add needed dependencies to have audio waveleng support";
         };
+        enableColorPicker = lib.mkOption {
+          type = bool;
+          default = true;
+          description = "Add support for the color picker";
+        };
         enableCalendarEvents = lib.mkOption {
             type = bool;
             default = true;
@@ -62,10 +67,10 @@ in {
             enable = true;
             package = cfg.quickshell.package;
 
-            configs.dms = "${
-                dmsPkgs.dankMaterialShell
-            }/etc/xdg/quickshell/DankMaterialShell";
-            activeConfig = lib.mkIf cfg.enableSystemd "dms";
+            configs.dykwabi = "${
+                dykwabiPkgs.buckMaterialShell
+            }/etc/xdg/quickshell/BuckMaterialShell";
+            activeConfig = lib.mkIf cfg.enableSystemd "dykwabi";
 
             systemd = lib.mkIf cfg.enableSystemd {
                 enable = true;
@@ -83,15 +88,16 @@ in {
                 pkgs.libsForQt5.qt5ct
                 pkgs.kdePackages.qt6ct
 
-                dmsPkgs.dmsCli
+                dykwabiPkgs.dykwabiCli
             ]
-            ++ lib.optional cfg.enableSystemMonitoring dmsPkgs.dgop
-            ++ lib.optionals cfg.enableClipboard [pkgs.cliphist pkgs.wl-clipboard]
+            ++ lib.optional cfg.enableSystemMonitoring dykwabiPkgs.dgop
+            ++ lib.optionals cfg.enableClipboard [dykwabiPkgs.stash pkgs.wl-clipboard]
             ++ lib.optionals cfg.enableVPN [pkgs.glib pkgs.networkmanager]
             ++ lib.optional cfg.enableBrightnessControl pkgs.brightnessctl
             ++ lib.optional cfg.enableNightMode pkgs.gammastep
             ++ lib.optional cfg.enableDynamicTheming pkgs.matugen
             ++ lib.optional cfg.enableAudioWavelength pkgs.cava
+            ++ lib.optional cfg.enableColorPicker pkgs.kdePackages.kcolorchooser
             ++ lib.optional cfg.enableCalendarEvents pkgs.khal;
     };
 }

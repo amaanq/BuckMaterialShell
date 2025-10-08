@@ -6,7 +6,7 @@ import qs.Widgets
 Item {
     id: weatherTab
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -40,7 +40,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "cloud"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -69,7 +69,7 @@ Item {
                             }
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: enableToggle
 
                             anchors.verticalCenter: parent.verticalCenter
@@ -106,7 +106,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "thermostat"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -135,7 +135,7 @@ Item {
                             }
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: temperatureToggle
 
                             anchors.verticalCenter: parent.verticalCenter
@@ -179,7 +179,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "location_on"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -208,7 +208,7 @@ Item {
                             }
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: autoLocationToggle
 
                             anchors.verticalCenter: parent.verticalCenter
@@ -253,7 +253,7 @@ Item {
                                         color: Theme.surfaceVariantText
                                     }
 
-                                    DankTextField {
+                                    BuckTextField {
                                         id: latitudeInput
                                         width: parent.width
                                         height: 48
@@ -304,7 +304,7 @@ Item {
                                         color: Theme.surfaceVariantText
                                     }
 
-                                    DankTextField {
+                                    BuckTextField {
                                         id: longitudeInput
                                         width: parent.width
                                         height: 48
@@ -358,7 +358,7 @@ Item {
                                 font.weight: Font.Medium
                             }
 
-                            DankLocationSearch {
+                            BuckLocationSearch {
                                 id: locationSearchInput
                                 width: parent.width
                                 currentLocation: ""

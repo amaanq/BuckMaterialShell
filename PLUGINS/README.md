@@ -1,10 +1,10 @@
 # Plugin System
 
-Create widgets for DankBar and Control Center using dynamically-loaded QML components.
+Create widgets for BuckBar and Control Center using dynamically-loaded QML components.
 
 ## Overview
 
-Plugins let you add custom widgets to DankBar and Control Center. They're discovered from `~/.config/DankMaterialShell/plugins/` and managed via PluginService.
+Plugins let you add custom widgets to BuckBar and Control Center. They're discovered from `~/.config/BuckMaterialShell/plugins/` and managed via PluginService.
 
 ## Architecture
 
@@ -12,7 +12,7 @@ Plugins let you add custom widgets to DankBar and Control Center. They're discov
 
 1. **PluginService** (`Services/PluginService.qml`)
    - Singleton service managing plugin lifecycle
-   - Discovers plugins from `$CONFIGPATH/DankMaterialShell/plugins/`
+   - Discovers plugins from `$CONFIGPATH/BuckMaterialShell/plugins/`
    - Handles loading, unloading, and state management
    - Provides data persistence for plugin settings
 
@@ -25,18 +25,18 @@ Plugins let you add custom widgets to DankBar and Control Center. They're discov
    - Dynamically loads plugin settings components inline
    - Provides consistent settings interface with proper focus handling
 
-4. **DankBar Integration** (`Modules/DankBar/DankBar.qml`)
+4. **BuckBar Integration** (`Modules/BuckBar/BuckBar.qml`)
    - Renders plugin widgets in the bar
    - Merges plugin components with built-in widgets
    - Supports left, center, and right sections
-   - Supports any dankbar position (top/left/right/bottom)
+   - Supports any buckbar position (top/left/right/bottom)
 
 ## Plugin Structure
 
-Each plugin must be a directory in `$CONFIGPATH/DankMaterialShell/plugins/` containing:
+Each plugin must be a directory in `$CONFIGPATH/BuckMaterialShell/plugins/` containing:
 
 ```
-$CONFIGPATH/DankMaterialShell/plugins/YourPlugin/
+$CONFIGPATH/BuckMaterialShell/plugins/YourPlugin/
 ├── plugin.json          # Required: Plugin manifest
 ├── YourWidget.qml       # Required: Widget component
 ├── YourSettings.qml     # Optional: Settings UI
@@ -96,7 +96,7 @@ import qs.Widgets
 import qs.Modules.Plugins
 
 PluginComponent {
-    // Define horizontal bar pill, for top and bottom DankBar positions (optional)
+    // Define horizontal bar pill, for top and bottom BuckBar positions (optional)
     horizontalBarPill: Component {
         StyledRect {
             width: content.implicitWidth + Theme.spacingM * 2
@@ -114,7 +114,7 @@ PluginComponent {
         }
     }
 
-    // Define vertical bar pill, for left and right DankBar positions (optional)
+    // Define vertical bar pill, for left and right BuckBar positions (optional)
     verticalBarPill: Component {
         // Same as horizontal but optimized for vertical layout
     }
@@ -247,7 +247,7 @@ PopoutComponent {
 
     // Your content here - use parent.width for full width
     // Calculate available height: root.popoutHeight - headerHeight - detailsHeight - spacing
-    DankGridView {
+    BuckGridView {
         width: parent.width
         height: parent.height
         // ...
@@ -512,7 +512,7 @@ PluginSettings {
 
 ```qml
 PluginService.pluginDirectory: string
-// Path to plugins directory ($CONFIGPATH/DankMaterialShell/plugins)
+// Path to plugins directory ($CONFIGPATH/BuckMaterialShell/plugins)
 
 PluginService.availablePlugins: object
 // Map of all discovered plugins {pluginId: pluginInfo}
@@ -559,8 +559,8 @@ PluginService.pluginLoadFailed(pluginId: string, error: string)
 ### Step 1: Create Plugin Directory
 
 ```bash
-mkdir -p $CONFIGPATH/DankMaterialShell/plugins/MyPlugin
-cd $CONFIGPATH/DankMaterialShell/plugins/MyPlugin
+mkdir -p $CONFIGPATH/BuckMaterialShell/plugins/MyPlugin
+cd $CONFIGPATH/BuckMaterialShell/plugins/MyPlugin
 ```
 
 ### Step 2: Create Manifest
@@ -671,27 +671,27 @@ PluginSettings {
 
 ### Step 5: Enable Plugin
 
-1. Run the shell: `qs -p $CONFIGPATH/quickshell/dms/shell.qml`
+1. Run the shell: `qs -p $CONFIGPATH/quickshell/dykwabi/shell.qml`
 2. Open Settings (Ctrl+,)
 3. Navigate to Plugins tab
 4. Click "Scan for Plugins"
 5. Enable your plugin with the toggle switch
-6. Add the plugin to your DankBar configuration
+6. Add the plugin to your BuckBar configuration
 
-## Adding Plugin to DankBar
+## Adding Plugin to BuckBar
 
 After enabling a plugin, add it to the bar:
 
-1. Open Settings → Appearance → DankBar Layout
+1. Open Settings → Appearance → BuckBar Layout
 2. Add a new widget entry with your plugin ID
 3. Choose section (left, center, right)
 4. Save and reload
 
-Or edit `$CONFIGPATH/quickshell/dms/config.json`:
+Or edit `$CONFIGPATH/quickshell/dykwabi/config.json`:
 
 ```json
 {
-    "dankBarLeftWidgets": [
+    "buckBarLeftWidgets": [
         {"widgetId": "myPlugin", "enabled": true}
     ]
 }
@@ -699,7 +699,7 @@ Or edit `$CONFIGPATH/quickshell/dms/config.json`:
 
 ## Best Practices
 
-1. **Use Existing Widgets**: Leverage `qs.Widgets` components (DankIcon, DankToggle, etc.) for consistency
+1. **Use Existing Widgets**: Leverage `qs.Widgets` components (BuckIcon, BuckToggle, etc.) for consistency
 2. **Follow Theme**: Use `Theme` singleton for colors, spacing, and fonts
 3. **Data Persistence**: Use PluginService data APIs instead of manual file operations
 4. **Error Handling**: Gracefully handle missing dependencies and invalid data
@@ -716,7 +716,7 @@ Or edit `$CONFIGPATH/quickshell/dms/config.json`:
 View plugin logs:
 
 ```bash
-qs -v -p $CONFIGPATH/quickshell/dms/shell.qml
+qs -v -p $CONFIGPATH/quickshell/dykwabi/shell.qml
 ```
 
 Look for lines prefixed with:
@@ -728,12 +728,12 @@ Look for lines prefixed with:
 
 1. **Plugin Not Detected**
    - Check plugin.json syntax (use `jq` or JSON validator)
-   - Verify directory is in `$CONFIGPATH/DankMaterialShell/plugins/`
+   - Verify directory is in `$CONFIGPATH/BuckMaterialShell/plugins/`
    - Click "Scan for Plugins" in Settings
 
 2. **Widget Not Displaying**
    - Ensure plugin is enabled in Settings
-   - Add plugin ID to DankBar widget list
+   - Add plugin ID to BuckBar widget list
    - Check widget width/height properties
 
 3. **Settings Not Loading**
@@ -744,7 +744,7 @@ Look for lines prefixed with:
 
 4. **Data Not Persisting**
    - Confirm pluginService.savePluginData() calls (with injection)
-   - Check `$CONFIGPATH/DankMaterialShell/settings.json` for pluginSettings data
+   - Check `$CONFIGPATH/BuckMaterialShell/settings.json` for pluginSettings data
    - Verify plugin has settings permissions
    - Ensure PluginService was properly injected into settings component
 
@@ -762,7 +762,7 @@ Currently, only `settings_write` is enforced by the PluginSettings component.
 
 ## API Stability
 
-The plugin API is currently **experimental**. Breaking changes may occur in minor version updates. Pin to specific DMS versions for production use.
+The plugin API is currently **experimental**. Breaking changes may occur in minor version updates. Pin to specific Dykwabi versions for production use.
 
 **Roadmap:**
 - Plugin marketplace/repository
@@ -776,7 +776,7 @@ The plugin API is currently **experimental**. Breaking changes may occur in mino
 - **Example Plugins**: [Emoji Picker](./ExampleEmojiPlugin/) [WorldClock](https://github.com/rochacbruno/WorldClock)
 - **PluginService**: `Services/PluginService.qml`
 - **Settings UI**: `Modules/Settings/PluginsTab.qml`
-- **DankBar Integration**: `Modules/DankBar/DankBar.qml`
+- **BuckBar Integration**: `Modules/BuckBar/BuckBar.qml`
 - **Theme Reference**: `Common/Theme.qml`
 - **Widget Library**: `Widgets/`
 
@@ -789,4 +789,4 @@ Share your plugins with the community:
 4. Add example screenshots
 5. Document dependencies and permissions
 
-For plugin system improvements, submit issues or PRs to the main DMS repository.
+For plugin system improvements, submit issues or PRs to the main Dykwabi repository.

@@ -46,11 +46,11 @@ Singleton {
     signal prepareForSleep()
     signal loginctlStateChanged()
 
-    property var dmsService: null
+    property var dykwabiService: null
     property bool subscriptionConnected: false
     property bool stateInitialized: false
 
-    readonly property string socketPath: Quickshell.env("DMS_SOCKET")
+    readonly property string socketPath: Quickshell.env("DYKWABI_SOCKET")
 
     Timer {
         id: sessionInitTimer
@@ -62,7 +62,7 @@ Singleton {
             detectHibernateProcess.running = true
             detectPrimeRunProcess.running = true
             console.log("SessionService: Native inhibitor available:", nativeInhibitorAvailable)
-            Qt.callLater(initializeDMSConnection)
+            Qt.callLater(initializeDykwabiConnection)
         }
     }
 
@@ -268,7 +268,7 @@ Singleton {
         }
     }
 
-    DankSocket {
+    BuckSocket {
         id: subscriptionSocket
         path: root.socketPath
         connected: loginctlAvailable
@@ -310,76 +310,76 @@ Singleton {
         })
     }
 
-    function initializeDMSConnection() {
+    function initializeDykwabiConnection() {
         if (!socketPath || socketPath.length === 0) {
-            console.log("SessionService: DMS_SOCKET not set, using fallback")
+            console.log("SessionService: DYKWABI_SOCKET not set, using fallback")
             initFallbackLoginctl()
             return
         }
 
         try {
-            dmsService = Qt.createQmlObject('import QtQuick; import qs.Services; QtObject { property var service: DMSService }', root)
-            if (dmsService && dmsService.service) {
-                dmsService.service.connectionStateChanged.connect(onDMSConnectionStateChanged)
-                dmsService.service.capabilitiesChanged.connect(onDMSCapabilitiesChanged)
+            dykwabiService = Qt.createQmlObject('import QtQuick; import qs.Services; QtObject { property var service: DykwabiService }', root)
+            if (dykwabiService && dykwabiService.service) {
+                dykwabiService.service.connectionStateChanged.connect(onDykwabiConnectionStateChanged)
+                dykwabiService.service.capabilitiesChanged.connect(onDykwabiCapabilitiesChanged)
                 checkCapabilities()
             } else {
-                console.warn("SessionService: Failed to get DMS service reference, using fallback")
+                console.warn("SessionService: Failed to get Dykwabi service reference, using fallback")
                 initFallbackLoginctl()
             }
         } catch (e) {
-            console.warn("SessionService: Failed to initialize DMS connection, using fallback:", e)
+            console.warn("SessionService: Failed to initialize Dykwabi connection, using fallback:", e)
             initFallbackLoginctl()
         }
     }
 
     function checkCapabilities() {
-        if (dmsService && dmsService.service && dmsService.service.isConnected) {
-            onDMSConnected()
+        if (dykwabiService && dykwabiService.service && dykwabiService.service.isConnected) {
+            onDykwabiConnected()
         }
     }
 
-    function onDMSConnectionStateChanged() {
-        if (dmsService && dmsService.service && dmsService.service.isConnected) {
-            onDMSConnected()
+    function onDykwabiConnectionStateChanged() {
+        if (dykwabiService && dykwabiService.service && dykwabiService.service.isConnected) {
+            onDykwabiConnected()
         }
     }
 
-    function onDMSCapabilitiesChanged() {
-        if (dmsService && dmsService.service) {
-            if (dmsService.service.capabilities.includes("loginctl")) {
+    function onDykwabiCapabilitiesChanged() {
+        if (dykwabiService && dykwabiService.service) {
+            if (dykwabiService.service.capabilities.includes("loginctl")) {
                 loginctlAvailable = true
-                if (dmsService.service.isConnected && !stateInitialized) {
+                if (dykwabiService.service.isConnected && !stateInitialized) {
                     stateInitialized = true
                     getLoginctlState()
                     subscriptionSocket.connected = true
                 }
-            } else if (dmsService.service.capabilities.length > 0 && !loginctlAvailable) {
-                console.log("SessionService: loginctl capability not available in DMS, using fallback")
+            } else if (dykwabiService.service.capabilities.length > 0 && !loginctlAvailable) {
+                console.log("SessionService: loginctl capability not available in Dykwabi, using fallback")
                 initFallbackLoginctl()
             }
         }
     }
 
-    function onDMSConnected() {
-        if (dmsService && dmsService.service && dmsService.service.capabilities && dmsService.service.capabilities.length > 0) {
-            loginctlAvailable = dmsService.service.capabilities.includes("loginctl")
+    function onDykwabiConnected() {
+        if (dykwabiService && dykwabiService.service && dykwabiService.service.capabilities && dykwabiService.service.capabilities.length > 0) {
+            loginctlAvailable = dykwabiService.service.capabilities.includes("loginctl")
 
             if (loginctlAvailable && !stateInitialized) {
                 stateInitialized = true
                 getLoginctlState()
                 subscriptionSocket.connected = true
             } else if (!loginctlAvailable) {
-                console.log("SessionService: loginctl capability not available in DMS, using fallback")
+                console.log("SessionService: loginctl capability not available in Dykwabi, using fallback")
                 initFallbackLoginctl()
             }
         }
     }
 
     function getLoginctlState() {
-        if (!loginctlAvailable || !dmsService || !dmsService.service) return
+        if (!loginctlAvailable || !dykwabiService || !dykwabiService.service) return
 
-        dmsService.service.sendRequest("loginctl.getState", null, response => {
+        dykwabiService.service.sendRequest("loginctl.getState", null, response => {
             if (response.result) {
                 updateLoginctlState(response.result)
             }
@@ -426,8 +426,8 @@ Singleton {
     }
 
     function lockSession() {
-        if (loginctlAvailable && dmsService && dmsService.service) {
-            dmsService.service.sendRequest("loginctl.lock", null, response => {
+        if (loginctlAvailable && dykwabiService && dykwabiService.service) {
+            dykwabiService.service.sendRequest("loginctl.lock", null, response => {
                 if (response.error) {
                     console.warn("SessionService: Failed to lock session:", response.error)
                 }

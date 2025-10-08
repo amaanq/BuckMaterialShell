@@ -15,17 +15,17 @@ Singleton {
     property bool settingsPortalAvailable: false
     property int systemColorScheme: 0
 
-    property var dmsService: null
+    property var dykwabiService: null
     property bool freedeskAvailable: false
 
     function init() {}
 
     function getSystemProfileImage() {
-        if (freedeskAvailable && dmsService && dmsService.service) {
+        if (freedeskAvailable && dykwabiService && dykwabiService.service) {
             const username = Quickshell.env("USER")
             if (!username) return
 
-            dmsService.service.sendRequest("freedesktop.accounts.getUserIconFile", { username: username }, response => {
+            dykwabiService.service.sendRequest("freedesktop.accounts.getUserIconFile", { username: username }, response => {
                 if (response.result && response.result.success) {
                     const iconFile = response.result.value || ""
                     if (iconFile && iconFile !== "" && iconFile !== "/var/lib/AccountsService/icons/") {
@@ -46,13 +46,13 @@ Singleton {
             profileImage = ""
             return
         }
-        if (Quickshell.env("DMS_RUN_GREETER") === "1" || Quickshell.env("DMS_RUN_GREETER") === "true") {
+        if (Quickshell.env("DYKWABI_RUN_GREETER") === "1" || Quickshell.env("DYKWABI_RUN_GREETER") === "true") {
             profileImage = ""
             return
         }
 
-        if (freedeskAvailable && dmsService && dmsService.service) {
-            dmsService.service.sendRequest("freedesktop.accounts.getUserIconFile", { username: username }, response => {
+        if (freedeskAvailable && dykwabiService && dykwabiService.service) {
+            dykwabiService.service.sendRequest("freedesktop.accounts.getUserIconFile", { username: username }, response => {
                 if (response.result && response.result.success) {
                     const icon = response.result.value || ""
                     if (icon && icon !== "" && icon !== "/var/lib/AccountsService/icons/") {
@@ -85,8 +85,8 @@ Singleton {
     }
 
     function getSystemColorScheme() {
-        if (freedeskAvailable && dmsService && dmsService.service) {
-            dmsService.service.sendRequest("freedesktop.settings.getColorScheme", null, response => {
+        if (freedeskAvailable && dykwabiService && dykwabiService.service) {
+            dykwabiService.service.sendRequest("freedesktop.settings.getColorScheme", null, response => {
                 if (response.result) {
                     systemColorScheme = response.result.value || 0
 
@@ -134,8 +134,8 @@ Singleton {
     function setSystemProfileImage(imagePath) {
         if (!accountsServiceAvailable) return
 
-        if (freedeskAvailable && dmsService && dmsService.service) {
-            dmsService.service.sendRequest("freedesktop.accounts.setIconFile", { path: imagePath || "" }, response => {
+        if (freedeskAvailable && dykwabiService && dykwabiService.service) {
+            dykwabiService.service.sendRequest("freedesktop.accounts.setIconFile", { path: imagePath || "" }, response => {
                 if (response.error) {
                     console.warn("PortalService: Failed to set icon file:", response.error)
                 } else {
@@ -150,17 +150,17 @@ Singleton {
     }
 
     Component.onCompleted: {
-        Qt.callLater(initializeDMSConnection)
+        Qt.callLater(initializeDykwabiConnection)
     }
 
-    function initializeDMSConnection() {
+    function initializeDykwabiConnection() {
         try {
-            dmsService = Qt.createQmlObject('import QtQuick; import qs.Services; QtObject { property var service: DMSService }', root)
-            if (dmsService && dmsService.service) {
-                dmsService.service.connectionStateChanged.connect(onDMSConnectionStateChanged)
-                dmsService.service.capabilitiesChanged.connect(onDMSCapabilitiesChanged)
-                if (dmsService.service.isConnected) {
-                    onDMSConnected()
+            dykwabiService = Qt.createQmlObject('import QtQuick; import qs.Services; QtObject { property var service: DykwabiService }', root)
+            if (dykwabiService && dykwabiService.service) {
+                dykwabiService.service.connectionStateChanged.connect(onDykwabiConnectionStateChanged)
+                dykwabiService.service.capabilitiesChanged.connect(onDykwabiCapabilitiesChanged)
+                if (dykwabiService.service.isConnected) {
+                    onDykwabiConnected()
                 } else {
                     Qt.callLater(checkFallback)
                 }
@@ -168,36 +168,36 @@ Singleton {
                 Qt.callLater(checkFallback)
             }
         } catch (e) {
-            console.warn("PortalService: Failed to initialize DMS connection:", e)
+            console.warn("PortalService: Failed to initialize Dykwabi connection:", e)
             Qt.callLater(checkFallback)
         }
     }
 
     function checkFallback() {
         if (!freedeskAvailable) {
-            console.log("PortalService: DMS not available, using fallback methods")
+            console.log("PortalService: Dykwabi not available, using fallback methods")
             checkAccountsServiceFallback()
             checkSettingsPortalFallback()
         }
     }
 
-    function onDMSConnectionStateChanged() {
-        if (dmsService && dmsService.service && dmsService.service.isConnected) {
-            onDMSConnected()
+    function onDykwabiConnectionStateChanged() {
+        if (dykwabiService && dykwabiService.service && dykwabiService.service.isConnected) {
+            onDykwabiConnected()
         }
     }
 
-    function onDMSCapabilitiesChanged() {
-        if (dmsService && dmsService.service && dmsService.service.capabilities.includes("freedesktop")) {
+    function onDykwabiCapabilitiesChanged() {
+        if (dykwabiService && dykwabiService.service && dykwabiService.service.capabilities.includes("freedesktop")) {
             freedeskAvailable = true
             checkAccountsService()
             checkSettingsPortal()
         }
     }
 
-    function onDMSConnected() {
-        if (dmsService && dmsService.service && dmsService.service.capabilities && dmsService.service.capabilities.length > 0) {
-            freedeskAvailable = dmsService.service.capabilities.includes("freedesktop")
+    function onDykwabiConnected() {
+        if (dykwabiService && dykwabiService.service && dykwabiService.service.capabilities && dykwabiService.service.capabilities.length > 0) {
+            freedeskAvailable = dykwabiService.service.capabilities.includes("freedesktop")
             if (freedeskAvailable) {
                 checkAccountsService()
                 checkSettingsPortal()
@@ -206,9 +206,9 @@ Singleton {
     }
 
     function checkAccountsService() {
-        if (!freedeskAvailable || !dmsService || !dmsService.service) return
+        if (!freedeskAvailable || !dykwabiService || !dykwabiService.service) return
 
-        dmsService.service.sendRequest("freedesktop.getState", null, response => {
+        dykwabiService.service.sendRequest("freedesktop.getState", null, response => {
             if (response.result && response.result.accounts) {
                 accountsServiceAvailable = response.result.accounts.available || false
                 if (accountsServiceAvailable) {
@@ -219,9 +219,9 @@ Singleton {
     }
 
     function checkSettingsPortal() {
-        if (!freedeskAvailable || !dmsService || !dmsService.service) return
+        if (!freedeskAvailable || !dykwabiService || !dykwabiService.service) return
 
-        dmsService.service.sendRequest("freedesktop.getState", null, response => {
+        dykwabiService.service.sendRequest("freedesktop.getState", null, response => {
             if (response.result && response.result.settings) {
                 settingsPortalAvailable = response.result.settings.available || false
                 if (settingsPortalAvailable) {

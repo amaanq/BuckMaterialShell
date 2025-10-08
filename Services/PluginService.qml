@@ -21,9 +21,9 @@ Singleton {
         if (configDirStr.startsWith("file://")) {
             configDirStr = configDirStr.substring(7)
         }
-        return configDirStr + "/DankMaterialShell/plugins"
+        return configDirStr + "/BuckMaterialShell/plugins"
     }
-    property string systemPluginDirectory: "/etc/xdg/quickshell/dms-plugins"
+    property string systemPluginDirectory: "/etc/xdg/quickshell/dykwabi-plugins"
     property var pluginDirectories: [pluginDirectory, systemPluginDirectory]
 
     signal pluginLoaded(string pluginId)

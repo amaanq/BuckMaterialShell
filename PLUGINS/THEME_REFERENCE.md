@@ -77,7 +77,7 @@ Theme.popupBackground()  // Popup background with opacity
 
 ### Icon with Text
 ```qml
-DankIcon {
+BuckIcon {
     name: "icon_name"
     color: Theme.onSurface
     font.pixelSize: Theme.iconSize

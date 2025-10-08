@@ -10,7 +10,7 @@ import Quickshell.Services.UPower
 Singleton {
     id: root
 
-    readonly property string preferredBatteryOverride: Quickshell.env("DMS_PREFERRED_BATTERY")
+    readonly property string preferredBatteryOverride: Quickshell.env("DYKWABI_PREFERRED_BATTERY")
 
     readonly property UPowerDevice device: {
         var preferredDev

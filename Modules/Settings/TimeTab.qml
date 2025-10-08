@@ -6,7 +6,7 @@ import qs.Widgets
 Item {
     id: timeTab
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -40,7 +40,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "schedule"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -69,7 +69,7 @@ Item {
                             }
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: toggle
 
                             anchors.verticalCenter: parent.verticalCenter
@@ -104,7 +104,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "calendar_today"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -120,7 +120,7 @@ Item {
                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         height: 50
                         text: I18n.tr("Top Bar Format")
                         description: "Preview: " + (SettingsData.clockDateFormat ? new Date().toLocaleDateString(Qt.locale(), SettingsData.clockDateFormat) : new Date().toLocaleDateString(Qt.locale(), "ddd d"))
@@ -183,7 +183,7 @@ Item {
                                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         height: 50
                         text: I18n.tr("Lock Screen Format")
                         description: "Preview: " + (SettingsData.lockDateFormat ? new Date().toLocaleDateString(Qt.locale(), SettingsData.lockDateFormat) : new Date().toLocaleDateString(Qt.locale(), Locale.LongFormat))
@@ -246,7 +246,7 @@ Item {
                                         }
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         id: customFormatInput
 
                         width: parent.width
@@ -259,7 +259,7 @@ Item {
                         }
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         id: customLockFormatInput
 
                         width: parent.width

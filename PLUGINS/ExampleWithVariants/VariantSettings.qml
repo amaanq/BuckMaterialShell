@@ -65,7 +65,7 @@ PluginSettings {
                         color: Theme.surfaceVariantText
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         id: nameField
                         width: parent.width
                         placeholderText: "Variant Name"
@@ -82,7 +82,7 @@ PluginSettings {
                         color: Theme.surfaceVariantText
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         id: iconField
                         width: parent.width
                         placeholderText: "star"
@@ -99,7 +99,7 @@ PluginSettings {
                         color: Theme.surfaceVariantText
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         id: textField
                         width: parent.width
                         placeholderText: "Display Text"
@@ -107,7 +107,7 @@ PluginSettings {
                 }
             }
 
-            DankButton {
+            BuckButton {
                 text: "Create Variant"
                 iconName: "add"
                 onClicked: {
@@ -179,7 +179,7 @@ PluginSettings {
                             height: Theme.iconSize
                             anchors.verticalCenter: parent.verticalCenter
 
-                            DankIcon {
+                            BuckIcon {
                                 anchors.centerIn: parent
                                 name: model.icon || "widgets"
                                 size: Theme.iconSize
@@ -220,7 +220,7 @@ PluginSettings {
                             color: deleteArea.containsMouse ? Theme.error : "transparent"
                             anchors.verticalCenter: parent.verticalCenter
 
-                            DankIcon {
+                            BuckIcon {
                                 anchors.centerIn: parent
                                 name: "delete"
                                 size: 16
@@ -274,7 +274,7 @@ PluginSettings {
             Row {
                 spacing: Theme.spacingM
 
-                DankIcon {
+                BuckIcon {
                     name: "info"
                     size: Theme.iconSize
                     color: Theme.primary

@@ -47,7 +47,7 @@ Row {
                 anchors.right: parent.right
                 spacing: Theme.spacingM
 
-                DankIcon {
+                BuckIcon {
                     name: "add_circle"
                     size: Theme.iconSize
                     color: Theme.primary
@@ -62,7 +62,7 @@ Row {
                 }
             }
 
-            DankListView {
+            BuckListView {
                 anchors.top: headerRow.bottom
                 anchors.topMargin: Theme.spacingM
                 anchors.left: parent.left
@@ -84,7 +84,7 @@ Row {
                         anchors.margins: Theme.spacingM
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: modelData.icon
                             size: Theme.iconSize
                             color: Theme.primary
@@ -113,7 +113,7 @@ Row {
                             }
                         }
 
-                        DankIcon {
+                        BuckIcon {
                             name: "add"
                             size: Theme.iconSize - 4
                             color: Theme.primary
@@ -147,7 +147,7 @@ Row {
             anchors.centerIn: parent
             spacing: Theme.spacingS
 
-            DankIcon {
+            BuckIcon {
                 name: "add"
                 size: Theme.iconSize - 2
                 color: Theme.primary
@@ -181,7 +181,7 @@ Row {
             anchors.centerIn: parent
             spacing: Theme.spacingS
 
-            DankIcon {
+            BuckIcon {
                 name: "settings_backup_restore"
                 size: Theme.iconSize - 2
                 color: Theme.warning
@@ -215,7 +215,7 @@ Row {
             anchors.centerIn: parent
             spacing: Theme.spacingS
 
-            DankIcon {
+            BuckIcon {
                 name: "clear_all"
                 size: Theme.iconSize - 2
                 color: Theme.error

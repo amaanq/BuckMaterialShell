@@ -50,7 +50,7 @@
   {
     "term": "7-Day Forecast",
     "context": "7-Day Forecast",
-    "reference": "Modules/DankDash/WeatherTab.qml:525",
+    "reference": "Modules/BuckDash/WeatherTab.qml:525",
     "comment": ""
   },
   {
@@ -68,25 +68,25 @@
   {
     "term": "Access clipboard history",
     "context": "Access clipboard history",
-    "reference": "Modules/Settings/DankBarTab.qml:68",
+    "reference": "Modules/Settings/BuckBarTab.qml:68",
     "comment": ""
   },
   {
     "term": "Access to notifications and do not disturb",
     "context": "Access to notifications and do not disturb",
-    "reference": "Modules/Settings/DankBarTab.qml:127",
+    "reference": "Modules/Settings/BuckBarTab.qml:127",
     "comment": ""
   },
   {
     "term": "Access to system controls and settings",
     "context": "Access to system controls and settings",
-    "reference": "Modules/Settings/DankBarTab.qml:121",
+    "reference": "Modules/Settings/BuckBarTab.qml:121",
     "comment": ""
   },
   {
     "term": "Actions",
     "context": "Actions",
-    "reference": "Widgets/DankIconPicker.qml:46",
+    "reference": "Widgets/BuckIconPicker.qml:46",
     "comment": ""
   },
   {
@@ -110,7 +110,7 @@
   {
     "term": "Add a VPN in NetworkManager",
     "context": "Add a VPN in NetworkManager",
-    "reference": "Modules/ControlCenter/BuiltinPlugins/VpnWidget.qml:148, Modules/DankBar/Popouts/VpnPopout.qml:276",
+    "reference": "Modules/ControlCenter/BuiltinPlugins/VpnWidget.qml:148, Modules/BuckBar/Popouts/VpnPopout.qml:276",
     "comment": ""
   },
   {
@@ -152,7 +152,7 @@
   {
     "term": "App Launcher",
     "context": "App Launcher",
-    "reference": "Modules/Settings/DankBarTab.qml:25",
+    "reference": "Modules/Settings/BuckBarTab.qml:25",
     "comment": ""
   },
   {
@@ -164,7 +164,7 @@
   {
     "term": "Apply",
     "context": "Apply",
-    "reference": "Modals/DankColorPickerModal.qml:521",
+    "reference": "Modals/BuckColorPickerModal.qml:521",
     "comment": ""
   },
   {
@@ -248,7 +248,7 @@
   {
     "term": "Audio Output Devices (",
     "context": "Audio Output Devices (",
-    "reference": "Modules/DankDash/MediaPlayerTab.qml:409",
+    "reference": "Modules/BuckDash/MediaPlayerTab.qml:409",
     "comment": ""
   },
   {
@@ -260,7 +260,7 @@
   {
     "term": "Auto-hide",
     "context": "Auto-hide",
-    "reference": "Modules/Settings/DankBarTab.qml:768",
+    "reference": "Modules/Settings/BuckBarTab.qml:768",
     "comment": ""
   },
   {
@@ -314,7 +314,7 @@
   {
     "term": "Automatically hide the top bar to expand screen real estate",
     "context": "Automatically hide the top bar to expand screen real estate",
-    "reference": "Modules/Settings/DankBarTab.qml:775",
+    "reference": "Modules/Settings/BuckBarTab.qml:775",
     "comment": ""
   },
   {
@@ -344,19 +344,19 @@
   {
     "term": "Back",
     "context": "Back",
-    "reference": "Modules/DankBar/Widgets/SystemTrayBar.qml:451",
+    "reference": "Modules/BuckBar/Widgets/SystemTrayBar.qml:451",
     "comment": ""
   },
   {
     "term": "Battery",
     "context": "Battery",
-    "reference": "Modules/Settings/DankBarTab.qml:132",
+    "reference": "Modules/Settings/BuckBarTab.qml:132",
     "comment": ""
   },
   {
     "term": "Battery level and power management",
     "context": "Battery level and power management",
-    "reference": "Modules/Settings/DankBarTab.qml:133",
+    "reference": "Modules/Settings/BuckBarTab.qml:133",
     "comment": ""
   },
   {
@@ -380,7 +380,7 @@
   {
     "term": "Border",
     "context": "Border",
-    "reference": "Modules/Settings/DankBarTab.qml:1061",
+    "reference": "Modules/Settings/BuckBarTab.qml:1061",
     "comment": ""
   },
   {
@@ -410,49 +410,49 @@
   {
     "term": "CPU Temperature",
     "context": "CPU Temperature",
-    "reference": "Modules/Settings/DankBarTab.qml:94",
+    "reference": "Modules/Settings/BuckBarTab.qml:94",
     "comment": ""
   },
   {
     "term": "CPU Usage",
     "context": "CPU Usage",
-    "reference": "Modules/Settings/DankBarTab.qml:73",
+    "reference": "Modules/Settings/BuckBarTab.qml:73",
     "comment": ""
   },
   {
     "term": "CPU temperature display",
     "context": "CPU temperature display",
-    "reference": "Modules/Settings/DankBarTab.qml:95",
+    "reference": "Modules/Settings/BuckBarTab.qml:95",
     "comment": ""
   },
   {
     "term": "CPU usage indicator",
     "context": "CPU usage indicator",
-    "reference": "Modules/Settings/DankBarTab.qml:74",
+    "reference": "Modules/Settings/BuckBarTab.qml:74",
     "comment": ""
   },
   {
     "term": "Cancel",
     "context": "Cancel",
-    "reference": "Modals/DankColorPickerModal.qml:548, Modals/WifiPasswordModal.qml:300, Modals/FileBrowser/FileBrowserModal.qml:951, Modules/Lock/LockScreenContent.qml:1247, Modules/Greetd/GreeterContent.qml:1328, Modules/Settings/PluginsTab.qml:1214",
+    "reference": "Modals/BuckColorPickerModal.qml:548, Modals/WifiPasswordModal.qml:300, Modals/FileBrowser/FileBrowserModal.qml:951, Modules/Lock/LockScreenContent.qml:1247, Modules/Greetd/GreeterContent.qml:1328, Modules/Settings/PluginsTab.qml:1214",
     "comment": ""
   },
   {
     "term": "Capacity",
     "context": "Capacity",
-    "reference": "Modules/ControlCenter/Details/BatteryDetail.qml:171, Modules/DankBar/Popouts/BatteryPopout.qml:349",
+    "reference": "Modules/ControlCenter/Details/BatteryDetail.qml:171, Modules/BuckBar/Popouts/BatteryPopout.qml:349",
     "comment": ""
   },
   {
     "term": "Center Section",
     "context": "Center Section",
-    "reference": "Modules/Settings/DankBarTab.qml:1375",
+    "reference": "Modules/Settings/BuckBarTab.qml:1375",
     "comment": ""
   },
   {
     "term": "Check for system updates",
     "context": "Check for system updates",
-    "reference": "Modules/Settings/DankBarTab.qml:188",
+    "reference": "Modules/Settings/BuckBarTab.qml:188",
     "comment": ""
   },
   {
@@ -464,12 +464,12 @@
   {
     "term": "Choose icon",
     "context": "Choose icon",
-    "reference": "Widgets/DankIconPicker.qml:70",
+    "reference": "Widgets/BuckIconPicker.qml:70",
     "comment": ""
   },
   {
-    "term": "Choose the logo displayed on the launcher button in DankBar",
-    "context": "Choose the logo displayed on the launcher button in DankBar",
+    "term": "Choose the logo displayed on the launcher button in BuckBar",
+    "context": "Choose the logo displayed on the launcher button in BuckBar",
     "reference": "Modules/Settings/LauncherTab.qml:75",
     "comment": ""
   },
@@ -506,19 +506,19 @@
   {
     "term": "Clipboard Manager",
     "context": "Clipboard Manager",
-    "reference": "Modules/Settings/DankBarTab.qml:67",
+    "reference": "Modules/Settings/BuckBarTab.qml:67",
     "comment": ""
   },
   {
     "term": "Clock",
     "context": "Clock",
-    "reference": "Modules/Settings/DankBarTab.qml:49",
+    "reference": "Modules/Settings/BuckBarTab.qml:49",
     "comment": ""
   },
   {
     "term": "Close",
     "context": "Close",
-    "reference": "Modules/SystemUpdatePopout.qml:329, Modals/NetworkInfoModal.qml:129, Modules/DankBar/Widgets/RunningApps.qml:614",
+    "reference": "Modules/SystemUpdatePopout.qml:329, Modals/NetworkInfoModal.qml:129, Modules/BuckBar/Widgets/RunningApps.qml:614",
     "comment": ""
   },
   {
@@ -530,7 +530,7 @@
   {
     "term": "Color Picker",
     "context": "Color Picker",
-    "reference": "Modules/Settings/DankBarTab.qml:181",
+    "reference": "Modules/Settings/BuckBarTab.qml:181",
     "comment": ""
   },
   {
@@ -542,7 +542,7 @@
   {
     "term": "Communication",
     "context": "Communication",
-    "reference": "Widgets/DankIconPicker.qml:34",
+    "reference": "Widgets/BuckIconPicker.qml:34",
     "comment": ""
   },
   {
@@ -596,13 +596,13 @@
   {
     "term": "Control Center",
     "context": "Control Center",
-    "reference": "Modules/Settings/DankBarTab.qml:120",
+    "reference": "Modules/Settings/BuckBarTab.qml:120",
     "comment": ""
   },
   {
     "term": "Control currently playing media",
     "context": "Control currently playing media",
-    "reference": "Modules/Settings/DankBarTab.qml:62",
+    "reference": "Modules/Settings/BuckBarTab.qml:62",
     "comment": ""
   },
   {
@@ -626,7 +626,7 @@
   {
     "term": "Copy",
     "context": "Copy",
-    "reference": "Modals/DankColorPickerModal.qml:567",
+    "reference": "Modals/BuckColorPickerModal.qml:567",
     "comment": ""
   },
   {
@@ -668,13 +668,13 @@
   {
     "term": "Current time and date display",
     "context": "Current time and date display",
-    "reference": "Modules/Settings/DankBarTab.qml:50",
+    "reference": "Modules/Settings/BuckBarTab.qml:50",
     "comment": ""
   },
   {
     "term": "Current weather conditions and temperature",
     "context": "Current weather conditions and temperature",
-    "reference": "Modules/Settings/DankBarTab.qml:56",
+    "reference": "Modules/Settings/BuckBarTab.qml:56",
     "comment": ""
   },
   {
@@ -704,7 +704,7 @@
   {
     "term": "Customizable empty space",
     "context": "Customizable empty space",
-    "reference": "Modules/Settings/DankBarTab.qml:151",
+    "reference": "Modules/Settings/BuckBarTab.qml:151",
     "comment": ""
   },
   {
@@ -714,14 +714,14 @@
     "comment": ""
   },
   {
-    "term": "DMS Plugin Manager Unavailable",
-    "context": "DMS Plugin Manager Unavailable",
+    "term": "Dykwabi Plugin Manager Unavailable",
+    "context": "Dykwabi Plugin Manager Unavailable",
     "reference": "Modules/Settings/PluginsTab.qml:101",
     "comment": ""
   },
   {
-    "term": "DMS_SOCKET not available",
-    "context": "DMS_SOCKET not available",
+    "term": "DYKWABI_SOCKET not available",
+    "context": "DYKWABI_SOCKET not available",
     "reference": "Modules/ControlCenter/Components/DragDropGrid.qml:186",
     "comment": ""
   },
@@ -732,33 +732,33 @@
     "comment": ""
   },
   {
-    "term": "Dank Bar",
-    "context": "Dank Bar",
+    "term": "Buck Bar",
+    "context": "Buck Bar",
     "reference": "Modals/Settings/SettingsSidebar.qml:21",
     "comment": ""
   },
   {
-    "term": "Dank Bar Transparency",
-    "context": "Dank Bar Transparency",
+    "term": "Buck Bar Transparency",
+    "context": "Buck Bar Transparency",
     "reference": "Modules/Settings/ThemeColorsTab.qml:772",
     "comment": ""
   },
   {
-    "term": "Dank Bar Widget Transparency",
-    "context": "Dank Bar Widget Transparency",
+    "term": "Buck Bar Widget Transparency",
+    "context": "Buck Bar Widget Transparency",
     "reference": "Modules/Settings/ThemeColorsTab.qml:806",
     "comment": ""
   },
   {
-    "term": "Dank Suite:",
-    "context": "Dank Suite:",
+    "term": "Buck Suite:",
+    "context": "Buck Suite:",
     "reference": "Modules/Settings/AboutTab.qml:483",
     "comment": ""
   },
   {
-    "term": "DankBar Font Scale",
-    "context": "DankBar Font Scale",
-    "reference": "Modules/Settings/DankBarTab.qml:1091",
+    "term": "BuckBar Font Scale",
+    "context": "BuckBar Font Scale",
+    "reference": "Modules/Settings/BuckBarTab.qml:1091",
     "comment": ""
   },
   {
@@ -788,7 +788,7 @@
   {
     "term": "Development",
     "context": "Development",
-    "reference": "Services/AppSearchService.qml:158, Services/AppSearchService.qml:159, Services/AppSearchService.qml:160, Widgets/DankIconPicker.qml:31",
+    "reference": "Services/AppSearchService.qml:158, Services/AppSearchService.qml:159, Services/AppSearchService.qml:160, Widgets/BuckIconPicker.qml:31",
     "comment": ""
   },
   {
@@ -800,7 +800,7 @@
   {
     "term": "Disconnect",
     "context": "Disconnect",
-    "reference": "Modules/ControlCenter/BuiltinPlugins/VpnWidget.qml:90, Modules/DankBar/Popouts/VpnPopout.qml:213",
+    "reference": "Modules/ControlCenter/BuiltinPlugins/VpnWidget.qml:90, Modules/BuckBar/Popouts/VpnPopout.qml:213",
     "comment": ""
   },
   {
@@ -812,7 +812,7 @@
   {
     "term": "Disk Usage",
     "context": "Disk Usage",
-    "reference": "Modules/Settings/DankBarTab.qml:87",
+    "reference": "Modules/Settings/BuckBarTab.qml:87",
     "comment": ""
   },
   {
@@ -836,7 +836,7 @@
   {
     "term": "Display currently focused application title",
     "context": "Display currently focused application title",
-    "reference": "Modules/Settings/DankBarTab.qml:38",
+    "reference": "Modules/Settings/BuckBarTab.qml:38",
     "comment": ""
   },
   {
@@ -854,7 +854,7 @@
   {
     "term": "Displays the active keyboard layout and allows switching",
     "context": "Displays the active keyboard layout and allows switching",
-    "reference": "Modules/Settings/DankBarTab.qml:171",
+    "reference": "Modules/Settings/BuckBarTab.qml:171",
     "comment": ""
   },
   {
@@ -884,7 +884,7 @@
   {
     "term": "Drag widgets to reorder within sections. Use the eye icon to hide/show widgets (maintains spacing), or X to remove them completely.",
     "context": "Drag widgets to reorder within sections. Use the eye icon to hide/show widgets (maintains spacing), or X to remove them completely.",
-    "reference": "Modules/Settings/DankBarTab.qml:1273",
+    "reference": "Modules/Settings/BuckBarTab.qml:1273",
     "comment": ""
   },
   {
@@ -896,7 +896,7 @@
   {
     "term": "Edge Spacing (0 = edge-to-edge)",
     "context": "Edge Spacing (0 = edge-to-edge)",
-    "reference": "Modules/Settings/DankBarTab.qml:946",
+    "reference": "Modules/Settings/BuckBarTab.qml:946",
     "comment": ""
   },
   {
@@ -956,7 +956,7 @@
   {
     "term": "Exclusive Zone Offset",
     "context": "Exclusive Zone Offset",
-    "reference": "Modules/Settings/DankBarTab.qml:974",
+    "reference": "Modules/Settings/BuckBarTab.qml:974",
     "comment": ""
   },
   {
@@ -968,7 +968,7 @@
   {
     "term": "Feels Like",
     "context": "Feels Like",
-    "reference": "Modules/DankDash/WeatherTab.qml:260",
+    "reference": "Modules/BuckDash/WeatherTab.qml:260",
     "comment": ""
   },
   {
@@ -998,7 +998,7 @@
   {
     "term": "Focused Window",
     "context": "Focused Window",
-    "reference": "Modules/Settings/DankBarTab.qml:37",
+    "reference": "Modules/Settings/BuckBarTab.qml:37",
     "comment": ""
   },
   {
@@ -1064,7 +1064,7 @@
   {
     "term": "Fun",
     "context": "Fun",
-    "reference": "Widgets/DankIconPicker.qml:52",
+    "reference": "Widgets/BuckIconPicker.qml:52",
     "comment": ""
   },
   {
@@ -1076,13 +1076,13 @@
   {
     "term": "GPU Temperature",
     "context": "GPU Temperature",
-    "reference": "Modules/Settings/DankBarTab.qml:101",
+    "reference": "Modules/Settings/BuckBarTab.qml:101",
     "comment": ""
   },
   {
     "term": "GPU temperature display",
     "context": "GPU temperature display",
-    "reference": "Modules/Settings/DankBarTab.qml:102",
+    "reference": "Modules/Settings/BuckBarTab.qml:102",
     "comment": ""
   },
   {
@@ -1100,13 +1100,13 @@
   {
     "term": "Good",
     "context": "Good",
-    "reference": "Modules/DankDash/WeatherTab.qml:502",
+    "reference": "Modules/BuckDash/WeatherTab.qml:502",
     "comment": ""
   },
   {
     "term": "Goth Corners",
     "context": "Goth Corners",
-    "reference": "Modules/Settings/DankBarTab.qml:1050",
+    "reference": "Modules/Settings/BuckBarTab.qml:1050",
     "comment": ""
   },
   {
@@ -1130,7 +1130,7 @@
   {
     "term": "Health",
     "context": "Health",
-    "reference": "Modules/ControlCenter/Details/BatteryDetail.qml:136, Modules/DankBar/Popouts/BatteryPopout.qml:314",
+    "reference": "Modules/ControlCenter/Details/BatteryDetail.qml:136, Modules/BuckBar/Popouts/BatteryPopout.qml:314",
     "comment": ""
   },
   {
@@ -1142,7 +1142,7 @@
   {
     "term": "Hex:",
     "context": "Hex:",
-    "reference": "Modals/DankColorPickerModal.qml:483",
+    "reference": "Modals/BuckColorPickerModal.qml:483",
     "comment": ""
   },
   {
@@ -1178,7 +1178,7 @@
   {
     "term": "Humidity",
     "context": "Humidity",
-    "reference": "Modules/DankDash/WeatherTab.qml:307",
+    "reference": "Modules/BuckDash/WeatherTab.qml:307",
     "comment": ""
   },
   {
@@ -1196,7 +1196,7 @@
   {
     "term": "Idle Inhibitor",
     "context": "Idle Inhibitor",
-    "reference": "Modules/Settings/DankBarTab.qml:144",
+    "reference": "Modules/Settings/BuckBarTab.qml:144",
     "comment": ""
   },
   {
@@ -1230,8 +1230,8 @@
     "comment": ""
   },
   {
-    "term": "Install plugins from the DMS plugin registry",
-    "context": "Install plugins from the DMS plugin registry",
+    "term": "Install plugins from the Dykwabi plugin registry",
+    "context": "Install plugins from the Dykwabi plugin registry",
     "reference": "Modules/Settings/PluginsTab.qml:834",
     "comment": ""
   },
@@ -1256,7 +1256,7 @@
   {
     "term": "Keyboard Layout Name",
     "context": "Keyboard Layout Name",
-    "reference": "Modules/Settings/DankBarTab.qml:170",
+    "reference": "Modules/Settings/BuckBarTab.qml:170",
     "comment": ""
   },
   {
@@ -1374,8 +1374,8 @@
     "comment": ""
   },
   {
-    "term": "Manage and configure plugins for extending DMS functionality",
-    "context": "Manage and configure plugins for extending DMS functionality",
+    "term": "Manage and configure plugins for extending Dykwabi functionality",
+    "context": "Manage and configure plugins for extending Dykwabi functionality",
     "reference": "Modules/Settings/PluginsTab.qml:68",
     "comment": ""
   },
@@ -1388,13 +1388,13 @@
   {
     "term": "Manual Show/Hide",
     "context": "Manual Show/Hide",
-    "reference": "Modules/Settings/DankBarTab.qml:820",
+    "reference": "Modules/Settings/BuckBarTab.qml:820",
     "comment": ""
   },
   {
     "term": "Material Colors",
     "context": "Material Colors",
-    "reference": "Modals/DankColorPickerModal.qml:349",
+    "reference": "Modals/BuckColorPickerModal.qml:349",
     "comment": ""
   },
   {
@@ -1412,13 +1412,13 @@
   {
     "term": "Media",
     "context": "Media",
-    "reference": "Services/AppSearchService.qml:155, Services/AppSearchService.qml:156, Services/AppSearchService.qml:157, Widgets/DankIconPicker.qml:37, Modules/DankDash/DankDashPopout.qml:135",
+    "reference": "Services/AppSearchService.qml:155, Services/AppSearchService.qml:156, Services/AppSearchService.qml:157, Widgets/BuckIconPicker.qml:37, Modules/BuckDash/BuckDashPopout.qml:135",
     "comment": ""
   },
   {
     "term": "Media Controls",
     "context": "Media Controls",
-    "reference": "Modules/Settings/DankBarTab.qml:61",
+    "reference": "Modules/Settings/BuckBarTab.qml:61",
     "comment": ""
   },
   {
@@ -1430,7 +1430,7 @@
   {
     "term": "Media Players (",
     "context": "Media Players (",
-    "reference": "Modules/DankDash/MediaPlayerTab.qml:567",
+    "reference": "Modules/BuckDash/MediaPlayerTab.qml:567",
     "comment": ""
   },
   {
@@ -1442,13 +1442,13 @@
   {
     "term": "Memory Usage",
     "context": "Memory Usage",
-    "reference": "Modules/Settings/DankBarTab.qml:80",
+    "reference": "Modules/Settings/BuckBarTab.qml:80",
     "comment": ""
   },
   {
     "term": "Memory usage indicator",
     "context": "Memory usage indicator",
-    "reference": "Modules/Settings/DankBarTab.qml:81",
+    "reference": "Modules/Settings/BuckBarTab.qml:81",
     "comment": ""
   },
   {
@@ -1502,7 +1502,7 @@
   {
     "term": "Navigation",
     "context": "Navigation",
-    "reference": "Widgets/DankIconPicker.qml:43",
+    "reference": "Widgets/BuckIconPicker.qml:43",
     "comment": ""
   },
   {
@@ -1538,13 +1538,13 @@
   {
     "term": "Network Speed Monitor",
     "context": "Network Speed Monitor",
-    "reference": "Modules/Settings/DankBarTab.qml:163",
+    "reference": "Modules/Settings/BuckBarTab.qml:163",
     "comment": ""
   },
   {
     "term": "Network download and upload speed display",
     "context": "Network download and upload speed display",
-    "reference": "Modules/Settings/DankBarTab.qml:164",
+    "reference": "Modules/Settings/BuckBarTab.qml:164",
     "comment": ""
   },
   {
@@ -1568,13 +1568,13 @@
   {
     "term": "No Active Players",
     "context": "No Active Players",
-    "reference": "Modules/DankDash/MediaPlayerTab.qml:308",
+    "reference": "Modules/BuckDash/MediaPlayerTab.qml:308",
     "comment": ""
   },
   {
     "term": "No Background",
     "context": "No Background",
-    "reference": "Modules/Settings/DankBarTab.qml:1039",
+    "reference": "Modules/Settings/BuckBarTab.qml:1039",
     "comment": ""
   },
   {
@@ -1586,19 +1586,19 @@
   {
     "term": "No Media",
     "context": "No Media",
-    "reference": "Modules/DankDash/Overview/MediaOverviewCard.qml:56",
+    "reference": "Modules/BuckDash/Overview/MediaOverviewCard.qml:56",
     "comment": ""
   },
   {
     "term": "No VPN profiles found",
     "context": "No VPN profiles found",
-    "reference": "Modules/ControlCenter/BuiltinPlugins/VpnWidget.qml:141, Modules/DankBar/Popouts/VpnPopout.qml:269",
+    "reference": "Modules/ControlCenter/BuiltinPlugins/VpnWidget.qml:141, Modules/BuckBar/Popouts/VpnPopout.qml:269",
     "comment": ""
   },
   {
     "term": "No Weather Data Available",
     "context": "No Weather Data Available",
-    "reference": "Modules/DankDash/WeatherTab.qml:27",
+    "reference": "Modules/BuckDash/WeatherTab.qml:27",
     "comment": ""
   },
   {
@@ -1640,7 +1640,7 @@
   {
     "term": "Notepad",
     "context": "Notepad",
-    "reference": "DMSShell.qml:412, Modules/Settings/DankBarTab.qml:175",
+    "reference": "DykwabiShell.qml:412, Modules/Settings/BuckBarTab.qml:175",
     "comment": ""
   },
   {
@@ -1658,7 +1658,7 @@
   {
     "term": "Notification Center",
     "context": "Notification Center",
-    "reference": "Modules/Settings/DankBarTab.qml:126",
+    "reference": "Modules/Settings/BuckBarTab.qml:126",
     "comment": ""
   },
   {
@@ -1694,7 +1694,7 @@
   {
     "term": "Numbers",
     "context": "Numbers",
-    "reference": "Widgets/DankIconPicker.qml:25",
+    "reference": "Widgets/BuckIconPicker.qml:25",
     "comment": ""
   },
   {
@@ -1712,7 +1712,7 @@
   {
     "term": "Opacity",
     "context": "Opacity",
-    "reference": "Modals/DankColorPickerModal.qml:447",
+    "reference": "Modals/BuckColorPickerModal.qml:447",
     "comment": ""
   },
   {
@@ -1736,7 +1736,7 @@
   {
     "term": "Overview",
     "context": "Overview",
-    "reference": "Modules/DankDash/DankDashPopout.qml:134",
+    "reference": "Modules/BuckDash/BuckDashPopout.qml:134",
     "comment": ""
   },
   {
@@ -1772,7 +1772,7 @@
   {
     "term": "Percentage",
     "context": "Percentage",
-    "reference": "Modules/Settings/DankBarTab.qml:88",
+    "reference": "Modules/Settings/BuckBarTab.qml:88",
     "comment": ""
   },
   {
@@ -1814,7 +1814,7 @@
   {
     "term": "Plugin is disabled - enable in Plugins settings to use",
     "context": "Plugin is disabled - enable in Plugins settings to use",
-    "reference": "Modules/Settings/DankBarTab.qml:202",
+    "reference": "Modules/Settings/BuckBarTab.qml:202",
     "comment": ""
   },
   {
@@ -1838,7 +1838,7 @@
   {
     "term": "Position",
     "context": "Position",
-    "reference": "Modules/Settings/DankBarTab.qml:698",
+    "reference": "Modules/Settings/BuckBarTab.qml:698",
     "comment": ""
   },
   {
@@ -1862,19 +1862,19 @@
   {
     "term": "Power Profile Degradation",
     "context": "Power Profile Degradation",
-    "reference": "Modules/ControlCenter/Details/BatteryDetail.qml:240, Modules/DankBar/Popouts/BatteryPopout.qml:418",
+    "reference": "Modules/ControlCenter/Details/BatteryDetail.qml:240, Modules/BuckBar/Popouts/BatteryPopout.qml:418",
     "comment": ""
   },
   {
     "term": "Pressure",
     "context": "Pressure",
-    "reference": "Modules/DankDash/WeatherTab.qml:401",
+    "reference": "Modules/BuckDash/WeatherTab.qml:401",
     "comment": ""
   },
   {
     "term": "Prevent screen timeout",
     "context": "Prevent screen timeout",
-    "reference": "Modules/Settings/DankBarTab.qml:145",
+    "reference": "Modules/Settings/BuckBarTab.qml:145",
     "comment": ""
   },
   {
@@ -1886,7 +1886,7 @@
   {
     "term": "Privacy Indicator",
     "context": "Privacy Indicator",
-    "reference": "Modules/Settings/DankBarTab.qml:114",
+    "reference": "Modules/Settings/BuckBarTab.qml:114",
     "comment": ""
   },
   {
@@ -1904,25 +1904,25 @@
   {
     "term": "Quick access to application launcher",
     "context": "Quick access to application launcher",
-    "reference": "Modules/Settings/DankBarTab.qml:26",
+    "reference": "Modules/Settings/BuckBarTab.qml:26",
     "comment": ""
   },
   {
     "term": "Quick access to color picker",
     "context": "Quick access to color picker",
-    "reference": "Modules/Settings/DankBarTab.qml:182",
+    "reference": "Modules/Settings/BuckBarTab.qml:182",
     "comment": ""
   },
   {
     "term": "Quick access to notepad",
     "context": "Quick access to notepad",
-    "reference": "Modules/Settings/DankBarTab.qml:176",
+    "reference": "Modules/Settings/BuckBarTab.qml:176",
     "comment": ""
   },
   {
     "term": "Rain Chance",
     "context": "Rain Chance",
-    "reference": "Modules/DankDash/WeatherTab.qml:448",
+    "reference": "Modules/BuckDash/WeatherTab.qml:448",
     "comment": ""
   },
   {
@@ -1934,7 +1934,7 @@
   {
     "term": "Recent Colors",
     "context": "Recent Colors",
-    "reference": "Modals/DankColorPickerModal.qml:397",
+    "reference": "Modals/BuckColorPickerModal.qml:397",
     "comment": ""
   },
   {
@@ -1946,7 +1946,7 @@
   {
     "term": "Refresh",
     "context": "Refresh",
-    "reference": "Modules/DankDash/Overview/WeatherOverviewCard.qml:36",
+    "reference": "Modules/BuckDash/Overview/WeatherOverviewCard.qml:36",
     "comment": ""
   },
   {
@@ -1958,13 +1958,13 @@
   {
     "term": "Reset",
     "context": "Reset",
-    "reference": "Modules/Settings/DankBarTab.qml:1231, Modules/ControlCenter/Components/EditControls.qml:226",
+    "reference": "Modules/Settings/BuckBarTab.qml:1231, Modules/ControlCenter/Components/EditControls.qml:226",
     "comment": ""
   },
   {
     "term": "Running Apps",
     "context": "Running Apps",
-    "reference": "Modules/Settings/DankBarTab.qml:43",
+    "reference": "Modules/Settings/BuckBarTab.qml:43",
     "comment": ""
   },
   {
@@ -1998,9 +1998,9 @@
     "comment": ""
   },
   {
-    "term": "Scale DankBar font sizes independently",
-    "context": "Scale DankBar font sizes independently",
-    "reference": "Modules/Settings/DankBarTab.qml:1098",
+    "term": "Scale BuckBar font sizes independently",
+    "context": "Scale BuckBar font sizes independently",
+    "reference": "Modules/Settings/BuckBarTab.qml:1098",
     "comment": ""
   },
   {
@@ -2024,7 +2024,7 @@
   {
     "term": "Search for a location...",
     "context": "Search for a location...",
-    "reference": "Widgets/DankLocationSearch.qml:22",
+    "reference": "Widgets/BuckLocationSearch.qml:22",
     "comment": ""
   },
   {
@@ -2036,7 +2036,7 @@
   {
     "term": "Search...",
     "context": "Search...",
-    "reference": "Widgets/DankDropdown.qml:260",
+    "reference": "Widgets/BuckDropdown.qml:260",
     "comment": ""
   },
   {
@@ -2048,7 +2048,7 @@
   {
     "term": "Select a color from the palette or use custom sliders",
     "context": "Select a color from the palette or use custom sliders",
-    "reference": "Modals/DankColorPickerModal.qml:191",
+    "reference": "Modals/BuckColorPickerModal.qml:191",
     "comment": ""
   },
   {
@@ -2096,7 +2096,7 @@
   {
     "term": "Separator",
     "context": "Separator",
-    "reference": "Modules/Settings/DankBarTab.qml:156",
+    "reference": "Modules/Settings/BuckBarTab.qml:156",
     "comment": ""
   },
   {
@@ -2114,7 +2114,7 @@
   {
     "term": "Settings",
     "context": "Settings",
-    "reference": "Services/AppSearchService.qml:173, Modals/Settings/SettingsModal.qml:143, Modules/DankDash/DankDashPopout.qml:142",
+    "reference": "Services/AppSearchService.qml:173, Modals/Settings/SettingsModal.qml:143, Modules/BuckDash/BuckDashPopout.qml:142",
     "comment": ""
   },
   {
@@ -2150,7 +2150,7 @@
   {
     "term": "Show on Overview",
     "context": "Show on Overview",
-    "reference": "Modules/Settings/DockTab.qml:232, Modules/Settings/DankBarTab.qml:874",
+    "reference": "Modules/Settings/DockTab.qml:232, Modules/Settings/BuckBarTab.qml:874",
     "comment": ""
   },
   {
@@ -2180,25 +2180,25 @@
   {
     "term": "Shows all running applications with focus indication",
     "context": "Shows all running applications with focus indication",
-    "reference": "Modules/Settings/DankBarTab.qml:44",
+    "reference": "Modules/Settings/BuckBarTab.qml:44",
     "comment": ""
   },
   {
     "term": "Shows current workspace and allows switching",
     "context": "Shows current workspace and allows switching",
-    "reference": "Modules/Settings/DankBarTab.qml:32",
+    "reference": "Modules/Settings/BuckBarTab.qml:32",
     "comment": ""
   },
   {
     "term": "Shows when microphone, camera, or screen sharing is active",
     "context": "Shows when microphone, camera, or screen sharing is active",
-    "reference": "Modules/Settings/DankBarTab.qml:115",
+    "reference": "Modules/Settings/BuckBarTab.qml:115",
     "comment": ""
   },
   {
     "term": "Size",
     "context": "Size",
-    "reference": "Modules/ProcessList/SystemTab.qml:456, Modules/Settings/DankBarTab.qml:1002",
+    "reference": "Modules/ProcessList/SystemTab.qml:456, Modules/Settings/BuckBarTab.qml:1002",
     "comment": ""
   },
   {
@@ -2210,19 +2210,19 @@
   {
     "term": "Spacer",
     "context": "Spacer",
-    "reference": "Modules/Settings/DankBarTab.qml:150",
+    "reference": "Modules/Settings/BuckBarTab.qml:150",
     "comment": ""
   },
   {
     "term": "Spacing",
     "context": "Spacing",
-    "reference": "Modules/Settings/DockTab.qml:363, Modules/Settings/DankBarTab.qml:933",
+    "reference": "Modules/Settings/DockTab.qml:363, Modules/Settings/BuckBarTab.qml:933",
     "comment": ""
   },
   {
     "term": "Square Corners",
     "context": "Square Corners",
-    "reference": "Modules/Settings/DankBarTab.qml:1028",
+    "reference": "Modules/Settings/BuckBarTab.qml:1028",
     "comment": ""
   },
   {
@@ -2240,7 +2240,7 @@
   {
     "term": "Status",
     "context": "Status",
-    "reference": "Widgets/DankIconPicker.qml:49",
+    "reference": "Widgets/BuckIconPicker.qml:49",
     "comment": ""
   },
   {
@@ -2282,7 +2282,7 @@
   {
     "term": "System",
     "context": "System",
-    "reference": "Services/AppSearchService.qml:174, Widgets/DankIconPicker.qml:40, Modules/ProcessList/SystemTab.qml:130",
+    "reference": "Services/AppSearchService.qml:174, Widgets/BuckIconPicker.qml:40, Modules/ProcessList/SystemTab.qml:130",
     "comment": ""
   },
   {
@@ -2312,13 +2312,13 @@
   {
     "term": "System Tray",
     "context": "System Tray",
-    "reference": "Modules/Settings/DankBarTab.qml:108",
+    "reference": "Modules/Settings/BuckBarTab.qml:108",
     "comment": ""
   },
   {
     "term": "System Update",
     "context": "System Update",
-    "reference": "Modules/Settings/DankBarTab.qml:187",
+    "reference": "Modules/Settings/BuckBarTab.qml:187",
     "comment": ""
   },
   {
@@ -2330,7 +2330,7 @@
   {
     "term": "System notification area icons",
     "context": "System notification area icons",
-    "reference": "Modules/Settings/DankBarTab.qml:109",
+    "reference": "Modules/Settings/BuckBarTab.qml:109",
     "comment": ""
   },
   {
@@ -2358,8 +2358,8 @@
     "comment": ""
   },
   {
-    "term": "The DMS_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DMS_SOCKET.",
-    "context": "The DMS_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DMS_SOCKET.",
+    "term": "The DYKWABI_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DYKWABI_SOCKET.",
+    "context": "The DYKWABI_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DYKWABI_SOCKET.",
     "reference": "Modules/Settings/PluginsTab.qml:110",
     "comment": ""
   },
@@ -2388,15 +2388,15 @@
     "comment": ""
   },
   {
-    "term": "Third-party plugins are created by the community and are not officially supported by DankMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.",
-    "context": "Third-party plugins are created by the community and are not officially supported by DankMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.",
+    "term": "Third-party plugins are created by the community and are not officially supported by BuckMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.",
+    "context": "Third-party plugins are created by the community and are not officially supported by BuckMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.",
     "reference": "Modules/Settings/PluginsTab.qml:1175",
     "comment": ""
   },
   {
     "term": "This widget prevents GPU power off states, which can significantly impact battery life on laptops. It is not recommended to use this on laptops with hybrid graphics.",
     "context": "This widget prevents GPU power off states, which can significantly impact battery life on laptops. It is not recommended to use this on laptops with hybrid graphics.",
-    "reference": "Modules/Settings/DankBarTab.qml:104",
+    "reference": "Modules/Settings/BuckBarTab.qml:104",
     "comment": ""
   },
   {
@@ -2420,7 +2420,7 @@
   {
     "term": "Toggle top bar visibility manually (can be controlled via IPC)",
     "context": "Toggle top bar visibility manually (can be controlled via IPC)",
-    "reference": "Modules/Settings/DankBarTab.qml:827",
+    "reference": "Modules/Settings/BuckBarTab.qml:827",
     "comment": ""
   },
   {
@@ -2540,31 +2540,31 @@
   {
     "term": "VPN",
     "context": "VPN",
-    "reference": "Modules/Settings/DankBarTab.qml:138",
+    "reference": "Modules/Settings/BuckBarTab.qml:138",
     "comment": ""
   },
   {
     "term": "VPN Connections",
     "context": "VPN Connections",
-    "reference": "Modules/DankBar/Popouts/VpnPopout.qml:103",
+    "reference": "Modules/BuckBar/Popouts/VpnPopout.qml:103",
     "comment": ""
   },
   {
     "term": "VPN status and quick connect",
     "context": "VPN status and quick connect",
-    "reference": "Modules/Settings/DankBarTab.qml:139",
+    "reference": "Modules/Settings/BuckBarTab.qml:139",
     "comment": ""
   },
   {
     "term": "Visibility",
     "context": "Visibility",
-    "reference": "Modules/DankDash/WeatherTab.qml:495",
+    "reference": "Modules/BuckDash/WeatherTab.qml:495",
     "comment": ""
   },
   {
     "term": "Visual divider between widgets",
     "context": "Visual divider between widgets",
-    "reference": "Modules/Settings/DankBarTab.qml:157",
+    "reference": "Modules/Settings/BuckBarTab.qml:157",
     "comment": ""
   },
   {
@@ -2588,13 +2588,13 @@
   {
     "term": "Weather",
     "context": "Weather",
-    "reference": "Modals/Settings/SettingsSidebar.qml:18, Modules/DankDash/DankDashPopout.qml:139",
+    "reference": "Modals/Settings/SettingsSidebar.qml:18, Modules/BuckDash/BuckDashPopout.qml:139",
     "comment": ""
   },
   {
     "term": "Weather Widget",
     "context": "Weather Widget",
-    "reference": "Modules/Settings/DankBarTab.qml:55",
+    "reference": "Modules/Settings/BuckBarTab.qml:55",
     "comment": ""
   },
   {
@@ -2606,7 +2606,7 @@
   {
     "term": "Widget Management",
     "context": "Widget Management",
-    "reference": "Modules/Settings/DankBarTab.qml:1193",
+    "reference": "Modules/Settings/BuckBarTab.qml:1193",
     "comment": ""
   },
   {
@@ -2624,13 +2624,13 @@
   {
     "term": "Wind",
     "context": "Wind",
-    "reference": "Modules/DankDash/WeatherTab.qml:354",
+    "reference": "Modules/BuckDash/WeatherTab.qml:354",
     "comment": ""
   },
   {
     "term": "Workspace",
     "context": "Workspace",
-    "reference": "Widgets/DankIconPicker.qml:28",
+    "reference": "Widgets/BuckIconPicker.qml:28",
     "comment": ""
   },
   {
@@ -2654,7 +2654,7 @@
   {
     "term": "Workspace Switcher",
     "context": "Workspace Switcher",
-    "reference": "Modules/Settings/DankBarTab.qml:31",
+    "reference": "Modules/Settings/BuckBarTab.qml:31",
     "comment": ""
   },
   {
@@ -2694,8 +2694,8 @@
     "comment": ""
   },
   {
-    "term": "update dms for NM integration.",
-    "context": "update dms for NM integration.",
+    "term": "update dykwabi for NM integration.",
+    "context": "update dykwabi for NM integration.",
     "reference": "Modules/ControlCenter/Components/DragDropGrid.qml:190",
     "comment": ""
   },

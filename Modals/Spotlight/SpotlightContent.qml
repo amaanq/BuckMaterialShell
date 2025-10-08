@@ -109,7 +109,7 @@ Item {
             spacing: Theme.spacingM
             leftPadding: Theme.spacingS
 
-            DankTextField {
+            BuckTextField {
                 id: searchField
 
                 width: parent.width - 80 - Theme.spacingL
@@ -162,7 +162,7 @@ Item {
                     radius: Theme.cornerRadius
                     color: appLauncher.viewMode === "list" ? Theme.primaryHover : listViewArea.containsMouse ? Theme.surfaceHover : "transparent"
 
-                    DankIcon {
+                    BuckIcon {
                         anchors.centerIn: parent
                         name: "view_list"
                         size: 18
@@ -187,7 +187,7 @@ Item {
                     radius: Theme.cornerRadius
                     color: appLauncher.viewMode === "grid" ? Theme.primaryHover : gridViewArea.containsMouse ? Theme.surfaceHover : "transparent"
 
-                    DankIcon {
+                    BuckIcon {
                         anchors.centerIn: parent
                         name: "grid_view"
                         size: 18
