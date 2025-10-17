@@ -14,13 +14,13 @@ import "StockThemes.js" as StockThemes
 Singleton {
     id: root
 
-    readonly property string stateDir: Paths.strip(StandardPaths.writableLocation(StandardPaths.GenericCacheLocation).toString()) + "/DankMaterialShell"
+    readonly property string stateDir: Paths.strip(StandardPaths.writableLocation(StandardPaths.GenericCacheLocation).toString()) + "/BuckMaterialShell"
 
-    readonly property bool envDisableMatugen: Quickshell.env("DMS_DISABLE_MATUGEN") === "1" || Quickshell.env("DMS_DISABLE_MATUGEN") === "true"
+    readonly property bool envDisableMatugen: Quickshell.env("DYKWABI_DISABLE_MATUGEN") === "1" || Quickshell.env("DYKWABI_DISABLE_MATUGEN") === "true"
 
     readonly property real popupDistance: {
         if (typeof SettingsData === "undefined") return 4
-        return SettingsData.popupGapsAuto ? Math.max(4, SettingsData.dankBarSpacing) : SettingsData.popupGapsManual
+        return SettingsData.popupGapsAuto ? Math.max(4, SettingsData.buckBarSpacing) : SettingsData.popupGapsManual
     }
 
     property string currentTheme: "blue"
@@ -329,7 +329,7 @@ Singleton {
     property real iconSizeLarge: 32
 
     property real panelTransparency: 0.85
-    property real widgetTransparency: typeof SettingsData !== "undefined" && SettingsData.dankBarWidgetTransparency !== undefined ? SettingsData.dankBarWidgetTransparency : 1.0
+    property real widgetTransparency: typeof SettingsData !== "undefined" && SettingsData.buckBarWidgetTransparency !== undefined ? SettingsData.buckBarWidgetTransparency : 1.0
     property real popupTransparency: typeof SettingsData !== "undefined" && SettingsData.popupTransparency !== undefined ? SettingsData.popupTransparency : 1.0
 
     function screenTransition() {
@@ -532,10 +532,10 @@ Singleton {
 
     function barTextSize(barThickness) {
         const scale = barThickness / 48
-        const dankBarScale = (typeof SettingsData !== "undefined" ? SettingsData.dankBarFontScale : 1.0)
-        if (scale <= 0.75) return fontSizeSmall * 0.9 * dankBarScale
-        if (scale >= 1.25) return fontSizeMedium * dankBarScale
-        return fontSizeSmall * dankBarScale
+        const buckBarScale = (typeof SettingsData !== "undefined" ? SettingsData.buckBarFontScale : 1.0)
+        if (scale <= 0.75) return fontSizeSmall * 0.9 * buckBarScale
+        if (scale >= 1.25) return fontSizeMedium * buckBarScale
+        return fontSizeSmall * buckBarScale
     }
 
     function getBatteryIcon(level, isCharging, batteryAvailable) {
@@ -879,10 +879,10 @@ Singleton {
     FileView {
         id: dynamicColorsFileView
         path: {
-            const greetCfgDir = Quickshell.env("DMS_GREET_CFG_DIR") || "/etc/greetd/.dms"
+            const greetCfgDir = Quickshell.env("DYKWABI_GREET_CFG_DIR") || "/etc/greetd/.dykwabi"
             const colorsPath = SessionData.isGreeterMode
                 ? greetCfgDir + "/colors.json"
-                : stateDir + "/dms-colors.json"
+                : stateDir + "/dykwabi-colors.json"
             return colorsPath
         }
         watchChanges: currentTheme === dynamic && !SessionData.isGreeterMode

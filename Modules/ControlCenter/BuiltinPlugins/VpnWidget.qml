@@ -80,7 +80,7 @@ PluginComponent {
                             anchors.centerIn: parent
                             spacing: Theme.spacingXS
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "link_off"
                                 size: Theme.fontSizeSmall
                                 color: Theme.surfaceText
@@ -110,7 +110,7 @@ PluginComponent {
                     color: Qt.rgba(Theme.outline.r, Theme.outline.g, Theme.outline.b, 0.12)
                 }
 
-                DankFlickable {
+                BuckFlickable {
                     width: parent.width
                     height: 160
                     contentHeight: listCol.height
@@ -130,7 +130,7 @@ PluginComponent {
                                 anchors.centerIn: parent
                                 spacing: Theme.spacingS
 
-                                DankIcon {
+                                BuckIcon {
                                     name: "playlist_remove"
                                     size: 36
                                     color: Theme.surfaceVariantText
@@ -173,7 +173,7 @@ PluginComponent {
                                     anchors.margins: Theme.spacingM
                                     spacing: Theme.spacingS
 
-                                    DankIcon {
+                                    BuckIcon {
                                         name: VpnService.isActiveUuid(modelData.uuid) ? "vpn_lock" : "vpn_key_off"
                                         size: Theme.iconSize - 4
                                         color: VpnService.isActiveUuid(modelData.uuid) ? Theme.primary : Theme.surfaceText

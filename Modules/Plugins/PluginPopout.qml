@@ -2,7 +2,7 @@ import QtQuick
 import qs.Common
 import qs.Widgets
 
-DankPopout {
+BuckPopout {
     id: root
 
     property var triggerScreen: null

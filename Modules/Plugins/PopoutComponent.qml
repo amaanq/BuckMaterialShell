@@ -41,7 +41,7 @@ Column {
             color: closeArea.containsMouse ? Theme.errorHover : "transparent"
             visible: root.showCloseButton
 
-            DankIcon {
+            BuckIcon {
                 anchors.centerIn: parent
                 name: "close"
                 size: Theme.iconSize - 4

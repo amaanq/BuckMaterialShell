@@ -11,7 +11,7 @@ Singleton {
     id: root
 
     readonly property string configPath: {
-        const greetCfgDir = Quickshell.env("DMS_GREET_CFG_DIR") || "/etc/greetd/.dms"
+        const greetCfgDir = Quickshell.env("DYKWABI_GREET_CFG_DIR") || "/etc/greetd/.dykwabi"
         return greetCfgDir + "/settings.json"
     }
 

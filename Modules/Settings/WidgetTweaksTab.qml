@@ -7,7 +7,7 @@ import qs.Widgets
 Item {
     id: widgetTweaksTab
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -39,7 +39,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "view_module"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -55,7 +55,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         width: parent.width
                         text: I18n.tr("Workspace Index Numbers")
                         description: "Show workspace index numbers in the top bar workspace switcher"
@@ -66,7 +66,7 @@ Item {
                                    }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         width: parent.width
                         text: I18n.tr("Workspace Padding")
                         description: "Always show a minimum of 3 workspaces, even if fewer are available"
@@ -77,7 +77,7 @@ Item {
                                    }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         width: parent.width
                         text: I18n.tr("Show Workspace Apps")
                         description: "Display application icons in workspace indicators"
@@ -107,7 +107,7 @@ Item {
                                 font.weight: Font.Medium
                             }
 
-                            DankTextField {
+                            BuckTextField {
                                 width: 100
                                 height: 28
                                 placeholderText: "#ffffff"
@@ -130,7 +130,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         width: parent.width
                         text: I18n.tr("Per-Monitor Workspaces")
                         description: "Show only workspaces belonging to each specific monitor."
@@ -162,7 +162,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "music_note"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -178,7 +178,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         width: parent.width
                         text: I18n.tr("Wave Progress Bars")
                         description: "Use animated wave progress bars for media playback"
@@ -209,7 +209,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "refresh"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -225,7 +225,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         width: parent.width
                         text: I18n.tr("Use Custom Command")
                         description: I18n.tr("Use custom command for update your system")
@@ -253,7 +253,7 @@ Item {
                             color: Theme.surfaceVariantText
                         }
 
-                        DankTextField {
+                        BuckTextField {
                             id: updaterCustomCommand
                             width: parent.width
                             height: 48
@@ -286,7 +286,7 @@ Item {
                             color: Theme.surfaceVariantText
                         }
 
-                        DankTextField {
+                        BuckTextField {
                             id: updaterTerminalCustomClass
                             width: parent.width
                             height: 48
@@ -329,7 +329,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "apps"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -345,7 +345,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         width: parent.width
                         text: I18n.tr("Running Apps Only In Current Workspace")
                         description: "Show only apps running in current workspace"
@@ -379,7 +379,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "label"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -438,7 +438,7 @@ Item {
                                     elide: Text.ElideRight
                                 }
 
-                                DankIconPicker {
+                                BuckIconPicker {
                                     id: iconPicker
                                     anchors.verticalCenter: parent.verticalCenter
 
@@ -486,7 +486,7 @@ Item {
                                     border.width: 0
                                     anchors.verticalCenter: parent.verticalCenter
 
-                                    DankIcon {
+                                    BuckIcon {
                                         name: "close"
                                         size: 16
                                         color: clearMouseArea.containsMouse ? Theme.error : Theme.outline
@@ -536,7 +536,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "notifications"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -558,7 +558,7 @@ Item {
                         leftPadding: Theme.spacingM
                         rightPadding: Theme.spacingM
 
-                        DankDropdown {
+                        BuckDropdown {
                             width: parent.width - parent.leftPadding - parent.rightPadding
                             text: I18n.tr("Popup Position")
                             description: I18n.tr("Choose where notification popups appear on screen")
@@ -621,7 +621,7 @@ Item {
                     anchors.margins: Theme.spacingL
                     spacing: Theme.spacingM
 
-                    DankIcon {
+                    BuckIcon {
                         name: "tune"
                         size: Theme.iconSize
                         color: Theme.primary
@@ -649,7 +649,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         id: osdToggle
 
                         anchors.verticalCenter: parent.verticalCenter

@@ -10,19 +10,19 @@ import Quickshell
 ShellRoot {
     id: entrypoint
 
-    readonly property bool runGreeter: Quickshell.env("DMS_RUN_GREETER") === "1" || Quickshell.env("DMS_RUN_GREETER") === "true"
+    readonly property bool runGreeter: Quickshell.env("DYKWABI_RUN_GREETER") === "1" || Quickshell.env("DYKWABI_RUN_GREETER") === "true"
 
     Loader {
-        id: dmsShellLoader
+        id: dykwabiShellLoader
         asynchronous: false
-        sourceComponent: DMSShell {}
+        sourceComponent: DykwabiShell {}
         active: !entrypoint.runGreeter
     }
 
     Loader {
-        id: dmsGreeterLoader
+        id: dykwabiGreeterLoader
         asynchronous: false
-        sourceComponent: DMSGreeter {}
+        sourceComponent: DykwabiGreeter {}
         active: entrypoint.runGreeter
     }
 }

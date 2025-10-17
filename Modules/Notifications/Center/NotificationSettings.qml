@@ -120,7 +120,7 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 spacing: Theme.spacingM
 
-                DankIcon {
+                BuckIcon {
                     name: SessionData.doNotDisturb ? "notifications_off" : "notifications"
                     size: Theme.iconSizeSmall
                     color: SessionData.doNotDisturb ? Theme.error : Theme.surfaceText
@@ -135,7 +135,7 @@ Rectangle {
                 }
             }
 
-            DankToggle {
+            BuckToggle {
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 checked: SessionData.doNotDisturb
@@ -156,7 +156,7 @@ Rectangle {
             color: Theme.surfaceVariantText
         }
 
-        DankDropdown {
+        BuckDropdown {
             text: I18n.tr("Low Priority")
             description: "Timeout for low priority notifications"
             currentValue: getTimeoutText(SettingsData.notificationTimeoutLow)
@@ -171,7 +171,7 @@ Rectangle {
                             }
         }
 
-        DankDropdown {
+        BuckDropdown {
             text: I18n.tr("Normal Priority")
             description: "Timeout for normal priority notifications"
             currentValue: getTimeoutText(SettingsData.notificationTimeoutNormal)
@@ -186,7 +186,7 @@ Rectangle {
                             }
         }
 
-        DankDropdown {
+        BuckDropdown {
             text: I18n.tr("Critical Priority")
             description: "Timeout for critical priority notifications"
             currentValue: getTimeoutText(SettingsData.notificationTimeoutCritical)
@@ -216,7 +216,7 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 spacing: Theme.spacingM
 
-                DankIcon {
+                BuckIcon {
                     name: "notifications_active"
                     size: Theme.iconSizeSmall
                     color: SettingsData.notificationOverlayEnabled ? Theme.primary : Theme.surfaceText
@@ -241,7 +241,7 @@ Rectangle {
                 }
             }
 
-            DankToggle {
+            BuckToggle {
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 checked: SettingsData.notificationOverlayEnabled

@@ -10,8 +10,8 @@ Item {
     id: displaysTab
 
     property var variantComponents: [{
-        "id": "dankBar",
-        "name": "Dank Bar",
+        "id": "buckBar",
+        "name": "Buck Bar",
         "description": "System bar with widgets and system information",
         "icon": "toolbar"
     }, {
@@ -62,7 +62,7 @@ Item {
         SettingsData.setScreenPreferences(prefs);
     }
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         anchors.bottomMargin: Theme.spacingS
@@ -95,7 +95,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "brightness_6"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -111,7 +111,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         id: nightModeToggle
 
                         width: parent.width
@@ -137,7 +137,7 @@ Item {
                         leftPadding: Theme.spacingM
                         rightPadding: Theme.spacingM
 
-                        DankDropdown {
+                        BuckDropdown {
                             width: parent.width - parent.leftPadding - parent.rightPadding
                             text: I18n.tr("Temperature")
                             description: I18n.tr("Color temperature for night mode")
@@ -156,7 +156,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         id: automaticToggle
                         width: parent.width
                         text: I18n.tr("Automatic Control")
@@ -196,7 +196,7 @@ Item {
                             width: parent.width
                             height: 45 + Theme.spacingM
 
-                            DankTabBar {
+                            BuckTabBar {
                                 id: modeTabBarNight
                                 width: 200
                                 height: 45
@@ -277,7 +277,7 @@ Item {
                                         verticalAlignment: Text.AlignVCenter
                                     }
 
-                                    DankDropdown {
+                                    BuckDropdown {
                                         dropdownWidth: 70
                                         currentValue: SessionData.nightModeStartHour.toString()
                                         options: {
@@ -292,7 +292,7 @@ Item {
                                                         }
                                     }
 
-                                    DankDropdown {
+                                    BuckDropdown {
                                         dropdownWidth: 70
                                         currentValue: SessionData.nightModeStartMinute.toString().padStart(2, '0')
                                         options: {
@@ -320,7 +320,7 @@ Item {
                                         verticalAlignment: Text.AlignVCenter
                                     }
 
-                                    DankDropdown {
+                                    BuckDropdown {
                                         dropdownWidth: 70
                                         currentValue: SessionData.nightModeEndHour.toString()
                                         options: {
@@ -335,7 +335,7 @@ Item {
                                                         }
                                     }
 
-                                    DankDropdown {
+                                    BuckDropdown {
                                         dropdownWidth: 70
                                         currentValue: SessionData.nightModeEndMinute.toString().padStart(2, '0')
                                         options: {
@@ -359,7 +359,7 @@ Item {
                             spacing: Theme.spacingM
                             width: parent.width
 
-                            DankToggle {
+                            BuckToggle {
                                 width: parent.width
                                 text: I18n.tr("Auto-location")
                                 description: DisplayService.geoclueAvailable ? "Use automatic location detection (geoclue2)" : "Geoclue service not running - cannot auto-detect location"
@@ -400,7 +400,7 @@ Item {
                                             color: Theme.surfaceVariantText
                                         }
 
-                                        DankTextField {
+                                        BuckTextField {
                                             width: 120
                                             height: 40
                                             text: SessionData.latitude.toString()
@@ -423,7 +423,7 @@ Item {
                                             color: Theme.surfaceVariantText
                                         }
 
-                                        DankTextField {
+                                        BuckTextField {
                                             width: 120
                                             height: 40
                                             text: SessionData.longitude.toString()
@@ -470,7 +470,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "monitor"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -530,7 +530,7 @@ Item {
                                     anchors.margins: Theme.spacingS
                                     spacing: Theme.spacingM
 
-                                    DankIcon {
+                                    BuckIcon {
                                         name: "desktop_windows"
                                         size: Theme.iconSize - 4
                                         color: Theme.primary
@@ -612,7 +612,7 @@ Item {
                                 width: parent.width
                                 spacing: Theme.spacingM
 
-                                DankIcon {
+                                BuckIcon {
                                     name: modelData.icon
                                     size: Theme.iconSize
                                     color: Theme.primary
@@ -661,7 +661,7 @@ Item {
                                     width: parent.width
                                     spacing: Theme.spacingXS
 
-                                    DankToggle {
+                                    BuckToggle {
                                         width: parent.width
                                         text: I18n.tr("All displays")
                                         description: I18n.tr("Show on all connected displays")
@@ -690,7 +690,7 @@ Item {
                                         Repeater {
                                             model: Quickshell.screens
 
-                                            delegate: DankToggle {
+                                            delegate: BuckToggle {
                                                 property string screenName: modelData.name
                                                 property string componentId: parent.parent.componentId
 

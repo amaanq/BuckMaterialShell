@@ -1,33 +1,33 @@
 [config]
 
-[templates.dmsgtk3]
+[templates.dykwabigtk3]
 input_path = './templates/gtk-colors.css'
-output_path = '~/.config/gtk-3.0/dank-colors.css'
+output_path = '~/.config/gtk-3.0/buck-colors.css'
 
-[templates.dmsgtk4]
+[templates.dykwabigtk4]
 input_path = './templates/gtk-colors.css'
-output_path = '~/.config/gtk-4.0/dank-colors.css'
+output_path = '~/.config/gtk-4.0/buck-colors.css'
 
-[templates.dmsqt5ct]
+[templates.dykwabiqt5ct]
 input_path = './templates/qtct-colors.conf'
 output_path = '~/.config/qt5ct/colors/matugen.conf'
 
-[templates.dmsqt6ct]
+[templates.dykwabiqt6ct]
 input_path = './templates/qtct-colors.conf'
 output_path = '~/.config/qt6ct/colors/matugen.conf'
 
-[templates.dmskcolorscheme]
+[templates.dykwabikcolorscheme]
 input_path = './templates/matugen-kcolorscheme.colors'
-output_path = '~/.local/share/color-schemes/DankMatugen.colors'
+output_path = '~/.local/share/color-schemes/BuckMatugen.colors'
 
-[templates.dmsdgop]
+[templates.dykwabidgop]
 input_path = './templates/dgop.json'
 output_path = '~/.config/dgop/colors.json'
 
-[templates.dmsniri]
+[templates.dykwabiniri]
 input_path = './templates/niri-colors.kdl'
-output_path = '~/.config/niri/dankshell-colors.kdl'
+output_path = '~/.config/niri/buckshell-colors.kdl'
 
-[templates.dmsghostty]
+[templates.dykwabighostty]
 input_path = './templates/ghostty-colors.conf'
-output_path = '~/.config/ghostty/config-dankcolors'
+output_path = '~/.config/ghostty/config-buckcolors'

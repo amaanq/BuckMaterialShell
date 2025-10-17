@@ -10,7 +10,7 @@ Item {
 
     property bool isHyprland: CompositorService.isHyprland
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -40,23 +40,8 @@ Item {
                     anchors.margins: Theme.spacingL
                     spacing: Theme.spacingM
 
-                    Item {
-                        width: parent.width
-                        height: asciiText.implicitHeight
-
-                        StyledText {
-                            id: asciiText
-
-                            text: "██████╗  █████╗ ███╗   ██╗██╗  ██╗\n██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝\n██║  ██║███████║██╔██╗ ██║█████╔╝ \n██║  ██║██╔══██║██║╚██╗██║██╔═██╗ \n██████╔╝██║  ██║██║ ╚████║██║  ██╗\n╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝"
-                            isMonospace: true
-                            font.pixelSize: Theme.fontSizeMedium
-                            color: Theme.primary
-                            anchors.centerIn: parent
-                        }
-                    }
-
                     StyledText {
-                        text: SystemUpdateService.shellVersion ? `dms ${SystemUpdateService.shellVersion}` : "dms"
+                        text: SystemUpdateService.shellVersion ? `dykwabi ${SystemUpdateService.shellVersion}` : "dykwabi"
                         font.pixelSize: Theme.fontSizeXLarge
                         font.weight: Font.Bold
                         color: Theme.surfaceText
@@ -240,7 +225,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "info"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -257,7 +242,7 @@ Item {
                     }
 
                     StyledText {
-                        text: `dms is a highly customizable, modern desktop shell with a <a href="https://m3.material.io/" style="text-decoration:none; color:${Theme.primary};">material 3 inspired</a> design.
+                        text: `dykwabi is a highly customizable, modern desktop shell with a <a href="https://m3.material.io/" style="text-decoration:none; color:${Theme.primary};">material 3 inspired</a> design.
                         <br /><br/>It is built with <a href="https://quickshell.org" style="text-decoration:none; color:${Theme.primary};">Quickshell</a>, a QT6 framework for building desktop shells, and <a href="https://go.dev" style="text-decoration:none; color:${Theme.primary};">Go</a>, a statically typed, compiled programming language.
                         `
                         textFormat: Text.RichText
@@ -299,7 +284,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "code"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -420,7 +405,7 @@ Item {
                             spacing: 4
                             
                             StyledText {
-                                text: `<a href="https://github.com/AvengeMedia/DankMaterialShell" style="text-decoration:none; color:${Theme.primary};">DankMaterialShell</a>`
+                                text: `<a href="https://github.com/AvengeMedia/BuckMaterialShell" style="text-decoration:none; color:${Theme.primary};">BuckMaterialShell</a>`
                                 font.pixelSize: Theme.fontSizeMedium
                                 color: Theme.surfaceVariantText
                                 linkColor: Theme.primary
@@ -480,7 +465,7 @@ Item {
                         }
 
                         StyledText {
-                            text: I18n.tr("Dank Suite:")
+                            text: I18n.tr("Buck Suite:")
                             font.pixelSize: Theme.fontSizeMedium
                             font.weight: Font.Medium
                             color: Theme.surfaceText
@@ -490,7 +475,7 @@ Item {
                             spacing: 4
                             
                             StyledText {
-                                text: `<a href="https://danklinux.com" style="text-decoration:none; color:${Theme.primary};">danklinux.com</a>`
+                                text: `<a href="https://bucklinux.com" style="text-decoration:none; color:${Theme.primary};">bucklinux.com</a>`
                                 font.pixelSize: Theme.fontSizeMedium
                                 color: Theme.surfaceVariantText
                                 linkColor: Theme.primary
