@@ -69,7 +69,7 @@ Rectangle {
                 anchors.centerIn: parent
                 spacing: Theme.spacingXS
 
-                DankIcon {
+                BuckIcon {
                     name: BluetoothService.adapter && BluetoothService.adapter.discovering ? "stop" : "bluetooth_searching"
                     size: 18
                     color: BluetoothService.adapter && BluetoothService.adapter.enabled ? Theme.primary : Theme.surfaceVariantText
@@ -99,7 +99,7 @@ Rectangle {
         }
     }
 
-    DankFlickable {
+    BuckFlickable {
         id: bluetoothContent
         anchors.top: headerRow.bottom
         anchors.left: parent.left
@@ -169,7 +169,7 @@ Rectangle {
                         anchors.leftMargin: Theme.spacingM
                         spacing: Theme.spacingS
 
-                        DankIcon {
+                        BuckIcon {
                             name: BluetoothService.getDeviceIcon(modelData)
                             size: Theme.iconSize - 4
                             color: {
@@ -246,7 +246,7 @@ Rectangle {
                         }
                     }
 
-                    DankActionButton {
+                    BuckActionButton {
                         id: pairedOptionsButton
                         anchors.right: parent.right
                         anchors.rightMargin: Theme.spacingS
@@ -293,7 +293,7 @@ Rectangle {
                 height: 80
                 visible: BluetoothService.adapter && BluetoothService.adapter.discovering && availableRepeater.count === 0
 
-                DankIcon {
+                BuckIcon {
                     anchors.centerIn: parent
                     name: "sync"
                     size: 24
@@ -343,7 +343,7 @@ Rectangle {
                         anchors.leftMargin: Theme.spacingM
                         spacing: Theme.spacingS
 
-                        DankIcon {
+                        BuckIcon {
                             name: BluetoothService.getDeviceIcon(modelData)
                             size: Theme.iconSize - 4
                             color: Theme.surfaceText

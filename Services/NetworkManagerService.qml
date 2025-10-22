@@ -95,20 +95,20 @@ Singleton {
     signal connectionChanged
     signal credentialsNeeded(string token, string ssid, string setting, var fields, var hints, string reason)
 
-    readonly property string socketPath: Quickshell.env("DMS_SOCKET")
+    readonly property string socketPath: Quickshell.env("DYKWABI_SOCKET")
 
     Component.onCompleted: {
         root.userPreference = SettingsData.networkPreference
         if (socketPath && socketPath.length > 0) {
-            checkDMSCapabilities()
+            checkDykwabiCapabilities()
         }
     }
 
     Connections {
-        target: DMSService
+        target: DykwabiService
 
         function onNetworkStateUpdate(data) {
-            if (DMSService.verboseLogs) {
+            if (DykwabiService.verboseLogs) {
                 const networksCount = data.wifiNetworks?.length ?? "null"
                 console.log("NetworkManagerService: Subscription update received, networks:", networksCount)
             }
@@ -117,21 +117,21 @@ Singleton {
     }
 
     Connections {
-        target: DMSService
+        target: DykwabiService
 
         function onConnectionStateChanged() {
-            if (DMSService.isConnected) {
-                checkDMSCapabilities()
+            if (DykwabiService.isConnected) {
+                checkDykwabiCapabilities()
             }
         }
     }
 
     Connections {
-        target: DMSService
-        enabled: DMSService.isConnected
+        target: DykwabiService
+        enabled: DykwabiService.isConnected
 
         function onCapabilitiesChanged() {
-            checkDMSCapabilities()
+            checkDykwabiCapabilities()
         }
 
         function onCredentialsRequest(data) {
@@ -139,18 +139,18 @@ Singleton {
         }
     }
 
-    function checkDMSCapabilities() {
-        if (!DMSService.isConnected) {
+    function checkDykwabiCapabilities() {
+        if (!DykwabiService.isConnected) {
             return
         }
 
-        if (DMSService.capabilities.length === 0) {
+        if (DykwabiService.capabilities.length === 0) {
             return
         }
 
-        networkAvailable = DMSService.capabilities.includes("network")
+        networkAvailable = DykwabiService.capabilities.includes("network")
 
-        if (DMSService.verboseLogs) {
+        if (DykwabiService.verboseLogs) {
             console.log("NetworkManagerService: Network available:", networkAvailable)
         }
 
@@ -191,11 +191,11 @@ Singleton {
     function getState() {
         if (!networkAvailable) return
 
-        DMSService.sendRequest("network.getState", null, response => {
+        DykwabiService.sendRequest("network.getState", null, response => {
             if (response.result) {
                 updateState(response.result)
                 if (!initialStateFetched && response.result.wifiEnabled && (!response.result.wifiNetworks || response.result.wifiNetworks.length === 0)) {
-                    if (DMSService.verboseLogs) {
+                    if (DykwabiService.verboseLogs) {
                         console.log("NetworkManagerService: Initial state has no networks, triggering scan")
                     }
                     initialStateFetched = true
@@ -259,7 +259,7 @@ Singleton {
 
         if (pendingConnectionSSID) {
             if (wifiConnected && currentWifiSSID === pendingConnectionSSID && wifiIP) {
-                if (DMSService.verboseLogs) {
+                if (DykwabiService.verboseLogs) {
                     const elapsed = Date.now() - pendingConnectionStartTime
                     console.log("NetworkManagerService: Successfully connected to", pendingConnectionSSID, "in", elapsed, "ms")
                 }
@@ -275,12 +275,12 @@ Singleton {
                 const elapsed = Date.now() - pendingConnectionStartTime
 
                 if (elapsed < 5000) {
-                    if (DMSService.verboseLogs) {
+                    if (DykwabiService.verboseLogs) {
                         console.log("NetworkManagerService: Quick connection failure, likely authentication error")
                     }
                     connectionStatus = "invalid_password"
                 } else {
-                    if (DMSService.verboseLogs) {
+                    if (DykwabiService.verboseLogs) {
                         console.log("NetworkManagerService: Connection failed for", pendingConnectionSSID)
                     }
                     if (connectionError === "connection-failed") {
@@ -308,7 +308,7 @@ Singleton {
 
         const params = { uuid: uuid }
 
-        DMSService.sendRequest("network.ethernet.connect.config", params, response => {
+        DykwabiService.sendRequest("network.ethernet.connect.config", params, response => {
             if (response.error) {
                 connectionError = response.error
                 lastConnectionError = response.error
@@ -327,16 +327,16 @@ Singleton {
     function scanWifi() {
         if (!networkAvailable || isScanning || !wifiEnabled) return
 
-        if (DMSService.verboseLogs) {
+        if (DykwabiService.verboseLogs) {
             console.log("NetworkManagerService: Starting WiFi scan...")
         }
         isScanning = true
-        DMSService.sendRequest("network.wifi.scan", null, response => {
+        DykwabiService.sendRequest("network.wifi.scan", null, response => {
             isScanning = false
             if (response.error) {
                 console.warn("NetworkManagerService: WiFi scan failed:", response.error)
             } else {
-                if (DMSService.verboseLogs) {
+                if (DykwabiService.verboseLogs) {
                     console.log("NetworkManagerService: Scan completed")
                 }
                 Qt.callLater(() => getState())
@@ -359,7 +359,7 @@ Singleton {
 
         const params = { ssid: ssid }
 
-        if (DMSService.apiVersion >= 7) {
+        if (DykwabiService.apiVersion >= 7) {
             if (password || username) {
                 params.password = password
                 if (username) params.username = username
@@ -376,9 +376,9 @@ Singleton {
             if (domainSuffixMatch) params.domainSuffixMatch = domainSuffixMatch
         }
 
-        DMSService.sendRequest("network.wifi.connect", params, response => {
+        DykwabiService.sendRequest("network.wifi.connect", params, response => {
             if (response.error) {
-                if (DMSService.verboseLogs) {
+                if (DykwabiService.verboseLogs) {
                     console.log("NetworkManagerService: Connection request failed:", response.error)
                 }
 
@@ -388,7 +388,7 @@ Singleton {
                 connectionStatus = "failed"
                 ToastService.showError(I18n.tr("Failed to start connection to ") + ssid)
             } else {
-                if (DMSService.verboseLogs) {
+                if (DykwabiService.verboseLogs) {
                     console.log("NetworkManagerService: Connection request sent for", ssid)
                 }
             }
@@ -398,7 +398,7 @@ Singleton {
     function disconnectWifi() {
         if (!networkAvailable || !wifiInterface) return
 
-        DMSService.sendRequest("network.wifi.disconnect", null, response => {
+        DykwabiService.sendRequest("network.wifi.disconnect", null, response => {
             if (response.error) {
                 ToastService.showError(I18n.tr("Failed to disconnect WiFi"))
             } else {
@@ -410,7 +410,7 @@ Singleton {
     }
 
     function submitCredentials(token, secrets, save) {
-        if (!networkAvailable || DMSService.apiVersion < 7) return
+        if (!networkAvailable || DykwabiService.apiVersion < 7) return
 
         const params = {
             token: token,
@@ -418,13 +418,13 @@ Singleton {
             save: save || false
         }
 
-        if (DMSService.verboseLogs) {
+        if (DykwabiService.verboseLogs) {
             console.log("NetworkManagerService: Submitting credentials for token", token)
         }
 
         credentialsRequested = false
 
-        DMSService.sendRequest("network.credentials.submit", params, response => {
+        DykwabiService.sendRequest("network.credentials.submit", params, response => {
             if (response.error) {
                 console.warn("NetworkManagerService: Failed to submit credentials:", response.error)
             }
@@ -432,14 +432,14 @@ Singleton {
     }
 
     function cancelCredentials(token) {
-        if (!networkAvailable || DMSService.apiVersion < 7) return
+        if (!networkAvailable || DykwabiService.apiVersion < 7) return
 
         const params = {
             token: token,
             cancel: true
         }
 
-        if (DMSService.verboseLogs) {
+        if (DykwabiService.verboseLogs) {
             console.log("NetworkManagerService: Cancelling credentials for token", token)
         }
 
@@ -447,7 +447,7 @@ Singleton {
         pendingConnectionSSID = ""
         connectionStatus = "cancelled"
 
-        DMSService.sendRequest("network.credentials.submit", params, response => {
+        DykwabiService.sendRequest("network.credentials.submit", params, response => {
             if (response.error) {
                 console.warn("NetworkManagerService: Failed to cancel credentials:", response.error)
             }
@@ -458,7 +458,7 @@ Singleton {
         if (!networkAvailable) return
 
         forgetSSID = ssid
-        DMSService.sendRequest("network.wifi.forget", { ssid: ssid }, response => {
+        DykwabiService.sendRequest("network.wifi.forget", { ssid: ssid }, response => {
             if (response.error) {
                 console.warn("Failed to forget network:", response.error)
             } else {
@@ -488,7 +488,7 @@ Singleton {
         if (!networkAvailable || wifiToggling) return
 
         wifiToggling = true
-        DMSService.sendRequest("network.wifi.toggle", null, response => {
+        DykwabiService.sendRequest("network.wifi.toggle", null, response => {
             wifiToggling = false
 
             if (response.error) {
@@ -503,7 +503,7 @@ Singleton {
     function enableWifiDevice() {
         if (!networkAvailable) return
 
-        DMSService.sendRequest("network.wifi.enable", null, response => {
+        DykwabiService.sendRequest("network.wifi.enable", null, response => {
             if (response.error) {
                 ToastService.showError(I18n.tr("Failed to enable WiFi"))
             } else {
@@ -520,7 +520,7 @@ Singleton {
         targetPreference = preference
         SettingsData.setNetworkPreference(preference)
 
-        DMSService.sendRequest("network.preference.set", { preference: preference }, response => {
+        DykwabiService.sendRequest("network.preference.set", { preference: preference }, response => {
             changingPreference = false
             targetPreference = ""
 
@@ -548,9 +548,9 @@ Singleton {
 
         if (type === "ethernet") {
             if (networkStatus === "ethernet") {
-                DMSService.sendRequest("network.ethernet.disconnect", null, null)
+                DykwabiService.sendRequest("network.ethernet.disconnect", null, null)
             } else {
-                DMSService.sendRequest("network.ethernet.connect", null, null)
+                DykwabiService.sendRequest("network.ethernet.connect", null, null)
             }
         }
     }
@@ -575,7 +575,7 @@ Singleton {
         networkWiredInfoLoading = true
         networkWiredInfoDetails = "Loading network information..."
 
-        DMSService.sendRequest("network.ethernet.info", { uuid: uuid }, response => {
+        DykwabiService.sendRequest("network.ethernet.info", { uuid: uuid }, response => {
             networkWiredInfoLoading = false
 
             if (response.error) {
@@ -630,7 +630,7 @@ Singleton {
         networkInfoLoading = true
         networkInfoDetails = "Loading network information..."
 
-        DMSService.sendRequest("network.info", { ssid: ssid }, response => {
+        DykwabiService.sendRequest("network.info", { ssid: ssid }, response => {
             networkInfoLoading = false
 
             if (response.error) {

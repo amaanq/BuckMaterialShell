@@ -132,7 +132,7 @@ Item {
         }
     }
 
-    DankBackdrop {
+    BuckBackdrop {
         anchors.fill: parent
         screenName: root.screenName
         visible: {
@@ -150,7 +150,7 @@ Item {
             if (screenName && currentWallpaper && currentWallpaper.startsWith("we:")) {
                 const cacheHome = StandardPaths.writableLocation(StandardPaths.GenericCacheLocation).toString()
                 const baseDir = Paths.strip(cacheHome)
-                const screenshotPath = baseDir + "/DankMaterialShell/we_screenshots" + "/" + currentWallpaper.substring(3) + ".jpg"
+                const screenshotPath = baseDir + "/BuckMaterialShell/we_screenshots" + "/" + currentWallpaper.substring(3) + ".jpg"
                 return screenshotPath
             }
             return (currentWallpaper && !currentWallpaper.startsWith("#")) ? currentWallpaper : ""
@@ -244,7 +244,7 @@ Item {
                     spacing: Theme.spacingL
                     Layout.fillWidth: true
 
-                    DankCircularImage {
+                    BuckCircularImage {
                         Layout.preferredWidth: 60
                         Layout.preferredHeight: 60
                         imageSource: {
@@ -271,7 +271,7 @@ Item {
                         border.color: inputField.activeFocus ? Theme.primary : Qt.rgba(1, 1, 1, 0.3)
                         border.width: inputField.activeFocus ? 2 : 1
 
-                        DankIcon {
+                        BuckIcon {
                             id: lockIcon
 
                             anchors.left: parent.left
@@ -417,7 +417,7 @@ Item {
                             }
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             id: revealButton
 
                             anchors.right: virtualKeyboardButton.visible ? virtualKeyboardButton.left : (enterButton.visible ? enterButton.left : parent.right)
@@ -429,7 +429,7 @@ Item {
                             enabled: visible
                             onClicked: parent.showPassword = !parent.showPassword
                         }
-                        DankActionButton {
+                        BuckActionButton {
                             id: virtualKeyboardButton
 
                             anchors.right: enterButton.visible ? enterButton.left : parent.right
@@ -448,7 +448,7 @@ Item {
                             }
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             id: enterButton
 
                             anchors.right: parent.right
@@ -538,7 +538,7 @@ Item {
                         anchors.centerIn: parent
                         spacing: Theme.spacingS
 
-                        DankIcon {
+                        BuckIcon {
                             name: "people"
                             size: Theme.iconSize - 4
                             color: Theme.surfaceText
@@ -594,7 +594,7 @@ Item {
                         width: Theme.iconSize
                         height: Theme.iconSize
 
-                        DankIcon {
+                        BuckIcon {
                             name: "keyboard"
                             size: Theme.iconSize
                             color: "white"
@@ -667,7 +667,7 @@ Item {
                 visible: WeatherService.weather.available
                 anchors.verticalCenter: parent.verticalCenter
 
-                DankIcon {
+                BuckIcon {
                     name: WeatherService.getWeatherIcon(WeatherService.weather.wCode)
                     size: Theme.iconSize
                     color: "white"
@@ -696,7 +696,7 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
                 visible: NetworkService.networkStatus !== "disconnected" || (BluetoothService.available && BluetoothService.enabled) || (AudioService.sink && AudioService.sink.audio)
 
-                DankIcon {
+                BuckIcon {
                     name: NetworkService.networkStatus === "ethernet" ? "lan" : NetworkService.wifiSignalIcon
                     size: Theme.iconSize - 2
                     color: NetworkService.networkStatus !== "disconnected" ? "white" : Qt.rgba(255, 255, 255, 0.5)
@@ -704,7 +704,7 @@ Item {
                     visible: NetworkService.networkStatus !== "disconnected"
                 }
 
-                DankIcon {
+                BuckIcon {
                     name: "bluetooth"
                     size: Theme.iconSize - 2
                     color: "white"
@@ -712,7 +712,7 @@ Item {
                     visible: BluetoothService.available && BluetoothService.enabled
                 }
 
-                DankIcon {
+                BuckIcon {
                     name: {
                         if (!AudioService.sink?.audio) {
                             return "volume_up"
@@ -745,7 +745,7 @@ Item {
                 visible: BatteryService.batteryAvailable
                 anchors.verticalCenter: parent.verticalCenter
 
-                DankIcon {
+                BuckIcon {
                     name: {
                         if (BatteryService.isCharging) {
                             if (BatteryService.batteryLevel >= 90) {
@@ -866,7 +866,7 @@ Item {
             visible: root.randomFact !== ""
         }
 
-        DankActionButton {
+        BuckActionButton {
             anchors.bottom: parent.bottom
             anchors.left: parent.left
             anchors.margins: Theme.spacingXL
@@ -908,7 +908,7 @@ Item {
                 }
             }
 
-            DankDropdown {
+            BuckDropdown {
                 id: sessionDropdown
                 anchors.fill: parent
                 text: ""
@@ -934,7 +934,7 @@ Item {
 
     FileView {
         id: pamConfigWatcher
-        path: "/etc/pam.d/dankshell"
+        path: "/etc/pam.d/buckshell"
         printErrors: false
     }
 

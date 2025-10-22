@@ -111,14 +111,14 @@ shell.qml           # Main entry point (minimal orchestration)
 │   ├── PluginSettingsModal.qml
 │   └── [7 more modals]
 ├── Widgets/        # Reusable UI controls (19 files)
-│   ├── DankIcon.qml
-│   ├── DankSlider.qml
-│   ├── DankToggle.qml
-│   ├── DankTabBar.qml
-│   ├── DankGridView.qml
-│   ├── DankListView.qml
+│   ├── BuckIcon.qml
+│   ├── BuckSlider.qml
+│   ├── BuckToggle.qml
+│   ├── BuckTabBar.qml
+│   ├── BuckGridView.qml
+│   ├── BuckListView.qml
 │   └── [13 more widgets]
-└── plugins/        # External plugins directory ($CONFIGPATH/DankMaterialShell/plugins/)
+└── plugins/        # External plugins directory ($CONFIGPATH/BuckMaterialShell/plugins/)
     └── PluginName/ # Example Plugin structure
         ├── plugin.json            # Plugin manifest
         ├── PluginNameWidget.qml   # Widget component
@@ -158,25 +158,25 @@ shell.qml           # Main entry point (minimal orchestration)
    - Unified modal management with consistent styling and keyboard navigation
 
 6. **Widgets/** - Reusable UI controls (19 files)
-   - **DankIcon**: Centralized icon component with Material Design font integration
-   - **DankSlider**: Enhanced slider with animations and smart detection
-   - **DankToggle**: Consistent toggle switch component
-   - **DankTabBar**: Unified tab bar implementation
-   - **DankGridView**: Reusable grid view with adaptive columns
-   - **DankListView**: Reusable list view with configurable styling
-   - **DankTextField**: Styled text input with validation
-   - **DankDropdown**: Dropdown selection component
-   - **DankPopout**: Base popout component for overlays
+   - **BuckIcon**: Centralized icon component with Material Design font integration
+   - **BuckSlider**: Enhanced slider with animations and smart detection
+   - **BuckToggle**: Consistent toggle switch component
+   - **BuckTabBar**: Unified tab bar implementation
+   - **BuckGridView**: Reusable grid view with adaptive columns
+   - **BuckListView**: Reusable list view with configurable styling
+   - **BuckTextField**: Styled text input with validation
+   - **BuckDropdown**: Dropdown selection component
+   - **BuckPopout**: Base popout component for overlays
    - **StateLayer**: Material Design 3 interaction states
    - **StyledRect/StyledText**: Themed base components
    - **CachingImage**: Optimized image loading with caching
-   - **DankLocationSearch**: Location picker with search
+   - **BuckLocationSearch**: Location picker with search
    - **SystemLogo**: Animated system branding component
 
-7. **Plugins/** - External plugin system (`$CONFIGPATH/DankMaterialShell/plugins/`)
+7. **Plugins/** - External plugin system (`$CONFIGPATH/BuckMaterialShell/plugins/`)
    - **PluginService**: Discovers, loads, and manages plugin lifecycle
    - **Dynamic Loading**: Plugins loaded at runtime from external directory
-   - **DankBar Integration**: Plugin widgets rendered alongside built-in widgets
+   - **BuckBar Integration**: Plugin widgets rendered alongside built-in widgets
    - **Settings System**: Per-plugin settings with persistence
 
 ### Key Architectural Patterns
@@ -218,12 +218,12 @@ shell.qml           # Main entry point (minimal orchestration)
 
 #### Key Widgets
 
-- **DankIcon**: Centralized icon component with automatic Material Design font detection
-- **DankSlider**: Enhanced slider with animations and smart detection
-- **DankToggle**: Consistent toggle switch component
-- **DankTabBar**: Unified tab bar implementation
-- **DankGridView**: Reusable grid view with adaptive columns
-- **DankListView**: Reusable list view with configurable styling
+- **BuckIcon**: Centralized icon component with automatic Material Design font detection
+- **BuckSlider**: Enhanced slider with animations and smart detection
+- **BuckToggle**: Consistent toggle switch component
+- **BuckTabBar**: Unified tab bar implementation
+- **BuckGridView**: Reusable grid view with adaptive columns
+- **BuckListView**: Reusable list view with configurable styling
 
 ## Code Conventions
 
@@ -240,7 +240,7 @@ shell.qml           # Main entry point (minimal orchestration)
 
 2. **Naming Conventions**:
    - **Services**: Use `Singleton` type with `id: root`
-   - **Components**: Use descriptive names (e.g., `DankSlider`, `TopBar`)
+   - **Components**: Use descriptive names (e.g., `BuckSlider`, `TopBar`)
    - **Properties**: camelCase for properties, PascalCase for types
 
 3. **Null-Safe Operations**:
@@ -283,14 +283,14 @@ shell.qml           # Main entry point (minimal orchestration)
    import Quickshell.Io     // For Process, FileView
    import qs.Common         // For Theme, utilities
    import qs.Services       // For service access
-   import qs.Widgets        // For reusable widgets (DankIcon, etc.)
+   import qs.Widgets        // For reusable widgets (BuckIcon, etc.)
    ```
 
 2. **Service Dependencies**:
    - Services should NOT import other services
    - Modules and Widgets can import and use services via property bindings
    - Use `Theme.propertyName` for consistent styling
-   - Use `DankIcon { name: "icon_name" }` for all icons instead of manual Text components
+   - Use `BuckIcon { name: "icon_name" }` for all icons instead of manual Text components
 
 ### Component Development Patterns
 
@@ -307,7 +307,7 @@ shell.qml           # Main entry point (minimal orchestration)
    property bool brightnessAvailable: false
 
    // In modules - adapt UI accordingly
-   DankSlider {
+   BuckSlider {
        visible: DisplayService.brightnessAvailable
        enabled: DisplayService.brightnessAvailable
        value: DisplayService.brightnessLevel
@@ -315,7 +315,7 @@ shell.qml           # Main entry point (minimal orchestration)
    ```
 
 3. **Reusable Components**:
-   - Create reusable widgets for common patterns (like DankSlider)
+   - Create reusable widgets for common patterns (like BuckSlider)
    - Use configurable properties for different use cases
    - Include proper signal handling with unique names (avoid `valueChanged`)
 
@@ -386,7 +386,7 @@ When modifying the shell:
    - Import `qs.Widgets` for reusable components
    - Bind to service properties for reactive updates
    - Consider per-screen vs global behavior
-   - Use `DankIcon` for icons instead of manual Text components
+   - Use `BuckIcon` for icons instead of manual Text components
 
 3. **Integration in shell.qml**:
    ```qml
@@ -409,7 +409,7 @@ When modifying the shell:
    - Import `qs.Common` for theming
    - Focus on reusability and composition
    - Keep widgets simple and focused
-   - Use `DankIcon` for icons instead of manual Text components
+   - Use `BuckIcon` for icons instead of manual Text components
 
 ### Adding New Services
 
@@ -448,17 +448,17 @@ When modifying the shell:
 
 ### Creating Plugins
 
-Plugins are external, dynamically-loaded components that extend DankMaterialShell functionality. Plugins are stored in `~/.config/DankMaterialShell/plugins/` and have their settings isolated from core DMS settings.
+Plugins are external, dynamically-loaded components that extend BuckMaterialShell functionality. Plugins are stored in `~/.config/BuckMaterialShell/plugins/` and have their settings isolated from core Dykwabi settings.
 
 **Plugin Types:**
-- **Widget plugins** (`"type": "widget"` or omit type field): Display UI components in DankBar
+- **Widget plugins** (`"type": "widget"` or omit type field): Display UI components in BuckBar
 - **Daemon plugins** (`"type": "daemon"`): Run invisibly in the background without UI
 
 #### Widget Plugins
 
 1. **Create plugin directory**:
    ```bash
-   mkdir -p ~/.config/DankMaterialShell/plugins/YourPlugin
+   mkdir -p ~/.config/BuckMaterialShell/plugins/YourPlugin
    ```
 
 2. **Create manifest** (`plugin.json`):
@@ -550,7 +550,7 @@ Plugins are external, dynamically-loaded components that extend DankMaterialShel
    - Open Settings → Plugins
    - Click "Scan for Plugins"
    - Toggle plugin to enable
-   - Add plugin ID to DankBar widget list
+   - Add plugin ID to BuckBar widget list
 
 #### Daemon Plugins
 
@@ -558,7 +558,7 @@ Daemon plugins run invisibly in the background without any UI components. They'r
 
 1. **Create plugin directory**:
    ```bash
-   mkdir -p ~/.config/DankMaterialShell/plugins/YourDaemon
+   mkdir -p ~/.config/BuckMaterialShell/plugins/YourDaemon
    ```
 
 2. **Create manifest** (`plugin.json`):
@@ -613,8 +613,8 @@ Daemon plugins run invisibly in the background without any UI components. They'r
 
 **Plugin Directory Structure:**
 ```
-~/.config/DankMaterialShell/
-├── settings.json                    # Core DMS settings + plugin settings
+~/.config/BuckMaterialShell/
+├── settings.json                    # Core Dykwabi settings + plugin settings
 │   └── pluginSettings: {
 │       └── yourPlugin: {
 │           ├── enabled: true,
@@ -658,25 +658,25 @@ Daemon plugins run invisibly in the background without any UI components. They'r
 - **Robustness**: Implement feature detection and graceful degradation
 - **Consistency**: Follow Material Design 3 principles via Theme singleton
 - **Performance**: Minimize expensive operations and use appropriate data structures
-- **Icon Management**: Use `DankIcon` for all icons instead of manual Text components
-- **Widget System**: Leverage existing widgets (DankSlider, DankToggle, etc.) for consistency
+- **Icon Management**: Use `BuckIcon` for all icons instead of manual Text components
+- **Widget System**: Leverage existing widgets (BuckSlider, BuckToggle, etc.) for consistency
 - **NO WRAPPER HELL**: Avoid creating unnecessary wrapper functions - bind directly to underlying APIs for better reactivity and performance
 - **Function Discovery**: Use grep/search tools to find existing utility functions before implementing new ones
-- **Modern QML Patterns**: Leverage new widgets like DankTextField, DankDropdown, CachingImage
+- **Modern QML Patterns**: Leverage new widgets like BuckTextField, BuckDropdown, CachingImage
 - **Structured Organization**: Follow the established Services/Modules/Widgets/Modals separation
 - **Plugin System**: For user extensions, create plugins instead of modifying core modules - see docs/PLUGINS.md
 
 ### Common Widget Patterns
 
-1. **Icons**: Always use `DankIcon { name: "icon_name" }` instead of `Text { font.family: Theme.iconFont }`
-2. **Sliders**: Use `DankSlider` for consistent styling and behavior
-3. **Toggles**: Use `DankToggle` for switches and checkboxes
-4. **Tab Bars**: Use `DankTabBar` for tabbed interfaces
-5. **Lists**: Use `DankListView` for scrollable lists
-6. **Grids**: Use `DankGridView` for grid layouts
-7. **Text Fields**: Use `DankTextField` for text input with validation
-8. **Dropdowns**: Use `DankDropdown` for selection menus
-9. **Popouts**: Use `DankPopout` as base for overlay components
+1. **Icons**: Always use `BuckIcon { name: "icon_name" }` instead of `Text { font.family: Theme.iconFont }`
+2. **Sliders**: Use `BuckSlider` for consistent styling and behavior
+3. **Toggles**: Use `BuckToggle` for switches and checkboxes
+4. **Tab Bars**: Use `BuckTabBar` for tabbed interfaces
+5. **Lists**: Use `BuckListView` for scrollable lists
+6. **Grids**: Use `BuckGridView` for grid layouts
+7. **Text Fields**: Use `BuckTextField` for text input with validation
+8. **Dropdowns**: Use `BuckDropdown` for selection menus
+9. **Popouts**: Use `BuckPopout` as base for overlay components
 10. **Images**: Use `CachingImage` for optimized image loading
 
 ### Essential Utility Functions

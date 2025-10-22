@@ -16,9 +16,9 @@ assignees: ""
 
 <!-- Arch, Fedora, Debian, etc. -->
 
-## dms version
+## dykwabi version
 
-<!-- Output of dms version command -->
+<!-- Output of dykwabi version command -->
 
 ## Description
 

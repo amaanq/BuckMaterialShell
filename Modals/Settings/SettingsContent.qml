@@ -51,7 +51,7 @@ Item {
             active: root.currentIndex === 2
             visible: active
 
-            sourceComponent: DankBarTab {
+            sourceComponent: BuckBarTab {
                 parentModal: root.parentModal
             }
 

@@ -14,7 +14,7 @@ Item {
     property real barThickness: 48
     property alias content: contentLoader.sourceComponent
     property bool isVerticalOrientation: axis?.isVertical ?? false
-    readonly property real horizontalPadding: SettingsData.dankBarNoBackground ? 0 : Math.max(Theme.spacingXS, Theme.spacingS * (widgetThickness / 30))
+    readonly property real horizontalPadding: SettingsData.buckBarNoBackground ? 0 : Math.max(Theme.spacingXS, Theme.spacingS * (widgetThickness / 30))
     readonly property real visualWidth: isVerticalOrientation ? widgetThickness : (contentLoader.item ? (contentLoader.item.implicitWidth + horizontalPadding * 2) : 0)
     readonly property real visualHeight: isVerticalOrientation ? (contentLoader.item ? (contentLoader.item.implicitHeight + horizontalPadding * 2) : 0) : widgetThickness
     readonly property alias visualContent: visualContent
@@ -29,9 +29,9 @@ Item {
         width: root.visualWidth
         height: root.visualHeight
         anchors.centerIn: parent
-        radius: SettingsData.dankBarNoBackground ? 0 : Theme.cornerRadius
+        radius: SettingsData.buckBarNoBackground ? 0 : Theme.cornerRadius
         color: {
-            if (SettingsData.dankBarNoBackground) {
+            if (SettingsData.buckBarNoBackground) {
                 return "transparent"
             }
 

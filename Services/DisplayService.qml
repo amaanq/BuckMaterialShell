@@ -212,14 +212,14 @@ Singleton {
     // Night Mode Functions - Simplified
     function enableNightMode() {
         if (!gammaControlAvailable) {
-            ToastService.showWarning("Night mode failed: DMS gamma control not available")
+            ToastService.showWarning("Night mode failed: Dykwabi gamma control not available")
             return
         }
 
         nightModeEnabled = true
         SessionData.setNightModeEnabled(true)
 
-        DMSService.sendRequest("wayland.gamma.setEnabled", {
+        DykwabiService.sendRequest("wayland.gamma.setEnabled", {
             "enabled": true
         }, response => {
             if (response.error) {
@@ -246,7 +246,7 @@ Singleton {
             return
         }
 
-        DMSService.sendRequest("wayland.gamma.setEnabled", {
+        DykwabiService.sendRequest("wayland.gamma.setEnabled", {
             "enabled": false
         }, response => {
             if (response.error) {
@@ -267,7 +267,7 @@ Singleton {
     function applyNightModeDirectly() {
         const temperature = SessionData.nightModeTemperature || 4000
 
-        DMSService.sendRequest("wayland.gamma.setManualTimes", {
+        DykwabiService.sendRequest("wayland.gamma.setManualTimes", {
             "sunrise": null,
             "sunset": null
         }, response => {
@@ -276,7 +276,7 @@ Singleton {
                 return
             }
 
-            DMSService.sendRequest("wayland.gamma.setUseIPLocation", {
+            DykwabiService.sendRequest("wayland.gamma.setUseIPLocation", {
                 "use": false
             }, response => {
                 if (response.error) {
@@ -284,7 +284,7 @@ Singleton {
                     return
                 }
 
-                DMSService.sendRequest("wayland.gamma.setTemperature", {
+                DykwabiService.sendRequest("wayland.gamma.setTemperature", {
                     "temp": temperature
                 }, response => {
                     if (response.error) {
@@ -323,7 +323,7 @@ Singleton {
         const sunrise = `${String(sunriseHour).padStart(2, '0')}:${String(sunriseMinute).padStart(2, '0')}`
         const sunset = `${String(sunsetHour).padStart(2, '0')}:${String(sunsetMinute).padStart(2, '0')}`
 
-        DMSService.sendRequest("wayland.gamma.setUseIPLocation", {
+        DykwabiService.sendRequest("wayland.gamma.setUseIPLocation", {
             "use": false
         }, response => {
             if (response.error) {
@@ -331,7 +331,7 @@ Singleton {
                 return
             }
 
-            DMSService.sendRequest("wayland.gamma.setTemperature", {
+            DykwabiService.sendRequest("wayland.gamma.setTemperature", {
                 "low": temperature,
                 "high": dayTemp
             }, response => {
@@ -341,7 +341,7 @@ Singleton {
                     return
                 }
 
-                DMSService.sendRequest("wayland.gamma.setManualTimes", {
+                DykwabiService.sendRequest("wayland.gamma.setManualTimes", {
                     "sunrise": sunrise,
                     "sunset": sunset
                 }, response => {
@@ -358,7 +358,7 @@ Singleton {
         const temperature = SessionData.nightModeTemperature || 4000
         const dayTemp = 6500
 
-        DMSService.sendRequest("wayland.gamma.setManualTimes", {
+        DykwabiService.sendRequest("wayland.gamma.setManualTimes", {
             "sunrise": null,
             "sunset": null
         }, response => {
@@ -367,7 +367,7 @@ Singleton {
                 return
             }
 
-            DMSService.sendRequest("wayland.gamma.setTemperature", {
+            DykwabiService.sendRequest("wayland.gamma.setTemperature", {
                 "low": temperature,
                 "high": dayTemp
             }, response => {
@@ -378,7 +378,7 @@ Singleton {
                 }
 
                 if (SessionData.nightModeUseIPLocation) {
-                    DMSService.sendRequest("wayland.gamma.setUseIPLocation", {
+                    DykwabiService.sendRequest("wayland.gamma.setUseIPLocation", {
                         "use": true
                     }, response => {
                         if (response.error) {
@@ -387,7 +387,7 @@ Singleton {
                         }
                     })
                 } else if (SessionData.latitude !== 0.0 && SessionData.longitude !== 0.0) {
-                    DMSService.sendRequest("wayland.gamma.setUseIPLocation", {
+                    DykwabiService.sendRequest("wayland.gamma.setUseIPLocation", {
                         "use": false
                     }, response => {
                         if (response.error) {
@@ -395,7 +395,7 @@ Singleton {
                             return
                         }
 
-                        DMSService.sendRequest("wayland.gamma.setLocation", {
+                        DykwabiService.sendRequest("wayland.gamma.setLocation", {
                             "latitude": SessionData.latitude,
                             "longitude": SessionData.longitude
                         }, response => {
@@ -431,23 +431,23 @@ Singleton {
     }
 
     function checkGammaControlAvailability() {
-        if (!DMSService.isConnected) {
+        if (!DykwabiService.isConnected) {
             return
         }
 
-        if (DMSService.apiVersion < 6) {
+        if (DykwabiService.apiVersion < 6) {
             gammaControlAvailable = false
             automationAvailable = false
             return
         }
 
-        if (!DMSService.capabilities.includes("gamma")) {
+        if (!DykwabiService.capabilities.includes("gamma")) {
             gammaControlAvailable = false
             automationAvailable = false
             return
         }
 
-        DMSService.sendRequest("wayland.gamma.getState", null, response => {
+        DykwabiService.sendRequest("wayland.gamma.getState", null, response => {
             if (response.error) {
                 gammaControlAvailable = false
                 automationAvailable = false
@@ -457,7 +457,7 @@ Singleton {
                 automationAvailable = true
 
                 if (nightModeEnabled) {
-                    DMSService.sendRequest("wayland.gamma.setEnabled", {
+                    DykwabiService.sendRequest("wayland.gamma.setEnabled", {
                         "enabled": true
                     }, enableResponse => {
                         if (enableResponse.error) {
@@ -765,10 +765,10 @@ Singleton {
     }
 
     Connections {
-        target: DMSService
+        target: DykwabiService
 
         function onConnectionStateChanged() {
-            if (DMSService.isConnected) {
+            if (DykwabiService.isConnected) {
                 checkGammaControlAvailability()
             } else {
                 gammaControlAvailable = false

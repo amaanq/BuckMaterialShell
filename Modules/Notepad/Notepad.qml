@@ -348,7 +348,7 @@ Item {
         }
     }
 
-    DankModal {
+    BuckModal {
         id: confirmationDialog
 
         width: 400
@@ -406,7 +406,7 @@ Item {
                             }
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             iconName: "close"
                             iconSize: Theme.iconSize - 4
                             iconColor: Theme.surfaceText

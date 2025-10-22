@@ -84,15 +84,15 @@ Singleton {
     property bool usingLegacy: false
     property var activeService: null
 
-    readonly property string socketPath: Quickshell.env("DMS_SOCKET")
+    readonly property string socketPath: Quickshell.env("DYKWABI_SOCKET")
 
     Component.onCompleted: {
         console.log("NetworkService: Initializing...")
         if (!socketPath || socketPath.length === 0) {
-            console.log("NetworkService: DMS_SOCKET not set, using LegacyNetworkService")
+            console.log("NetworkService: DYKWABI_SOCKET not set, using LegacyNetworkService")
             useLegacyService()
         } else {
-            console.log("NetworkService: DMS_SOCKET found, waiting for capabilities...")
+            console.log("NetworkService: DYKWABI_SOCKET found, waiting for capabilities...")
         }
     }
 
@@ -107,7 +107,7 @@ Singleton {
                 console.log("NetworkService: Switched to NetworkManagerService, networkAvailable:", networkAvailable)
                 connectSignals()
             } else if (!activeService && !NetworkManagerService.networkAvailable && socketPath && socketPath.length > 0) {
-                console.log("NetworkService: Network capability not available in DMS, using LegacyNetworkService")
+                console.log("NetworkService: Network capability not available in Dykwabi, using LegacyNetworkService")
                 useLegacyService()
             }
         }

@@ -8,7 +8,7 @@ import qs.Widgets
 Item {
     id: dockTab
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -41,7 +41,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "swap_vert"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -62,7 +62,7 @@ Item {
                             anchors.verticalCenter: parent.verticalCenter
                         }
 
-                        DankButtonGroup {
+                        BuckButtonGroup {
                             id: positionButtonGroup
                             anchors.verticalCenter: parent.verticalCenter
                             model: ["Top", "Bottom", "Left", "Right"]
@@ -111,7 +111,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "visibility_off"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -140,7 +140,7 @@ Item {
                             }
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: autoHideToggle
 
                             anchors.verticalCenter: parent.verticalCenter
@@ -162,7 +162,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "dock_to_bottom"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -191,7 +191,7 @@ Item {
                             }
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: enableToggle
 
                             anchors.verticalCenter: parent.verticalCenter
@@ -215,7 +215,7 @@ Item {
                         spacing: Theme.spacingM
                         visible: CompositorService.isNiri
 
-                        DankIcon {
+                        BuckIcon {
                             name: "fullscreen"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -244,7 +244,7 @@ Item {
                             }
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: overviewToggle
 
                             anchors.verticalCenter: parent.verticalCenter
@@ -280,7 +280,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "apps"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -309,7 +309,7 @@ Item {
                             }
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: groupByAppToggle
 
                             anchors.verticalCenter: parent.verticalCenter
@@ -352,7 +352,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "photo_size_select_large"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -368,7 +368,7 @@ Item {
                         }
                     }
 
-                    DankSlider {
+                    BuckSlider {
                         width: parent.width
                         height: 24
                         value: SettingsData.dockIconSize
@@ -415,7 +415,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "space_bar"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -442,7 +442,7 @@ Item {
                             font.weight: Font.Medium
                         }
 
-                        DankSlider {
+                        BuckSlider {
                             width: parent.width
                             height: 24
                             value: SettingsData.dockSpacing
@@ -470,7 +470,7 @@ Item {
                             font.weight: Font.Medium
                         }
 
-                        DankSlider {
+                        BuckSlider {
                             width: parent.width
                             height: 24
                             value: SettingsData.dockBottomGap
@@ -519,7 +519,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "opacity"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -535,7 +535,7 @@ Item {
                         }
                     }
 
-                    DankSlider {
+                    BuckSlider {
                         width: parent.width
                         height: 32
                         value: Math.round(SettingsData.dockTransparency * 100)

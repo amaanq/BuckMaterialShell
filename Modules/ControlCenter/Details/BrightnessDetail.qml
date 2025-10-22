@@ -19,7 +19,7 @@ Rectangle {
     border.color: Qt.rgba(Theme.outline.r, Theme.outline.g, Theme.outline.b, 0.08)
     border.width: 0
 
-    DankFlickable {
+    BuckFlickable {
         id: brightnessContent
         anchors.top: parent.top
         anchors.left: parent.left
@@ -44,7 +44,7 @@ Rectangle {
                     anchors.centerIn: parent
                     spacing: Theme.spacingM
 
-                    DankIcon {
+                    BuckIcon {
                         anchors.horizontalCenter: parent.horizontalCenter
                         name: DisplayService.brightnessAvailable ? "brightness_6" : "error"
                         size: 32
@@ -84,7 +84,7 @@ Rectangle {
                             anchors.verticalCenter: parent.verticalCenter
                             spacing: 2
 
-                            DankIcon {
+                            BuckIcon {
                                 name: {
                                     const deviceClass = modelData.class || ""
                                     const deviceName = modelData.name || ""
