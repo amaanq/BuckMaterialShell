@@ -10,7 +10,7 @@ Singleton {
     property var notificationCenterPopout: null
     property var appDrawerPopout: null
     property var processListPopout: null
-    property var dankDashPopout: null
+    property var buckDashPopout: null
     property var batteryPopout: null
     property var vpnPopout: null
     property var systemUpdatePopout: null
@@ -105,32 +105,32 @@ Singleton {
         }
     }
 
-    function openDankDash(tabIndex, x, y, width, section, screen) {
-        if (dankDashPopout) {
+    function openBuckDash(tabIndex, x, y, width, section, screen) {
+        if (buckDashPopout) {
             if (arguments.length >= 6) {
-                setPosition(dankDashPopout, x, y, width, section, screen)
+                setPosition(buckDashPopout, x, y, width, section, screen)
             }
-            dankDashPopout.currentTabIndex = tabIndex || 0
-            dankDashPopout.dashVisible = true
+            buckDashPopout.currentTabIndex = tabIndex || 0
+            buckDashPopout.dashVisible = true
         }
     }
 
-    function closeDankDash() {
-        if (dankDashPopout) {
-            dankDashPopout.dashVisible = false
+    function closeBuckDash() {
+        if (buckDashPopout) {
+            buckDashPopout.dashVisible = false
         }
     }
 
-    function toggleDankDash(tabIndex, x, y, width, section, screen) {
-        if (dankDashPopout) {
+    function toggleBuckDash(tabIndex, x, y, width, section, screen) {
+        if (buckDashPopout) {
             if (arguments.length >= 6) {
-                setPosition(dankDashPopout, x, y, width, section, screen)
+                setPosition(buckDashPopout, x, y, width, section, screen)
             }
-            if (dankDashPopout.dashVisible) {
-                dankDashPopout.dashVisible = false
+            if (buckDashPopout.dashVisible) {
+                buckDashPopout.dashVisible = false
             } else {
-                dankDashPopout.currentTabIndex = tabIndex || 0
-                dankDashPopout.dashVisible = true
+                buckDashPopout.currentTabIndex = tabIndex || 0
+                buckDashPopout.dashVisible = true
             }
         }
     }

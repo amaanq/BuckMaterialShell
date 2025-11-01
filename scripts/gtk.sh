@@ -15,11 +15,11 @@ apply_gtk3_colors() {
     local shell_dir="$3"
     
     local gtk3_dir="$config_dir/gtk-3.0"
-    local dank_colors="$gtk3_dir/dank-colors.css"
+    local buck_colors="$gtk3_dir/buck-colors.css"
     local gtk_css="$gtk3_dir/gtk.css"
     
-    if [ ! -f "$dank_colors" ]; then
-        echo "Error: dank-colors.css not found at $dank_colors" >&2
+    if [ ! -f "$buck_colors" ]; then
+        echo "Error: buck-colors.css not found at $buck_colors" >&2
         echo "Run matugen first to generate theme files" >&2
         exit 1
     fi
@@ -31,26 +31,26 @@ apply_gtk3_colors() {
         echo "Backed up existing gtk.css"
     fi
     
-    ln -s "dank-colors.css" "$gtk_css"
-    echo "Created symlink: $gtk_css -> dank-colors.css"
+    ln -s "buck-colors.css" "$gtk_css"
+    echo "Created symlink: $gtk_css -> buck-colors.css"
 }
 
 apply_gtk4_colors() {
     local config_dir="$1"
     
     local gtk4_dir="$config_dir/gtk-4.0"
-    local dank_colors="$gtk4_dir/dank-colors.css"
+    local buck_colors="$gtk4_dir/buck-colors.css"
     local gtk_css="$gtk4_dir/gtk.css"
-    local gtk4_import="@import url(\"dank-colors.css\");"
+    local gtk4_import="@import url(\"buck-colors.css\");"
     
-    if [ ! -f "$dank_colors" ]; then
-        echo "Error: GTK4 dank-colors.css not found at $dank_colors" >&2
+    if [ ! -f "$buck_colors" ]; then
+        echo "Error: GTK4 buck-colors.css not found at $buck_colors" >&2
         echo "Run matugen first to generate theme files" >&2
         exit 1
     fi
     
     if [ -f "$gtk_css" ]; then
-        sed -i '/^@import url.*dank-colors\.css.*);$/d' "$gtk_css"
+        sed -i '/^@import url.*buck-colors\.css.*);$/d' "$gtk_css"
         sed -i "1i\\$gtk4_import" "$gtk_css"
     else
         echo "$gtk4_import" > "$gtk_css"

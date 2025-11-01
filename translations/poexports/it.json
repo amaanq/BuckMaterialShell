@@ -311,8 +311,8 @@
   "Choose the border accent color": {
     "Choose the border accent color": "Scegli il colore di accento dei bordi"
   },
-  "Choose the logo displayed on the launcher button in DankBar": {
-    "Choose the logo displayed on the launcher button in DankBar": "Scegli il logo visualizzato sul bottone lanciatore nella DankBar"
+  "Choose the logo displayed on the launcher button in BuckBar": {
+    "Choose the logo displayed on the launcher button in BuckBar": "Scegli il logo visualizzato sul bottone lanciatore nella BuckBar"
   },
   "Choose where notification popups appear on screen": {
     "Choose where notification popups appear on screen": "Scegli dove i popup delle notifiche appaiono sullo schermo"
@@ -479,38 +479,38 @@
   "DEMO MODE - Click anywhere to exit": {
     "DEMO MODE - Click anywhere to exit": "DEMO MODE - Clicca ovunque per uscire"
   },
-  "DMS Plugin Manager Unavailable": {
-    "DMS Plugin Manager Unavailable": "Gestore Plugin DMS non disponibile"
+  "Dykwabi Plugin Manager Unavailable": {
+    "Dykwabi Plugin Manager Unavailable": "Gestore Plugin Dykwabi non disponibile"
   },
-  "DMS out of date": {
-    "DMS out of date": "DMS obsoleta"
+  "Dykwabi out of date": {
+    "Dykwabi out of date": "Dykwabi obsoleta"
   },
-  "DMS_SOCKET not available": {
-    "DMS_SOCKET not available": "DMS_SOCKET non disponibile"
+  "DYKWABI_SOCKET not available": {
+    "DYKWABI_SOCKET not available": "DYKWABI_SOCKET non disponibile"
   },
   "Daily at:": {
     "Daily at:": "Giornalmente alle:"
   },
-  "Dank": {
-    "Dank": "Dank"
+  "Buck": {
+    "Buck": "Buck"
   },
-  "Dank Bar": {
-    "Dank Bar": "Dank Bar"
+  "Buck Bar": {
+    "Buck Bar": "Buck Bar"
   },
-  "Dank Bar Transparency": {
-    "Dank Bar Transparency": "Trasparenza Dank Bar"
+  "Buck Bar Transparency": {
+    "Buck Bar Transparency": "Trasparenza Buck Bar"
   },
-  "Dank Bar Widget Transparency": {
-    "Dank Bar Widget Transparency": "Trasparenza Widget Dank Bar"
+  "Buck Bar Widget Transparency": {
+    "Buck Bar Widget Transparency": "Trasparenza Widget Buck Bar"
   },
-  "Dank Suite:": {
-    "Dank Suite:": "Dank Suite:"
+  "Buck Suite:": {
+    "Buck Suite:": "Buck Suite:"
   },
-  "DankBar Font Scale": {
-    "DankBar Font Scale": "Scala Font DankBar"
+  "BuckBar Font Scale": {
+    "BuckBar Font Scale": "Scala Font BuckBar"
   },
-  "DankSearch not available": {
-    "DankSearch not available": ""
+  "BuckSearch not available": {
+    "BuckSearch not available": ""
   },
   "Date Format": {
     "Date Format": "Formato Data"
@@ -626,8 +626,8 @@
   "Enable WiFi": {
     "Enable WiFi": "Abilita WiFi"
   },
-  "Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.": {
-    "Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.": "Abilitare il livello di sfocatura compositore-targetable (namespace: dms:blurwallpaper). Richiede la configurazione manuale di niri."
+  "Enable compositor-targetable blur layer (namespace: dykwabi:blurwallpaper). Requires manual niri configuration.": {
+    "Enable compositor-targetable blur layer (namespace: dykwabi:blurwallpaper). Requires manual niri configuration.": "Abilitare il livello di sfocatura compositore-targetable (namespace: dykwabi:blurwallpaper). Richiede la configurazione manuale di niri."
   },
   "Enable fingerprint authentication": {
     "Enable fingerprint authentication": "Abilita autenticazione biometrica"
@@ -779,8 +779,8 @@
   "Gamma Control": {
     "Gamma Control": "Gamma Control"
   },
-  "Gamma control not available. Requires DMS API v6+.": {
-    "Gamma control not available. Requires DMS API v6+.": "Gamma control non disponibile. Richiede API DMS v6+."
+  "Gamma control not available. Requires Dykwabi API v6+.": {
+    "Gamma control not available. Requires Dykwabi API v6+.": "Gamma control non disponibile. Richiede API Dykwabi v6+."
   },
   "Geoclue service not running - cannot auto-detect location": {
     "Geoclue service not running - cannot auto-detect location": "Il servizio Geoclue non è in esecuzione - non può determinare la posizione automaticamente"
@@ -872,8 +872,8 @@
   "Input Devices": {
     "Input Devices": "Dispositivi Input"
   },
-  "Install plugins from the DMS plugin registry": {
-    "Install plugins from the DMS plugin registry": "Installa plugins dal registro dei plugin DMS"
+  "Install plugins from the Dykwabi plugin registry": {
+    "Install plugins from the Dykwabi plugin registry": "Installa plugins dal registro dei plugin Dykwabi"
   },
   "Internet": {
     "Internet": "Internet"
@@ -968,8 +968,8 @@
   "Low Priority": {
     "Low Priority": "Bassa Priorità"
   },
-  "Manage and configure plugins for extending DMS functionality": {
-    "Manage and configure plugins for extending DMS functionality": "Gestione e configurazione plugins per estendere le funzionalità di DMS"
+  "Manage and configure plugins for extending Dykwabi functionality": {
+    "Manage and configure plugins for extending Dykwabi functionality": "Gestione e configurazione plugins per estendere le funzionalità di Dykwabi"
   },
   "Manual Coordinates": {
     "Manual Coordinates": "Coordinate Manuali"
@@ -1382,8 +1382,8 @@
   "Saved": {
     "Saved": "Salvato"
   },
-  "Scale DankBar font sizes independently": {
-    "Scale DankBar font sizes independently": "Scale le dimensioni font della DankBar indipendentemente"
+  "Scale BuckBar font sizes independently": {
+    "Scale BuckBar font sizes independently": "Scale le dimensioni font della BuckBar indipendentemente"
   },
   "Scale all font sizes": {
     "Scale all font sizes": "Scala tutte le dimensioni dei font"
@@ -1646,8 +1646,8 @@
   "Text": {
     "Text": "Testo"
   },
-  "The DMS_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DMS_SOCKET.": {
-    "The DMS_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DMS_SOCKET.": "La variabile di sistema DMS_SOCKET non è settata o il socket non è disponibile. La gestione automatica dei plugin richiede il DMS_SOCKET "
+  "The DYKWABI_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DYKWABI_SOCKET.": {
+    "The DYKWABI_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DYKWABI_SOCKET.": "La variabile di sistema DYKWABI_SOCKET non è settata o il socket non è disponibile. La gestione automatica dei plugin richiede il DYKWABI_SOCKET "
   },
   "The below settings will modify your GTK and Qt settings. If you wish to preserve your current configurations, please back them up (qt5ct.conf|qt6ct.conf and ~/.config/gtk-3.0|gtk-4.0).": {
     "The below settings will modify your GTK and Qt settings. If you wish to preserve your current configurations, please back them up (qt5ct.conf|qt6ct.conf and ~/.config/gtk-3.0|gtk-4.0).": "Le seguenti impostazioni modificheranno le tue impostazioni GTK e Qt. Se vuoi preservare la tua configurazione attuale, per favore fai il backup (qt5ct.conf|qt6ct.conf and ~/.config/gtk-3.0|gtk-4.0)."
@@ -1661,8 +1661,8 @@
   "Third-Party Plugin Warning": {
     "Third-Party Plugin Warning": "Avviso Plugin Terze-Parti"
   },
-  "Third-party plugins are created by the community and are not officially supported by DankMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": {
-    "Third-party plugins are created by the community and are not officially supported by DankMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": "I plugin di terze parti sono creati dalla community e non sono ufficialmente supportati da DankMaterialShell.\\n\\nQuesti plugin possono comportare rischi per la sicurezza e la privacy - installare a proprio rischio."
+  "Third-party plugins are created by the community and are not officially supported by BuckMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": {
+    "Third-party plugins are created by the community and are not officially supported by BuckMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": "I plugin di terze parti sono creati dalla community e non sono ufficialmente supportati da BuckMaterialShell.\\n\\nQuesti plugin possono comportare rischi per la sicurezza e la privacy - installare a proprio rischio."
   },
   "This widget prevents GPU power off states, which can significantly impact battery life on laptops. It is not recommended to use this on laptops with hybrid graphics.": {
     "This widget prevents GPU power off states, which can significantly impact battery life on laptops. It is not recommended to use this on laptops with hybrid graphics.": "Questo widget impedisce gli stati di spegnimento della GPU, che possono influire in modo significativo sulla durata della batteria sui laptop. Non è consigliabile utilizzare questo su laptop con grafica ibrida."
@@ -1889,8 +1889,8 @@
   "events": {
     "events": "eventi"
   },
-  "loginctl not available - lock integration requires DMS socket connection": {
-    "loginctl not available - lock integration requires DMS socket connection": "loginctl non disponibile - integrazione blocco richiede connessione socket DMS"
+  "loginctl not available - lock integration requires Dykwabi socket connection": {
+    "loginctl not available - lock integration requires Dykwabi socket connection": "loginctl non disponibile - integrazione blocco richiede connessione socket Dykwabi"
   },
   "matugen not detected - dynamic theming unavailable": {
     "matugen not detected - dynamic theming unavailable": "matugen non rilevato - tema dinamico non disponibile"
@@ -1898,8 +1898,8 @@
   "official": {
     "official": "ufficiale"
   },
-  "update dms for NM integration.": {
-    "update dms for NM integration.": "aggiorna dms per integrazione NM"
+  "update dykwabi for NM integration.": {
+    "update dykwabi for NM integration.": "aggiorna dykwabi per integrazione NM"
   },
   "• Install only from trusted sources": {
     "• Install only from trusted sources": "• Installa solo da sorgenti fidate"

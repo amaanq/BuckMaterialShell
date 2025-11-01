@@ -104,7 +104,7 @@ Item {
         Process {
             id: imageLoader
             running: false
-            command: ["sh", "-c", `cliphist decode ${thumbnailImage.entryId} | base64 -w 0`]
+            command: ["sh", "-c", `stash decode ${thumbnailImage.entryId} | base64 -w 0`]
 
             stdout: StdioCollector {
                 onStreamFinished: {
@@ -156,7 +156,7 @@ Item {
     }
 
     // Fallback icon
-    DankIcon {
+    BuckIcon {
         visible: !(entryType === "image" && thumbnailImage.status === Image.Ready && thumbnailImage.source != "")
         name: {
             if (entryType === "image") {

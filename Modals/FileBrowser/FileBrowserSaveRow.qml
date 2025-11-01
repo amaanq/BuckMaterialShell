@@ -15,7 +15,7 @@ Row {
     visible: saveMode
     spacing: Theme.spacingM
 
-    DankTextField {
+    BuckTextField {
         id: fileNameInput
 
         width: parent.width - saveButton.width - Theme.spacingM

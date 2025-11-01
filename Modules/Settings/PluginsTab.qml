@@ -17,7 +17,7 @@ FocusScope {
 
     focus: true
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -48,7 +48,7 @@ FocusScope {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "extension"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -67,7 +67,7 @@ FocusScope {
                             }
 
                             StyledText {
-                                text: I18n.tr("Manage and configure plugins for extending DMS functionality")
+                                text: I18n.tr("Manage and configure plugins for extending Dykwabi functionality")
                                 font.pixelSize: Theme.fontSizeSmall
                                 color: Theme.surfaceVariantText
                             }
@@ -76,15 +76,15 @@ FocusScope {
 
                     StyledRect {
                         width: parent.width
-                        height: dmsWarningColumn.implicitHeight + Theme.spacingM * 2
+                        height: dykwabiWarningColumn.implicitHeight + Theme.spacingM * 2
                         radius: Theme.cornerRadius
                         color: Qt.rgba(Theme.warning.r, Theme.warning.g, Theme.warning.b, 0.1)
                         border.color: Theme.warning
                         border.width: 1
-                        visible: !DMSService.dmsAvailable
+                        visible: !DykwabiService.dykwabiAvailable
 
                         Column {
-                            id: dmsWarningColumn
+                            id: dykwabiWarningColumn
                             anchors.fill: parent
                             anchors.margins: Theme.spacingM
                             spacing: Theme.spacingXS
@@ -92,7 +92,7 @@ FocusScope {
                             Row {
                                 spacing: Theme.spacingXS
 
-                                DankIcon {
+                                BuckIcon {
                                     name: "warning"
                                     size: 16
                                     color: Theme.warning
@@ -100,7 +100,7 @@ FocusScope {
                                 }
 
                                 StyledText {
-                                    text: I18n.tr("DMS Plugin Manager Unavailable")
+                                    text: I18n.tr("Dykwabi Plugin Manager Unavailable")
                                     font.pixelSize: Theme.fontSizeSmall
                                     color: Theme.warning
                                     font.weight: Font.Medium
@@ -109,7 +109,7 @@ FocusScope {
                             }
 
                             StyledText {
-                                text: I18n.tr("The DMS_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DMS_SOCKET.")
+                                text: I18n.tr("The DYKWABI_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DYKWABI_SOCKET.")
                                 font.pixelSize: Theme.fontSizeSmall - 1
                                 color: Theme.surfaceVariantText
                                 wrapMode: Text.WordWrap
@@ -122,29 +122,29 @@ FocusScope {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankButton {
+                        BuckButton {
                             text: I18n.tr("Browse")
                             iconName: "store"
-                            enabled: DMSService.dmsAvailable
+                            enabled: DykwabiService.dykwabiAvailable
                             onClicked: {
                                 pluginBrowserModal.show()
                             }
                         }
 
-                        DankButton {
+                        BuckButton {
                             text: I18n.tr("Scan")
                             iconName: "refresh"
                             onClicked: {
                                 pluginsTab.isRefreshingPlugins = true
                                 PluginService.scanPlugins()
-                                if (DMSService.dmsAvailable) {
-                                    DMSService.listInstalled()
+                                if (DykwabiService.dykwabiAvailable) {
+                                    DykwabiService.listInstalled()
                                 }
                                 pluginsTab.refreshPluginList()
                             }
                         }
 
-                        DankButton {
+                        BuckButton {
                             text: I18n.tr("Create Dir")
                             iconName: "create_new_folder"
                             onClicked: {
@@ -227,7 +227,7 @@ FocusScope {
                                 pluginData: modelData
                                 expandedPluginId: pluginsTab.expandedPluginId
                                 hasUpdate: {
-                                    if (DMSService.apiVersion < 8) return false
+                                    if (DykwabiService.apiVersion < 8) return false
                                     return pluginsTab.installedPluginsData[pluginId] || pluginsTab.installedPluginsData[pluginName] || false
                                 }
                                 isReloading: pluginsTab.isReloading
@@ -278,15 +278,15 @@ FocusScope {
             }
         }
         function onPluginListUpdated() {
-            if (DMSService.apiVersion >= 8) {
-                DMSService.listInstalled()
+            if (DykwabiService.apiVersion >= 8) {
+                DykwabiService.listInstalled()
             }
             refreshPluginList()
         }
     }
 
     Connections {
-        target: DMSService
+        target: DykwabiService
         function onPluginsListReceived(plugins) {
             pluginBrowserModal.isLoading = false
             pluginBrowserModal.allPlugins = plugins
@@ -317,8 +317,8 @@ FocusScope {
 
     Component.onCompleted: {
         pluginBrowserModal.parentModal = pluginsTab.parentModal
-        if (DMSService.dmsAvailable && DMSService.apiVersion >= 8) {
-            DMSService.listInstalled()
+        if (DykwabiService.dykwabiAvailable && DykwabiService.apiVersion >= 8) {
+            DykwabiService.listInstalled()
         }
     }
 

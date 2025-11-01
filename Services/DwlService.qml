@@ -18,12 +18,12 @@ Singleton {
     signal stateChanged()
 
     Connections {
-        target: DMSService
+        target: DykwabiService
         function onCapabilitiesReceived() {
             checkCapabilities()
         }
         function onConnectionStateChanged() {
-            if (DMSService.isConnected) {
+            if (DykwabiService.isConnected) {
                 checkCapabilities()
             } else {
                 dwlAvailable = false
@@ -37,7 +37,7 @@ Singleton {
     }
 
     Component.onCompleted: {
-        if (DMSService.dmsAvailable) {
+        if (DykwabiService.dykwabiAvailable) {
             checkCapabilities()
         }
         if (dwlAvailable) {
@@ -46,12 +46,12 @@ Singleton {
     }
 
     function checkCapabilities() {
-        if (!DMSService.capabilities || !Array.isArray(DMSService.capabilities)) {
+        if (!DykwabiService.capabilities || !Array.isArray(DykwabiService.capabilities)) {
             dwlAvailable = false
             return
         }
 
-        const hasDwl = DMSService.capabilities.includes("dwl")
+        const hasDwl = DykwabiService.capabilities.includes("dwl")
         if (hasDwl && !dwlAvailable) {
             dwlAvailable = true
             console.info("DwlService: DWL capability detected")
@@ -63,11 +63,11 @@ Singleton {
     }
 
     function requestState() {
-        if (!DMSService.isConnected || !dwlAvailable) {
+        if (!DykwabiService.isConnected || !dwlAvailable) {
             return
         }
 
-        DMSService.sendRequest("dwl.getState", null, response => {
+        DykwabiService.sendRequest("dwl.getState", null, response => {
             if (response.result) {
                 handleStateUpdate(response.result)
             }
@@ -83,11 +83,11 @@ Singleton {
     }
 
     function setTags(outputName, tagmask, toggleTagset) {
-        if (!DMSService.isConnected || !dwlAvailable) {
+        if (!DykwabiService.isConnected || !dwlAvailable) {
             return
         }
 
-        DMSService.sendRequest("dwl.setTags", {
+        DykwabiService.sendRequest("dwl.setTags", {
             "output": outputName,
             "tagmask": tagmask,
             "toggleTagset": toggleTagset
@@ -99,11 +99,11 @@ Singleton {
     }
 
     function setClientTags(outputName, andTags, xorTags) {
-        if (!DMSService.isConnected || !dwlAvailable) {
+        if (!DykwabiService.isConnected || !dwlAvailable) {
             return
         }
 
-        DMSService.sendRequest("dwl.setClientTags", {
+        DykwabiService.sendRequest("dwl.setClientTags", {
             "output": outputName,
             "andTags": andTags,
             "xorTags": xorTags
@@ -115,11 +115,11 @@ Singleton {
     }
 
     function setLayout(outputName, index) {
-        if (!DMSService.isConnected || !dwlAvailable) {
+        if (!DykwabiService.isConnected || !dwlAvailable) {
             return
         }
 
-        DMSService.sendRequest("dwl.setLayout", {
+        DykwabiService.sendRequest("dwl.setLayout", {
             "output": outputName,
             "index": index
         }, response => {

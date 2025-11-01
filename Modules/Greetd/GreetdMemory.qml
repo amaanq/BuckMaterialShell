@@ -10,7 +10,7 @@ import qs.Common
 Singleton {
     id: root
 
-    readonly property string greetCfgDir: Quickshell.env("DMS_GREET_CFG_DIR") || "/etc/greetd/.dms"
+    readonly property string greetCfgDir: Quickshell.env("DYKWABI_GREET_CFG_DIR") || "/etc/greetd/.dykwabi"
     readonly property string sessionConfigPath: greetCfgDir + "/session.json"
     readonly property string memoryFile: greetCfgDir + "/memory.json"
 

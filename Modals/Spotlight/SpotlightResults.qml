@@ -19,7 +19,7 @@ Rectangle {
     color: "transparent"
     clip: true
 
-    DankListView {
+    BuckListView {
         id: resultsList
 
         property int itemHeight: 60
@@ -96,7 +96,7 @@ Rectangle {
                     property string materialName: isMaterial ? iconValue.substring(9) : ""
                     property string unicodeChar: isUnicode ? iconValue.substring(8) : ""
 
-                    DankIcon {
+                    BuckIcon {
                         anchors.centerIn: parent
                         name: parent.materialName
                         size: resultsList.iconSize
@@ -195,7 +195,7 @@ Rectangle {
         }
     }
 
-    DankGridView {
+    BuckGridView {
         id: resultsGrid
 
         property int currentIndex: appLauncher ? appLauncher.selectedIndex : -1
@@ -284,7 +284,7 @@ Rectangle {
                     property string materialName: isMaterial ? iconValue.substring(9) : ""
                     property string unicodeChar: isUnicode ? iconValue.substring(8) : ""
 
-                    DankIcon {
+                    BuckIcon {
                         anchors.centerIn: parent
                         name: parent.materialName
                         size: parent.iconSize

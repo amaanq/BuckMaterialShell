@@ -62,7 +62,7 @@ Item {
         cachedMatugenSchemes = Theme.availableMatugenSchemes.map(function (option) { return option.label })
     }
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -97,7 +97,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "palette"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -117,7 +117,7 @@ Item {
                             height: 1
                         }
 
-                        DankButtonGroup {
+                        BuckButtonGroup {
                             id: surfaceBaseGroup
                             property int currentSurfaceIndex: {
                                 switch (SettingsData.surfaceBase) {
@@ -194,7 +194,7 @@ Item {
                         spacing: Theme.spacingM
                         anchors.horizontalCenter: parent.horizontalCenter
 
-                        DankButtonGroup {
+                        BuckButtonGroup {
                             property int currentThemeIndex: {
                                 if (Theme.currentTheme === Theme.dynamic) return 2
                                 if (Theme.currentThemeName === "custom") return 3
@@ -556,7 +556,7 @@ Item {
                                         layer.enabled: true
                                     }
 
-                                    DankIcon {
+                                    BuckIcon {
                                         anchors.centerIn: parent
                                         name: {
                                             if (ToastService.wallpaperErrorStatus === "error" || ToastService.wallpaperErrorStatus === "matugen_missing")
@@ -624,7 +624,7 @@ Item {
                                 }
                             }
 
-                            DankDropdown {
+                            BuckDropdown {
                                 id: matugenPaletteDropdown
                                 text: I18n.tr("Matugen Palette")
                                 description: I18n.tr("Select the palette algorithm used for wallpaper-based colors")
@@ -664,7 +664,7 @@ Item {
                                 width: parent.width
                                 spacing: Theme.spacingM
 
-                                DankActionButton {
+                                BuckActionButton {
                                     buttonSize: 48
                                     iconName: "folder_open"
                                     iconSize: Theme.iconSize
@@ -723,7 +723,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "opacity"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -744,17 +744,17 @@ Item {
                         spacing: Theme.spacingS
 
                         StyledText {
-                            text: I18n.tr("Dank Bar Transparency")
+                            text: I18n.tr("Buck Bar Transparency")
                             font.pixelSize: Theme.fontSizeSmall
                             color: Theme.surfaceText
                             font.weight: Font.Medium
                         }
 
-                        DankSlider {
+                        BuckSlider {
                             width: parent.width
                             height: 24
                             value: Math.round(
-                                       SettingsData.dankBarTransparency * 100)
+                                       SettingsData.buckBarTransparency * 100)
                             minimum: 0
                             maximum: 100
                             unit: ""
@@ -762,7 +762,7 @@ Item {
                             wheelEnabled: false
                             thumbOutlineColor: Theme.surfaceContainerHigh
                             onSliderValueChanged: newValue => {
-                                                      SettingsData.setDankBarTransparency(
+                                                      SettingsData.setBuckBarTransparency(
                                                           newValue / 100)
                                                   }
                         }
@@ -778,7 +778,7 @@ Item {
 
                             StyledText {
                                 id: transparencyLabel
-                                text: I18n.tr("Dank Bar Widget Transparency")
+                                text: I18n.tr("Buck Bar Widget Transparency")
                                 font.pixelSize: Theme.fontSizeSmall
                                 color: Theme.surfaceText
                                 font.weight: Font.Medium
@@ -786,7 +786,7 @@ Item {
                                 anchors.verticalCenter: parent.verticalCenter
                             }
 
-                            DankButtonGroup {
+                            BuckButtonGroup {
                                 id: widgetColorGroup
                                 property int currentColorIndex: {
                                     switch (SettingsData.widgetBackgroundColor) {
@@ -819,11 +819,11 @@ Item {
                             }
                         }
 
-                        DankSlider {
+                        BuckSlider {
                             width: parent.width
                             height: 24
                             value: Math.round(
-                                       SettingsData.dankBarWidgetTransparency * 100)
+                                       SettingsData.buckBarWidgetTransparency * 100)
                             minimum: 0
                             maximum: 100
                             unit: ""
@@ -831,7 +831,7 @@ Item {
                             wheelEnabled: false
                             thumbOutlineColor: Theme.surfaceContainerHigh
                             onSliderValueChanged: newValue => {
-                                                      SettingsData.setDankBarWidgetTransparency(
+                                                      SettingsData.setBuckBarWidgetTransparency(
                                                           newValue / 100)
                                                   }
                         }
@@ -848,7 +848,7 @@ Item {
                             font.weight: Font.Medium
                         }
 
-                        DankSlider {
+                        BuckSlider {
                             width: parent.width
                             height: 24
                             value: Math.round(
@@ -885,7 +885,7 @@ Item {
                             font.weight: Font.Medium
                         }
 
-                        DankSlider {
+                        BuckSlider {
                             width: parent.width
                             height: 24
                             value: SettingsData.cornerRadius
@@ -924,7 +924,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "font_download"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -940,7 +940,7 @@ Item {
                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         text: I18n.tr("Font Family")
                         description: I18n.tr("Select system font family")
                         currentValue: {
@@ -961,7 +961,7 @@ Item {
                                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         text: I18n.tr("Font Weight")
                         description: I18n.tr("Select font weight")
                         currentValue: {
@@ -1027,7 +1027,7 @@ Item {
                                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         text: I18n.tr("Monospace Font")
                         description: I18n.tr("Select monospace font for process list and technical displays")
                         currentValue: {
@@ -1085,7 +1085,7 @@ Item {
                             anchors.verticalCenter: parent.verticalCenter
                             spacing: Theme.spacingS
 
-                            DankActionButton {
+                            BuckActionButton {
                                 buttonSize: 32
                                 iconName: "remove"
                                 iconSize: Theme.iconSizeSmall
@@ -1118,7 +1118,7 @@ Item {
                                 }
                             }
 
-                            DankActionButton {
+                            BuckActionButton {
                                 buttonSize: 32
                                 iconName: "add"
                                 iconSize: Theme.iconSizeSmall
@@ -1152,7 +1152,7 @@ Item {
                     anchors.margins: Theme.spacingL
                     spacing: Theme.spacingM
 
-                    DankIcon {
+                    BuckIcon {
                         name: "sync"
                         size: Theme.iconSize
                         color: Theme.primary
@@ -1180,7 +1180,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         id: syncToggle
 
                         width: 48
@@ -1208,7 +1208,7 @@ Item {
                     anchors.margins: Theme.spacingM
                     spacing: Theme.spacingM
 
-                    DankIcon {
+                    BuckIcon {
                         name: "info"
                         size: Theme.iconSizeSmall
                         color: Theme.warning
@@ -1247,18 +1247,18 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingXS
 
-                        DankIcon {
+                        BuckIcon {
                             name: "image"
                             size: Theme.iconSize
                             color: Theme.primary
                             anchors.verticalCenter: parent.verticalCenter
                         }
 
-                        DankDropdown {
+                        BuckDropdown {
                             width: parent.width - Theme.iconSize - Theme.spacingXS
                             anchors.verticalCenter: parent.verticalCenter
                             text: I18n.tr("Icon Theme")
-                            description: "DankShell & System Icons\n(requires restart)"
+                            description: "BuckShell & System Icons\n(requires restart)"
                             currentValue: SettingsData.iconTheme
                             enableFuzzySearch: true
                             popupWidthOffset: 100
@@ -1299,7 +1299,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "extension"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -1331,7 +1331,7 @@ Item {
                                 anchors.centerIn: parent
                                 spacing: Theme.spacingS
 
-                                DankIcon {
+                                BuckIcon {
                                     name: "folder"
                                     size: 16
                                     color: Theme.primary
@@ -1367,7 +1367,7 @@ Item {
                                 anchors.centerIn: parent
                                 spacing: Theme.spacingS
 
-                                DankIcon {
+                                BuckIcon {
                                     name: "settings"
                                     size: 16
                                     color: Theme.primary
@@ -1393,7 +1393,7 @@ Item {
                     }
 
                     StyledText {
-                        text: I18n.tr(`Generate baseline GTK3/4 or QT5/QT6 (requires qt6ct-kde) configurations to follow DMS colors. Only needed once.<br /><br />It is recommended to configure <a href="https://github.com/AvengeMedia/DankMaterialShell/blob/master/README.md#Theming" style="text-decoration:none; color:${Theme.primary};">adw-gtk3</a> prior to applying GTK themes.`)
+                        text: I18n.tr(`Generate baseline GTK3/4 or QT5/QT6 (requires qt6ct-kde) configurations to follow Dykwabi colors. Only needed once.<br /><br />It is recommended to configure <a href="https://github.com/AvengeMedia/BuckMaterialShell/blob/master/README.md#Theming" style="text-decoration:none; color:${Theme.primary};">adw-gtk3</a> prior to applying GTK themes.`)
                         textFormat: Text.RichText
                         linkColor: Theme.primary
                         onLinkActivated: url => Qt.openUrlExternally(url)

@@ -2,19 +2,19 @@
     config,
     pkgs,
     lib,
-    dmsPkgs,
+    dykwabiPkgs,
     ...
 }: let
-    cfg = config.programs.dankMaterialShell;
+    cfg = config.programs.buckMaterialShell;
     jsonFormat = pkgs.formats.json { };
 in {
     imports = [
-        (lib.mkRemovedOptionModule ["programs" "dankMaterialShell" "enableNightMode"] "Night mode is now always available.")
+        (lib.mkRemovedOptionModule ["programs" "buckMaterialShell" "enableNightMode"] "Night mode is now always available.")
     ];
-    options.programs.dankMaterialShell = with lib.types; {
-        enable = lib.mkEnableOption "DankMaterialShell";
+    options.programs.buckMaterialShell = with lib.types; {
+        enable = lib.mkEnableOption "BuckMaterialShell";
 
-        enableSystemd = lib.mkEnableOption "DankMaterialShell systemd startup";
+        enableSystemd = lib.mkEnableOption "BuckMaterialShell systemd startup";
         enableSystemMonitoring = lib.mkOption {
             type = bool;
             default = true;
@@ -87,12 +87,12 @@ in {
                     };
                     src = lib.mkOption {
                         type = types.path;
-                        description = "Source to link to DMS plugins directory";
+                        description = "Source to link to Dykwabi plugins directory";
                     };
                 };
             }));
             default = {};
-            description = "DMS Plugins to install";
+            description = "Dykwabi Plugins to install";
         };
     };
 
@@ -102,35 +102,35 @@ in {
             enable = true;
             package = cfg.quickshell.package;
 
-            configs.dms = "${dmsPkgs.dankMaterialShell}/etc/xdg/quickshell/dms";
+            configs.dykwabi = "${dykwabiPkgs.buckMaterialShell}/etc/xdg/quickshell/dykwabi";
         };
 
-        systemd.user.services.dms = lib.mkIf cfg.enableSystemd {
+        systemd.user.services.dykwabi = lib.mkIf cfg.enableSystemd {
             Unit = {
-                Description = "DankMaterialShell";
+                Description = "BuckMaterialShell";
                 PartOf = [ config.wayland.systemd.target ];
                 After = [ config.wayland.systemd.target ];
             };
 
             Service = {
-                ExecStart = lib.getExe dmsPkgs.dmsCli + " run";
+                ExecStart = lib.getExe dykwabiPkgs.dykwabiCli + " run";
                 Restart = "on-failure";
             };
 
             Install.WantedBy = [ config.wayland.systemd.target ];
         };
 
-        xdg.stateFile."DankMaterialShell/default-session.json" = lib.mkIf (cfg.default.session != { }) {
+        xdg.stateFile."BuckMaterialShell/default-session.json" = lib.mkIf (cfg.default.session != { }) {
             source = jsonFormat.generate "default-session.json" cfg.default.session;
         };
 
         xdg.configFile = lib.mkMerge [
             (lib.mapAttrs' (name: plugin: {
-                name = "DankMaterialShell/plugins/${name}";
+                name = "BuckMaterialShell/plugins/${name}";
                 value.source = plugin.src;
             }) (lib.filterAttrs (n: v: v.enable) cfg.plugins))
             {
-                "DankMaterialShell/default-settings.json" = lib.mkIf (cfg.default.settings != { }) {
+                "BuckMaterialShell/default-settings.json" = lib.mkIf (cfg.default.settings != { }) {
                     source = jsonFormat.generate "default-settings.json" cfg.default.settings;
                 };
             }
@@ -146,10 +146,10 @@ in {
                 pkgs.libsForQt5.qt5ct
                 pkgs.kdePackages.qt6ct
 
-                dmsPkgs.dmsCli
+                dykwabiPkgs.dykwabiCli
             ]
-            ++ lib.optional cfg.enableSystemMonitoring dmsPkgs.dgop
-            ++ lib.optionals cfg.enableClipboard [pkgs.cliphist pkgs.wl-clipboard]
+            ++ lib.optional cfg.enableSystemMonitoring dykwabiPkgs.dgop
+            ++ lib.optionals cfg.enableClipboard [dykwabiPkgs.stash pkgs.wl-clipboard]
             ++ lib.optionals cfg.enableVPN [pkgs.glib pkgs.networkmanager]
             ++ lib.optional cfg.enableBrightnessControl pkgs.brightnessctl
             ++ lib.optional cfg.enableColorPicker pkgs.hyprpicker

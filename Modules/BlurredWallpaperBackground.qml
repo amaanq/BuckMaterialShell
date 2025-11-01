@@ -24,7 +24,7 @@ Variants {
         screen: modelData
 
         WlrLayershell.layer: WlrLayer.Background
-        WlrLayershell.namespace: "dms:blurwallpaper"
+        WlrLayershell.namespace: "dykwabi:blurwallpaper"
         WlrLayershell.exclusionMode: ExclusionMode.Ignore
 
         anchors.top: true
@@ -160,7 +160,7 @@ Variants {
                 active: !root.source || root.isColorSource
                 asynchronous: true
 
-                sourceComponent: DankBackdrop {
+                sourceComponent: BuckBackdrop {
                     screenName: modelData.name
                 }
             }

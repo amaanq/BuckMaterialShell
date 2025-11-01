@@ -311,8 +311,8 @@
   "Choose the border accent color": {
     "Choose the border accent color": "Kenarlık vurgu rengini seç"
   },
-  "Choose the logo displayed on the launcher button in DankBar": {
-    "Choose the logo displayed on the launcher button in DankBar": "DankBar'daki başlatıcı düğmesinde görüntülenen logoyu seçin"
+  "Choose the logo displayed on the launcher button in BuckBar": {
+    "Choose the logo displayed on the launcher button in BuckBar": "BuckBar'daki başlatıcı düğmesinde görüntülenen logoyu seçin"
   },
   "Choose where notification popups appear on screen": {
     "Choose where notification popups appear on screen": "Bildirim açılır pencerelerinin ekranda nerede görüneceğini seçin"
@@ -479,38 +479,38 @@
   "DEMO MODE - Click anywhere to exit": {
     "DEMO MODE - Click anywhere to exit": "DEMO MODU - Çıkmak için herhangi bir yere tıklayın"
   },
-  "DMS Plugin Manager Unavailable": {
-    "DMS Plugin Manager Unavailable": "DMS Eklenti Yöneticisi Kullanılamıyor"
+  "Dykwabi Plugin Manager Unavailable": {
+    "Dykwabi Plugin Manager Unavailable": "Dykwabi Eklenti Yöneticisi Kullanılamıyor"
   },
-  "DMS out of date": {
-    "DMS out of date": "DMS güncel değil"
+  "Dykwabi out of date": {
+    "Dykwabi out of date": "Dykwabi güncel değil"
   },
-  "DMS_SOCKET not available": {
-    "DMS_SOCKET not available": "DMS_SOCKET kullanılamıyor"
+  "DYKWABI_SOCKET not available": {
+    "DYKWABI_SOCKET not available": "DYKWABI_SOCKET kullanılamıyor"
   },
   "Daily at:": {
     "Daily at:": "Her gün saat:"
   },
-  "Dank": {
-    "Dank": ""
+  "Buck": {
+    "Buck": ""
   },
-  "Dank Bar": {
-    "Dank Bar": "Dank Bar"
+  "Buck Bar": {
+    "Buck Bar": "Buck Bar"
   },
-  "Dank Bar Transparency": {
-    "Dank Bar Transparency": "Dank Bar Şeffaflığı"
+  "Buck Bar Transparency": {
+    "Buck Bar Transparency": "Buck Bar Şeffaflığı"
   },
-  "Dank Bar Widget Transparency": {
-    "Dank Bar Widget Transparency": "Dank Bar Widget Şeffaflığı"
+  "Buck Bar Widget Transparency": {
+    "Buck Bar Widget Transparency": "Buck Bar Widget Şeffaflığı"
   },
-  "Dank Suite:": {
-    "Dank Suite:": "Dank Suite:"
+  "Buck Suite:": {
+    "Buck Suite:": "Buck Suite:"
   },
-  "DankBar Font Scale": {
-    "DankBar Font Scale": "DankBar Yazı Tipi Ölçeği"
+  "BuckBar Font Scale": {
+    "BuckBar Font Scale": "BuckBar Yazı Tipi Ölçeği"
   },
-  "DankSearch not available": {
-    "DankSearch not available": "DankSearch kullanılamıyor"
+  "BuckSearch not available": {
+    "BuckSearch not available": "BuckSearch kullanılamıyor"
   },
   "Date Format": {
     "Date Format": "Tarih Biçimi"
@@ -626,8 +626,8 @@
   "Enable WiFi": {
     "Enable WiFi": "WiFi Etkinleştir"
   },
-  "Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.": {
-    "Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.": "Kompozitör tarafından hedeflenebilir bulanıklık katmanını etkinleştir (isim alanı: dms:blurwallpaper). Manuel Niri yapılandırması gerektirir."
+  "Enable compositor-targetable blur layer (namespace: dykwabi:blurwallpaper). Requires manual niri configuration.": {
+    "Enable compositor-targetable blur layer (namespace: dykwabi:blurwallpaper). Requires manual niri configuration.": "Kompozitör tarafından hedeflenebilir bulanıklık katmanını etkinleştir (isim alanı: dykwabi:blurwallpaper). Manuel Niri yapılandırması gerektirir."
   },
   "Enable fingerprint authentication": {
     "Enable fingerprint authentication": "Parmak izi kimlik doğrulamasını etkinleştir"
@@ -779,8 +779,8 @@
   "Gamma Control": {
     "Gamma Control": "Gama Kontrolü"
   },
-  "Gamma control not available. Requires DMS API v6+.": {
-    "Gamma control not available. Requires DMS API v6+.": "Gama kontrolü mevcut değil. DMS API V6+ gerekir."
+  "Gamma control not available. Requires Dykwabi API v6+.": {
+    "Gamma control not available. Requires Dykwabi API v6+.": "Gama kontrolü mevcut değil. Dykwabi API V6+ gerekir."
   },
   "Geoclue service not running - cannot auto-detect location": {
     "Geoclue service not running - cannot auto-detect location": "Geoclue hizmeti çalışmıyor - konum otomatik olarak algılanamıyor"
@@ -872,8 +872,8 @@
   "Input Devices": {
     "Input Devices": "Giriş Aygıtları"
   },
-  "Install plugins from the DMS plugin registry": {
-    "Install plugins from the DMS plugin registry": "DMS eklenti deposundan eklentiler yükle"
+  "Install plugins from the Dykwabi plugin registry": {
+    "Install plugins from the Dykwabi plugin registry": "Dykwabi eklenti deposundan eklentiler yükle"
   },
   "Internet": {
     "Internet": "İnternet"
@@ -968,8 +968,8 @@
   "Low Priority": {
     "Low Priority": "Düşük Öncelik"
   },
-  "Manage and configure plugins for extending DMS functionality": {
-    "Manage and configure plugins for extending DMS functionality": "DMS işlevselliğini genişletmek için eklentileri yönetin ve yapılandırın"
+  "Manage and configure plugins for extending Dykwabi functionality": {
+    "Manage and configure plugins for extending Dykwabi functionality": "Dykwabi işlevselliğini genişletmek için eklentileri yönetin ve yapılandırın"
   },
   "Manual Coordinates": {
     "Manual Coordinates": "Manuel Koordinatlar"
@@ -1382,8 +1382,8 @@
   "Saved": {
     "Saved": "Kaydedildi"
   },
-  "Scale DankBar font sizes independently": {
-    "Scale DankBar font sizes independently": "DankBar yazı tipi boyutlarını bağımsız olarak ölçeklendir"
+  "Scale BuckBar font sizes independently": {
+    "Scale BuckBar font sizes independently": "BuckBar yazı tipi boyutlarını bağımsız olarak ölçeklendir"
   },
   "Scale all font sizes": {
     "Scale all font sizes": "Tüm yazı tipi boyutlarını ölçeklendir"
@@ -1646,8 +1646,8 @@
   "Text": {
     "Text": "Metin"
   },
-  "The DMS_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DMS_SOCKET.": {
-    "The DMS_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DMS_SOCKET.": "DMS_SOCKET ortam değişkeni ayarlanmamış veya soket kullanılamıyor. Otomatik eklenti yönetimi için DMS_SOCKET gereklidir."
+  "The DYKWABI_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DYKWABI_SOCKET.": {
+    "The DYKWABI_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DYKWABI_SOCKET.": "DYKWABI_SOCKET ortam değişkeni ayarlanmamış veya soket kullanılamıyor. Otomatik eklenti yönetimi için DYKWABI_SOCKET gereklidir."
   },
   "The below settings will modify your GTK and Qt settings. If you wish to preserve your current configurations, please back them up (qt5ct.conf|qt6ct.conf and ~/.config/gtk-3.0|gtk-4.0).": {
     "The below settings will modify your GTK and Qt settings. If you wish to preserve your current configurations, please back them up (qt5ct.conf|qt6ct.conf and ~/.config/gtk-3.0|gtk-4.0).": "Aşağıdaki ayarlar GTK ve Qt ayarlarınızı değiştirecektir. Mevcut yapılandırmalarınızı korumak istiyorsanız, lütfen yedekleyin (qt5ct.conf|qt6ct.conf ve ~/.config/gtk-3.0|gtk-4.0)."
@@ -1661,8 +1661,8 @@
   "Third-Party Plugin Warning": {
     "Third-Party Plugin Warning": "Üçüncü Taraf Eklenti Uyarısı"
   },
-  "Third-party plugins are created by the community and are not officially supported by DankMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": {
-    "Third-party plugins are created by the community and are not officially supported by DankMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": "Üçüncü taraf eklentiler topluluk tarafından oluşturulmuştur ve DankMaterialShell tarafından resmi olarak desteklenmemektedir.\\n\\nBu eklentiler güvenlik ve gizlilik riskleri oluşturabilir - kendi sorumluluğunuzda yükleyin."
+  "Third-party plugins are created by the community and are not officially supported by BuckMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": {
+    "Third-party plugins are created by the community and are not officially supported by BuckMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": "Üçüncü taraf eklentiler topluluk tarafından oluşturulmuştur ve BuckMaterialShell tarafından resmi olarak desteklenmemektedir.\\n\\nBu eklentiler güvenlik ve gizlilik riskleri oluşturabilir - kendi sorumluluğunuzda yükleyin."
   },
   "This widget prevents GPU power off states, which can significantly impact battery life on laptops. It is not recommended to use this on laptops with hybrid graphics.": {
     "This widget prevents GPU power off states, which can significantly impact battery life on laptops. It is not recommended to use this on laptops with hybrid graphics.": "Bu widget, dizüstü bilgisayarlarda pil ömrünü önemli ölçüde etkileyebilen GPU güç kapatma durumlarını önler. Hibrit grafik kartına sahip dizüstü bilgisayarlarda kullanılması önerilmez."
@@ -1889,8 +1889,8 @@
   "events": {
     "events": "etkinlikler"
   },
-  "loginctl not available - lock integration requires DMS socket connection": {
-    "loginctl not available - lock integration requires DMS socket connection": "loginctl kullanılabilir değil - kilit entegrasyonu DMS soket bağlantısı gerektirir"
+  "loginctl not available - lock integration requires Dykwabi socket connection": {
+    "loginctl not available - lock integration requires Dykwabi socket connection": "loginctl kullanılabilir değil - kilit entegrasyonu Dykwabi soket bağlantısı gerektirir"
   },
   "matugen not detected - dynamic theming unavailable": {
     "matugen not detected - dynamic theming unavailable": "matugen tespit edilemedi - dinamik tema kullanılamıyor"
@@ -1898,8 +1898,8 @@
   "official": {
     "official": "resmi"
   },
-  "update dms for NM integration.": {
-    "update dms for NM integration.": "NM entegrasyonu için dms'yi güncelle"
+  "update dykwabi for NM integration.": {
+    "update dykwabi for NM integration.": "NM entegrasyonu için dykwabi'yi güncelle"
   },
   "• Install only from trusted sources": {
     "• Install only from trusted sources": "• Yalnızca güvenilir kaynaklardan yükle"

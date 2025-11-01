@@ -311,8 +311,8 @@
   "Choose the border accent color": {
     "Choose the border accent color": "ボーダーの強調色を選ぶ"
   },
-  "Choose the logo displayed on the launcher button in DankBar": {
-    "Choose the logo displayed on the launcher button in DankBar": "Dank Barのランチャーボタンに表示されるロゴを選ぶ"
+  "Choose the logo displayed on the launcher button in BuckBar": {
+    "Choose the logo displayed on the launcher button in BuckBar": "Buck Barのランチャーボタンに表示されるロゴを選ぶ"
   },
   "Choose where notification popups appear on screen": {
     "Choose where notification popups appear on screen": "通知ポップアップが画面に表示される場所を選ぶ"
@@ -479,38 +479,38 @@
   "DEMO MODE - Click anywhere to exit": {
     "DEMO MODE - Click anywhere to exit": "デモモード -任意の場所をクリックして 終了"
   },
-  "DMS Plugin Manager Unavailable": {
-    "DMS Plugin Manager Unavailable": "DMS プラグイン マネージャーが利用できません"
+  "Dykwabi Plugin Manager Unavailable": {
+    "Dykwabi Plugin Manager Unavailable": "Dykwabi プラグイン マネージャーが利用できません"
   },
-  "DMS out of date": {
-    "DMS out of date": "DMSに更新があります"
+  "Dykwabi out of date": {
+    "Dykwabi out of date": "Dykwabiに更新があります"
   },
-  "DMS_SOCKET not available": {
-    "DMS_SOCKET not available": "DMS_SOCKETが利用できません"
+  "DYKWABI_SOCKET not available": {
+    "DYKWABI_SOCKET not available": "DYKWABI_SOCKETが利用できません"
   },
   "Daily at:": {
     "Daily at:": "毎日："
   },
-  "Dank": {
-    "Dank": "Dank"
+  "Buck": {
+    "Buck": "Buck"
   },
-  "Dank Bar": {
-    "Dank Bar": "Dank Bar"
+  "Buck Bar": {
+    "Buck Bar": "Buck Bar"
   },
-  "Dank Bar Transparency": {
-    "Dank Bar Transparency": "Dank Barの透明性"
+  "Buck Bar Transparency": {
+    "Buck Bar Transparency": "Buck Barの透明性"
   },
-  "Dank Bar Widget Transparency": {
-    "Dank Bar Widget Transparency": "Dank Barウィジェットの透明度"
+  "Buck Bar Widget Transparency": {
+    "Buck Bar Widget Transparency": "Buck Barウィジェットの透明度"
   },
-  "Dank Suite:": {
-    "Dank Suite:": "Dankスイート："
+  "Buck Suite:": {
+    "Buck Suite:": "Buckスイート："
   },
-  "DankBar Font Scale": {
-    "DankBar Font Scale": "Dank Bar フォントスケール"
+  "BuckBar Font Scale": {
+    "BuckBar Font Scale": "Buck Bar フォントスケール"
   },
-  "DankSearch not available": {
-    "DankSearch not available": "DankSearchが利用できません"
+  "BuckSearch not available": {
+    "BuckSearch not available": "BuckSearchが利用できません"
   },
   "Date Format": {
     "Date Format": "日付形式"
@@ -626,8 +626,8 @@
   "Enable WiFi": {
     "Enable WiFi": "WiFiを有効にする"
   },
-  "Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.": {
-    "Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.": "コンポジターをターゲットに設定できるぼかしレイヤー(名前空間：dms:blurwallpaper)を有効にします。Niri を手動で設定する必要があります。"
+  "Enable compositor-targetable blur layer (namespace: dykwabi:blurwallpaper). Requires manual niri configuration.": {
+    "Enable compositor-targetable blur layer (namespace: dykwabi:blurwallpaper). Requires manual niri configuration.": "コンポジターをターゲットに設定できるぼかしレイヤー(名前空間：dykwabi:blurwallpaper)を有効にします。Niri を手動で設定する必要があります。"
   },
   "Enable fingerprint authentication": {
     "Enable fingerprint authentication": "指紋認証を有効に"
@@ -779,8 +779,8 @@
   "Gamma Control": {
     "Gamma Control": "ガンマ設定"
   },
-  "Gamma control not available. Requires DMS API v6+.": {
-    "Gamma control not available. Requires DMS API v6+.": "ガンマ制御は使用できません。DMS API v6+ が必要です。"
+  "Gamma control not available. Requires Dykwabi API v6+.": {
+    "Gamma control not available. Requires Dykwabi API v6+.": "ガンマ制御は使用できません。Dykwabi API v6+ が必要です。"
   },
   "Geoclue service not running - cannot auto-detect location": {
     "Geoclue service not running - cannot auto-detect location": "ジオクルー サービスが実行されていない - 位置を自動検出できません"
@@ -872,8 +872,8 @@
   "Input Devices": {
     "Input Devices": "入力デバイス"
   },
-  "Install plugins from the DMS plugin registry": {
-    "Install plugins from the DMS plugin registry": "DMSプラグインレジストリからプラグインをインストールする"
+  "Install plugins from the Dykwabi plugin registry": {
+    "Install plugins from the Dykwabi plugin registry": "Dykwabiプラグインレジストリからプラグインをインストールする"
   },
   "Internet": {
     "Internet": "インターネット"
@@ -968,8 +968,8 @@
   "Low Priority": {
     "Low Priority": "低優先度"
   },
-  "Manage and configure plugins for extending DMS functionality": {
-    "Manage and configure plugins for extending DMS functionality": "DMS 機能を拡張するためのプラグインを管理および構成"
+  "Manage and configure plugins for extending Dykwabi functionality": {
+    "Manage and configure plugins for extending Dykwabi functionality": "Dykwabi 機能を拡張するためのプラグインを管理および構成"
   },
   "Manual Coordinates": {
     "Manual Coordinates": "手動座標"
@@ -1382,8 +1382,8 @@
   "Saved": {
     "Saved": "保存されました"
   },
-  "Scale DankBar font sizes independently": {
-    "Scale DankBar font sizes independently": "Dank Barのフォントサイズを個別に調整"
+  "Scale BuckBar font sizes independently": {
+    "Scale BuckBar font sizes independently": "Buck Barのフォントサイズを個別に調整"
   },
   "Scale all font sizes": {
     "Scale all font sizes": "すべてのフォントサイズを拡大縮小"
@@ -1646,8 +1646,8 @@
   "Text": {
     "Text": "テキスト"
   },
-  "The DMS_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DMS_SOCKET.": {
-    "The DMS_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DMS_SOCKET.": "DMS_SOCKET環境変数が設定されていないか、ソケットが利用できません。自動プラグイン管理にはDMS_SOCKETが必要です。"
+  "The DYKWABI_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DYKWABI_SOCKET.": {
+    "The DYKWABI_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DYKWABI_SOCKET.": "DYKWABI_SOCKET環境変数が設定されていないか、ソケットが利用できません。自動プラグイン管理にはDYKWABI_SOCKETが必要です。"
   },
   "The below settings will modify your GTK and Qt settings. If you wish to preserve your current configurations, please back them up (qt5ct.conf|qt6ct.conf and ~/.config/gtk-3.0|gtk-4.0).": {
     "The below settings will modify your GTK and Qt settings. If you wish to preserve your current configurations, please back them up (qt5ct.conf|qt6ct.conf and ~/.config/gtk-3.0|gtk-4.0).": "以下の設定は、GTKとQtの設定を変更します。現在の設定を維持したい場合は、バックアップを作成してください（qt5ct.conf|qt6ct.conf および ~/.config/gtk-3.0|gtk-4.0）。"
@@ -1661,8 +1661,8 @@
   "Third-Party Plugin Warning": {
     "Third-Party Plugin Warning": "サードパーティ製プラグインの警告"
   },
-  "Third-party plugins are created by the community and are not officially supported by DankMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": {
-    "Third-party plugins are created by the community and are not officially supported by DankMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": "サードパーティプラグインはコミュニティによって作成されており、DankMaterialShellによる公式サポートはありません。\\n\\nこれらのプラグインはセキュリティやプライバシーのリスクをもたらす可能性があります - 自己責任でインストールしてください。"
+  "Third-party plugins are created by the community and are not officially supported by BuckMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": {
+    "Third-party plugins are created by the community and are not officially supported by BuckMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": "サードパーティプラグインはコミュニティによって作成されており、BuckMaterialShellによる公式サポートはありません。\\n\\nこれらのプラグインはセキュリティやプライバシーのリスクをもたらす可能性があります - 自己責任でインストールしてください。"
   },
   "This widget prevents GPU power off states, which can significantly impact battery life on laptops. It is not recommended to use this on laptops with hybrid graphics.": {
     "This widget prevents GPU power off states, which can significantly impact battery life on laptops. It is not recommended to use this on laptops with hybrid graphics.": "このウィジェットはGPUの省電力状態を防ぎ、ノートパソコンのバッテリー寿命に大きな影響を与える可能性があります。ハイブリッドグラフィックス搭載のノートパソコンでの使用は推奨されません。"
@@ -1889,8 +1889,8 @@
   "events": {
     "events": "イベント"
   },
-  "loginctl not available - lock integration requires DMS socket connection": {
-    "loginctl not available - lock integration requires DMS socket connection": "loginctlが利用できません- ロック統合のためにDMS socketの接続が必要です。"
+  "loginctl not available - lock integration requires Dykwabi socket connection": {
+    "loginctl not available - lock integration requires Dykwabi socket connection": "loginctlが利用できません- ロック統合のためにDykwabi socketの接続が必要です。"
   },
   "matugen not detected - dynamic theming unavailable": {
     "matugen not detected - dynamic theming unavailable": "matugen が検出されません - ダイナミックテーマ設定は利用できません"
@@ -1898,8 +1898,8 @@
   "official": {
     "official": "公式"
   },
-  "update dms for NM integration.": {
-    "update dms for NM integration.": "NM統合のためにDMSを更新します。"
+  "update dykwabi for NM integration.": {
+    "update dykwabi for NM integration.": "NM統合のためにDykwabiを更新します。"
   },
   "• Install only from trusted sources": {
     "• Install only from trusted sources": "• 信頼できるソースからのみインストールする"

@@ -4,7 +4,7 @@ import qs.Modals.Common
 import qs.Services
 import qs.Widgets
 
-DankModal {
+BuckModal {
     id: root
 
     property string wifiPasswordSSID: ""
@@ -216,7 +216,7 @@ DankModal {
                         }
                     }
 
-                    DankActionButton {
+                    BuckActionButton {
                         iconName: "close"
                         iconSize: Theme.iconSize - 4
                         iconColor: Theme.surfaceText
@@ -249,7 +249,7 @@ DankModal {
                                    }
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         id: usernameInput
 
                         anchors.fill: parent
@@ -285,7 +285,7 @@ DankModal {
                                    }
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         id: passwordInput
 
                         anchors.fill: parent
@@ -379,7 +379,7 @@ DankModal {
                                    }
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         id: anonInput
 
                         anchors.fill: parent
@@ -411,7 +411,7 @@ DankModal {
                                    }
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         id: domainMatchInput
 
                         anchors.fill: parent
@@ -442,7 +442,7 @@ DankModal {
                         border.color: checked ? Theme.primary : Theme.outlineButton
                         border.width: 2
 
-                        DankIcon {
+                        BuckIcon {
                             anchors.centerIn: parent
                             name: "check"
                             size: 12

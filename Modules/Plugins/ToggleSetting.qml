@@ -70,7 +70,7 @@ Row {
         }
     }
 
-    DankToggle {
+    BuckToggle {
         id: toggle
         anchors.verticalCenter: parent.verticalCenter
         checked: root.value

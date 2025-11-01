@@ -1,9 +1,9 @@
 # IPC Commands Reference
 
-DankMaterialShell provides comprehensive IPC (Inter-Process Communication) functionality that allows external control of the shell through command-line commands. All IPC commands follow the format:
+BuckMaterialShell provides comprehensive IPC (Inter-Process Communication) functionality that allows external control of the shell through command-line commands. All IPC commands follow the format:
 
 ```bash
-dms ipc call <target> <function> [parameters...]
+dykwabi ipc call <target> <function> [parameters...]
 ```
 
 ## Target: `audio`
@@ -44,9 +44,9 @@ Audio system control and information.
 
 ### Examples
 ```bash
-dms ipc call audio setvolume 50
-dms ipc call audio increment 10
-dms ipc call audio mute
+dykwabi ipc call audio setvolume 50
+dykwabi ipc call audio increment 10
+dykwabi ipc call audio mute
 ```
 
 ## Target: `brightness`
@@ -86,9 +86,9 @@ Display brightness control for internal and external displays.
 
 ### Examples
 ```bash
-dms ipc call brightness set 80
-dms ipc call brightness increment 10 ""
-dms ipc call brightness decrement 5 "intel_backlight"
+dykwabi ipc call brightness set 80
+dykwabi ipc call brightness increment 10 ""
+dykwabi ipc call brightness decrement 5 "intel_backlight"
 ```
 
 ## Target: `night`
@@ -141,11 +141,11 @@ Night mode (gamma/color temperature) control.
 
 ### Examples
 ```bash
-dms ipc call night toggle
-dms ipc call night temperature 4000
-dms ipc call night automation time
-dms ipc call night schedule 20:00 06:00
-dms ipc call night location 40.7128 -74.0060
+dykwabi ipc call night toggle
+dykwabi ipc call night temperature 4000
+dykwabi ipc call night automation time
+dykwabi ipc call night schedule 20:00 06:00
+dykwabi ipc call night location 40.7128 -74.0060
 ```
 
 ## Target: `mpris`
@@ -184,8 +184,8 @@ Media player control via MPRIS interface.
 
 ### Examples
 ```bash
-dms ipc call mpris playPause
-dms ipc call mpris next
+dykwabi ipc call mpris playPause
+dykwabi ipc call mpris next
 ```
 
 ## Target: `lock`
@@ -208,8 +208,8 @@ Screen lock control and status.
 
 ### Examples
 ```bash
-dms ipc call lock lock
-dms ipc call lock isLocked
+dykwabi ipc call lock lock
+dykwabi ipc call lock isLocked
 ```
 
 ## Target: `inhibit`
@@ -232,8 +232,8 @@ Idle inhibitor control to prevent automatic sleep/lock.
 
 ### Examples
 ```bash
-dms ipc call inhibit toggle
-dms ipc call inhibit enable
+dykwabi ipc call inhibit toggle
+dykwabi ipc call inhibit enable
 ```
 
 ## Target: `wallpaper`
@@ -291,36 +291,36 @@ Wallpaper management and retrieval with support for per-monitor configurations.
 
 **Global wallpaper mode:**
 ```bash
-dms ipc call wallpaper get
-dms ipc call wallpaper set /path/to/image.jpg
-dms ipc call wallpaper next
-dms ipc call wallpaper clear
+dykwabi ipc call wallpaper get
+dykwabi ipc call wallpaper set /path/to/image.jpg
+dykwabi ipc call wallpaper next
+dykwabi ipc call wallpaper clear
 ```
 
 **Per-monitor wallpaper mode:**
 ```bash
 # Set different wallpapers for each monitor
-dms ipc call wallpaper setFor DP-2 /path/to/image1.jpg
-dms ipc call wallpaper setFor eDP-1 /path/to/image2.jpg
+dykwabi ipc call wallpaper setFor DP-2 /path/to/image1.jpg
+dykwabi ipc call wallpaper setFor eDP-1 /path/to/image2.jpg
 
 # Get wallpaper for specific monitor
-dms ipc call wallpaper getFor DP-2
+dykwabi ipc call wallpaper getFor DP-2
 
 # Cycle wallpapers for specific monitor
-dms ipc call wallpaper nextFor eDP-1
-dms ipc call wallpaper prevFor DP-2
+dykwabi ipc call wallpaper nextFor eDP-1
+dykwabi ipc call wallpaper prevFor DP-2
 
 # Clear all wallpapers and return to global mode
-dms ipc call wallpaper clear
+dykwabi ipc call wallpaper clear
 ```
 
 **Error handling:**
 When per-monitor mode is enabled, legacy functions will return helpful error messages:
 ```bash
-dms ipc call wallpaper get
+dykwabi ipc call wallpaper get
 # Returns: "ERROR: Per-monitor mode enabled. Use getFor(screenName) instead."
 
-dms ipc call wallpaper set /path/to/image.jpg
+dykwabi ipc call wallpaper set /path/to/image.jpg
 # Returns: "ERROR: Per-monitor mode enabled. Use setFor(screenName, path) instead."
 ```
 
@@ -345,9 +345,9 @@ User profile image management.
 
 ### Examples
 ```bash
-dms ipc call profile getImage
-dms ipc call profile setImage /path/to/avatar.png
-dms ipc call profile clearImage
+dykwabi ipc call profile getImage
+dykwabi ipc call profile setImage /path/to/avatar.png
+dykwabi ipc call profile clearImage
 ```
 
 ## Target: `theme`
@@ -374,8 +374,8 @@ Theme mode control (light/dark mode switching).
 
 ### Examples
 ```bash
-dms ipc call theme toggle
-dms ipc call theme dark
+dykwabi ipc call theme toggle
+dykwabi ipc call theme dark
 ```
 
 ## Target: `bar`
@@ -402,9 +402,9 @@ Top bar visibility control.
 
 ### Examples
 ```bash
-dms ipc call bar toggle
-dms ipc call bar hide
-dms ipc call bar status
+dykwabi ipc call bar toggle
+dykwabi ipc call bar hide
+dykwabi ipc call bar status
 ```
 
 ## Target: `systemupdater`
@@ -419,7 +419,7 @@ System updater external check request.
 
 ### Examples
 ```bash
-dms ipc call systemupdater updatestatus
+dykwabi ipc call systemupdater updatestatus
 ```
 
 ## Modal Controls
@@ -490,9 +490,9 @@ Control Center popout containing network, bluetooth, audio, power, and other qui
 
 **Examples**
 ```bash
-dms ipc call control-center toggle
-dms ipc call control-center open
-dms ipc call control-center close
+dykwabi ipc call control-center toggle
+dykwabi ipc call control-center open
+dykwabi ipc call control-center close
 ```
 
 ### Target: `notepad`
@@ -516,11 +516,11 @@ Dashboard popup control with tab selection for overview, media, and weather info
   - Parameters: `tab` - Tab to open when showing: "", "overview", "media", or "weather"
   - Returns: Success/failure message
 
-### Target: `dankdash`
-DankDash wallpaper browser control.
+### Target: `buckdash`
+BuckDash wallpaper browser control.
 
 **Functions:**
-- `wallpaper` - Toggle DankDash popup on focused screen with wallpaper tab selected
+- `wallpaper` - Toggle BuckDash popup on focused screen with wallpaper tab selected
   - Returns: Success/failure message
 
 ### Target: `file`
@@ -574,50 +574,50 @@ Displays a live overview of all workspaces across all monitors with window previ
 ### Modal Examples
 ```bash
 # Open application launcher
-dms ipc call spotlight toggle
+dykwabi ipc call spotlight toggle
 
 # Open spotlight with pre-filled search
-dms ipc call spotlight openQuery browser
-dms ipc call spotlight toggleQuery "!"
+dykwabi ipc call spotlight openQuery browser
+dykwabi ipc call spotlight toggleQuery "!"
 
 # Show clipboard history
-dms ipc call clipboard open
+dykwabi ipc call clipboard open
 
 # Toggle notification center
-dms ipc call notifications toggle
+dykwabi ipc call notifications toggle
 
 # Show settings
-dms ipc call settings open
+dykwabi ipc call settings open
 
 # Show system monitor
-dms ipc call processlist toggle
+dykwabi ipc call processlist toggle
 
 # Show power menu
-dms ipc call powermenu toggle
+dykwabi ipc call powermenu toggle
 
 # Open notepad
-dms ipc call notepad toggle
+dykwabi ipc call notepad toggle
 
 # Show dashboard with specific tabs
-dms ipc call dash open overview
-dms ipc call dash toggle media
-dms ipc call dash open weather
+dykwabi ipc call dash open overview
+dykwabi ipc call dash toggle media
+dykwabi ipc call dash open weather
 
 # Open wallpaper browser
-dms ipc call dankdash wallpaper
+dykwabi ipc call buckdash wallpaper
 
 # Open file browsers
-dms ipc call file browse wallpaper
-dms ipc call file browse profile
+dykwabi ipc call file browse wallpaper
+dykwabi ipc call file browse profile
 
 # Show Hyprland keybinds cheatsheet (Hyprland only)
-dms ipc call hypr toggleBinds
-dms ipc call hypr openBinds
+dykwabi ipc call hypr toggleBinds
+dykwabi ipc call hypr openBinds
 
 # Show Hyprland workspace overview (Hyprland only)
-dms ipc call hypr toggleOverview
-dms ipc call hypr openOverview
-dms ipc call hypr closeOverview
+dykwabi ipc call hypr toggleOverview
+dykwabi ipc call hypr openOverview
+dykwabi ipc call hypr closeOverview
 ```
 
 ## Common Usage Patterns
@@ -629,25 +629,25 @@ These IPC commands are designed to be used with window manager keybindings.
 **Example niri configuration:**
 ```kdl
 binds {
-    Mod+Space { spawn "qs" "-c" "dms" "ipc" "call" "spotlight" "toggle"; }
-    Mod+V { spawn "qs" "-c" "dms" "ipc" "call" "clipboard" "toggle"; }
-    Mod+P { spawn "qs" "-c" "dms" "ipc" "call" "notepad" "toggle"; }
-    Mod+X { spawn "qs" "-c" "dms" "ipc" "call" "powermenu" "toggle"; }
-    XF86AudioRaiseVolume { spawn "qs" "-c" "dms" "ipc" "call" "audio" "increment" "3"; }
-    XF86MonBrightnessUp { spawn "qs" "-c" "dms" "ipc" "call" "brightness" "increment" "5" ""; }
+    Mod+Space { spawn "qs" "-c" "dykwabi" "ipc" "call" "spotlight" "toggle"; }
+    Mod+V { spawn "qs" "-c" "dykwabi" "ipc" "call" "clipboard" "toggle"; }
+    Mod+P { spawn "qs" "-c" "dykwabi" "ipc" "call" "notepad" "toggle"; }
+    Mod+X { spawn "qs" "-c" "dykwabi" "ipc" "call" "powermenu" "toggle"; }
+    XF86AudioRaiseVolume { spawn "qs" "-c" "dykwabi" "ipc" "call" "audio" "increment" "3"; }
+    XF86MonBrightnessUp { spawn "qs" "-c" "dykwabi" "ipc" "call" "brightness" "increment" "5" ""; }
 }
 ```
 
 **Example Hyprland configuration:**
 ```conf
-bind = SUPER, Space, exec, qs -c dms ipc call spotlight toggle
-bind = SUPER, V, exec, qs -c dms ipc call clipboard toggle
-bind = SUPER, P, exec, qs -c dms ipc call notepad toggle
-bind = SUPER, X, exec, qs -c dms ipc call powermenu toggle
-bind = SUPER, slash, exec, qs -c dms ipc call hypr toggleBinds
-bind = SUPER, Tab, exec, qs -c dms ipc call hypr toggleOverview
-bind = , XF86AudioRaiseVolume, exec, qs -c dms ipc call audio increment 3
-bind = , XF86MonBrightnessUp, exec, qs -c dms ipc call brightness increment 5 ""
+bind = SUPER, Space, exec, qs -c dykwabi ipc call spotlight toggle
+bind = SUPER, V, exec, qs -c dykwabi ipc call clipboard toggle
+bind = SUPER, P, exec, qs -c dykwabi ipc call notepad toggle
+bind = SUPER, X, exec, qs -c dykwabi ipc call powermenu toggle
+bind = SUPER, slash, exec, qs -c dykwabi ipc call hypr toggleBinds
+bind = SUPER, Tab, exec, qs -c dykwabi ipc call hypr toggleOverview
+bind = , XF86AudioRaiseVolume, exec, qs -c dykwabi ipc call audio increment 3
+bind = , XF86MonBrightnessUp, exec, qs -c dykwabi ipc call brightness increment 5 ""
 ```
 
 ### Scripting and Automation
@@ -659,9 +659,9 @@ IPC commands can be used in scripts for automation:
 # Toggle night mode based on time of day
 hour=$(date +%H)
 if [ $hour -ge 20 ] || [ $hour -le 6 ]; then
-    dms ipc call night enable
+    dykwabi ipc call night enable
 else
-    dms ipc call night disable
+    dykwabi ipc call night disable
 fi
 ```
 
@@ -671,9 +671,9 @@ Many commands provide status information useful for scripts:
 
 ```bash
 # Check if screen is locked before performing action
-if dms ipc call lock isLocked | grep -q "false"; then
+if dykwabi ipc call lock isLocked | grep -q "false"; then
     # Perform action only if unlocked
-    dms ipc call notifications open
+    dykwabi ipc call notifications open
 fi
 ```
 

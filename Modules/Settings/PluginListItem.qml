@@ -61,7 +61,7 @@ StyledRect {
             width: parent.width
             spacing: Theme.spacingM
 
-            DankIcon {
+            BuckIcon {
                 name: root.pluginIcon
                 size: Theme.iconSize
                 color: PluginService.isPluginLoaded(root.pluginId) ? Theme.primary : Theme.surfaceVariantText
@@ -85,7 +85,7 @@ StyledRect {
                         anchors.verticalCenter: parent.verticalCenter
                     }
 
-                    DankIcon {
+                    BuckIcon {
                         name: root.hasSettings ? (root.isExpanded ? "expand_less" : "expand_more") : ""
                         size: 16
                         color: root.hasSettings ? Theme.primary : "transparent"
@@ -112,9 +112,9 @@ StyledRect {
                     height: 28
                     radius: 14
                     color: updateArea.containsMouse ? Theme.surfaceContainerHighest : "transparent"
-                    visible: DMSService.dmsAvailable && PluginService.isPluginLoaded(root.pluginId) && root.hasUpdate
+                    visible: DykwabiService.dykwabiAvailable && PluginService.isPluginLoaded(root.pluginId) && root.hasUpdate
 
-                    DankIcon {
+                    BuckIcon {
                         anchors.centerIn: parent
                         name: "download"
                         size: 16
@@ -129,14 +129,14 @@ StyledRect {
                         onClicked: {
                             const currentPluginName = root.pluginName
                             const currentPluginId = root.pluginId
-                            DMSService.update(currentPluginName, response => {
+                            DykwabiService.update(currentPluginName, response => {
                                 if (response.error) {
                                     ToastService.showError("Update failed: " + response.error)
                                 } else {
                                     ToastService.showInfo("Plugin updated: " + currentPluginName)
                                     PluginService.forceRescanPlugin(currentPluginId)
-                                    if (DMSService.apiVersion >= 8) {
-                                        DMSService.listInstalled()
+                                    if (DykwabiService.apiVersion >= 8) {
+                                        DykwabiService.listInstalled()
                                     }
                                 }
                             })
@@ -162,9 +162,9 @@ StyledRect {
                     height: 28
                     radius: 14
                     color: uninstallArea.containsMouse ? Theme.surfaceContainerHighest : "transparent"
-                    visible: DMSService.dmsAvailable
+                    visible: DykwabiService.dykwabiAvailable
 
-                    DankIcon {
+                    BuckIcon {
                         anchors.centerIn: parent
                         name: "delete"
                         size: 16
@@ -178,7 +178,7 @@ StyledRect {
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
                             const currentPluginName = root.pluginName
-                            DMSService.uninstall(currentPluginName, response => {
+                            DykwabiService.uninstall(currentPluginName, response => {
                                 if (response.error) {
                                     ToastService.showError("Uninstall failed: " + response.error)
                                 } else {
@@ -213,7 +213,7 @@ StyledRect {
                     color: reloadArea.containsMouse ? Theme.surfaceContainerHighest : "transparent"
                     visible: PluginService.isPluginLoaded(root.pluginId)
 
-                    DankIcon {
+                    BuckIcon {
                         anchors.centerIn: parent
                         name: "refresh"
                         size: 16
@@ -252,7 +252,7 @@ StyledRect {
                     }
                 }
 
-                DankToggle {
+                BuckToggle {
                     id: pluginToggle
                     anchors.verticalCenter: parent.verticalCenter
                     checked: PluginService.isPluginLoaded(root.pluginId)
@@ -391,6 +391,6 @@ StyledRect {
     Loader {
         id: tooltipLoader
         active: false
-        sourceComponent: DankTooltip {}
+        sourceComponent: BuckTooltip {}
     }
 }

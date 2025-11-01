@@ -69,7 +69,7 @@ Rectangle {
                 }
             }
 
-            DankIcon {
+            BuckIcon {
                 anchors.centerIn: parent
                 name: {
                     if (!AudioService.sink || !AudioService.sink.audio) return "volume_off"
@@ -85,7 +85,7 @@ Rectangle {
             }
         }
 
-        DankSlider {
+        BuckSlider {
             readonly property real actualVolumePercent: AudioService.sink && AudioService.sink.audio ? Math.round(AudioService.sink.audio.volume * 100) : 0
 
             anchors.verticalCenter: parent.verticalCenter
@@ -111,7 +111,7 @@ Rectangle {
         }
     }
 
-    DankFlickable {
+    BuckFlickable {
         id: audioContent
         anchors.top: volumeSlider.visible ? volumeSlider.bottom : headerRow.bottom
         anchors.left: parent.left
@@ -149,7 +149,7 @@ Rectangle {
                         anchors.leftMargin: Theme.spacingM
                         spacing: Theme.spacingS
 
-                        DankIcon {
+                        BuckIcon {
                             name: {
                                 if (modelData.name.includes("bluez"))
                                     return "headset"

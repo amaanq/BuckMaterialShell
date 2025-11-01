@@ -17,7 +17,7 @@ Rectangle {
         "text": I18n.tr("Time & Weather"),
         "icon": "schedule"
     }, {
-        "text": I18n.tr("Dank Bar"),
+        "text": I18n.tr("Buck Bar"),
         "icon": "toolbar"
     }, {
         "text": I18n.tr("Widgets"),
@@ -58,7 +58,7 @@ Rectangle {
     color: Theme.surfaceContainer
     radius: Theme.cornerRadius
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         clip: true
         contentHeight: sidebarColumn.implicitHeight
@@ -111,7 +111,7 @@ Rectangle {
                         anchors.verticalCenter: parent.verticalCenter
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: modelData.icon || ""
                             size: Theme.iconSize - 2
                             color: parent.parent.isActive ? Theme.primaryText : Theme.surfaceText

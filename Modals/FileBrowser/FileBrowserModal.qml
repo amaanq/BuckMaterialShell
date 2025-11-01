@@ -8,7 +8,7 @@ import qs.Modals.Common
 import qs.Modals.FileBrowser
 import qs.Widgets
 
-DankModal {
+BuckModal {
     id: fileBrowserModal
 
     property string homeDir: StandardPaths.writableLocation(StandardPaths.HomeLocation)
@@ -617,7 +617,7 @@ DankModal {
                         anchors.left: parent.left
                         anchors.leftMargin: Theme.spacingL
 
-                        DankIcon {
+                        BuckIcon {
                             name: browserIcon
                             size: Theme.iconSizeLarge
                             color: Theme.primary
@@ -639,7 +639,7 @@ DankModal {
                         anchors.verticalCenter: parent.verticalCenter
                         spacing: Theme.spacingS
 
-                        DankActionButton {
+                        BuckActionButton {
                             circular: false
                             iconName: showHiddenFiles ? "visibility_off" : "visibility"
                             iconSize: Theme.iconSize - 4
@@ -648,7 +648,7 @@ DankModal {
                             onClicked: showHiddenFiles = !showHiddenFiles
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             circular: false
                             iconName: viewMode === "grid" ? "view_list" : "grid_view"
                             iconSize: Theme.iconSize - 4
@@ -657,7 +657,7 @@ DankModal {
                             onClicked: viewMode = viewMode === "grid" ? "list" : "grid"
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             circular: false
                             iconName: iconSizeIndex === 0 ? "photo_size_select_small" : iconSizeIndex === 1 ? "photo_size_select_large" : iconSizeIndex === 2 ? "photo_size_select_actual" : "zoom_in"
                             iconSize: Theme.iconSize - 4
@@ -666,7 +666,7 @@ DankModal {
                             onClicked: iconSizeIndex = (iconSizeIndex + 1) % iconSizes.length
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             circular: false
                             iconName: "movie"
                             iconSize: Theme.iconSize - 4
@@ -682,7 +682,7 @@ DankModal {
                             }
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             circular: false
                             iconName: "info"
                             iconSize: Theme.iconSize - 4
@@ -690,7 +690,7 @@ DankModal {
                             onClicked: fileBrowserModal.showKeyboardHints = !fileBrowserModal.showKeyboardHints
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             circular: false
                             iconName: "close"
                             iconSize: Theme.iconSize - 4
@@ -782,7 +782,7 @@ DankModal {
                                     fileBrowserModal.actualGridColumns = gridColumns
                                 }
 
-                                DankGridView {
+                                BuckGridView {
                                     id: fileGrid
                                     anchors.fill: parent
                                     anchors.leftMargin: gridContainer.gridLeftMargin
@@ -800,7 +800,7 @@ DankModal {
                                             positionViewAtIndex(currentIndex, GridView.Contain)
                                     }
 
-                                    ScrollBar.vertical: DankScrollbar {
+                                    ScrollBar.vertical: BuckScrollbar {
                                         id: gridScrollbar
                                     }
 
@@ -856,7 +856,7 @@ DankModal {
                                     }
                                 }
 
-                                DankListView {
+                                BuckListView {
                                     id: fileList
                                     anchors.fill: parent
                                     anchors.leftMargin: Theme.spacingM
@@ -872,7 +872,7 @@ DankModal {
                                             positionViewAtIndex(currentIndex, ListView.Contain)
                                     }
 
-                                    ScrollBar.vertical: DankScrollbar {
+                                    ScrollBar.vertical: BuckScrollbar {
                                         id: listScrollbar
                                     }
 

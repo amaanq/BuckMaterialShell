@@ -169,7 +169,7 @@ StyledRect {
                 }
             }
 
-            DankNFIcon {
+            BuckNFIcon {
                 anchors.centerIn: parent
                 name: delegateRoot.fileIsDir ? "folder" : getIconForFile(delegateRoot.fileName)
                 size: iconSizes[iconSizeIndex] * 0.45

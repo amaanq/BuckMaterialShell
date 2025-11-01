@@ -6,7 +6,7 @@ import qs.Modals.Common
 import qs.Services
 import qs.Widgets
 
-DankModal {
+BuckModal {
     id: root
 
     property var allPlugins: []
@@ -72,7 +72,7 @@ DankModal {
 
     function installPlugin(pluginName) {
         ToastService.showInfo("Installing plugin: " + pluginName)
-        DMSService.install(pluginName, response => {
+        DykwabiService.install(pluginName, response => {
             if (response.error) {
                 ToastService.showError("Install failed: " + response.error)
             } else {
@@ -85,9 +85,9 @@ DankModal {
 
     function refreshPlugins() {
         isLoading = true
-        DMSService.listPlugins()
-        if (DMSService.apiVersion >= 8) {
-            DMSService.listInstalled()
+        DykwabiService.listPlugins()
+        if (DykwabiService.apiVersion >= 8) {
+            DykwabiService.listInstalled()
         }
     }
 
@@ -162,7 +162,7 @@ DankModal {
                     anchors.top: parent.top
                     height: Math.max(headerIcon.height, headerText.height, refreshButton.height, closeButton.height)
 
-                    DankIcon {
+                    BuckIcon {
                         id: headerIcon
                         name: "store"
                         size: Theme.iconSize
@@ -187,7 +187,7 @@ DankModal {
                         anchors.verticalCenter: parent.verticalCenter
                         spacing: Theme.spacingXS
 
-                        DankButton {
+                        BuckButton {
                             id: thirdPartyButton
                             text: SessionData.showThirdPartyPlugins ? "Hide 3rd Party" : "Show 3rd Party"
                             iconName: SessionData.showThirdPartyPlugins ? "visibility_off" : "visibility"
@@ -202,7 +202,7 @@ DankModal {
                             }
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             id: refreshButton
                             iconName: "refresh"
                             iconSize: 18
@@ -211,7 +211,7 @@ DankModal {
                             onClicked: root.refreshPlugins()
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             id: closeButton
                             iconName: "close"
                             iconSize: Theme.iconSize - 2
@@ -227,13 +227,13 @@ DankModal {
                     anchors.right: parent.right
                     anchors.top: headerArea.bottom
                     anchors.topMargin: Theme.spacingM
-                    text: I18n.tr("Install plugins from the DMS plugin registry")
+                    text: I18n.tr("Install plugins from the Dykwabi plugin registry")
                     font.pixelSize: Theme.fontSizeSmall
                     color: Theme.outline
                     wrapMode: Text.WordWrap
                 }
 
-                DankTextField {
+                BuckTextField {
                     id: browserSearchField
                     anchors.left: parent.left
                     anchors.right: parent.right
@@ -279,7 +279,7 @@ DankModal {
                             anchors.centerIn: parent
                             spacing: Theme.spacingM
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "sync"
                                 size: 48
                                 color: Theme.primary
@@ -303,7 +303,7 @@ DankModal {
                         }
                     }
 
-                    DankListView {
+                    BuckListView {
                         id: pluginBrowserList
 
                         anchors.fill: parent
@@ -316,7 +316,7 @@ DankModal {
                         clip: true
                         visible: !root.isLoading
 
-                        ScrollBar.vertical: DankScrollbar {
+                        ScrollBar.vertical: BuckScrollbar {
                             id: browserScrollbar
                         }
 
@@ -346,7 +346,7 @@ DankModal {
                                     width: parent.width
                                     spacing: Theme.spacingM
 
-                                    DankIcon {
+                                    BuckIcon {
                                         name: modelData.icon || "extension"
                                         size: Theme.iconSize
                                         color: Theme.primary
@@ -455,7 +455,7 @@ DankModal {
                                             anchors.centerIn: parent
                                             spacing: Theme.spacingXS
 
-                                            DankIcon {
+                                            BuckIcon {
                                                 name: isInstalled ? "check" : "download"
                                                 size: 14
                                                 color: isInstalled ? Theme.surfaceText : Theme.surface
@@ -537,7 +537,7 @@ DankModal {
         }
     }
 
-    DankModal {
+    BuckModal {
         id: thirdPartyConfirmModal
 
         width: 500
@@ -567,7 +567,7 @@ DankModal {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "warning"
                             size: Theme.iconSize
                             color: Theme.warning
@@ -585,7 +585,7 @@ DankModal {
 
                     StyledText {
                         width: parent.width
-                        text: I18n.tr("Third-party plugins are created by the community and are not officially supported by DankMaterialShell.\n\nThese plugins may pose security and privacy risks - install at your own risk.")
+                        text: I18n.tr("Third-party plugins are created by the community and are not officially supported by BuckMaterialShell.\n\nThese plugins may pose security and privacy risks - install at your own risk.")
                         font.pixelSize: Theme.fontSizeMedium
                         color: Theme.surfaceText
                         wrapMode: Text.WordWrap
@@ -623,13 +623,13 @@ DankModal {
                         anchors.right: parent.right
                         spacing: Theme.spacingM
 
-                        DankButton {
+                        BuckButton {
                             text: I18n.tr("Cancel")
                             iconName: "close"
                             onClicked: thirdPartyConfirmModal.close()
                         }
 
-                        DankButton {
+                        BuckButton {
                             text: I18n.tr("I Understand")
                             iconName: "check"
                             onClicked: {

@@ -1,17 +1,17 @@
 [config]
 
-[templates.dmsgtk4]
+[templates.dykwabigtk4]
 input_path = './matugen/templates/gtk-colors.css'
-output_path = '~/.config/gtk-4.0/dank-colors.css'
+output_path = '~/.config/gtk-4.0/buck-colors.css'
 
-[templates.dmskcolorscheme]
+[templates.dykwabikcolorscheme]
 input_path = './matugen/templates/kcolorscheme.colors'
-output_path = '~/.local/share/color-schemes/DankMatugen.colors'
+output_path = '~/.local/share/color-schemes/BuckMatugen.colors'
 
-[templates.dmslightkcolorscheme]
+[templates.dykwabilightkcolorscheme]
 input_path = './matugen/templates/light-kcolorscheme.colors'
-output_path = '~/.local/share/color-schemes/DankMatugenLight.colors'
+output_path = '~/.local/share/color-schemes/BuckMatugenLight.colors'
 
-[templates.dmsdarkkcolorscheme]
+[templates.dykwabidarkkcolorscheme]
 input_path = './matugen/templates/dark-kcolorscheme.colors'
-output_path = '~/.local/share/color-schemes/DankMatugenDark.colors'
+output_path = '~/.local/share/color-schemes/BuckMatugenDark.colors'

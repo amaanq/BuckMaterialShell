@@ -30,11 +30,11 @@ Rectangle {
     }
 
     property int currentPreferenceIndex: {
-        if (DMSService.apiVersion < 5) {
+        if (DykwabiService.apiVersion < 5) {
             return 1
         }
 
-        if (NetworkService.backend !== "networkmanager" || DMSService.apiVersion <= 10) {
+        if (NetworkService.backend !== "networkmanager" || DykwabiService.apiVersion <= 10) {
             return 1
         }
 
@@ -77,10 +77,10 @@ Rectangle {
             height: parent.height
         }
 
-        DankButtonGroup {
+        BuckButtonGroup {
             id: preferenceControls
             anchors.verticalCenter: parent.verticalCenter
-            visible: NetworkService.backend === "networkmanager" && DMSService.apiVersion > 10
+            visible: NetworkService.backend === "networkmanager" && DykwabiService.apiVersion > 10
 
             model: ["Ethernet", "WiFi"]
             currentIndex: currentPreferenceIndex
@@ -107,7 +107,7 @@ Rectangle {
             anchors.centerIn: parent
             spacing: Theme.spacingM
 
-            DankIcon {
+            BuckIcon {
                 anchors.horizontalCenter: parent.horizontalCenter
                 name: "sync"
                 size: 32
@@ -147,7 +147,7 @@ Rectangle {
             spacing: Theme.spacingL
             width: parent.width
 
-            DankIcon {
+            BuckIcon {
                 anchors.horizontalCenter: parent.horizontalCenter
                 name: "wifi_off"
                 size: 48
@@ -192,7 +192,7 @@ Rectangle {
         }
     }
 
-    DankFlickable {
+    BuckFlickable {
         id: wiredContent
         anchors.top: headerRow.bottom
         anchors.left: parent.left
@@ -200,7 +200,7 @@ Rectangle {
         anchors.bottom: parent.bottom
         anchors.margins: Theme.spacingM
         anchors.topMargin: Theme.spacingM
-        visible: currentPreferenceIndex === 0 && NetworkService.backend === "networkmanager" && DMSService.apiVersion > 10
+        visible: currentPreferenceIndex === 0 && NetworkService.backend === "networkmanager" && DykwabiService.apiVersion > 10
         contentHeight: wiredColumn.height
         clip: true
 
@@ -240,7 +240,7 @@ Rectangle {
                         anchors.leftMargin: Theme.spacingM
                         spacing: Theme.spacingS
 
-                        DankIcon {
+                        BuckIcon {
                             name: "lan"
                             size: Theme.iconSize - 4
                             color: modelData.isActive ? Theme.primary : Theme.surfaceText
@@ -262,7 +262,7 @@ Rectangle {
                         }
                     }
 
-                    DankActionButton {
+                    BuckActionButton {
                         id: wiredOptionsButton
                         anchors.right: parent.right
                         anchors.rightMargin: Theme.spacingS
@@ -364,7 +364,7 @@ Rectangle {
         }
     }
 
-    DankFlickable {
+    BuckFlickable {
         id: wifiContent
         anchors.top: headerRow.bottom
         anchors.left: parent.left
@@ -386,7 +386,7 @@ Rectangle {
                 height: 200
                 visible: NetworkService.wifiInterface && NetworkService.wifiNetworks?.length < 1 && !NetworkService.wifiToggling && NetworkService.isScanning
 
-                DankIcon {
+                BuckIcon {
                     anchors.centerIn: parent
                     name: "refresh"
                     size: 48
@@ -433,7 +433,7 @@ Rectangle {
                         anchors.leftMargin: Theme.spacingM
                         spacing: Theme.spacingS
 
-                        DankIcon {
+                        BuckIcon {
                             name: {
                                 let strength = modelData.signal || 0
                                 if (strength >= 50) return "wifi"
@@ -483,7 +483,7 @@ Rectangle {
                         }
                     }
 
-                    DankActionButton {
+                    BuckActionButton {
                         id: optionsButton
                         anchors.right: parent.right
                         anchors.rightMargin: Theme.spacingS
@@ -513,7 +513,7 @@ Rectangle {
                         onClicked: function(event) {
                             if (modelData.ssid !== NetworkService.currentWifiSSID) {
                                 if (modelData.secured && !modelData.saved) {
-                                    if (DMSService.apiVersion >= 7) {
+                                    if (DykwabiService.apiVersion >= 7) {
                                         NetworkService.connectToWifi(modelData.ssid)
                                     } else if (PopoutService.wifiPasswordModal) {
                                         PopoutService.wifiPasswordModal.show(modelData.ssid)
@@ -571,7 +571,7 @@ Rectangle {
                     NetworkService.disconnectWifi()
                 } else {
                     if (networkContextMenu.currentSecured && !networkContextMenu.currentSaved) {
-                        if (DMSService.apiVersion >= 7) {
+                        if (DykwabiService.apiVersion >= 7) {
                             NetworkService.connectToWifi(networkContextMenu.currentSSID)
                         } else if (PopoutService.wifiPasswordModal) {
                             PopoutService.wifiPasswordModal.show(networkContextMenu.currentSSID)

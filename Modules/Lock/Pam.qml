@@ -26,14 +26,14 @@ Scope {
     FileView {
         id: pamConfigWatcher
 
-        path: "/etc/pam.d/dankshell"
+        path: "/etc/pam.d/buckshell"
         printErrors: false
     }
 
     PamContext {
         id: passwd
 
-        config: pamConfigWatcher.loaded ? "dankshell" : "login"
+        config: pamConfigWatcher.loaded ? "buckshell" : "login"
 
         onMessageChanged: {
             if (message.startsWith("The account is locked"))
