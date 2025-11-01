@@ -637,6 +637,48 @@
     "comment": ""
   },
   {
+    "term": "Buck",
+    "translation": "",
+    "context": "",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Buck Bar",
+    "translation": "",
+    "context": "",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Buck Bar Transparency",
+    "translation": "",
+    "context": "",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Buck Bar Widget Transparency",
+    "translation": "",
+    "context": "",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "BuckBar Font Scale",
+    "translation": "",
+    "context": "",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "BuckSearch not available",
+    "translation": "",
+    "context": "",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "CPU",
     "translation": "",
     "context": "",
@@ -1099,20 +1141,6 @@
     "comment": ""
   },
   {
-    "term": "Dykwabi Plugin Manager Unavailable",
-    "translation": "",
-    "context": "",
-    "reference": "",
-    "comment": ""
-  },
-  {
-    "term": "Dykwabi out of date",
-    "translation": "",
-    "context": "",
-    "reference": "",
-    "comment": ""
-  },
-  {
     "term": "DYKWABI_SOCKET not available",
     "translation": "",
     "context": "",
@@ -1121,48 +1149,6 @@
   },
   {
     "term": "Daily at:",
-    "translation": "",
-    "context": "",
-    "reference": "",
-    "comment": ""
-  },
-  {
-    "term": "Buck",
-    "translation": "",
-    "context": "",
-    "reference": "",
-    "comment": ""
-  },
-  {
-    "term": "Buck Bar",
-    "translation": "",
-    "context": "",
-    "reference": "",
-    "comment": ""
-  },
-  {
-    "term": "Buck Bar Transparency",
-    "translation": "",
-    "context": "",
-    "reference": "",
-    "comment": ""
-  },
-  {
-    "term": "Buck Bar Widget Transparency",
-    "translation": "",
-    "context": "",
-    "reference": "",
-    "comment": ""
-  },
-  {
-    "term": "BuckBar Font Scale",
-    "translation": "",
-    "context": "",
-    "reference": "",
-    "comment": ""
-  },
-  {
-    "term": "BuckSearch not available",
     "translation": "",
     "context": "",
     "reference": "",
@@ -1373,6 +1359,20 @@
   },
   {
     "term": "Duration",
+    "translation": "",
+    "context": "",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Dykwabi Plugin Manager Unavailable",
+    "translation": "",
+    "context": "",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Dykwabi out of date",
     "translation": "",
     "context": "",
     "reference": "",
