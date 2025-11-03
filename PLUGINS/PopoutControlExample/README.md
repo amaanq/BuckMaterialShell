@@ -42,11 +42,11 @@ popoutService.closeProcessList()
 popoutService.toggleProcessList()
 ```
 
-#### DankDash
+#### BuckDash
 ```qml
-popoutService.openDankDash(tabIndex)    // tabIndex: 0=Calendar, 1=Media, 2=Weather
-popoutService.closeDankDash()
-popoutService.toggleDankDash(tabIndex)
+popoutService.openBuckDash(tabIndex)    // tabIndex: 0=Calendar, 1=Media, 2=Weather
+popoutService.closeBuckDash()
+popoutService.toggleBuckDash(tabIndex)
 ```
 
 #### Battery Popout
@@ -193,11 +193,11 @@ Error: Cannot assign to non-existent property "popoutService"
 
 ## Installation
 
-1. Copy the plugin directory to `~/.config/DankMaterialShell/plugins/`
+1. Copy the plugin directory to `~/.config/BuckMaterialShell/plugins/`
 2. Open Settings → Plugins
 3. Click "Scan for Plugins"
 4. Enable "Popout Control Example"
-5. Add `popoutControlExample` to your DankBar widget list
+5. Add `popoutControlExample` to your BuckBar widget list
 
 ## Notes
 

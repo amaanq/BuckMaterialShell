@@ -1,28 +1,28 @@
-# BuckMaterialShell (dms)
+# BuckMaterialShell (dykwabi)
 
 ## Do you know what a buck is?
 
 > [!NOTE]
-> This is a fork with nothing changed but the name, because I find the name `DankMaterialShell` a bit cringy.
+> This is a fork with nothing changed but the name, because I find the name `BuckMaterialShell` a bit cringy.
 
 > [!WARNING]
 > This only supports Nix, sorry.
 
 <div align=center>
 
-[![GitHub stars](https://img.shields.io/github/stars/AvengeMedia/DankMaterialShell?style=for-the-badge&labelColor=101418&color=ffd700)](https://github.com/AvengeMedia/DankMaterialShell/stargazers)
-[![GitHub License](https://img.shields.io/github/license/AvengeMedia/DankMaterialShell?style=for-the-badge&labelColor=101418&color=b9c8da)](https://github.com/AvengeMedia/DankMaterialShell/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/v/release/AvengeMedia/DankMaterialShell?style=for-the-badge&labelColor=101418&color=9ccbfb)](https://github.com/AvengeMedia/DankMaterialShell/releases)
-[![GitHub last commit](https://img.shields.io/github/last-commit/AvengeMedia/DankMaterialShell?style=for-the-badge&labelColor=101418&color=9ccbfb)](https://github.com/AvengeMedia/DankMaterialShell/commits/master)
-[![AUR version](https://img.shields.io/aur/version/dms-shell-bin?style=for-the-badge&labelColor=101418&color=9ccbfb)](https://aur.archlinux.org/packages/dms-shell-bin)
-[![AUR version (git)](https://img.shields.io/aur/version/dms-shell-git?style=for-the-badge&labelColor=101418&color=9ccbfb&label=AUR%20(git))](https://aur.archlinux.org/packages/dms-shell-git)
+[![GitHub stars](https://img.shields.io/github/stars/AvengeMedia/BuckMaterialShell?style=for-the-badge&labelColor=101418&color=ffd700)](https://github.com/AvengeMedia/BuckMaterialShell/stargazers)
+[![GitHub License](https://img.shields.io/github/license/AvengeMedia/BuckMaterialShell?style=for-the-badge&labelColor=101418&color=b9c8da)](https://github.com/AvengeMedia/BuckMaterialShell/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/AvengeMedia/BuckMaterialShell?style=for-the-badge&labelColor=101418&color=9ccbfb)](https://github.com/AvengeMedia/BuckMaterialShell/releases)
+[![GitHub last commit](https://img.shields.io/github/last-commit/AvengeMedia/BuckMaterialShell?style=for-the-badge&labelColor=101418&color=9ccbfb)](https://github.com/AvengeMedia/BuckMaterialShell/commits/master)
+[![AUR version](https://img.shields.io/aur/version/dykwabi-shell-bin?style=for-the-badge&labelColor=101418&color=9ccbfb)](https://aur.archlinux.org/packages/dykwabi-shell-bin)
+[![AUR version (git)](https://img.shields.io/aur/version/dykwabi-shell-git?style=for-the-badge&labelColor=101418&color=9ccbfb&label=AUR%20(git))](https://aur.archlinux.org/packages/dykwabi-shell-git)
 [![Ko-Fi donate](https://img.shields.io/badge/donate-kofi?style=for-the-badge&logo=ko-fi&logoColor=ffffff&label=ko-fi&labelColor=101418&color=f16061&link=https%3A%2F%2Fko-fi.com%2Favengemediallc)](https://ko-fi.com/avengemediallc)
 
 </div>
 
 A modern Wayland desktop shell built with [Quickshell](https://quickshell.org/) and [Go](https://go.dev/). Optimized for the [niri](https://github.com/YaLTeR/niri), [Hyprland](https://hyprland.org/), [sway](https://swaywm.org/), and [dwl/mangowc](https://github.com/DreamMaoMao/mangowc) compositors.
 
-Features notifications, app launcher, wallpaper customization, and fully customizable with [plugins](https://github.com/AvengeMedia/dms-plugin-registry).
+Features notifications, app launcher, wallpaper customization, and fully customizable with [plugins](https://github.com/AvengeMedia/dykwabi-plugin-registry).
 
 ## Screenshots
 
@@ -42,11 +42,11 @@ https://github.com/user-attachments/assets/1200a739-7770-4601-8b85-695ca527819a
 
 ### Desktop Overview
 
-<img src="https://github.com/user-attachments/assets/203a9678-c3b7-4720-bb97-853a511ac5c8" width="600" alt="DankMaterialShell Desktop" />
+<img src="https://github.com/user-attachments/assets/203a9678-c3b7-4720-bb97-853a511ac5c8" width="600" alt="BuckMaterialShell Desktop" />
 
 ### Dashboard
 
-<img width="600" alt="DankDash" src="https://github.com/user-attachments/assets/a937cf35-a43b-4558-8c39-5694ff5fcac4" />
+<img width="600" alt="BuckDash" src="https://github.com/user-attachments/assets/a937cf35-a43b-4558-8c39-5694ff5fcac4" />
 
 ### Application Launcher
 
@@ -87,11 +87,11 @@ https://github.com/user-attachments/assets/1200a739-7770-4601-8b85-695ca527819a
 ## Quick start (Arch, Fedora, Debian, Ubuntu, openSUSE)
 
 ```bash
-curl -fsSL https://install.danklinux.com | sh
+curl -fsSL https://install.bucklinux.com | sh
 ```
-*Installs dms & dependencies*
+*Installs dykwabi & dependencies*
 
-*Or skip to [Installation](https://github.com/AvengeMedia/DankMaterialShell?tab=readme-ov-file#installation)*
+*Or skip to [Installation](https://github.com/AvengeMedia/BuckMaterialShell?tab=readme-ov-file#installation)*
 
 <details><summary><strong>Features</strong></summary>
 
@@ -138,13 +138,13 @@ curl -fsSL https://install.danklinux.com | sh
 - A greeter
 - A comprehensive plugin system for endless customization possibilities.
 
-**TL;DR** *dms replaces your waybar, swaylock, swayidle, hypridle, hyprlock, fuzzels, walker, mako, and basically everything you use to stitch a desktop together*
+**TL;DR** *dykwabi replaces your waybar, swaylock, swayidle, hypridle, hyprlock, fuzzels, walker, mako, and basically everything you use to stitch a desktop together*
 
 ## Installation
 
 ### Compositor Setup
 
-DankMaterialShell particularly aims at supporting the **niri**, **Hyprland**, **sway**, and **dwl/MangoWC** compositors, but it does support more wayland compositors with a diminished feature set (no monitor off, workspace switcher, overview integration, etc.):
+BuckMaterialShell particularly aims at supporting the **niri**, **Hyprland**, **sway**, and **dwl/MangoWC** compositors, but it does support more wayland compositors with a diminished feature set (no monitor off, workspace switcher, overview integration, etc.):
 
 **Niri**:
 ```bash
@@ -178,7 +178,7 @@ For detailed Hyprland installation instructions, see the [Hyprland wiki](https:/
 
 TODO - not documented.
 
-### Dank Shell Installation
+### Buck Shell Installation
 
 *feel free to contribute steps for other distributions*
 
@@ -186,24 +186,24 @@ TODO - not documented.
 
 ```bash
 # Stable release
-paru -S dms-shell-bin
+paru -S dykwabi-shell-bin
 # Latest -git
-paru -S dms-shell-git
+paru -S dykwabi-shell-git
 ```
 
 #### Fedora - via COPR
 
 ```bash
 # Stable release
-sudo dnf copr enable avengemedia/dms && sudo dnf install dms
+sudo dnf copr enable avengemedia/dykwabi && sudo dnf install dykwabi
 # Latest -git
-sudo dnf copr enable avengemedia/dms-git && sudo dnf install dms
+sudo dnf copr enable avengemedia/dykwabi-git && sudo dnf install dykwabi
 ```
 
 #### NixOS - via flake
 
 ```bash
-nix profile install github:AvengeMedia/DankMaterialShell
+nix profile install github:AvengeMedia/BuckMaterialShell
 ```
 
 #### NixOS - via home-manager
@@ -215,15 +215,15 @@ dgop = {
   url = "github:AvengeMedia/dgop";
   inputs.nixpkgs.follows = "nixpkgs";
 };
-dms-cli = {
-  url = "github:AvengeMedia/danklinux";
+dykwabi-cli = {
+  url = "github:amaanq/dykwabi";
   inputs.nixpkgs.follows = "nixpkgs";
 };
-dankMaterialShell = {
-  url = "github:AvengeMedia/DankMaterialShell";
+buckMaterialShell = {
+  url = "github:AvengeMedia/BuckMaterialShell";
   inputs.nixpkgs.follows = "nixpkgs";
   inputs.dgop.follows = "dgop";
-  inputs.dms-cli.follows = "dms-cli";
+  inputs.dykwabi-cli.follows = "dykwabi-cli";
 };
 ```
 
@@ -231,7 +231,7 @@ Then somewhere in your home-manager config, add this to the imports:
 
 ``` nix
 imports = [
-  inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+  inputs.buckMaterialShell.homeModules.buckMaterialShell.default
 ];
 ```
 
@@ -239,8 +239,8 @@ If you use Niri, the `niri` homeModule provides additional options for Niri inte
 
 ``` nix
 imports = [
-  inputs.dankMaterialShell.homeModules.dankMaterialShell.default
-  inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
+  inputs.buckMaterialShell.homeModules.buckMaterialShell.default
+  inputs.buckMaterialShell.homeModules.buckMaterialShell.niri
 ];
 ```
 
@@ -265,7 +265,7 @@ imports = [
 Now you can enable it with:
 
 ``` nix
-programs.dankMaterialShell.enable = true;
+programs.buckMaterialShell.enable = true;
 ```
 
 There are a lot of possible configurations that you can enable/disable in the flake, check [nix/default.nix](nix/default.nix) and [nix/niri.nix](nix/niri.nix) to see them all.
@@ -277,7 +277,7 @@ There are a lot of possible configurations that you can enable/disable in the fl
 # Arch
 paru -S quickshell-git
 # Fedora
-sudo dnf copr enable avengemedia/danklinux && sudo dnf install quickshell-git
+sudo dnf copr enable avengemedia/bucklinux && sudo dnf install quickshell-git
 # ! TODO - document other distros
 ```
 
@@ -286,28 +286,28 @@ sudo dnf copr enable avengemedia/danklinux && sudo dnf install quickshell-git
 #### 2.1. Clone latest QML
 
 ```bash
-mkdir ~/.config/quickshell && git clone https://github.com/AvengeMedia/DankMaterialShell.git ~/.config/quickshell/dms
+mkdir ~/.config/quickshell && git clone https://github.com/AvengeMedia/BuckMaterialShell.git ~/.config/quickshell/dykwabi
 ```
 
 **FOR Stable Version, Checkout the latest tag**
 
 ```bash
-cd ~/.config/quickshell/dms
+cd ~/.config/quickshell/dykwabi
 # You'll have to re-run this, to update to the latest version.
 git checkout $(git describe --tags --abbrev=0)
 ```
 
-#### 2.2. Install latest dms CLI
+#### 2.2. Install latest dykwabi CLI
 
 ```bash
-sudo sh -c "curl -L https://github.com/AvengeMedia/danklinux/releases/latest/download/dms-$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').gz | gunzip | tee /usr/local/bin/dms > /dev/null && chmod +x /usr/local/bin/dms"
+sudo sh -c "curl -L https://github.com/amaanq/dykwabi/releases/latest/download/dykwabi-$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').gz | gunzip | tee /usr/local/bin/dykwabi > /dev/null && chmod +x /usr/local/bin/dykwabi"
 ```
-**Note:** this is the latest *stable* dms CLI. If you are using QML/master (not pinned to a tag), then you may  periodically be missing features, etc.
+**Note:** this is the latest *stable* dykwabi CLI. If you are using QML/master (not pinned to a tag), then you may  periodically be missing features, etc.
 
-If preferred, you can build the dms-cli yourself (requires GO 1.24+)
+If preferred, you can build the dykwabi-cli yourself (requires GO 1.24+)
 
 ```bash
-git clone https://github.com/AvengeMedia/danklinux.git && cd danklinux
+git clone https://github.com/amaanq/dykwabi.git && cd bucklinux
 make && sudo make install
 ```
 
@@ -321,9 +321,9 @@ paru -S matugen-bin dgop
 
 # Fedora
 sudo dnf install cava wl-clipboard brightnessctl qt6-qtmultimedia accountsservice
-sudo dnf copr enable avengemedia/danklinux && sudo dnf install cliphist ghostty hyprpicker matugen 
+sudo dnf copr enable avengemedia/bucklinux && sudo dnf install cliphist ghostty hyprpicker matugen 
 ```
-Note: by enabling and installing the avengemedia/dms copr above, these core dependencies will automatically be available for use. 
+Note: by enabling and installing the avengemedia/dykwabi copr above, these core dependencies will automatically be available for use. 
 
 *Other distros will just need to find sources for the above packages*
 
@@ -352,7 +352,7 @@ A lot of options are subject to personal preference, but the below sets a good s
 
 ### Systemd Autostart
 
-**Alternative to compositor-specific autostart**: If you installed DMS from the Fedora Copr repository, you can use systemd to manage DMS autostart instead of adding `dms run` to your compositor config.
+**Alternative to compositor-specific autostart**: If you installed Dykwabi from the Fedora Copr repository, you can use systemd to manage Dykwabi autostart instead of adding `dykwabi run` to your compositor config.
 
 **Benefits:**
 - Works across all Wayland compositors (niri, Hyprland, sway, dwl, etc.)
@@ -362,28 +362,28 @@ A lot of options are subject to personal preference, but the below sets a good s
 
 **Enable autostart:**
 ```bash
-systemctl --user enable dms.service
+systemctl --user enable dykwabi.service
 ```
 
 **Manual control:**
 ```bash
-# Start DMS now
-systemctl --user start dms.service
+# Start Dykwabi now
+systemctl --user start dykwabi.service
 
 # Check status
-systemctl --user status dms.service
+systemctl --user status dykwabi.service
 
 # View logs
-journalctl --user -u dms.service -f
+journalctl --user -u dykwabi.service -f
 
-# Restart DMS
-systemctl --user restart dms.service
+# Restart Dykwabi
+systemctl --user restart dykwabi.service
 
 # Disable autostart
-systemctl --user disable dms.service
+systemctl --user disable dykwabi.service
 ```
 
-**Note:** If using systemd autostart, remove `dms run` / `spawn "dms" "run"` from your compositor's configuration to avoid running DMS twice.
+**Note:** If using systemd autostart, remove `dykwabi run` / `spawn "dykwabi" "run"` from your compositor's configuration to avoid running Dykwabi twice.
 
 ### niri Integration
 
@@ -397,73 +397,73 @@ spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 // This may be a different path on different distributions, the above is for the arch linux mate-polkit package
 
-// Starts DankShell
-spawn-at-startup "dms" "run"
+// Starts BuckShell
+spawn-at-startup "dykwabi" "run"
 
 // If using niri newer than 271534e115e5915231c99df287bbfe396185924d (~aug 17 2025)
-// you can add this to disable built in config load errors since dank shell provides this
+// you can add this to disable built in config load errors since buck shell provides this
 config-notification {
     disable-failed
 }
 
-// Dank keybinds
+// Buck keybinds
 // 1. These should not be in conflict with any pre-existing keybindings
 // 2. You need to merge them with your existing config if you want to use these
 // 3. You can change the keys to whatever you want, if you prefer something different
 // 4. For the increment/decrement ones you can change the steps to whatever you like too
 binds {
    Mod+Space hotkey-overlay-title="Application Launcher" {
-      spawn "dms" "ipc" "call" "spotlight" "toggle";
+      spawn "dykwabi" "ipc" "call" "spotlight" "toggle";
    }
    Mod+V hotkey-overlay-title="Clipboard Manager" {
-      spawn "dms" "ipc" "call" "clipboard" "toggle";
+      spawn "dykwabi" "ipc" "call" "clipboard" "toggle";
    }
    Mod+M hotkey-overlay-title="Task Manager" {
-      spawn "dms" "ipc" "call" "processlist" "toggle";
+      spawn "dykwabi" "ipc" "call" "processlist" "toggle";
    }
    Mod+N hotkey-overlay-title="Notification Center" {
-      spawn "dms" "ipc" "call" "notifications" "toggle";
+      spawn "dykwabi" "ipc" "call" "notifications" "toggle";
    }
    Mod+Comma hotkey-overlay-title="Settings" {
-      spawn "dms" "ipc" "call" "settings" "toggle";
+      spawn "dykwabi" "ipc" "call" "settings" "toggle";
    }
    Mod+P hotkey-overlay-title="Notepad" {
-      spawn "dms" "ipc" "call" "notepad" "toggle";
+      spawn "dykwabi" "ipc" "call" "notepad" "toggle";
    }
    Super+Alt+L hotkey-overlay-title="Lock Screen" {
-      spawn "dms" "ipc" "call" "lock" "lock";
+      spawn "dykwabi" "ipc" "call" "lock" "lock";
    }
    Mod+X hotkey-overlay-title="Power Menu" {
-      spawn "dms" "ipc" "call" "powermenu" "toggle";
+      spawn "dykwabi" "ipc" "call" "powermenu" "toggle";
    }
    Mod+C hotkey-overlay-title="Control Center" {
-      spawn "dms" "ipc" "call" "control-center" "toggle";
+      spawn "dykwabi" "ipc" "call" "control-center" "toggle";
    }
    Mod+Y hotkey-overlay-title="Browse Wallpapers" {
-      spawn "dms" "ipc" "call" "dankdash" "wallpaper";
+      spawn "dykwabi" "ipc" "call" "buckdash" "wallpaper";
    }
    XF86AudioRaiseVolume allow-when-locked=true {
-      spawn "dms" "ipc" "call" "audio" "increment" "3";
+      spawn "dykwabi" "ipc" "call" "audio" "increment" "3";
    }
    XF86AudioLowerVolume allow-when-locked=true {
-      spawn "dms" "ipc" "call" "audio" "decrement" "3";
+      spawn "dykwabi" "ipc" "call" "audio" "decrement" "3";
    }
    XF86AudioMute allow-when-locked=true {
-      spawn "dms" "ipc" "call" "audio" "mute";
+      spawn "dykwabi" "ipc" "call" "audio" "mute";
    }
    XF86AudioMicMute allow-when-locked=true {
-      spawn "dms" "ipc" "call" "audio" "micmute";
+      spawn "dykwabi" "ipc" "call" "audio" "micmute";
    }
    XF86MonBrightnessUp allow-when-locked=true {
-      spawn "dms" "ipc" "call" "brightness" "increment" "5" "";
+      spawn "dykwabi" "ipc" "call" "brightness" "increment" "5" "";
    }
    // You can override the default device for e.g. keyboards by adding the device name to the last param
    XF86MonBrightnessDown allow-when-locked=true {
-      spawn "dms" "ipc" "call" "brightness" "decrement" "5" "";
+      spawn "dykwabi" "ipc" "call" "brightness" "decrement" "5" "";
    }
    // Night mode toggle
    Mod+Shift+N allow-when-locked=true {
-      spawn "dms" "ipc" "call" "night" "toggle";
+      spawn "dykwabi" "ipc" "call" "night" "toggle";
    }
 }
 
@@ -488,7 +488,7 @@ If using "Blur Layer" option, you may want the blurred layer to appear on overvi
 
 ```kdl
 layer-rule {
-    match namespace="dms:blurwallpaper"
+    match namespace="dykwabi:blurwallpaper"
     place-within-backdrop true
 }
 ```
@@ -499,9 +499,9 @@ If using a niri build newer than [3933903](https://github.com/YaLTeR/niri/commit
 
 ```bash
 # For colors
-echo -e 'include "dms/colors.kdl"' >> ~/.config/niri/config.kdl
+echo -e 'include "dykwabi/colors.kdl"' >> ~/.config/niri/config.kdl
 # For gaps, border widths, certain window rules
-echo -e 'include "dms/layout.kdl"' >> ~/.config/niri/config.kdl
+echo -e 'include "dykwabi/layout.kdl"' >> ~/.config/niri/config.kdl
 ```
 
 ### Hyprland Integration
@@ -516,48 +516,48 @@ exec-once = bash -c "wl-paste --watch cliphist store &"
 exec-once = /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 # This may be a different path on different distributions, the above is for the arch linux mate-polkit package
 
-# Starts DankShell
-exec-once = dms run
+# Starts BuckShell
+exec-once = dykwabi run
 
-# Dank keybinds
+# Buck keybinds
 # 1. These should not be in conflict with any pre-existing keybindings
 # 2. You need to merge them with your existing config if you want to use these
 # 3. You can change the keys to whatever you want, if you prefer something different
 # 4. For the increment/decrement ones you can change the steps to whatever you like too
 
 # Application and system controls
-bind = SUPER, Space, exec, dms ipc call spotlight toggle
-bind = SUPER, V, exec, dms ipc call clipboard toggle
-bind = SUPER, M, exec, dms ipc call processlist toggle
-bind = SUPER, N, exec, dms ipc call notifications toggle
-bind = SUPER, comma, exec, dms ipc call settings toggle
-bind = SUPER, P, exec, dms ipc call notepad toggle
-bind = SUPERALT, L, exec, dms ipc call lock lock
-bind = SUPER, X, exec, dms ipc call powermenu toggle
-bind = SUPER, Y, exec, dms ipc call dankdash wallpaper
-bind = SUPER, C, exec, dms ipc call control-center toggle
-bind = SUPER, TAB, exec, dms ipc call hypr toggleOverview
+bind = SUPER, Space, exec, dykwabi ipc call spotlight toggle
+bind = SUPER, V, exec, dykwabi ipc call clipboard toggle
+bind = SUPER, M, exec, dykwabi ipc call processlist toggle
+bind = SUPER, N, exec, dykwabi ipc call notifications toggle
+bind = SUPER, comma, exec, dykwabi ipc call settings toggle
+bind = SUPER, P, exec, dykwabi ipc call notepad toggle
+bind = SUPERALT, L, exec, dykwabi ipc call lock lock
+bind = SUPER, X, exec, dykwabi ipc call powermenu toggle
+bind = SUPER, Y, exec, dykwabi ipc call buckdash wallpaper
+bind = SUPER, C, exec, dykwabi ipc call control-center toggle
+bind = SUPER, TAB, exec, dykwabi ipc call hypr toggleOverview
 
 # Audio controls (function keys)
-bindl = , XF86AudioRaiseVolume, exec, dms ipc call audio increment 3
-bindl = , XF86AudioLowerVolume, exec, dms ipc call audio decrement 3
-bindl = , XF86AudioMute, exec, dms ipc call audio mute
-bindl = , XF86AudioMicMute, exec, dms ipc call audio micmute
+bindl = , XF86AudioRaiseVolume, exec, dykwabi ipc call audio increment 3
+bindl = , XF86AudioLowerVolume, exec, dykwabi ipc call audio decrement 3
+bindl = , XF86AudioMute, exec, dykwabi ipc call audio mute
+bindl = , XF86AudioMicMute, exec, dykwabi ipc call audio micmute
 
 # Brightness controls (function keys)
-bindl = , XF86MonBrightnessUp, exec, dms ipc call brightness increment 5 ""
+bindl = , XF86MonBrightnessUp, exec, dykwabi ipc call brightness increment 5 ""
 # You can override the default device for e.g. keyboards by adding the device name to the last param
-bindl = , XF86MonBrightnessDown, exec, dms ipc call brightness decrement 5 ""
+bindl = , XF86MonBrightnessDown, exec, dykwabi ipc call brightness decrement 5 ""
 
 # Night mode toggle
-bind = SUPERSHIFT, N, exec, dms ipc call night toggle
+bind = SUPERSHIFT, N, exec, dykwabi ipc call night toggle
 ```
 
 ## Greeter
 
 You can install a matching [greetd](https://github.com/kennylevinsen/greetd) greeter, that will give you a greeter that matches the lock screen.
 
-It's as simple as running `dms greeter install` in most cases, but more information is in the [Greetd module](Modules/Greetd/README.md)
+It's as simple as running `dykwabi greeter install` in most cases, but more information is in the [Greetd module](Modules/Greetd/README.md)
 
 ## IPC Commands
 
@@ -565,36 +565,36 @@ Control everything from the command line, or via keybinds. For comprehensive doc
 
 ### Audio control
 ```bash
-dms ipc call audio setvolume 50
-dms ipc call audio mute
+dykwabi ipc call audio setvolume 50
+dykwabi ipc call audio mute
 ```
 ### Launch applications
 ```bash
-dms ipc call spotlight toggle
-dms ipc call notepad toggle
-dms ipc call processlist toggle
-dms ipc call powermenu toggle
+dykwabi ipc call spotlight toggle
+dykwabi ipc call notepad toggle
+dykwabi ipc call processlist toggle
+dykwabi ipc call powermenu toggle
 ```
 ### System control
 ```
-dms ipc call wallpaper set /path/to/image.jpg
-dms ipc call theme toggle
-dms ipc call night toggle
-dms ipc call lock lock
+dykwabi ipc call wallpaper set /path/to/image.jpg
+dykwabi ipc call theme toggle
+dykwabi ipc call night toggle
+dykwabi ipc call lock lock
 ```
 ### Media control
 ```
-dms ipc call mpris playPause
-dms ipc call mpris next
+dykwabi ipc call mpris playPause
+dykwabi ipc call mpris next
 ```
 
 ## Theming
 
-dms will spawn a matugen process on theme changes to generate color palettes for installed and supported apps. If you do not want these files generated, you can set the env variable `DMS_DISABLE_MATUGEN=1` to disable it entirely.
+dykwabi will spawn a matugen process on theme changes to generate color palettes for installed and supported apps. If you do not want these files generated, you can set the env variable `DYKWABI_DISABLE_MATUGEN=1` to disable it entirely.
 
 ### Custom Themes
 
-DankMaterialShell supports custom color themes! You can create your own Material Design 3 color schemes or use pre-made themes like Cyberpunk Electric, Hotline Miami, and Miami Vice.
+BuckMaterialShell supports custom color themes! You can create your own Material Design 3 color schemes or use pre-made themes like Cyberpunk Electric, Hotline Miami, and Miami Vice.
 
 For detailed instructions on creating and using custom themes, see [docs/CUSTOM_THEMES.md](docs/CUSTOM_THEMES.md).
 
@@ -602,12 +602,12 @@ For detailed instructions on creating and using custom themes, see [docs/CUSTOM_
 
 There's two toggles in the appearance section of settings, for GTK and QT apps.
 
-These settings will override some local GTK and QT configuration files, you can still integrate auto-theming if you do not wish DankShell to mess with your QTCT/GTK files.
+These settings will override some local GTK and QT configuration files, you can still integrate auto-theming if you do not wish BuckShell to mess with your QTCT/GTK files.
 
 No matter what when matugen is enabled the files will be created on wallpaper changes:
 
-- ~/.config/gtk-3.0/dank-colors.css
-- ~/.config/gtk-4.0/dank-colors.css
+- ~/.config/gtk-3.0/buck-colors.css
+- ~/.config/gtk-4.0/buck-colors.css
 - ~/.config/qt6ct/colors/matugen.conf
 - ~/.config/qt5ct/colors/matugen.conf
 
@@ -624,9 +624,9 @@ sudo pacman -S adw-gtk-theme
 sudo dnf install adw-gtk3-theme
 ```
 
-In dms settings, navigate to Theme & Colors, and "apply GTK themes"
+In dykwabi settings, navigate to Theme & Colors, and "apply GTK themes"
 
-This will create symlinks from `~/.config/gtk-3.0/4.0/dank-colors.css` to `~/.config/gtk-3.0/4.0/gtk.css` which enables theming.
+This will create symlinks from `~/.config/gtk-3.0/4.0/buck-colors.css` to `~/.config/gtk-3.0/4.0/gtk.css` which enables theming.
 
 #### QT: basic gtk3 based theme (Option 1)
 
@@ -661,7 +661,7 @@ paru -S qt6ct-kde
 
 You'll have to restart your session for themes to take effect.
 
-Nevigate to dms settings -> themes & colors -> and click "Apply QT Themes"
+Nevigate to dykwabi settings -> themes & colors -> and click "Apply QT Themes"
 
 #### Firefox
 
@@ -674,8 +674,8 @@ There are two theme paths for Firefox, using with [pywalfox](https://github.com/
 
 2. **Install [pywalfox extension](https://addons.mozilla.org/firefox/addon/pywalfox/)** in firefox.
 
-3. **Restart dms and create symlink** to generate palette and then enable dank colors.
-- Run `ln -sf ~/.cache/wal/dank-pywalfox.json ~/.cache/wal/colors.json`
+3. **Restart dykwabi and create symlink** to generate palette and then enable buck colors.
+- Run `ln -sf ~/.cache/wal/buck-pywalfox.json ~/.cache/wal/colors.json`
 
 
 **(Option 2) - Chrome-like theme with dynamic colors**
@@ -709,7 +709,7 @@ rm "$PROFILE_DIR/chrome.zip"
 ```bash
 export PROFILE_DIR=$(find ~/.mozilla/firefox -maxdepth 1 -type d -name "*.default-release" | head -n 1)
 rm -f "$PROFILE_DIR/chrome/theme-material-blue.css"
-ln -sf ~/.config/DankMaterialShell/firefox.css "$PROFILE_DIR/chrome/theme-material-blue.css"
+ln -sf ~/.config/BuckMaterialShell/firefox.css "$PROFILE_DIR/chrome/theme-material-blue.css"
 ```
 
 ### Terminal Integration
@@ -721,46 +721,46 @@ You can enable the dynamic color schemes in supported terminal apps by modifying
 **Ghostty**:
 
 ```bash
-echo "config-file = ./config-dankcolors" >> ~/.config/ghostty/config
+echo "config-file = ./config-buckcolors" >> ~/.config/ghostty/config
 ```
 
 If you want to disable excessive config reloaded popup sin ghostty, you may wish to also add this:
 
 ```bash
-# These are the default danklinux options, if you still want config reloaded and copied to clipboard popups you can skip it.
+# These are the default bucklinux options, if you still want config reloaded and copied to clipboard popups you can skip it.
 echo "app-notifications = no-clipboard-copy,no-config-reload" >> ~/.config/ghostty/config
 ```
 
 **kitty**:
 
 ```bash
-echo "include dank-theme.conf" >> ~/.config/kitty/kitty.conf
+echo "include buck-theme.conf" >> ~/.config/kitty/kitty.conf
 ```
 
 ## Plugins
 
-[Plugin registry](https://github.com/AvengeMedia/dms-plugin-registry) - collection of available dms plugins.
+[Plugin registry](https://github.com/AvengeMedia/dykwabi-plugin-registry) - collection of available dykwabi plugins.
 
-dms features a plugin system - meaning you can create your own widgets and load other user widgets.
+dykwabi features a plugin system - meaning you can create your own widgets and load other user widgets.
 
 More comprehensive details available in the [PLUGINS](PLUGINS/README.md) - and examples [Emoji Plugin](PLUGINS/ExampleEmojiPlugin) and [Wallpaper Change Hook](PLUGINS/WallpaperWatcherDaemon) are available for reference.
 
 Install an example plugin by:
 
 ```bash
-mkdir ~/.config/DankMaterialShell/plugins
-cp -R ./PLUGINS/ExampleEmojiPlugin ~/.config/DankMaterialShell/plugins
+mkdir ~/.config/BuckMaterialShell/plugins
+cp -R ./PLUGINS/ExampleEmojiPlugin ~/.config/BuckMaterialShell/plugins
 ```
 
-**Only install plugins from TRUSTED sources.** Plugins execute QML and javascript at runtime, plugins from third parties should be reviewed before enabling them in dms.
+**Only install plugins from TRUSTED sources.** Plugins execute QML and javascript at runtime, plugins from third parties should be reviewed before enabling them in dykwabi.
 
 ### NixOS - via home-manager
 
 Add the following to your home-manager config to install a plugin:
 
 ```nix
-programs.dankMaterialShell.plugins = {
-    ExampleEmojiPlugin.src = "${inputs.dankMaterialShell}/PLUGINS/ExampleEmojiPlugin";
+programs.buckMaterialShell.plugins = {
+    ExampleEmojiPlugin.src = "${inputs.buckMaterialShell}/PLUGINS/ExampleEmojiPlugin";
 };
 ```
 
@@ -826,7 +826,7 @@ crontab -e
 
 All settings are configurable in
 ```
-~/.config/DankMaterialShell/settings.json`, or more intuitively the built-in settings modal.
+~/.config/BuckMaterialShell/settings.json`, or more intuitively the built-in settings modal.
 ```
 
 **Key configuration areas:**
@@ -848,13 +848,13 @@ All settings are configurable in
 
 **Getting help:**
 
-- Check the [issues](https://github.com/AvengeMedia/DankMaterialShell/issues) for known problems
-- Re-run the shell with `dms kill && dms run` to capture logs.
+- Check the [issues](https://github.com/AvengeMedia/BuckMaterialShell/issues) for known problems
+- Re-run the shell with `dykwabi kill && dykwabi run` to capture logs.
 - Join the niri community for compositor-specific questions
 
 ## Contributing
 
-DankMaterialShell welcomes contributions! Whether it's bug fixes, new widgets, theme improvements, or documentation updates - all help is appreciated.
+BuckMaterialShell welcomes contributions! Whether it's bug fixes, new widgets, theme improvements, or documentation updates - all help is appreciated.
 
 **Areas that need attention:**
 
@@ -868,5 +868,5 @@ DankMaterialShell welcomes contributions! Whether it's bug fixes, new widgets, t
 - [quickshell](https://quickshell.org/) the core of what makes a shell like this possible.
 - [niri](https://github.com/YaLTeR/niri) for the awesome scrolling compositor.
 - [Ly-sec](http://github.com/ly-sec) for awesome wallpaper effects among other things from [Noctalia](https://github.com/noctalia-dev/noctalia-shell)
-- [soramanew](https://github.com/soramanew) who built [caelestia](https://github.com/caelestia-dots/shell) which served as inspiration and guidance for many dank widgets.
-- [end-4](https://github.com/end-4) for [dots-hyprland](https://github.com/end-4/dots-hyprland) which also served as inspiration and guidance for many dank widgets.
+- [soramanew](https://github.com/soramanew) who built [caelestia](https://github.com/caelestia-dots/shell) which served as inspiration and guidance for many buck widgets.
+- [end-4](https://github.com/end-4) for [dots-hyprland](https://github.com/end-4/dots-hyprland) which also served as inspiration and guidance for many buck widgets.

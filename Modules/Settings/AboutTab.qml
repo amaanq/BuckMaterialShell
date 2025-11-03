@@ -42,8 +42,8 @@ Item {
         return "niri GitHub"
     }
 
-    property string dmsDiscordUrl: "https://discord.gg/vT8Sfjy7sx"
-    property string dmsDiscordTooltip: "niri/dms Discord"
+    property string dykwabiDiscordUrl: "https://discord.gg/vT8Sfjy7sx"
+    property string dykwabiDiscordTooltip: "niri/dykwabi Discord"
 
     property string compositorDiscordUrl: {
         if (isHyprland) return "https://discord.com/invite/hQ9XvMUjjr"
@@ -64,7 +64,7 @@ Item {
     property bool showCompositorDiscord: isHyprland || isDwl
     property bool showReddit: isNiri && !isHyprland && !isSway && !isDwl
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -108,7 +108,7 @@ Item {
                             smooth: true
                             mipmap: true
                             asynchronous: true
-                            source: "file://" + Theme.shellDir + "/assets/danklogonormal.svg"
+                            source: "file://" + Theme.shellDir + "/assets/bucklogonormal.svg"
                             layer.enabled: true
                             layer.smooth: true
                             layer.mipmap: true
@@ -121,7 +121,7 @@ Item {
 
                         Text {
                             anchors.verticalCenter: parent.verticalCenter
-                            text: "DANK LINUX"
+                            text: "BUCK LINUX"
                             font.pixelSize: 48
                             font.weight: Font.Bold
                             font.family: interFont.name
@@ -136,7 +136,7 @@ Item {
                     }
 
                     StyledText {
-                        text: SystemUpdateService.shellVersion ? `dms ${SystemUpdateService.shellVersion}` : "dms"
+                        text: SystemUpdateService.shellVersion ? `dykwabi ${SystemUpdateService.shellVersion}` : "dykwabi"
                         font.pixelSize: Theme.fontSizeXLarge
                         font.weight: Font.Bold
                         color: Theme.surfaceText
@@ -149,7 +149,7 @@ Item {
                         anchors.horizontalCenter: parent.horizontalCenter
                         height: 24
                         width: {
-                            let baseWidth = compositorButton.width + dmsDiscordButton.width + Theme.spacingM
+                            let baseWidth = compositorButton.width + dykwabiDiscordButton.width + Theme.spacingM
                             if (showMatrix) {
                                 baseWidth += matrixButton.width + 4
                             }
@@ -233,14 +233,14 @@ Item {
                         }
 
                         Item {
-                            id: dmsDiscordButton
+                            id: dykwabiDiscordButton
                             width: 20
                             height: 20
                             x: showMatrix ? matrixButton.x + matrixButton.width + Theme.spacingM : compositorButton.x + compositorButton.width + Theme.spacingM
                             anchors.verticalCenter: parent.verticalCenter
 
                             property bool hovered: false
-                            property string tooltipText: dmsDiscordTooltip
+                            property string tooltipText: dykwabiDiscordTooltip
 
                             Image {
                                 anchors.fill: parent
@@ -259,7 +259,7 @@ Item {
                                 hoverEnabled: true
                                 onEntered: parent.hovered = true
                                 onExited: parent.hovered = false
-                                onClicked: Qt.openUrlExternally(dmsDiscordUrl)
+                                onClicked: Qt.openUrlExternally(dykwabiDiscordUrl)
                             }
                         }
 
@@ -267,7 +267,7 @@ Item {
                             id: compositorDiscordButton
                             width: 20
                             height: 20
-                            x: dmsDiscordButton.x + dmsDiscordButton.width + Theme.spacingM
+                            x: dykwabiDiscordButton.x + dykwabiDiscordButton.width + Theme.spacingM
                             anchors.verticalCenter: parent.verticalCenter
                             visible: showCompositorDiscord
 
@@ -299,7 +299,7 @@ Item {
                             id: redditButton
                             width: 20
                             height: 20
-                            x: showCompositorDiscord ? compositorDiscordButton.x + compositorDiscordButton.width + Theme.spacingM : dmsDiscordButton.x + dmsDiscordButton.width + Theme.spacingM
+                            x: showCompositorDiscord ? compositorDiscordButton.x + compositorDiscordButton.width + Theme.spacingM : dykwabiDiscordButton.x + dykwabiDiscordButton.width + Theme.spacingM
                             anchors.verticalCenter: parent.verticalCenter
                             visible: showReddit
 
@@ -352,7 +352,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "info"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -369,7 +369,7 @@ Item {
                     }
 
                     StyledText {
-                        text: I18n.tr(`dms is a highly customizable, modern desktop shell with a <a href="https://m3.material.io/" style="text-decoration:none; color:${Theme.primary};">material 3 inspired</a> design.
+                        text: I18n.tr(`dykwabi is a highly customizable, modern desktop shell with a <a href="https://m3.material.io/" style="text-decoration:none; color:${Theme.primary};">material 3 inspired</a> design.
                         <br /><br/>It is built with <a href="https://quickshell.org" style="text-decoration:none; color:${Theme.primary};">Quickshell</a>, a QT6 framework for building desktop shells, and <a href="https://go.dev" style="text-decoration:none; color:${Theme.primary};">Go</a>, a statically typed, compiled programming language.
                         `)
                         textFormat: Text.RichText
@@ -410,7 +410,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "code"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -440,7 +440,7 @@ Item {
                         }
 
                         StyledText {
-                            text: `<a href="https://danklinux.com" style="text-decoration:none; color:${Theme.primary};">danklinux.com</a>`
+                            text: `<a href="https://bucklinux.com" style="text-decoration:none; color:${Theme.primary};">bucklinux.com</a>`
                             linkColor: Theme.primary
                             textFormat: Text.RichText
                             onLinkActivated: url => Qt.openUrlExternally(url)
@@ -463,7 +463,7 @@ Item {
                         }
 
                         StyledText {
-                            text: `<a href="https://plugins.danklinux.com" style="text-decoration:none; color:${Theme.primary};">plugins.danklinux.com</a>`
+                            text: `<a href="https://plugins.bucklinux.com" style="text-decoration:none; color:${Theme.primary};">plugins.bucklinux.com</a>`
                             linkColor: Theme.primary
                             textFormat: Text.RichText
                             onLinkActivated: url => Qt.openUrlExternally(url)
@@ -489,7 +489,7 @@ Item {
                             spacing: 4
 
                             StyledText {
-                                text: `<a href="https://github.com/AvengeMedia/DankMaterialShell" style="text-decoration:none; color:${Theme.primary};">DankMaterialShell</a>`
+                                text: `<a href="https://github.com/AvengeMedia/BuckMaterialShell" style="text-decoration:none; color:${Theme.primary};">BuckMaterialShell</a>`
                                 font.pixelSize: Theme.fontSizeMedium
                                 color: Theme.surfaceVariantText
                                 linkColor: Theme.primary
@@ -572,7 +572,7 @@ Item {
                         spacing: Theme.spacingM
                         anchors.verticalCenter: parent.verticalCenter
 
-                        DankIcon {
+                        BuckIcon {
                             name: "volunteer_activism"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -593,7 +593,7 @@ Item {
                         height: 1
                     }
 
-                    DankButton {
+                    BuckButton {
                         id: kofiButton
                         text: I18n.tr("Donate on Ko-fi")
                         iconName: "favorite"
@@ -601,7 +601,7 @@ Item {
                         backgroundColor: Qt.rgba(Theme.primary.r, Theme.primary.g, Theme.primary.b, 0.08)
                         textColor: Theme.primary
                         anchors.verticalCenter: parent.verticalCenter
-                        onClicked: Qt.openUrlExternally("https://ko-fi.com/danklinux")
+                        onClicked: Qt.openUrlExternally("https://ko-fi.com/bucklinux")
                     }
                 }
             }
@@ -618,7 +618,7 @@ Item {
         property var hoveredButton: {
             if (compositorButton.hovered) return compositorButton
             if (matrixButton.visible && matrixButton.hovered) return matrixButton
-            if (dmsDiscordButton.hovered) return dmsDiscordButton
+            if (dykwabiDiscordButton.hovered) return dykwabiDiscordButton
             if (compositorDiscordButton.visible && compositorDiscordButton.hovered) return compositorDiscordButton
             if (redditButton.visible && redditButton.hovered) return redditButton
             return null

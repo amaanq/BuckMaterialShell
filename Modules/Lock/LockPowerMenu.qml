@@ -163,7 +163,7 @@ Rectangle {
                         height: 1
                     }
 
-                    DankActionButton {
+                    BuckActionButton {
                         iconName: "close"
                         iconSize: Theme.iconSize - 4
                         iconColor: Theme.surfaceText
@@ -198,7 +198,7 @@ Rectangle {
                             anchors.verticalCenter: parent.verticalCenter
                             spacing: Theme.spacingM
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "logout"
                                 size: Theme.iconSize
                                 color: Theme.surfaceText
@@ -249,7 +249,7 @@ Rectangle {
                             anchors.verticalCenter: parent.verticalCenter
                             spacing: Theme.spacingM
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "bedtime"
                                 size: Theme.iconSize
                                 color: Theme.surfaceText
@@ -301,7 +301,7 @@ Rectangle {
                             anchors.verticalCenter: parent.verticalCenter
                             spacing: Theme.spacingM
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "ac_unit"
                                 size: Theme.iconSize
                                 color: Theme.surfaceText
@@ -361,7 +361,7 @@ Rectangle {
                             anchors.verticalCenter: parent.verticalCenter
                             spacing: Theme.spacingM
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "restart_alt"
                                 size: Theme.iconSize
                                 color: rebootArea.containsMouse ? Theme.warning : Theme.surfaceText
@@ -421,7 +421,7 @@ Rectangle {
                             anchors.verticalCenter: parent.verticalCenter
                             spacing: Theme.spacingM
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "power_settings_new"
                                 size: Theme.iconSize
                                 color: powerOffArea.containsMouse ? Theme.error : Theme.surfaceText

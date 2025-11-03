@@ -6,7 +6,7 @@ import qs.Widgets
 Item {
     id: powerTab
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -43,7 +43,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "lock"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -59,7 +59,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         width: parent.width
                         text: I18n.tr("Show Power Actions")
                         description: I18n.tr("Show power, restart, and logout buttons on the lock screen")
@@ -68,7 +68,7 @@ Item {
                     }
 
                     StyledText {
-                        text: I18n.tr("loginctl not available - lock integration requires DMS socket connection")
+                        text: I18n.tr("loginctl not available - lock integration requires Dykwabi socket connection")
                         font.pixelSize: Theme.fontSizeSmall
                         color: Theme.warning
                         visible: !SessionService.loginctlAvailable
@@ -76,7 +76,7 @@ Item {
                         wrapMode: Text.Wrap
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         width: parent.width
                         text: I18n.tr("Enable loginctl lock integration")
                         description: I18n.tr("Bind lock screen to dbus signals from loginctl. Disable if using an external lock screen")
@@ -89,7 +89,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         width: parent.width
                         text: I18n.tr("Lock before suspend")
                         description: I18n.tr("Automatically lock the screen when the system prepares to suspend")
@@ -98,7 +98,7 @@ Item {
                         onToggled: checked => SettingsData.setLockBeforeSuspend(checked)
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         width: parent.width
                         text: I18n.tr("Enable fingerprint authentication")
                         description: I18n.tr("Use fingerprint reader for lock screen authentication (requires enrolled fingerprints)")
@@ -127,7 +127,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "schedule"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -147,7 +147,7 @@ Item {
                             height: parent.height
                         }
 
-                        DankButtonGroup {
+                        BuckButtonGroup {
                             id: powerCategory
                             anchors.verticalCenter: parent.verticalCenter
                             visible: BatteryService.batteryAvailable
@@ -158,7 +158,7 @@ Item {
                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         id: lockDropdown
                         property var timeoutOptions: ["Never", "1 minute", "2 minutes", "3 minutes", "5 minutes", "10 minutes", "15 minutes", "20 minutes", "30 minutes", "1 hour", "1 hour 30 minutes", "2 hours", "3 hours"]
                         property var timeoutValues: [0, 60, 120, 180, 300, 600, 900, 1200, 1800, 3600, 5400, 7200, 10800]
@@ -194,7 +194,7 @@ Item {
                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         id: monitorDropdown
                         property var timeoutOptions: ["Never", "1 minute", "2 minutes", "3 minutes", "5 minutes", "10 minutes", "15 minutes", "20 minutes", "30 minutes", "1 hour", "1 hour 30 minutes", "2 hours", "3 hours"]
                         property var timeoutValues: [0, 60, 120, 180, 300, 600, 900, 1200, 1800, 3600, 5400, 7200, 10800]
@@ -230,7 +230,7 @@ Item {
                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         id: suspendDropdown
                         property var timeoutOptions: ["Never", "1 minute", "2 minutes", "3 minutes", "5 minutes", "10 minutes", "15 minutes", "20 minutes", "30 minutes", "1 hour", "1 hour 30 minutes", "2 hours", "3 hours"]
                         property var timeoutValues: [0, 60, 120, 180, 300, 600, 900, 1200, 1800, 3600, 5400, 7200, 10800]
@@ -266,7 +266,7 @@ Item {
                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         id: hibernateDropdown
                         property var timeoutOptions: ["Never", "1 minute", "2 minutes", "3 minutes", "5 minutes", "10 minutes", "15 minutes", "20 minutes", "30 minutes", "1 hour", "1 hour 30 minutes", "2 hours", "3 hours"]
                         property var timeoutValues: [0, 60, 120, 180, 300, 600, 900, 1200, 1800, 3600, 5400, 7200, 10800]
@@ -331,7 +331,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "check_circle"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -347,7 +347,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         width: parent.width
                         text: I18n.tr("Show Confirmation on Power Actions")
                         description: I18n.tr("Request confirmation on power off, restart, suspend, hibernate and logout actions")
@@ -375,7 +375,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "developer_mode"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -402,7 +402,7 @@ Item {
                             color: Theme.surfaceVariantText
                         }
 
-                        DankTextField {
+                        BuckTextField {
                             id: customLockCommand
                             width: parent.width
                             height: 48
@@ -434,7 +434,7 @@ Item {
                             color: Theme.surfaceVariantText
                         }
 
-                        DankTextField {
+                        BuckTextField {
                             id: customLogoutCommand
                             width: parent.width
                             height: 48
@@ -466,7 +466,7 @@ Item {
                             color: Theme.surfaceVariantText
                         }
 
-                        DankTextField {
+                        BuckTextField {
                             id: customSuspendCommand
                             width: parent.width
                             height: 48
@@ -498,7 +498,7 @@ Item {
                             color: Theme.surfaceVariantText
                         }
 
-                        DankTextField {
+                        BuckTextField {
                             id: customHibernateCommand
                             width: parent.width
                             height: 48
@@ -530,7 +530,7 @@ Item {
                             color: Theme.surfaceVariantText
                         }
 
-                        DankTextField {
+                        BuckTextField {
                             id: customRebootCommand
                             width: parent.width
                             height: 48
@@ -562,7 +562,7 @@ Item {
                             color: Theme.surfaceVariantText
                         }
 
-                        DankTextField {
+                        BuckTextField {
                             id: customPowerOffCommand
                             width: parent.width
                             height: 48

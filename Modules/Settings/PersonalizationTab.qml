@@ -66,7 +66,7 @@ Item {
         }
     }
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -99,7 +99,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "wallpaper"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -192,7 +192,7 @@ Item {
                                 layer.enabled: true
                             }
 
-                            DankIcon {
+                            BuckIcon {
                                 anchors.centerIn: parent
                                 name: "image"
                                 size: Theme.iconSizeLarge + 8
@@ -220,7 +220,7 @@ Item {
                                         radius: 16
                                         color: Qt.rgba(255, 255, 255, 0.9)
 
-                                        DankIcon {
+                                        BuckIcon {
                                             anchors.centerIn: parent
                                             name: "folder_open"
                                             size: 18
@@ -242,7 +242,7 @@ Item {
                                         radius: 16
                                         color: Qt.rgba(255, 255, 255, 0.9)
 
-                                        DankIcon {
+                                        BuckIcon {
                                             anchors.centerIn: parent
                                             name: "palette"
                                             size: 18
@@ -280,7 +280,7 @@ Item {
                                             return currentWallpaper !== ""
                                         }
 
-                                        DankIcon {
+                                        BuckIcon {
                                             anchors.centerIn: parent
                                             name: "clear"
                                             size: 18
@@ -355,7 +355,7 @@ Item {
                                     return currentWallpaper !== ""
                                 }
 
-                                DankActionButton {
+                                BuckActionButton {
                                     buttonSize: 32
                                     iconName: "skip_previous"
                                     iconSize: Theme.iconSizeSmall
@@ -378,7 +378,7 @@ Item {
                                     }
                                 }
 
-                                DankActionButton {
+                                BuckActionButton {
                                     buttonSize: 32
                                     iconName: "skip_next"
                                     iconSize: Theme.iconSizeSmall
@@ -412,7 +412,7 @@ Item {
                             return currentWallpaper !== "" && !currentWallpaper.startsWith("#")
                         }
 
-                        DankButtonGroup {
+                        BuckButtonGroup {
                             id: fillModeGroup
                             anchors.horizontalCenter: parent.horizontalCenter
                             model: ["Stretch", "Fit", "Fill", "Tile", "Tile V", "Tile H", "Pad"]
@@ -467,7 +467,7 @@ Item {
                         spacing: Theme.spacingM
                         visible: CompositorService.isNiri
 
-                        DankIcon {
+                        BuckIcon {
                             name: "blur_on"
                             size: Theme.iconSize
                             color: SettingsData.blurWallpaperOnOverview ? Theme.primary : Theme.surfaceVariantText
@@ -495,7 +495,7 @@ Item {
                             }
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: blurOverviewToggle
 
                             anchors.verticalCenter: parent.verticalCenter
@@ -524,7 +524,7 @@ Item {
                             width: parent.width
                             spacing: Theme.spacingM
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "brightness_6"
                                 size: Theme.iconSize
                                 color: SessionData.perModeWallpaper ? Theme.primary : Theme.surfaceVariantText
@@ -551,7 +551,7 @@ Item {
                                 }
                             }
 
-                            DankToggle {
+                            BuckToggle {
                                 id: perModeToggle
 
                                 anchors.verticalCenter: parent.verticalCenter
@@ -581,7 +581,7 @@ Item {
                             width: parent.width
                             spacing: Theme.spacingM
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "monitor"
                                 size: Theme.iconSize
                                 color: SessionData.perMonitorWallpaper ? Theme.primary : Theme.surfaceVariantText
@@ -608,7 +608,7 @@ Item {
                                 }
                             }
 
-                            DankToggle {
+                            BuckToggle {
                                 id: perMonitorToggle
 
                                 anchors.verticalCenter: parent.verticalCenter
@@ -632,7 +632,7 @@ Item {
                                 font.weight: Font.Medium
                             }
 
-                            DankDropdown {
+                            BuckDropdown {
                                 id: monitorDropdown
 
                                 text: I18n.tr("Wallpaper Monitor")
@@ -651,7 +651,7 @@ Item {
                                                 }
                             }
 
-                            DankDropdown {
+                            BuckDropdown {
                                 id: matugenTargetDropdown
 
                                 text: I18n.tr("Matugen Target Monitor")
@@ -700,7 +700,7 @@ Item {
                             width: parent.width
                             spacing: Theme.spacingM
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "schedule"
                                 size: Theme.iconSize
                                 color: SessionData.wallpaperCyclingEnabled ? Theme.primary : Theme.surfaceVariantText
@@ -727,7 +727,7 @@ Item {
                                 }
                             }
 
-                            DankToggle {
+                            BuckToggle {
                                 id: cyclingToggle
 
                                 anchors.verticalCenter: parent.verticalCenter
@@ -772,7 +772,7 @@ Item {
                                     width: 200
                                     height: 45 + Theme.spacingM
 
-                                    DankTabBar {
+                                    BuckTabBar {
                                         id: modeTabBar
 
                                         width: 200
@@ -817,7 +817,7 @@ Item {
                             }
 
                             // Interval settings
-                            DankDropdown {
+                            BuckDropdown {
                                 id: intervalDropdown
                                 property var intervalOptions: ["1 minute", "5 minutes", "15 minutes", "30 minutes", "1 hour", "1.5 hours", "2 hours", "3 hours", "4 hours", "6 hours", "8 hours", "12 hours"]
                                 property var intervalValues: [60, 300, 900, 1800, 3600, 5400, 7200, 10800, 14400, 21600, 28800, 43200]
@@ -891,7 +891,7 @@ Item {
                                     anchors.verticalCenter: parent.verticalCenter
                                 }
 
-                                DankTextField {
+                                BuckTextField {
                                     id: timeTextField
                                     width: 100
                                     height: 40
@@ -976,7 +976,7 @@ Item {
                         opacity: 0.2
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         text: I18n.tr("Transition Effect")
                         description: I18n.tr("Visual effect used when wallpaper changes")
                         currentValue: {
@@ -1011,7 +1011,7 @@ Item {
                             width: parent.width
                         }
 
-                        DankButtonGroup {
+                        BuckButtonGroup {
                             id: transitionGroup
                             width: parent.width
                             selectionMode: "multi"
@@ -1056,7 +1056,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "blur_on"
                             size: Theme.iconSize
                             color: SettingsData.blurredWallpaperLayer ? Theme.primary : Theme.surfaceVariantText
@@ -1076,7 +1076,7 @@ Item {
                             }
 
                             StyledText {
-                                text: I18n.tr("Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.")
+                                text: I18n.tr("Enable compositor-targetable blur layer (namespace: dykwabi:blurwallpaper). Requires manual niri configuration.")
                                 font.pixelSize: Theme.fontSizeSmall
                                 color: Theme.surfaceVariantText
                                 wrapMode: Text.WordWrap
@@ -1084,7 +1084,7 @@ Item {
                             }
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: blurLayerToggle
 
                             anchors.verticalCenter: parent.verticalCenter
@@ -1112,7 +1112,7 @@ Item {
                     anchors.margins: Theme.spacingL
                     spacing: Theme.spacingM
 
-                    DankIcon {
+                    BuckIcon {
                         name: "contrast"
                         size: Theme.iconSize
                         color: Theme.primary
@@ -1141,7 +1141,7 @@ Item {
                         }
                     }
 
-                    DankToggle {
+                    BuckToggle {
                         id: lightModeToggle
 
                         anchors.verticalCenter: parent.verticalCenter
@@ -1174,7 +1174,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "animation"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -1194,7 +1194,7 @@ Item {
                         width: parent.width
                         height: childrenRect.height
 
-                        DankButtonGroup {
+                        BuckButtonGroup {
                             id: animationSpeedGroup
                             x: (parent.width - width) / 2
                             model: ["None", "Short", "Medium", "Long", "Custom"]
@@ -1272,7 +1272,7 @@ Item {
                                     height: 40
                                     anchors.verticalCenter: parent.verticalCenter
 
-                                    DankSlider {
+                                    BuckSlider {
                                         id: customDurationSlider
                                         anchors.fill: parent
                                         minimum: 0
@@ -1346,7 +1346,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "palette"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -1366,7 +1366,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "auto_awesome"
                             size: Theme.iconSize
                             color: Theme.currentTheme === Theme.dynamic ? Theme.primary : Theme.surfaceVariantText
@@ -1394,7 +1394,7 @@ Item {
                             }
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: toggle
 
                             anchors.verticalCenter: parent.verticalCenter
@@ -1409,7 +1409,7 @@ Item {
                         }
                     }
 
-                    DankDropdown {
+                    BuckDropdown {
                         id: personalizationMatugenPaletteDropdown
                         text: I18n.tr("Matugen Palette")
                         description: I18n.tr("Select the palette algorithm used for wallpaper-based colors")
@@ -1452,7 +1452,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "code"
                             size: Theme.iconSize
                             color: SettingsData.runUserMatugenTemplates ? Theme.primary : Theme.surfaceVariantText
@@ -1479,7 +1479,7 @@ Item {
                             }
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: runUserTemplatesToggle
 
                             anchors.verticalCenter: parent.verticalCenter
@@ -1522,7 +1522,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "volume_up"
                             size: Theme.iconSize
                             color: SettingsData.soundsEnabled ? Theme.primary : Theme.surfaceVariantText
@@ -1549,7 +1549,7 @@ Item {
                             }
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: soundsToggle
 
                             anchors.verticalCenter: parent.verticalCenter
@@ -1597,7 +1597,7 @@ Item {
                                 }
                             }
 
-                            DankToggle {
+                            BuckToggle {
                                 id: useSystemSoundThemeToggle
 
                                 anchors.verticalCenter: parent.verticalCenter
@@ -1608,7 +1608,7 @@ Item {
                             }
                         }
 
-                        DankDropdown {
+                        BuckDropdown {
                             id: soundThemeDropdown
 
                             width: parent.width - parent.leftPadding
@@ -1662,7 +1662,7 @@ Item {
                                 }
                             }
 
-                            DankToggle {
+                            BuckToggle {
                                 id: notificationSoundToggle
 
                                 anchors.verticalCenter: parent.verticalCenter
@@ -1696,7 +1696,7 @@ Item {
                                 }
                             }
 
-                            DankToggle {
+                            BuckToggle {
                                 id: volumeSoundToggle
 
                                 anchors.verticalCenter: parent.verticalCenter
@@ -1731,7 +1731,7 @@ Item {
                                 }
                             }
 
-                            DankToggle {
+                            BuckToggle {
                                 id: pluggedInSoundToggle
 
                                 anchors.verticalCenter: parent.verticalCenter

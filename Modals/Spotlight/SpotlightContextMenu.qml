@@ -90,7 +90,7 @@ Popup {
                 anchors.verticalCenter: parent.verticalCenter
                 spacing: Theme.spacingS
 
-                DankIcon {
+                BuckIcon {
                     name: {
                         if (!desktopEntry)
                             return "push_pin"
@@ -239,7 +239,7 @@ Popup {
                 anchors.verticalCenter: parent.verticalCenter
                 spacing: Theme.spacingS
 
-                DankIcon {
+                BuckIcon {
                     name: "launch"
                     size: Theme.iconSize - 2
                     color: Theme.surfaceText
@@ -300,7 +300,7 @@ Popup {
                 anchors.verticalCenter: parent.verticalCenter
                 spacing: Theme.spacingS
 
-                DankIcon {
+                BuckIcon {
                     name: "memory"
                     size: Theme.iconSize - 2
                     color: Theme.surfaceText

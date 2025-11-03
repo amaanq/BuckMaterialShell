@@ -3,12 +3,12 @@
     lib,
     ...
 }: let
-    cfg = config.programs.dankMaterialShell;
+    cfg = config.programs.buckMaterialShell;
 in {
-    options.programs.dankMaterialShell = {
+    options.programs.buckMaterialShell = {
         niri = {
-            enableKeybinds = lib.mkEnableOption "DankMaterialShell niri keybinds";
-            enableSpawn = lib.mkEnableOption "DankMaterialShell niri spawn-at-startup";
+            enableKeybinds = lib.mkEnableOption "BuckMaterialShell niri keybinds";
+            enableSpawn = lib.mkEnableOption "BuckMaterialShell niri spawn-at-startup";
         };
     };
 
@@ -16,75 +16,75 @@ in {
         programs.niri.settings = lib.mkMerge [
             (lib.mkIf cfg.niri.enableKeybinds {
                 binds = with config.lib.niri.actions; let
-                    dms-ipc = spawn "dms" "ipc";
+                    dykwabi-ipc = spawn "dykwabi" "ipc";
                 in
                     {
                         "Mod+Space" = {
-                            action = dms-ipc "spotlight" "toggle";
+                            action = dykwabi-ipc "spotlight" "toggle";
                             hotkey-overlay.title = "Toggle Application Launcher";
                         };
                         "Mod+N" = {
-                            action = dms-ipc "notifications" "toggle";
+                            action = dykwabi-ipc "notifications" "toggle";
                             hotkey-overlay.title = "Toggle Notification Center";
                         };
                         "Mod+Comma" = {
-                            action = dms-ipc "settings" "toggle";
+                            action = dykwabi-ipc "settings" "toggle";
                             hotkey-overlay.title = "Toggle Settings";
                         };
                         "Mod+P" = {
-                            action = dms-ipc "notepad" "toggle";
+                            action = dykwabi-ipc "notepad" "toggle";
                             hotkey-overlay.title = "Toggle Notepad";
                         };
                         "Super+Alt+L" = {
-                            action = dms-ipc "lock" "lock";
+                            action = dykwabi-ipc "lock" "lock";
                             hotkey-overlay.title = "Toggle Lock Screen";
                         };
                         "Mod+X" = {
-                            action = dms-ipc "powermenu" "toggle";
+                            action = dykwabi-ipc "powermenu" "toggle";
                             hotkey-overlay.title = "Toggle Power Menu";
                         };
                         "XF86AudioRaiseVolume" = {
                             allow-when-locked = true;
-                            action = dms-ipc "audio" "increment" "3";
+                            action = dykwabi-ipc "audio" "increment" "3";
                         };
                         "XF86AudioLowerVolume" = {
                             allow-when-locked = true;
-                            action = dms-ipc "audio" "decrement" "3";
+                            action = dykwabi-ipc "audio" "decrement" "3";
                         };
                         "XF86AudioMute" = {
                             allow-when-locked = true;
-                            action = dms-ipc "audio" "mute";
+                            action = dykwabi-ipc "audio" "mute";
                         };
                         "XF86AudioMicMute" = {
                             allow-when-locked = true;
-                            action = dms-ipc "audio" "micmute";
+                            action = dykwabi-ipc "audio" "micmute";
                         };
                         "Mod+Alt+N" = {
                             allow-when-locked = true;
-                            action = dms-ipc "night" "toggle";
+                            action = dykwabi-ipc "night" "toggle";
                             hotkey-overlay.title = "Toggle Night Mode";
                         };
                     }
                     // lib.attrsets.optionalAttrs cfg.enableSystemMonitoring {
                         "Mod+M" = {
-                            action = dms-ipc "processlist" "toggle";
+                            action = dykwabi-ipc "processlist" "toggle";
                             hotkey-overlay.title = "Toggle Process List";
                         };
                     }
                     // lib.attrsets.optionalAttrs cfg.enableClipboard {
                         "Mod+V" = {
-                            action = dms-ipc "clipboard" "toggle";
+                            action = dykwabi-ipc "clipboard" "toggle";
                             hotkey-overlay.title = "Toggle Clipboard Manager";
                         };
                     }
                     // lib.attrsets.optionalAttrs cfg.enableBrightnessControl {
                         "XF86MonBrightnessUp" = {
                             allow-when-locked = true;
-                            action = dms-ipc "brightness" "increment" "5" "";
+                            action = dykwabi-ipc "brightness" "increment" "5" "";
                         };
                         "XF86MonBrightnessDown" = {
                             allow-when-locked = true;
-                            action = dms-ipc "brightness" "decrement" "5" "";
+                            action = dykwabi-ipc "brightness" "decrement" "5" "";
                         };
                     };
             })
@@ -92,7 +92,7 @@ in {
             (lib.mkIf cfg.niri.enableSpawn {
                 spawn-at-startup =
                     [
-                        {command = ["dms" "run"];}
+                        {command = ["dykwabi" "run"];}
                     ]
                     ++ lib.optionals cfg.enableClipboard [
                         {

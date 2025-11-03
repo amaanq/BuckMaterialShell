@@ -4,7 +4,7 @@ import qs.Modals.Common
 import qs.Services
 import qs.Widgets
 
-DankModal {
+BuckModal {
     id: root
 
     property string passwordInput: ""
@@ -161,7 +161,7 @@ DankModal {
                     }
                 }
 
-                DankActionButton {
+                BuckActionButton {
                     iconName: "close"
                     iconSize: Theme.iconSize - 4
                     iconColor: Theme.surfaceText
@@ -210,7 +210,7 @@ DankModal {
                         }
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         id: passwordField
 
                         anchors.fill: parent

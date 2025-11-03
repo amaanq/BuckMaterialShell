@@ -721,7 +721,7 @@
     "comment": ""
   },
   {
-    "term": "Choose the logo displayed on the launcher button in DankBar",
+    "term": "Choose the logo displayed on the launcher button in BuckBar",
     "translation": "",
     "context": "",
     "reference": "",
@@ -1099,21 +1099,21 @@
     "comment": ""
   },
   {
-    "term": "DMS Plugin Manager Unavailable",
+    "term": "Dykwabi Plugin Manager Unavailable",
     "translation": "",
     "context": "",
     "reference": "",
     "comment": ""
   },
   {
-    "term": "DMS out of date",
+    "term": "Dykwabi out of date",
     "translation": "",
     "context": "",
     "reference": "",
     "comment": ""
   },
   {
-    "term": "DMS_SOCKET not available",
+    "term": "DYKWABI_SOCKET not available",
     "translation": "",
     "context": "",
     "reference": "",
@@ -1127,42 +1127,42 @@
     "comment": ""
   },
   {
-    "term": "Dank",
+    "term": "Buck",
     "translation": "",
     "context": "",
     "reference": "",
     "comment": ""
   },
   {
-    "term": "Dank Bar",
+    "term": "Buck Bar",
     "translation": "",
     "context": "",
     "reference": "",
     "comment": ""
   },
   {
-    "term": "Dank Bar Transparency",
+    "term": "Buck Bar Transparency",
     "translation": "",
     "context": "",
     "reference": "",
     "comment": ""
   },
   {
-    "term": "Dank Bar Widget Transparency",
+    "term": "Buck Bar Widget Transparency",
     "translation": "",
     "context": "",
     "reference": "",
     "comment": ""
   },
   {
-    "term": "DankBar Font Scale",
+    "term": "BuckBar Font Scale",
     "translation": "",
     "context": "",
     "reference": "",
     "comment": ""
   },
   {
-    "term": "DankSearch not available",
+    "term": "BuckSearch not available",
     "translation": "",
     "context": "",
     "reference": "",
@@ -1435,7 +1435,7 @@
     "comment": ""
   },
   {
-    "term": "Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.",
+    "term": "Enable compositor-targetable blur layer (namespace: dykwabi:blurwallpaper). Requires manual niri configuration.",
     "translation": "",
     "context": "",
     "reference": "",
@@ -1785,7 +1785,7 @@
     "comment": ""
   },
   {
-    "term": "Gamma control not available. Requires DMS API v6+.",
+    "term": "Gamma control not available. Requires Dykwabi API v6+.",
     "translation": "",
     "context": "",
     "reference": "",
@@ -1995,7 +1995,7 @@
     "comment": ""
   },
   {
-    "term": "Install plugins from the DMS plugin registry",
+    "term": "Install plugins from the Dykwabi plugin registry",
     "translation": "",
     "context": "",
     "reference": "",
@@ -2212,7 +2212,7 @@
     "comment": ""
   },
   {
-    "term": "Manage and configure plugins for extending DMS functionality",
+    "term": "Manage and configure plugins for extending Dykwabi functionality",
     "translation": "",
     "context": "",
     "reference": "",
@@ -3164,7 +3164,7 @@
     "comment": ""
   },
   {
-    "term": "Scale DankBar font sizes independently",
+    "term": "Scale BuckBar font sizes independently",
     "translation": "",
     "context": "",
     "reference": "",
@@ -3766,7 +3766,7 @@
     "comment": ""
   },
   {
-    "term": "The DMS_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DMS_SOCKET.",
+    "term": "The DYKWABI_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DYKWABI_SOCKET.",
     "translation": "",
     "context": "",
     "reference": "",
@@ -3801,7 +3801,7 @@
     "comment": ""
   },
   {
-    "term": "Third-party plugins are created by the community and are not officially supported by DankMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.",
+    "term": "Third-party plugins are created by the community and are not officially supported by BuckMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.",
     "translation": "",
     "context": "",
     "reference": "",
@@ -4319,7 +4319,7 @@
     "comment": ""
   },
   {
-    "term": "loginctl not available - lock integration requires DMS socket connection",
+    "term": "loginctl not available - lock integration requires Dykwabi socket connection",
     "translation": "",
     "context": "",
     "reference": "",
@@ -4340,7 +4340,7 @@
     "comment": ""
   },
   {
-    "term": "update dms for NM integration.",
+    "term": "update dykwabi for NM integration.",
     "translation": "",
     "context": "",
     "reference": "",

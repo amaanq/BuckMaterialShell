@@ -6,7 +6,7 @@ import qs.Modals.Common
 import qs.Services
 import qs.Widgets
 
-DankModal {
+BuckModal {
     id: root
 
     width: 1400
@@ -91,7 +91,7 @@ DankModal {
         Item {
             anchors.fill: parent
 
-            DankFlickable {
+            BuckFlickable {
                 id: mainFlickable
                 anchors.fill: parent
                 anchors.margins: Theme.spacingL

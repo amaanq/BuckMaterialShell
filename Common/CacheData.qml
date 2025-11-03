@@ -12,7 +12,7 @@ Singleton {
 
     readonly property int cacheConfigVersion: 1
 
-    readonly property bool isGreeterMode: Quickshell.env("DMS_RUN_GREETER") === "1" || Quickshell.env("DMS_RUN_GREETER") === "true"
+    readonly property bool isGreeterMode: Quickshell.env("DYKWABI_RUN_GREETER") === "1" || Quickshell.env("DYKWABI_RUN_GREETER") === "true"
 
     readonly property string _stateUrl: StandardPaths.writableLocation(StandardPaths.GenericCacheLocation)
     readonly property string _stateDir: Paths.strip(_stateUrl)
@@ -187,7 +187,7 @@ Singleton {
     FileView {
         id: cacheFile
 
-        path: isGreeterMode ? "" : _stateDir + "/DankMaterialShell/cache.json"
+        path: isGreeterMode ? "" : _stateDir + "/BuckMaterialShell/cache.json"
         blockLoading: true
         blockWrites: true
         atomicWrites: true

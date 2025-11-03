@@ -432,7 +432,7 @@ Singleton {
             return            
         }
         
-        if (DMSService.dmsAvailable) {
+        if (DykwabiService.dykwabiAvailable) {
             Qt.callLater(checkForDwl)
         } else {
             isHyprland = false
@@ -445,7 +445,7 @@ Singleton {
     }
 
     Connections {
-        target: DMSService
+        target: DykwabiService
         function onCapabilitiesReceived() {
             if (!isHyprland && !isNiri && !isDwl) {
                 checkForDwl()
@@ -454,12 +454,12 @@ Singleton {
     }
 
     function checkForDwl() {
-        if (DMSService.apiVersion >= 12 && DMSService.capabilities.includes("dwl")) {
+        if (DykwabiService.apiVersion >= 12 && DykwabiService.capabilities.includes("dwl")) {
             isHyprland = false
             isNiri = false
             isDwl = true
             compositor = "dwl"
-            console.info("CompositorService: Detected DWL via DMS capability")
+            console.info("CompositorService: Detected DWL via Dykwabi capability")
         }
     }
 

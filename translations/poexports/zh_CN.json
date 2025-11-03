@@ -311,8 +311,8 @@
   "Choose the border accent color": {
     "Choose the border accent color": "选择边框强调色"
   },
-  "Choose the logo displayed on the launcher button in DankBar": {
-    "Choose the logo displayed on the launcher button in DankBar": "选择在 Dank Bar 启动器按钮上显示的 Logo"
+  "Choose the logo displayed on the launcher button in BuckBar": {
+    "Choose the logo displayed on the launcher button in BuckBar": "选择在 Buck Bar 启动器按钮上显示的 Logo"
   },
   "Choose where notification popups appear on screen": {
     "Choose where notification popups appear on screen": "设置通知弹窗的出现位置"
@@ -479,38 +479,38 @@
   "DEMO MODE - Click anywhere to exit": {
     "DEMO MODE - Click anywhere to exit": "演示模式 - 点击任意位置退出"
   },
-  "DMS Plugin Manager Unavailable": {
-    "DMS Plugin Manager Unavailable": "DMS 插件管理器不可用"
+  "Dykwabi Plugin Manager Unavailable": {
+    "Dykwabi Plugin Manager Unavailable": "Dykwabi 插件管理器不可用"
   },
-  "DMS out of date": {
-    "DMS out of date": "DMS 不是最新版本"
+  "Dykwabi out of date": {
+    "Dykwabi out of date": "Dykwabi 不是最新版本"
   },
-  "DMS_SOCKET not available": {
-    "DMS_SOCKET not available": "DMS_SOCKET 不可用"
+  "DYKWABI_SOCKET not available": {
+    "DYKWABI_SOCKET not available": "DYKWABI_SOCKET 不可用"
   },
   "Daily at:": {
     "Daily at:": "在每日："
   },
-  "Dank": {
-    "Dank": "Dank"
+  "Buck": {
+    "Buck": "Buck"
   },
-  "Dank Bar": {
-    "Dank Bar": "Dank Bar"
+  "Buck Bar": {
+    "Buck Bar": "Buck Bar"
   },
-  "Dank Bar Transparency": {
-    "Dank Bar Transparency": "Dank Bar 透明度"
+  "Buck Bar Transparency": {
+    "Buck Bar Transparency": "Buck Bar 透明度"
   },
-  "Dank Bar Widget Transparency": {
-    "Dank Bar Widget Transparency": "Dank Bar 小组件透明度"
+  "Buck Bar Widget Transparency": {
+    "Buck Bar Widget Transparency": "Buck Bar 小组件透明度"
   },
-  "Dank Suite:": {
-    "Dank Suite:": "Dank 套件："
+  "Buck Suite:": {
+    "Buck Suite:": "Buck 套件："
   },
-  "DankBar Font Scale": {
-    "DankBar Font Scale": "Dank Bar 字体缩放"
+  "BuckBar Font Scale": {
+    "BuckBar Font Scale": "Buck Bar 字体缩放"
   },
-  "DankSearch not available": {
-    "DankSearch not available": "DankSearch 不可用"
+  "BuckSearch not available": {
+    "BuckSearch not available": "BuckSearch 不可用"
   },
   "Date Format": {
     "Date Format": "日期格式"
@@ -626,8 +626,8 @@
   "Enable WiFi": {
     "Enable WiFi": "启用 Wi-Fi"
   },
-  "Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.": {
-    "Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.": "启用合成器可定位的模糊层（命名空间：dms:blurwallpaper），需要手动配置 niri。"
+  "Enable compositor-targetable blur layer (namespace: dykwabi:blurwallpaper). Requires manual niri configuration.": {
+    "Enable compositor-targetable blur layer (namespace: dykwabi:blurwallpaper). Requires manual niri configuration.": "启用合成器可定位的模糊层（命名空间：dykwabi:blurwallpaper），需要手动配置 niri。"
   },
   "Enable fingerprint authentication": {
     "Enable fingerprint authentication": "启用指纹认证"
@@ -779,8 +779,8 @@
   "Gamma Control": {
     "Gamma Control": "伽马控制"
   },
-  "Gamma control not available. Requires DMS API v6+.": {
-    "Gamma control not available. Requires DMS API v6+.": "伽玛控制不可用，需要 DMS API v6+。"
+  "Gamma control not available. Requires Dykwabi API v6+.": {
+    "Gamma control not available. Requires Dykwabi API v6+.": "伽玛控制不可用，需要 Dykwabi API v6+。"
   },
   "Geoclue service not running - cannot auto-detect location": {
     "Geoclue service not running - cannot auto-detect location": "Geoclue 服务未运行 - 无法自动检测位置"
@@ -872,8 +872,8 @@
   "Input Devices": {
     "Input Devices": "输入设备"
   },
-  "Install plugins from the DMS plugin registry": {
-    "Install plugins from the DMS plugin registry": "从 DMS 插件库安装插件"
+  "Install plugins from the Dykwabi plugin registry": {
+    "Install plugins from the Dykwabi plugin registry": "从 Dykwabi 插件库安装插件"
   },
   "Internet": {
     "Internet": "互联网"
@@ -968,8 +968,8 @@
   "Low Priority": {
     "Low Priority": "次要通知"
   },
-  "Manage and configure plugins for extending DMS functionality": {
-    "Manage and configure plugins for extending DMS functionality": "管理和配置插件以扩展 DMS 功能"
+  "Manage and configure plugins for extending Dykwabi functionality": {
+    "Manage and configure plugins for extending Dykwabi functionality": "管理和配置插件以扩展 Dykwabi 功能"
   },
   "Manual Coordinates": {
     "Manual Coordinates": "手动设置坐标"
@@ -1382,8 +1382,8 @@
   "Saved": {
     "Saved": "已保存"
   },
-  "Scale DankBar font sizes independently": {
-    "Scale DankBar font sizes independently": "独立调整 Dank Bar 字体缩放"
+  "Scale BuckBar font sizes independently": {
+    "Scale BuckBar font sizes independently": "独立调整 Buck Bar 字体缩放"
   },
   "Scale all font sizes": {
     "Scale all font sizes": "缩放所有字体大小"
@@ -1646,8 +1646,8 @@
   "Text": {
     "Text": "文本"
   },
-  "The DMS_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DMS_SOCKET.": {
-    "The DMS_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DMS_SOCKET.": "未设置 DMS_SOCKET 环境变量或套接字不可用，无法使用自动插件管理。"
+  "The DYKWABI_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DYKWABI_SOCKET.": {
+    "The DYKWABI_SOCKET environment variable is not set or the socket is unavailable. Automated plugin management requires the DYKWABI_SOCKET.": "未设置 DYKWABI_SOCKET 环境变量或套接字不可用，无法使用自动插件管理。"
   },
   "The below settings will modify your GTK and Qt settings. If you wish to preserve your current configurations, please back them up (qt5ct.conf|qt6ct.conf and ~/.config/gtk-3.0|gtk-4.0).": {
     "The below settings will modify your GTK and Qt settings. If you wish to preserve your current configurations, please back them up (qt5ct.conf|qt6ct.conf and ~/.config/gtk-3.0|gtk-4.0).": "以下设置将修改您的 GTK 和 Qt 配置。如需保留当前配置，请先备份 (qt5ct.conf|qt6ct.conf 和 ~/.config/gtk-3.0|gtk-4.0)。"
@@ -1661,8 +1661,8 @@
   "Third-Party Plugin Warning": {
     "Third-Party Plugin Warning": "外部插件警示"
   },
-  "Third-party plugins are created by the community and are not officially supported by DankMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": {
-    "Third-party plugins are created by the community and are not officially supported by DankMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": "第三方插件由社区开发，DankMaterialShell 不提供官方支持。\\n\\n这些插件可能存在隐私和安全隐患，请自行承担风险。"
+  "Third-party plugins are created by the community and are not officially supported by BuckMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": {
+    "Third-party plugins are created by the community and are not officially supported by BuckMaterialShell.\\n\\nThese plugins may pose security and privacy risks - install at your own risk.": "第三方插件由社区开发，BuckMaterialShell 不提供官方支持。\\n\\n这些插件可能存在隐私和安全隐患，请自行承担风险。"
   },
   "This widget prevents GPU power off states, which can significantly impact battery life on laptops. It is not recommended to use this on laptops with hybrid graphics.": {
     "This widget prevents GPU power off states, which can significantly impact battery life on laptops. It is not recommended to use this on laptops with hybrid graphics.": "此组件会阻止 GPU 进入省电状态，可能会显著影响笔记本的电池续航。不建议在配备混合显卡的笔记本上使用。"
@@ -1889,8 +1889,8 @@
   "events": {
     "events": "事件"
   },
-  "loginctl not available - lock integration requires DMS socket connection": {
-    "loginctl not available - lock integration requires DMS socket connection": "loginctl 不可用 - 启用锁定集成需连接 DMS socket"
+  "loginctl not available - lock integration requires Dykwabi socket connection": {
+    "loginctl not available - lock integration requires Dykwabi socket connection": "loginctl 不可用 - 启用锁定集成需连接 Dykwabi socket"
   },
   "matugen not detected - dynamic theming unavailable": {
     "matugen not detected - dynamic theming unavailable": "未检测到 Matugen，动态主题不可用"
@@ -1898,8 +1898,8 @@
   "official": {
     "official": "官方"
   },
-  "update dms for NM integration.": {
-    "update dms for NM integration.": "更新 DMS 以集成 NM"
+  "update dykwabi for NM integration.": {
+    "update dykwabi for NM integration.": "更新 Dykwabi 以集成 NM"
   },
   "• Install only from trusted sources": {
     "• Install only from trusted sources": "• 仅从可信来源安装"

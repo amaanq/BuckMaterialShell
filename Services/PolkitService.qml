@@ -7,7 +7,7 @@ import Quickshell
 Singleton {
     id: root
 
-    readonly property bool disablePolkitIntegration: Quickshell.env("DMS_DISABLE_POLKIT") === "1"
+    readonly property bool disablePolkitIntegration: Quickshell.env("DYKWABI_DISABLE_POLKIT") === "1"
 
     property bool polkitAvailable: false
     property var agent: null

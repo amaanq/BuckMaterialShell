@@ -8,7 +8,7 @@ import qs.Widgets
 Item {
     id: root
 
-    // DEVELOPER NOTE: This component manages the AppDrawer launcher (accessed via DankBar icon).
+    // DEVELOPER NOTE: This component manages the AppDrawer launcher (accessed via BuckBar icon).
     // Changes to launcher behavior, especially item rendering, filtering, or model structure,
     // likely require corresponding updates in Modals/Spotlight/SpotlightResults.qml and vice versa.
 

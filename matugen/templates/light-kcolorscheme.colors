@@ -2,8 +2,8 @@
 contrast=4
 
 [General]
-ColorScheme=DankMatugenLight
-Name=Dank Shell (matugen-light)
+ColorScheme=BuckMatugenLight
+Name=Buck Shell (matugen-light)
 
 [ColorEffects:Disabled]
 Color={{colors.on_surface_variant.light.red}},{{colors.on_surface_variant.light.green}},{{colors.on_surface_variant.light.blue}}

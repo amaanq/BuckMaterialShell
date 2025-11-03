@@ -16,7 +16,7 @@ Rectangle {
     color: "transparent"
     clip: true
 
-    DankListView {
+    BuckListView {
         id: filesList
 
         property int itemHeight: 60
@@ -105,7 +105,7 @@ Rectangle {
                         color: Theme.surfaceLight
                         visible: fileType !== "image"
 
-                        DankNFIcon {
+                        BuckNFIcon {
                             id: nerdIcon
                             anchors.centerIn: parent
                             name: {
@@ -222,7 +222,7 @@ Rectangle {
                     return ""
                 }
                 if (!DSearchService.dsearchAvailable) {
-                    return I18n.tr("DankSearch not available")
+                    return I18n.tr("BuckSearch not available")
                 }
                 if (fileSearchController.isSearching) {
                     return I18n.tr("Searching...")

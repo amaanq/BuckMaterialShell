@@ -10,24 +10,24 @@ PluginComponent {
     id: root
 
     Ref {
-        service: DMSNetworkService
+        service: DykwabiNetworkService
     }
 
 
-    ccWidgetIcon: DMSNetworkService.isBusy ? "sync" : (DMSNetworkService.connected ? "vpn_lock" : "vpn_key_off")
+    ccWidgetIcon: DykwabiNetworkService.isBusy ? "sync" : (DykwabiNetworkService.connected ? "vpn_lock" : "vpn_key_off")
     ccWidgetPrimaryText: "VPN"
     ccWidgetSecondaryText: {
-        if (!DMSNetworkService.connected)
+        if (!DykwabiNetworkService.connected)
             return "Disconnected"
-        const names = DMSNetworkService.activeNames || []
+        const names = DykwabiNetworkService.activeNames || []
         if (names.length <= 1)
             return names[0] || "Connected"
         return names[0] + " +" + (names.length - 1)
     }
-    ccWidgetIsActive: DMSNetworkService.connected
+    ccWidgetIsActive: DykwabiNetworkService.connected
 
     onCcWidgetToggled: {
-        DMSNetworkService.toggleVpn()
+        DykwabiNetworkService.toggleVpn()
     }
 
     ccDetailContent: Component {
@@ -49,9 +49,9 @@ PluginComponent {
 
                     StyledText {
                         text: {
-                            if (!DMSNetworkService.connected)
+                            if (!DykwabiNetworkService.connected)
                                 return "Active: None"
-                            const names = DMSNetworkService.activeNames || []
+                            const names = DykwabiNetworkService.activeNames || []
                             if (names.length <= 1)
                                 return "Active: " + (names[0] || "VPN")
                             return "Active: " + names[0] + " +" + (names.length - 1)
@@ -69,16 +69,16 @@ PluginComponent {
                         height: 28
                         radius: 14
                         color: discAllArea.containsMouse ? Theme.errorHover : Theme.surfaceLight
-                        visible: DMSNetworkService.connected
+                        visible: DykwabiNetworkService.connected
                         width: 110
                         Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-                        opacity: DMSNetworkService.isBusy ? 0.5 : 1.0
+                        opacity: DykwabiNetworkService.isBusy ? 0.5 : 1.0
 
                         Row {
                             anchors.centerIn: parent
                             spacing: Theme.spacingXS
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "link_off"
                                 size: Theme.fontSizeSmall
                                 color: Theme.surfaceText
@@ -96,9 +96,9 @@ PluginComponent {
                             id: discAllArea
                             anchors.fill: parent
                             hoverEnabled: true
-                            cursorShape: DMSNetworkService.isBusy ? Qt.BusyCursor : Qt.PointingHandCursor
-                            enabled: !DMSNetworkService.isBusy
-                            onClicked: DMSNetworkService.disconnectAllActive()
+                            cursorShape: DykwabiNetworkService.isBusy ? Qt.BusyCursor : Qt.PointingHandCursor
+                            enabled: !DykwabiNetworkService.isBusy
+                            onClicked: DykwabiNetworkService.disconnectAllActive()
                         }
                     }
                 }
@@ -109,7 +109,7 @@ PluginComponent {
                     color: Qt.rgba(Theme.outline.r, Theme.outline.g, Theme.outline.b, 0.12)
                 }
 
-                DankFlickable {
+                BuckFlickable {
                     width: parent.width
                     height: 160
                     contentHeight: listCol.height
@@ -122,14 +122,14 @@ PluginComponent {
 
                         Item {
                             width: parent.width
-                            height: DMSNetworkService.profiles.length === 0 ? 120 : 0
+                            height: DykwabiNetworkService.profiles.length === 0 ? 120 : 0
                             visible: height > 0
 
                             Column {
                                 anchors.centerIn: parent
                                 spacing: Theme.spacingS
 
-                                DankIcon {
+                                BuckIcon {
                                     name: "playlist_remove"
                                     size: 36
                                     color: Theme.surfaceVariantText
@@ -153,7 +153,7 @@ PluginComponent {
                         }
 
                         Repeater {
-                            model: DMSNetworkService.profiles
+                            model: DykwabiNetworkService.profiles
 
                             delegate: Rectangle {
                                 required property var modelData
@@ -161,10 +161,10 @@ PluginComponent {
                                 width: parent ? parent.width : 300
                                 height: 50
                                 radius: Theme.cornerRadius
-                                color: rowArea.containsMouse ? Theme.primaryHoverLight : (DMSNetworkService.isActiveUuid(modelData.uuid) ? Theme.primaryPressed : Theme.surfaceLight)
-                                border.width: DMSNetworkService.isActiveUuid(modelData.uuid) ? 2 : 1
-                                border.color: DMSNetworkService.isActiveUuid(modelData.uuid) ? Theme.primary : Theme.outlineLight
-                                opacity: DMSNetworkService.isBusy ? 0.5 : 1.0
+                                color: rowArea.containsMouse ? Theme.primaryHoverLight : (DykwabiNetworkService.isActiveUuid(modelData.uuid) ? Theme.primaryPressed : Theme.surfaceLight)
+                                border.width: DykwabiNetworkService.isActiveUuid(modelData.uuid) ? 2 : 1
+                                border.color: DykwabiNetworkService.isActiveUuid(modelData.uuid) ? Theme.primary : Theme.outlineLight
+                                opacity: DykwabiNetworkService.isBusy ? 0.5 : 1.0
 
                                 RowLayout {
                                     anchors.left: parent.left
@@ -173,10 +173,10 @@ PluginComponent {
                                     anchors.margins: Theme.spacingM
                                     spacing: Theme.spacingS
 
-                                    DankIcon {
-                                        name: DMSNetworkService.isActiveUuid(modelData.uuid) ? "vpn_lock" : "vpn_key_off"
+                                    BuckIcon {
+                                        name: DykwabiNetworkService.isActiveUuid(modelData.uuid) ? "vpn_lock" : "vpn_key_off"
                                         size: Theme.iconSize - 4
-                                        color: DMSNetworkService.isActiveUuid(modelData.uuid) ? Theme.primary : Theme.surfaceText
+                                        color: DykwabiNetworkService.isActiveUuid(modelData.uuid) ? Theme.primary : Theme.surfaceText
                                         Layout.alignment: Qt.AlignVCenter
                                     }
 
@@ -188,7 +188,7 @@ PluginComponent {
                                         StyledText {
                                             text: modelData.name
                                             font.pixelSize: Theme.fontSizeMedium
-                                            color: DMSNetworkService.isActiveUuid(modelData.uuid) ? Theme.primary : Theme.surfaceText
+                                            color: DykwabiNetworkService.isActiveUuid(modelData.uuid) ? Theme.primary : Theme.surfaceText
                                             elide: Text.ElideRight
                                             wrapMode: Text.NoWrap
                                             width: parent.width
@@ -237,9 +237,9 @@ PluginComponent {
                                     id: rowArea
                                     anchors.fill: parent
                                     hoverEnabled: true
-                                    cursorShape: DMSNetworkService.isBusy ? Qt.BusyCursor : Qt.PointingHandCursor
-                                    enabled: !DMSNetworkService.isBusy
-                                    onClicked: DMSNetworkService.toggle(modelData.uuid)
+                                    cursorShape: DykwabiNetworkService.isBusy ? Qt.BusyCursor : Qt.PointingHandCursor
+                                    enabled: !DykwabiNetworkService.isBusy
+                                    onClicked: DykwabiNetworkService.toggle(modelData.uuid)
                                 }
                             }
                         }

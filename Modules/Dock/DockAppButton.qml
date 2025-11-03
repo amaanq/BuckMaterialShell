@@ -401,7 +401,7 @@ Item {
             visible: status === Image.Ready
         }
 
-        DankIcon {
+        BuckIcon {
             anchors.centerIn: parent
             size: actualIconSize
             name: "sports_esports"

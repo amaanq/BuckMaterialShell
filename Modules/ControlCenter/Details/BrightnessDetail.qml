@@ -84,7 +84,7 @@ Rectangle {
     border.color: Qt.rgba(Theme.outline.r, Theme.outline.g, Theme.outline.b, 0.08)
     border.width: 0
 
-    DankFlickable {
+    BuckFlickable {
         id: brightnessContent
         anchors.top: parent.top
         anchors.left: parent.left
@@ -109,7 +109,7 @@ Rectangle {
                     anchors.centerIn: parent
                     spacing: Theme.spacingM
 
-                    DankIcon {
+                    BuckIcon {
                         anchors.horizontalCenter: parent.horizontalCenter
                         name: DisplayService.brightnessAvailable ? "brightness_6" : "error"
                         size: 32
@@ -142,7 +142,7 @@ Rectangle {
                         anchors.verticalCenter: parent.verticalCenter
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "monitor"
                             size: Theme.iconSize
                             color: Theme.surfaceText
@@ -170,7 +170,7 @@ Rectangle {
                             anchors.centerIn: parent
                             spacing: 4
 
-                            DankIcon {
+                            BuckIcon {
                                 name: isPinnedToScreen ? "push_pin" : "push_pin"
                                 size: 16
                                 color: isPinnedToScreen ? Theme.primary : Theme.surfaceText
@@ -217,7 +217,7 @@ Rectangle {
                             anchors.verticalCenter: parent.verticalCenter
                             spacing: 2
 
-                            DankIcon {
+                            BuckIcon {
                                 name: {
                                     const deviceClass = modelData.class || ""
                                     const deviceName = modelData.name || ""

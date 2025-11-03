@@ -5,4 +5,4 @@ export QT_QPA_PLATFORM=wayland
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export EGL_PLATFORM=gbm
 
-exec Hyprland -c /etc/greetd/dms-hypr.conf
+exec Hyprland -c /etc/greetd/dykwabi-hypr.conf

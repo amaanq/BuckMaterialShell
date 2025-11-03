@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "author": "AvengeMedia",
     "type": "widget",
-    "capabilities": ["emoji-search", "clipboard", "dankbar-widget"],
+    "capabilities": ["emoji-search", "clipboard", "buckbar-widget"],
     "component": "./EmojiWidget.qml",
     "icon": "mood",
     "settings": "./EmojiSettings.qml",

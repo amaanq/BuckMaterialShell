@@ -49,7 +49,7 @@ Singleton {
 
     property bool stateInitialized: false
 
-    readonly property string socketPath: Quickshell.env("DMS_SOCKET")
+    readonly property string socketPath: Quickshell.env("DYKWABI_SOCKET")
 
     Timer {
         id: sessionInitTimer
@@ -66,9 +66,9 @@ Singleton {
                 return
             }
             if (socketPath && socketPath.length > 0) {
-                checkDMSCapabilities()
+                checkDykwabiCapabilities()
             } else {
-                console.log("SessionService: DMS_SOCKET not set")
+                console.log("SessionService: DYKWABI_SOCKET not set")
             }
         }
     }
@@ -305,11 +305,11 @@ Singleton {
     }
 
     Connections {
-        target: DMSService
+        target: DykwabiService
 
         function onConnectionStateChanged() {
-            if (DMSService.isConnected) {
-                checkDMSCapabilities()
+            if (DykwabiService.isConnected) {
+                checkDykwabiCapabilities()
             }
         }
 
@@ -319,11 +319,11 @@ Singleton {
     }
 
     Connections {
-        target: DMSService
-        enabled: DMSService.isConnected
+        target: DykwabiService
+        enabled: DykwabiService.isConnected
 
         function onCapabilitiesChanged() {
-            checkDMSCapabilities()
+            checkDykwabiCapabilities()
         }
     }
 
@@ -354,7 +354,7 @@ Singleton {
     }
 
     Connections {
-        target: DMSService
+        target: DykwabiService
         enabled: SettingsData.loginctlLockIntegration
 
         function onLoginctlStateUpdate(data) {
@@ -366,16 +366,16 @@ Singleton {
         }
     }
 
-    function checkDMSCapabilities() {
-        if (!DMSService.isConnected) {
+    function checkDykwabiCapabilities() {
+        if (!DykwabiService.isConnected) {
             return
         }
 
-        if (DMSService.capabilities.length === 0) {
+        if (DykwabiService.capabilities.length === 0) {
             return
         }
 
-        if (DMSService.capabilities.includes("loginctl")) {
+        if (DykwabiService.capabilities.includes("loginctl")) {
             loginctlAvailable = true
             if (SettingsData.loginctlLockIntegration && !stateInitialized) {
                 stateInitialized = true
@@ -384,14 +384,14 @@ Singleton {
             }
         } else {
             loginctlAvailable = false
-            console.log("SessionService: loginctl capability not available in DMS")
+            console.log("SessionService: loginctl capability not available in Dykwabi")
         }
     }
 
     function getLoginctlState() {
         if (!loginctlAvailable) return
 
-        DMSService.sendRequest("loginctl.getState", null, response => {
+        DykwabiService.sendRequest("loginctl.getState", null, response => {
             if (response.result) {
                 updateLoginctlState(response.result)
             }
@@ -401,7 +401,7 @@ Singleton {
     function syncLockBeforeSuspend() {
         if (!loginctlAvailable) return
 
-        DMSService.sendRequest("loginctl.setLockBeforeSuspend", {
+        DykwabiService.sendRequest("loginctl.setLockBeforeSuspend", {
             enabled: SettingsData.lockBeforeSuspend
         }, response => {
             if (response.error) {
@@ -415,9 +415,9 @@ Singleton {
     function syncSleepInhibitor() {
         if (!loginctlAvailable) return
 
-        if (!DMSService.apiVersion || DMSService.apiVersion < 4) return
+        if (!DykwabiService.apiVersion || DykwabiService.apiVersion < 4) return
 
-        DMSService.sendRequest("loginctl.setSleepInhibitorEnabled", {
+        DykwabiService.sendRequest("loginctl.setSleepInhibitorEnabled", {
             enabled: SettingsData.loginctlLockIntegration && SettingsData.lockBeforeSuspend
         }, response => {
             if (response.error) {

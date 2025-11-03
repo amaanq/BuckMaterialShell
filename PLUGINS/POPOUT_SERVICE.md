@@ -2,12 +2,12 @@
 
 ## Overview
 
-The `PopoutService` singleton provides plugins with access to all DankMaterialShell popouts and modals. It's automatically injected into plugin widgets and daemons, enabling them to control shell UI elements.
+The `PopoutService` singleton provides plugins with access to all BuckMaterialShell popouts and modals. It's automatically injected into plugin widgets and daemons, enabling them to control shell UI elements.
 
 ## Automatic Injection
 
 The `popoutService` property is automatically injected into:
-- Widget plugins (loaded in DankBar)
+- Widget plugins (loaded in BuckBar)
 - Daemon plugins (background services)
 - Plugin settings components
 
@@ -21,7 +21,7 @@ property var popoutService: null
 
 ## API Reference
 
-### Popouts (DankPopout-based)
+### Popouts (BuckPopout-based)
 
 | Component | Open | Close | Toggle |
 |-----------|------|-------|--------|
@@ -29,12 +29,12 @@ property var popoutService: null
 | Notification Center | `openNotificationCenter()` | `closeNotificationCenter()` | `toggleNotificationCenter()` |
 | App Drawer | `openAppDrawer()` | `closeAppDrawer()` | `toggleAppDrawer()` |
 | Process List | `openProcessList()` | `closeProcessList()` | `toggleProcessList()` |
-| DankDash | `openDankDash(tab)` | `closeDankDash()` | `toggleDankDash(tab)` |
+| BuckDash | `openBuckDash(tab)` | `closeBuckDash()` | `toggleBuckDash(tab)` |
 | Battery | `openBattery()` | `closeBattery()` | `toggleBattery()` |
 | VPN | `openVpn()` | `closeVpn()` | `toggleVpn()` |
 | System Update | `openSystemUpdate()` | `closeSystemUpdate()` | `toggleSystemUpdate()` |
 
-### Modals (DankModal-based)
+### Modals (BuckModal-based)
 
 | Modal | Show | Hide | Notes |
 |-------|------|------|-------|
@@ -186,7 +186,7 @@ Singleton {
 
 ### Reference Assignment
 
-References are assigned in `DMSShell.qml` when popouts are loaded:
+References are assigned in `DykwabiShell.qml` when popouts are loaded:
 
 ```qml
 LazyLoader {
@@ -204,7 +204,7 @@ LazyLoader {
 
 The service is injected in three locations:
 
-1. **DMSShell.qml** (daemon plugins):
+1. **DykwabiShell.qml** (daemon plugins):
 ```qml
 Instantiator {
     delegate: Loader {

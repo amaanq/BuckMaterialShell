@@ -17,7 +17,7 @@ PluginComponent {
         "notificationCenter": (x, y, w, s, scr) => popoutService?.toggleNotificationCenter(x, y, w, s, scr),
         "appDrawer": (x, y, w, s, scr) => popoutService?.toggleAppDrawer(x, y, w, s, scr),
         "processList": (x, y, w, s, scr) => popoutService?.toggleProcessList(x, y, w, s, scr),
-        "dankDash": (x, y, w, s, scr) => popoutService?.toggleDankDash(0, x, y, w, s, scr),
+        "buckDash": (x, y, w, s, scr) => popoutService?.toggleBuckDash(0, x, y, w, s, scr),
         "battery": (x, y, w, s, scr) => popoutService?.toggleBattery(x, y, w, s, scr),
         "vpn": (x, y, w, s, scr) => popoutService?.toggleVpn(x, y, w, s, scr),
         "systemUpdate": (x, y, w, s, scr) => popoutService?.toggleSystemUpdate(x, y, w, s, scr),
@@ -34,7 +34,7 @@ PluginComponent {
         "notificationCenter": "Notification Center",
         "appDrawer": "App Drawer",
         "processList": "Process List",
-        "dankDash": "DankDash",
+        "buckDash": "BuckDash",
         "battery": "Battery Info",
         "vpn": "VPN",
         "systemUpdate": "System Update",
@@ -56,7 +56,7 @@ PluginComponent {
         Row {
             spacing: Theme.spacingXS
 
-            DankIcon {
+            BuckIcon {
                 name: "widgets"
                 color: Theme.primary
                 font.pixelSize: Theme.iconSize - 6
@@ -76,7 +76,7 @@ PluginComponent {
         Column {
             spacing: Theme.spacingXS
 
-            DankIcon {
+            BuckIcon {
                 name: "widgets"
                 color: Theme.primary
                 font.pixelSize: Theme.iconSize - 6

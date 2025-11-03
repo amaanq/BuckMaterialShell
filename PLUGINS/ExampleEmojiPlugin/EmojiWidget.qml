@@ -103,7 +103,7 @@ PluginComponent {
                 width: parent.width
                 implicitHeight: root.popoutHeight - popoutColumn.headerHeight - popoutColumn.detailsHeight - Theme.spacingXL
 
-                DankGridView {
+                BuckGridView {
                     id: emojiGrid
                     anchors.horizontalCenter: parent.horizontalCenter
                     width: Math.floor(parent.width / 50) * 50

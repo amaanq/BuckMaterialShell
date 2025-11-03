@@ -23,9 +23,9 @@ Singleton {
         if (configDirStr.startsWith("file://")) {
             configDirStr = configDirStr.substring(7)
         }
-        return configDirStr + "/DankMaterialShell/plugins"
+        return configDirStr + "/BuckMaterialShell/plugins"
     }
-    property string systemPluginDirectory: "/etc/xdg/quickshell/dms-plugins"
+    property string systemPluginDirectory: "/etc/xdg/quickshell/dykwabi-plugins"
 
     property var knownManifests: ({})
     property var pathToPluginId: ({})
@@ -417,33 +417,33 @@ Singleton {
         SettingsData.setPluginSetting(pluginId, "variants", newVariants)
 
         const fullId = pluginId + ":" + variantId
-        removeWidgetFromDankBar(fullId)
+        removeWidgetFromBuckBar(fullId)
 
         pluginDataChanged(pluginId)
     }
 
-    function removeWidgetFromDankBar(widgetId) {
+    function removeWidgetFromBuckBar(widgetId) {
         function filterWidget(widget) {
             const id = typeof widget === "string" ? widget : widget.id
             return id !== widgetId
         }
 
-        const leftWidgets = SettingsData.dankBarLeftWidgets
-        const centerWidgets = SettingsData.dankBarCenterWidgets
-        const rightWidgets = SettingsData.dankBarRightWidgets
+        const leftWidgets = SettingsData.buckBarLeftWidgets
+        const centerWidgets = SettingsData.buckBarCenterWidgets
+        const rightWidgets = SettingsData.buckBarRightWidgets
 
         const newLeft = leftWidgets.filter(filterWidget)
         const newCenter = centerWidgets.filter(filterWidget)
         const newRight = rightWidgets.filter(filterWidget)
 
         if (newLeft.length !== leftWidgets.length) {
-            SettingsData.setDankBarLeftWidgets(newLeft)
+            SettingsData.setBuckBarLeftWidgets(newLeft)
         }
         if (newCenter.length !== centerWidgets.length) {
-            SettingsData.setDankBarCenterWidgets(newCenter)
+            SettingsData.setBuckBarCenterWidgets(newCenter)
         }
         if (newRight.length !== rightWidgets.length) {
-            SettingsData.setDankBarRightWidgets(newRight)
+            SettingsData.setBuckBarRightWidgets(newRight)
         }
     }
 

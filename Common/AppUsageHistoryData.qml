@@ -115,7 +115,7 @@ Singleton {
         id: settingsFile
 
         path: StandardPaths.writableLocation(
-                  StandardPaths.GenericStateLocation) + "/DankMaterialShell/appusage.json"
+                  StandardPaths.GenericStateLocation) + "/BuckMaterialShell/appusage.json"
         blockLoading: true
         blockWrites: true
         watchChanges: true

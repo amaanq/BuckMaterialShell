@@ -4,7 +4,7 @@ import qs.Common
 import qs.Modals.Common
 import qs.Widgets
 
-DankModal {
+BuckModal {
     id: root
 
     property var allWidgets: []
@@ -168,7 +168,7 @@ DankModal {
             }
         }
 
-        DankActionButton {
+        BuckActionButton {
             iconName: "close"
             iconSize: Theme.iconSize - 2
             iconColor: Theme.outline
@@ -191,7 +191,7 @@ DankModal {
                 width: parent.width
                 spacing: Theme.spacingM
 
-                DankIcon {
+                BuckIcon {
                     name: "add_circle"
                     size: Theme.iconSize
                     color: Theme.primary
@@ -216,7 +216,7 @@ DankModal {
                 wrapMode: Text.WordWrap
             }
 
-            DankTextField {
+            BuckTextField {
                 id: searchField
                 width: parent.width
                 height: 48
@@ -251,7 +251,7 @@ DankModal {
                 }
             }
 
-            DankListView {
+            BuckListView {
                 id: widgetList
 
                 width: parent.width
@@ -280,7 +280,7 @@ DankModal {
                         anchors.margins: Theme.spacingM
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: modelData.icon
                             size: Theme.iconSize
                             color: Theme.primary
@@ -311,7 +311,7 @@ DankModal {
                             }
                         }
 
-                        DankIcon {
+                        BuckIcon {
                             name: "add"
                             size: Theme.iconSize - 4
                             color: Theme.primary

@@ -1,5 +1,5 @@
 [Unit]
-Description=Dank Material Shell (DMS)
+Description=Buck Material Shell (Dykwabi)
 PartOf=graphical-session.target
 After=graphical-session-pre.target
 Wants=graphical-session-pre.target
@@ -7,7 +7,7 @@ Requisite=graphical-session.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/dms run
+ExecStart=/usr/bin/dykwabi run
 Restart=on-failure
 RestartSec=1
 

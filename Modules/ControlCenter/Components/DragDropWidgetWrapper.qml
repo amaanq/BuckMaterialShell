@@ -217,7 +217,7 @@ Item {
         visible: editMode
         z: 10
 
-        DankIcon {
+        BuckIcon {
             anchors.centerIn: parent
             name: "close"
             size: 12
@@ -262,7 +262,7 @@ Item {
         z: 15
         opacity: dragArea.drag.active ? 1.0 : 0.7
 
-        DankIcon {
+        BuckIcon {
             anchors.centerIn: parent
             name: "drag_indicator"
             size: 10

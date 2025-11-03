@@ -4,7 +4,7 @@ import qs.Modals.Common
 import qs.Services
 import qs.Widgets
 
-DankModal {
+BuckModal {
     id: root
 
     property string deviceName: ""
@@ -60,7 +60,7 @@ DankModal {
     }
 
     onBackgroundClicked: () => {
-        DMSService.bluetoothCancelPairing(token)
+        DykwabiService.bluetoothCancelPairing(token)
         close()
         pinInput = ""
         passkeyInput = ""
@@ -78,7 +78,7 @@ DankModal {
             implicitHeight: mainColumn.implicitHeight
 
             Keys.onEscapePressed: event => {
-                DMSService.bluetoothCancelPairing(token)
+                DykwabiService.bluetoothCancelPairing(token)
                 close()
                 pinInput = ""
                 passkeyInput = ""
@@ -143,7 +143,7 @@ DankModal {
                         }
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         id: pinInputField
 
                         anchors.fill: parent
@@ -178,7 +178,7 @@ DankModal {
                         }
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         id: passkeyInputField
 
                         anchors.fill: parent
@@ -259,7 +259,7 @@ DankModal {
                                 hoverEnabled: true
                                 cursorShape: Qt.PointingHandCursor
                                 onClicked: () => {
-                                    DMSService.bluetoothCancelPairing(token)
+                                    DykwabiService.bluetoothCancelPairing(token)
                                     close()
                                     pinInput = ""
                                     passkeyInput = ""
@@ -320,7 +320,7 @@ DankModal {
                 }
             }
 
-            DankActionButton {
+            BuckActionButton {
                 anchors.top: parent.top
                 anchors.right: parent.right
                 anchors.topMargin: Theme.spacingM
@@ -329,7 +329,7 @@ DankModal {
                 iconSize: Theme.iconSize - 4
                 iconColor: Theme.surfaceText
                 onClicked: () => {
-                    DMSService.bluetoothCancelPairing(token)
+                    DykwabiService.bluetoothCancelPairing(token)
                     close()
                     pinInput = ""
                     passkeyInput = ""
@@ -349,7 +349,7 @@ DankModal {
             secrets["decision"] = "yes"
         }
 
-        DMSService.bluetoothSubmitPairing(token, secrets, true, response => {
+        DykwabiService.bluetoothSubmitPairing(token, secrets, true, response => {
             if (response.error) {
                 ToastService.showError(I18n.tr("Pairing failed"), response.error)
             }

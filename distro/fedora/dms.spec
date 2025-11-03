@@ -1,22 +1,22 @@
-# Spec for DMS - uses rpkg macros for git builds
+# Spec for Dykwabi - uses rpkg macros for git builds
 
 %global debug_package %{nil}
 %global version {{{ git_dir_version }}}
-%global pkg_summary DankMaterialShell - Material 3 inspired shell for Wayland compositors
+%global pkg_summary BuckMaterialShell - Material 3 inspired shell for Wayland compositors
 
-Name:           dms
+Name:           dykwabi
 Epoch:          1
 Version:        %{version}
 Release:        1%{?dist}
 Summary:        %{pkg_summary}
 
 License:        GPL-3.0-only
-URL:            https://github.com/AvengeMedia/DankMaterialShell
+URL:            https://github.com/AvengeMedia/BuckMaterialShell
 VCS:            {{{ git_dir_vcs }}}
 Source0:        {{{ git_dir_pack }}}
 
-# DMS CLI from danklinux latest commit
-Source1:        https://github.com/AvengeMedia/danklinux/archive/refs/heads/master.tar.gz
+# Dykwabi CLI from bucklinux latest commit
+Source1:        https://github.com/amaanq/dykwabi/archive/refs/heads/master.tar.gz
 
 BuildRequires:  git-core
 BuildRequires:  rpkg
@@ -29,10 +29,10 @@ BuildRequires:  systemd-rpm-macros
 # Core requirements
 Requires:       (quickshell-git or quickshell)
 Requires:       accountsservice
-Requires:       dms-cli
+Requires:       dykwabi-cli
 Requires:       dgop
 
-# Core utilities (Highly recommended for DMS functionality)
+# Core utilities (Highly recommended for Dykwabi functionality)
 Recommends:     brightnessctl
 Recommends:     cava
 Recommends:     cliphist
@@ -47,7 +47,7 @@ Recommends:     qt6-qtmultimedia
 Suggests:       qt6ct
 
 %description
-DankMaterialShell (DMS) is a modern Wayland desktop shell built with Quickshell
+BuckMaterialShell (Dykwabi) is a modern Wayland desktop shell built with Quickshell
 and optimized for the niri, hyprland, sway, and dwl (MangoWC) compositors. Features notifications,
 app launcher, wallpaper customization, and fully customizable with plugins.
 
@@ -55,30 +55,30 @@ Includes auto-theming for GTK/Qt apps with matugen, 20+ customizable widgets,
 process monitoring, notification center, clipboard history, dock, control center,
 lock screen, and comprehensive plugin system.
 
-%package -n dms-cli
-Summary:        DankMaterialShell CLI tool
+%package -n dykwabi-cli
+Summary:        BuckMaterialShell CLI tool
 License:        GPL-3.0-only
-URL:            https://github.com/AvengeMedia/danklinux
+URL:            https://github.com/amaanq/dykwabi
 
-%description -n dms-cli
-Command-line interface for DankMaterialShell configuration and management.
+%description -n dykwabi-cli
+Command-line interface for BuckMaterialShell configuration and management.
 Provides native DBus bindings, NetworkManager integration, and system utilities.
 
 %package -n dgop
-Summary:        Stateless CPU/GPU monitor for DankMaterialShell
+Summary:        Stateless CPU/GPU monitor for BuckMaterialShell
 License:        MIT
 URL:            https://github.com/AvengeMedia/dgop
 Provides:       dgop
 
 %description -n dgop
 DGOP is a stateless system monitoring tool that provides CPU, GPU, memory, and 
-network statistics. Designed for integration with DankMaterialShell but can be 
+network statistics. Designed for integration with BuckMaterialShell but can be 
 used standalone. This package always includes the latest stable dgop release.
 
 %prep
 {{{ git_dir_setup_macro }}}
 
-# Extract DankLinux source
+# Extract BuckLinux source
 tar -xzf %{SOURCE1} -C %{_builddir}
 
 # Download and extract DGOP binary for target architecture
@@ -103,18 +103,18 @@ gunzip -c %{_builddir}/dgop.gz > %{_builddir}/dgop
 chmod +x %{_builddir}/dgop
 
 %build
-# Build DMS CLI from source
-cd %{_builddir}/danklinux-master
+# Build Dykwabi CLI from source
+cd %{_builddir}/bucklinux-master
 make dist
 
 %install
-# Install dms-cli binary (built from source) - use architecture-specific path
+# Install dykwabi-cli binary (built from source) - use architecture-specific path
 case "%{_arch}" in
   x86_64)
-    DMS_BINARY="dms-linux-amd64"
+    DYKWABI_BINARY="dykwabi-linux-amd64"
     ;;
   aarch64)
-    DMS_BINARY="dms-linux-arm64"
+    DYKWABI_BINARY="dykwabi-linux-arm64"
     ;;
   *)
     echo "Unsupported architecture: %{_arch}"
@@ -122,36 +122,36 @@ case "%{_arch}" in
     ;;
 esac
 
-install -Dm755 %{_builddir}/danklinux-master/bin/${DMS_BINARY} %{buildroot}%{_bindir}/dms
+install -Dm755 %{_builddir}/bucklinux-master/bin/${DYKWABI_BINARY} %{buildroot}%{_bindir}/dykwabi
 
 # Install dgop binary
 install -Dm755 %{_builddir}/dgop %{buildroot}%{_bindir}/dgop
 
 # Install systemd user service
-install -Dm644 assets/systemd/dms.service %{buildroot}%{_userunitdir}/dms.service
+install -Dm644 assets/systemd/dykwabi.service %{buildroot}%{_userunitdir}/dykwabi.service
 
 # Install shell files to shared data location
-install -dm755 %{buildroot}%{_datadir}/quickshell/dms
-cp -r * %{buildroot}%{_datadir}/quickshell/dms/
+install -dm755 %{buildroot}%{_datadir}/quickshell/dykwabi
+cp -r * %{buildroot}%{_datadir}/quickshell/dykwabi/
 
 # Remove build files
-rm -rf %{buildroot}%{_datadir}/quickshell/dms/.git*
-rm -f %{buildroot}%{_datadir}/quickshell/dms/.gitignore
-rm -rf %{buildroot}%{_datadir}/quickshell/dms/.github
-rm -f %{buildroot}%{_datadir}/quickshell/dms/*.spec
+rm -rf %{buildroot}%{_datadir}/quickshell/dykwabi/.git*
+rm -f %{buildroot}%{_datadir}/quickshell/dykwabi/.gitignore
+rm -rf %{buildroot}%{_datadir}/quickshell/dykwabi/.github
+rm -f %{buildroot}%{_datadir}/quickshell/dykwabi/*.spec
 
 %posttrans
 # Clean up old installation path from previous versions (only if empty)
-if [ -d "%{_sysconfdir}/xdg/quickshell/dms" ]; then
+if [ -d "%{_sysconfdir}/xdg/quickshell/dykwabi" ]; then
     # Remove directories only if empty (preserves any user-added files)
-    rmdir "%{_sysconfdir}/xdg/quickshell/dms" 2>/dev/null || true
+    rmdir "%{_sysconfdir}/xdg/quickshell/dykwabi" 2>/dev/null || true
     rmdir "%{_sysconfdir}/xdg/quickshell" 2>/dev/null || true
     rmdir "%{_sysconfdir}/xdg" 2>/dev/null || true
 fi
 
-# Restart DMS for active users after upgrade
+# Restart Dykwabi for active users after upgrade
 if [ "$1" -ge 2 ]; then
-    # Find all quickshell DMS processes (PID and username)
+    # Find all quickshell Dykwabi processes (PID and username)
     while read pid cmd; do
         username=$(ps -o user= -p "$pid" 2>/dev/null)
         
@@ -166,7 +166,7 @@ if [ "$1" -ge 2 ]; then
         wayland_display=$(tr '\0' '\n' < /proc/$pid/environ 2>/dev/null | grep '^WAYLAND_DISPLAY=' | cut -d= -f2)
         [ -z "$wayland_display" ] && continue
         
-        echo "Restarting DMS for user: $username"
+        echo "Restarting Dykwabi for user: $username"
         
         # Run as user with full Wayland session environment
         runuser -u "$username" -- /bin/sh -c "
@@ -174,21 +174,21 @@ if [ "$1" -ge 2 ]; then
             export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$user_uid/bus
             export WAYLAND_DISPLAY=$wayland_display
             export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:\$PATH
-            dms restart >/dev/null 2>&1
+            dykwabi restart >/dev/null 2>&1
         " 2>/dev/null || true
         
         break
-    done < <(pgrep -a -f 'quickshell.*dms' 2>/dev/null)
+    done < <(pgrep -a -f 'quickshell.*dykwabi' 2>/dev/null)
 fi
 
 %files
 %license LICENSE
 %doc README.md CONTRIBUTING.md
-%{_datadir}/quickshell/dms/
-%{_userunitdir}/dms.service
+%{_datadir}/quickshell/dykwabi/
+%{_userunitdir}/dykwabi.service
 
-%files -n dms-cli
-%{_bindir}/dms
+%files -n dykwabi-cli
+%{_bindir}/dykwabi
 
 %files -n dgop
 %{_bindir}/dgop

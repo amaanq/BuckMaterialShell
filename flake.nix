@@ -1,5 +1,5 @@
 {
-    description = "Dank Material Shell";
+    description = "Buck Material Shell";
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -7,8 +7,12 @@
             url = "github:AvengeMedia/dgop";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        dms-cli = {
-            url = "github:AvengeMedia/danklinux";
+        dykwabi-cli = {
+            url = "github:amaanq/dykwabi";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        stash = {
+            url = "github:notashelf/stash";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
@@ -17,7 +21,8 @@
         self,
         nixpkgs,
         dgop,
-        dms-cli,
+        dykwabi-cli,
+        stash,
         ...
     }: let
         forEachSystem = fn:
@@ -25,22 +30,23 @@
             ["aarch64-darwin" "aarch64-linux" "x86_64-darwin" "x86_64-linux"]
             (system: fn system nixpkgs.legacyPackages.${system});
         buildDmsPkgs = pkgs: {
-            dmsCli = dms-cli.packages.${pkgs.system}.default;
+            dykwabiCli = dykwabi-cli.packages.${pkgs.system}.default;
             dgop = dgop.packages.${pkgs.system}.dgop;
-            dankMaterialShell = self.packages.${pkgs.system}.dankMaterialShell;
+            buckMaterialShell = self.packages.${pkgs.system}.buckMaterialShell;
+            stash = stash.packages.${pkgs.system}.default;
         };
     in {
         formatter = forEachSystem (_: pkgs: pkgs.alejandra);
 
         packages = forEachSystem (system: pkgs: {
-            dankMaterialShell = let
+            buckMaterialShell = let
                 mkDate = longDate: pkgs.lib.concatStringsSep "-" [
                     (builtins.substring 0 4 longDate)
                     (builtins.substring 4 2 longDate)
                     (builtins.substring 6 2 longDate)
                 ];
             in pkgs.stdenvNoCC.mkDerivation {
-                pname = "dankMaterialShell";
+                pname = "buckMaterialShell";
                 version = pkgs.lib.removePrefix "v" (pkgs.lib.trim (builtins.readFile ./VERSION))
                     + "+date=" + mkDate (self.lastModifiedDate or "19700101")
                     + "_" + (self.shortRev or "dirty");
@@ -50,8 +56,8 @@
                         !(builtins.any (prefix: pkgs.lib.path.hasPrefix (./. + prefix) (/. + path)) [
                             /.github
                             /.gitignore
-                            /dms.spec
-                            /dms-greeter.spec
+                            /dykwabi.spec
+                            /dykwabi-greeter.spec
                             /nix
                             /flake.nix
                             /flake.lock
@@ -59,28 +65,26 @@
                         ]);
                 };
                 installPhase = ''
-                    mkdir -p $out/etc/xdg/quickshell/dms
-                    cp -r . $out/etc/xdg/quickshell/dms
+                    mkdir -p $out/etc/xdg/quickshell/dykwabi
+                    cp -r . $out/etc/xdg/quickshell/dykwabi
                 '';
             };
 
-            default = self.packages.${system}.dankMaterialShell;
+            default = self.packages.${system}.buckMaterialShell;
         });
 
-        homeModules.dankMaterialShell.default = {pkgs, ...}: let
-            dmsPkgs = buildDmsPkgs pkgs;
+        homeModules.default = {pkgs, ...}: let
+            dykwabiPkgs = buildDmsPkgs pkgs;
         in {
-            imports = [./nix/default.nix];
-            _module.args.dmsPkgs = dmsPkgs;
+            imports = [./nix/default.nix ./nix/niri.nix];
+            _module.args.dykwabiPkgs = dykwabiPkgs;
         };
 
-        homeModules.dankMaterialShell.niri = import ./nix/niri.nix;
-
         nixosModules.greeter = {pkgs, ...}: let
-            dmsPkgs = buildDmsPkgs pkgs;
+            dykwabiPkgs = buildDmsPkgs pkgs;
         in {
             imports = [./nix/greeter.nix];
-            _module.args.dmsPkgs = dmsPkgs;
+            _module.args.dykwabiPkgs = dykwabiPkgs;
         };
     };
 }

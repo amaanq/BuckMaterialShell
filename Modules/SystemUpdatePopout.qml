@@ -8,7 +8,7 @@ import qs.Common
 import qs.Services
 import qs.Widgets
 
-DankPopout {
+BuckPopout {
     id: systemUpdatePopout
 
     property var parentWidget: null
@@ -29,7 +29,7 @@ DankPopout {
     popupWidth: 400
     popupHeight: 500
     triggerX: Screen.width - 600 - Theme.spacingL
-    triggerY: Math.max(26 + SettingsData.dankBarInnerPadding + 4, Theme.barHeight - 4 - (8 - SettingsData.dankBarInnerPadding)) + SettingsData.dankBarSpacing + SettingsData.dankBarBottomGap - 2
+    triggerY: Math.max(26 + SettingsData.buckBarInnerPadding + 4, Theme.barHeight - 4 - (8 - SettingsData.buckBarInnerPadding)) + SettingsData.buckBarSpacing + SettingsData.buckBarBottomGap - 2
     triggerWidth: 55
     positioning: ""
     screen: triggerScreen
@@ -118,7 +118,7 @@ DankPopout {
                             }
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             id: checkForUpdatesButton
                             buttonSize: 28
                             iconName: "refresh"
@@ -194,7 +194,7 @@ DankPopout {
                             visible: SystemUpdateService.updateCount === 0 || SystemUpdateService.hasError || SystemUpdateService.isChecking
                         }
 
-                        DankListView {
+                        BuckListView {
                             id: packagesList
 
                             width: parent.width
@@ -278,7 +278,7 @@ DankPopout {
                             anchors.centerIn: parent
                             spacing: Theme.spacingS
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "system_update_alt"
                                 size: Theme.iconSize
                                 color: Theme.primary
@@ -322,7 +322,7 @@ DankPopout {
                             anchors.centerIn: parent
                             spacing: Theme.spacingS
 
-                            DankIcon {
+                            BuckIcon {
                                 name: "close"
                                 size: Theme.iconSize
                                 color: Theme.surfaceText

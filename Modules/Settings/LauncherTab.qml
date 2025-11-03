@@ -22,7 +22,7 @@ Item {
         }
     }
 
-    DankFlickable {
+    BuckFlickable {
         anchors.fill: parent
         anchors.topMargin: Theme.spacingL
         clip: true
@@ -54,7 +54,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "apps"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -72,7 +72,7 @@ Item {
 
                     StyledText {
                         width: parent.width
-                        text: I18n.tr("Choose the logo displayed on the launcher button in DankBar")
+                        text: I18n.tr("Choose the logo displayed on the launcher button in BuckBar")
                         font.pixelSize: Theme.fontSizeSmall
                         color: Theme.surfaceVariantText
                         wrapMode: Text.WordWrap
@@ -82,11 +82,11 @@ Item {
                         width: parent.width
                         height: logoModeGroup.height
 
-                        DankButtonGroup {
+                        BuckButtonGroup {
                             id: logoModeGroup
                             anchors.horizontalCenter: parent.horizontalCenter
                             model: {
-                                const modes = [I18n.tr("Apps Icon"), I18n.tr("OS Logo"), I18n.tr("Dank")]
+                                const modes = [I18n.tr("Apps Icon"), I18n.tr("OS Logo"), I18n.tr("Buck")]
                                 if (CompositorService.isNiri) {
                                     modes.push("niri")
                                 } else if (CompositorService.isHyprland) {
@@ -104,7 +104,7 @@ Item {
                             currentIndex: {
                                 if (SettingsData.launcherLogoMode === "apps") return 0
                                 if (SettingsData.launcherLogoMode === "os") return 1
-                                if (SettingsData.launcherLogoMode === "dank") return 2
+                                if (SettingsData.launcherLogoMode === "buck") return 2
                                 if (SettingsData.launcherLogoMode === "compositor") return 3
                                 if (SettingsData.launcherLogoMode === "custom") return 4
                                 return 0
@@ -116,7 +116,7 @@ Item {
                                 } else if (index === 1) {
                                     SettingsData.setLauncherLogoMode("os")
                                 } else if (index === 2) {
-                                    SettingsData.setLauncherLogoMode("dank")
+                                    SettingsData.setLauncherLogoMode("buck")
                                 } else if (index === 3) {
                                     SettingsData.setLauncherLogoMode("compositor")
                                 } else if (index === 4) {
@@ -159,7 +159,7 @@ Item {
                             }
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             id: selectButton
                             iconName: "folder_open"
                             width: 36
@@ -197,7 +197,7 @@ Item {
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 spacing: Theme.spacingM
 
-                                DankButtonGroup {
+                                BuckButtonGroup {
                                     id: colorModeGroup
                                     model: [I18n.tr("Default"), I18n.tr("Primary"), I18n.tr("Surface"), I18n.tr("Custom")]
                                     currentIndex: {
@@ -279,7 +279,7 @@ Item {
                                     anchors.horizontalCenter: parent.horizontalCenter
                                 }
 
-                                DankSlider {
+                                BuckSlider {
                                     width: 100
                                     height: 20
                                     minimum: -12
@@ -330,7 +330,7 @@ Item {
                                         anchors.horizontalCenter: parent.horizontalCenter
                                     }
 
-                                    DankSlider {
+                                    BuckSlider {
                                         width: 100
                                         height: 20
                                         minimum: 0
@@ -359,7 +359,7 @@ Item {
                                         anchors.horizontalCenter: parent.horizontalCenter
                                     }
 
-                                    DankSlider {
+                                    BuckSlider {
                                         width: 100
                                         height: 20
                                         minimum: 0
@@ -388,7 +388,7 @@ Item {
                                         anchors.horizontalCenter: parent.horizontalCenter
                                     }
 
-                                    DankToggle {
+                                    BuckToggle {
                                         width: 32
                                         height: 18
                                         checked: SettingsData.launcherLogoColorInvertOnMode
@@ -424,7 +424,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "terminal"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -448,7 +448,7 @@ Item {
                         wrapMode: Text.WordWrap
                     }
 
-                    DankTextField {
+                    BuckTextField {
                         width: parent.width
                         text: SettingsData.launchPrefix
                         placeholderText: I18n.tr("Enter launch prefix (e.g., 'uwsm-app')")
@@ -479,7 +479,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "sort_by_alpha"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -501,7 +501,7 @@ Item {
                             height: 1
                         }
 
-                        DankToggle {
+                        BuckToggle {
                             id: sortToggle
 
                             width: 32
@@ -569,7 +569,7 @@ Item {
                         width: parent.width
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "history"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -591,7 +591,7 @@ Item {
                             height: 1
                         }
 
-                        DankActionButton {
+                        BuckActionButton {
                             id: clearAllButton
 
                             iconName: "delete_sweep"
@@ -716,7 +716,7 @@ Item {
                                     }
                                 }
 
-                                DankActionButton {
+                                BuckActionButton {
                                     anchors.right: parent.right
                                     anchors.rightMargin: Theme.spacingM
                                     anchors.verticalCenter: parent.verticalCenter

@@ -8,7 +8,7 @@ import qs.Modules.Settings
 import qs.Services
 import qs.Widgets
 
-DankModal {
+BuckModal {
     id: settingsModal
 
     property Component settingsContent
@@ -154,7 +154,7 @@ DankModal {
                         anchors.verticalCenter: parent.verticalCenter
                         spacing: Theme.spacingM
 
-                        DankIcon {
+                        BuckIcon {
                             name: "settings"
                             size: Theme.iconSize
                             color: Theme.primary
@@ -171,7 +171,7 @@ DankModal {
 
                     }
 
-                    DankActionButton {
+                    BuckActionButton {
                         anchors.right: parent.right
                         anchors.verticalCenter: parent.verticalCenter
                         circular: false

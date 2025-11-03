@@ -11,7 +11,7 @@ QtObject {
     // Load clipboard entries
     property var loadProcess: Process {
         id: loadProcess
-        command: ["cliphist", "list"]
+        command: ["stash", "list"]
         running: false
 
         stdout: StdioCollector {
@@ -66,7 +66,7 @@ QtObject {
     // Clear all entries
     property var clearProcess: Process {
         id: clearProcess
-        command: ["cliphist", "wipe"]
+        command: ["stash", "wipe"]
         running: false
 
         onExited: exitCode => {
@@ -84,7 +84,7 @@ QtObject {
 
     function deleteEntry(entry) {
         deleteProcess.deletedEntry = entry
-        deleteProcess.command = ["sh", "-c", `echo '${entry.replace(/'/g, "'\\''")}' | cliphist delete`]
+        deleteProcess.command = ["sh", "-c", `echo '${entry.replace(/'/g, "'\\''")}' | stash delete`]
         deleteProcess.running = true
     }
 
